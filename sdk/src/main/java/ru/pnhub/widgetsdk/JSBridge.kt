@@ -22,12 +22,27 @@ internal const val INJECT_JS_CODE = """
                 window.PNWidget._listeners.delete(listener);
             };
         };
-    })()
+        
+        function wrap(fn) {
+            return function wrapper() {
+                var res = fn.apply(this, arguments);
+                window.PNWidget._navigationStateChange();
+                return res;
+            }
+        }
+
+        history.pushState = wrap(history.pushState);
+        history.replaceState = wrap(history.replaceState);
+        window.addEventListener('popstate', function() {
+            window.PNWidget._navigationStateChange();
+        });
+    })();
 """
 
 class JSBridge(
         private val webView: WebView,
         private val eventListener: EventListener,
+        private val navigationStateChange: () -> Unit,
 ) {
 
     init {
@@ -63,6 +78,11 @@ class JSBridge(
         @JavascriptInterface
         fun _sendMobileEvent(json: String) {
             handleEvent(json)
+        }
+
+        @JavascriptInterface
+        fun _navigationStateChange() {
+            navigationStateChange()
         }
     }
 }

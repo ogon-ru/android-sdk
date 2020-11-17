@@ -25,12 +25,7 @@ private const val RESOURCE_AUDIO_CAPTURE = "android.webkit.resource.AUDIO_CAPTUR
 class WidgetActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_TOKEN = "EXTRA_TOKEN"
-
-        init {
-            if (BuildConfig.DEBUG) {
-                WebView.setWebContentsDebuggingEnabled(true)
-            }
-        }
+        const val EXTRA_BASE_URL = "EXTRA_BASE_URL"
     }
 
     private lateinit var webView: WebView
@@ -42,6 +37,7 @@ class WidgetActivity : AppCompatActivity() {
         setContentView(R.layout.activity_widget)
 
         val token = intent.getStringExtra(EXTRA_TOKEN)
+        val baseUrl = intent.getStringExtra(EXTRA_BASE_URL) ?: BASE_URL
 
         webView = findViewById<WebView>(R.id.webView).apply {
             settings.javaScriptEnabled = true
@@ -52,9 +48,13 @@ class WidgetActivity : AppCompatActivity() {
             webViewClient = WidgetWebViewClient()
             webChromeClient = WidgetWebChromeClient()
         }
-        jsBridge = JSBridge(webView, ::handleEvent)
+        jsBridge = JSBridge(
+            webView = webView,
+            eventListener = ::handleEvent,
+            navigationStateChange = ::handleNavigation,
+        )
 
-        webView.loadUrl("$BASE_URL/?token=$token")
+        webView.loadUrl("$baseUrl/?token=$token")
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
@@ -169,6 +169,14 @@ class WidgetActivity : AppCompatActivity() {
                 loadPaymentData(mobileEvent.paymentDataRequest)
             }
             else -> Log.i("[PNWidget]", "Unhandled event type: ${mobileEvent.type}")
+        }
+    }
+
+    private fun handleNavigation() {
+        webView.post {
+            if (webView.url.endsWith("/escape")) {
+                finish()
+            }
         }
     }
 
