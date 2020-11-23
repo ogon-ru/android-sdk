@@ -50,7 +50,9 @@ class JSBridge(
     }
 
     fun sendEvent(event: MobileEvent) {
-        val json = event.toJson()
+        val json = event.toJson(
+            preservingProtoFieldNames = true,
+        )
         val js = """javascript:(function() {
             const event = $json;
             for (let listener of window.PNWidget._listeners.values()) {
