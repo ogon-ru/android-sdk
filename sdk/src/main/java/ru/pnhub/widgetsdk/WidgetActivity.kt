@@ -1,9 +1,11 @@
 package ru.pnhub.widgetsdk
 
+import android.annotation.TargetApi
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.http.SslError
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
@@ -58,14 +60,20 @@ class WidgetActivity : AppCompatActivity() {
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK && webView.canGoBack()) {
-            webView.goBack()
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (webView.canGoBack()) {
+                webView.goBack()
+            } else {
+                finish()
+            }
+
             return true
         }
 
         return super.onKeyDown(keyCode, event)
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         when (requestCode) {
             RECORD_AUDIO_REQUEST_CODE -> {
@@ -93,6 +101,7 @@ class WidgetActivity : AppCompatActivity() {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     private fun requestMicrophone(request: PermissionRequest) {
         requestPermissions(arrayOf(android.Manifest.permission.RECORD_AUDIO), RECORD_AUDIO_REQUEST_CODE)
         permissionRequest = request
@@ -195,6 +204,7 @@ class WidgetActivity : AppCompatActivity() {
     }
 
     private inner class WidgetWebChromeClient : WebChromeClient() {
+        @TargetApi(Build.VERSION_CODES.M)
         override fun onPermissionRequest(request: PermissionRequest?) {
             request?.apply {
                 resources.forEach { resource ->
