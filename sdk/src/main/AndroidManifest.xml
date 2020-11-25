@@ -15,7 +15,8 @@
         <activity
             android:name=".WidgetActivity"
             android:label="@string/title_activity_widget"
-            android:theme="@style/Theme.WidgetSDK" />
+            android:theme="@style/Theme.WidgetSDK"
+            android:configChanges="orientation|screenSize|screenLayout"/>
     </application>
 
 </manifest>
