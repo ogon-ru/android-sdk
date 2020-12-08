@@ -32,6 +32,30 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_ERROR = 5;</code>
    */
   MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_ERROR(5),
+  /**
+   * <code>MOBILE_EVENT_APPLEPAY_IS_READY_TO_PAY_REQUEST = 6;</code>
+   */
+  MOBILE_EVENT_APPLEPAY_IS_READY_TO_PAY_REQUEST(6),
+  /**
+   * <code>MOBILE_EVENT_APPLEPAY_IS_READY_TO_PAY_RESPONSE = 7;</code>
+   */
+  MOBILE_EVENT_APPLEPAY_IS_READY_TO_PAY_RESPONSE(7),
+  /**
+   * <code>MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_REQUEST = 8;</code>
+   */
+  MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_REQUEST(8),
+  /**
+   * <code>MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_RESPONSE = 9;</code>
+   */
+  MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_RESPONSE(9),
+  /**
+   * <code>MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_ERROR = 10;</code>
+   */
+  MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_ERROR(10),
+  /**
+   * <code>MOBILE_EVENT_OPEN_URL_REQUEST = 11;</code>
+   */
+  MOBILE_EVENT_OPEN_URL_REQUEST(11),
   UNRECOGNIZED(-1),
   ;
 
@@ -59,11 +83,35 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_ERROR = 5;</code>
    */
   public static final int MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_ERROR_VALUE = 5;
+  /**
+   * <code>MOBILE_EVENT_APPLEPAY_IS_READY_TO_PAY_REQUEST = 6;</code>
+   */
+  public static final int MOBILE_EVENT_APPLEPAY_IS_READY_TO_PAY_REQUEST_VALUE = 6;
+  /**
+   * <code>MOBILE_EVENT_APPLEPAY_IS_READY_TO_PAY_RESPONSE = 7;</code>
+   */
+  public static final int MOBILE_EVENT_APPLEPAY_IS_READY_TO_PAY_RESPONSE_VALUE = 7;
+  /**
+   * <code>MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_REQUEST = 8;</code>
+   */
+  public static final int MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_REQUEST_VALUE = 8;
+  /**
+   * <code>MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_RESPONSE = 9;</code>
+   */
+  public static final int MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_RESPONSE_VALUE = 9;
+  /**
+   * <code>MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_ERROR = 10;</code>
+   */
+  public static final int MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_ERROR_VALUE = 10;
+  /**
+   * <code>MOBILE_EVENT_OPEN_URL_REQUEST = 11;</code>
+   */
+  public static final int MOBILE_EVENT_OPEN_URL_REQUEST_VALUE = 11;
 
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
-      throw new java.lang.IllegalArgumentException(
+      throw new IllegalArgumentException(
           "Can't get the number of an unknown enum value.");
     }
     return value;
@@ -74,7 +122,7 @@ public enum MobileEventType
    * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
-  @java.lang.Deprecated
+  @Deprecated
   public static MobileEventType valueOf(int value) {
     return forNumber(value);
   }
@@ -91,6 +139,12 @@ public enum MobileEventType
       case 3: return MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_REQUEST;
       case 4: return MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_RESPONSE;
       case 5: return MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_ERROR;
+      case 6: return MOBILE_EVENT_APPLEPAY_IS_READY_TO_PAY_REQUEST;
+      case 7: return MOBILE_EVENT_APPLEPAY_IS_READY_TO_PAY_RESPONSE;
+      case 8: return MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_REQUEST;
+      case 9: return MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_RESPONSE;
+      case 10: return MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_ERROR;
+      case 11: return MOBILE_EVENT_OPEN_URL_REQUEST;
       default: return null;
     }
   }
@@ -110,7 +164,7 @@ public enum MobileEventType
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
     if (this == UNRECOGNIZED) {
-      throw new java.lang.IllegalStateException(
+      throw new IllegalStateException(
           "Can't get the descriptor of an unrecognized enum value.");
     }
     return getDescriptor().getValues().get(ordinal());
@@ -121,7 +175,7 @@ public enum MobileEventType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return ru.pnhub.widgetsdk.model.MobileModel.getDescriptor().getEnumTypes().get(0);
+    return MobileModel.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final MobileEventType[] VALUES = values();
@@ -129,7 +183,7 @@ public enum MobileEventType
   public static MobileEventType valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
+      throw new IllegalArgumentException(
         "EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {

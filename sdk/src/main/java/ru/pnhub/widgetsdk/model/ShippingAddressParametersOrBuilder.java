@@ -11,7 +11,7 @@ public interface ShippingAddressParametersOrBuilder extends
    * <code>repeated string allowed_country_codes = 1;</code>
    * @return A list containing the allowedCountryCodes.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getAllowedCountryCodesList();
   /**
    * <code>repeated string allowed_country_codes = 1;</code>
@@ -23,7 +23,7 @@ public interface ShippingAddressParametersOrBuilder extends
    * @param index The index of the element to return.
    * @return The allowedCountryCodes at the given index.
    */
-  java.lang.String getAllowedCountryCodes(int index);
+  String getAllowedCountryCodes(int index);
   /**
    * <code>repeated string allowed_country_codes = 1;</code>
    * @param index The index of the value to return.

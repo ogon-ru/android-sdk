@@ -20,14 +20,14 @@ private static final long serialVersionUID = 0L;
     description_ = "";
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new MobileError();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +38,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -56,13 +56,13 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             message_ = s;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             description_ = s;
             break;
@@ -88,15 +88,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_MobileError_descriptor;
+    return MobileModel.internal_static_pb_MobileError_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_MobileError_fieldAccessorTable
+    return MobileModel.internal_static_pb_MobileError_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ru.pnhub.widgetsdk.model.MobileError.class, ru.pnhub.widgetsdk.model.MobileError.Builder.class);
+            MobileError.class, Builder.class);
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
@@ -105,26 +105,26 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 code = 1;</code>
    * @return The code.
    */
-  @java.lang.Override
+  @Override
   public int getCode() {
     return code_;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object message_;
+  private volatile Object message_;
   /**
    * <code>string message = 2;</code>
    * @return The message.
    */
-  @java.lang.Override
-  public java.lang.String getMessage() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getMessage() {
+    Object ref = message_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       message_ = s;
       return s;
     }
@@ -133,14 +133,14 @@ private static final long serialVersionUID = 0L;
    * <code>string message = 2;</code>
    * @return The bytes for message.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getMessageBytes() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
+    Object ref = message_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       message_ = b;
       return b;
     } else {
@@ -149,20 +149,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+  private volatile Object description_;
   /**
    * <code>string description = 3;</code>
    * @return The description.
    */
-  @java.lang.Override
-  public java.lang.String getDescription() {
-    java.lang.Object ref = description_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getDescription() {
+    Object ref = description_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
@@ -171,14 +171,14 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 3;</code>
    * @return The bytes for description.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
-    java.lang.Object ref = description_;
-    if (ref instanceof java.lang.String) {
+    Object ref = description_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       description_ = b;
       return b;
     } else {
@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (code_ != 0) {
@@ -212,7 +212,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -233,15 +233,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ru.pnhub.widgetsdk.model.MobileError)) {
+    if (!(obj instanceof MobileError)) {
       return super.equals(obj);
     }
-    ru.pnhub.widgetsdk.model.MobileError other = (ru.pnhub.widgetsdk.model.MobileError) obj;
+    MobileError other = (MobileError) obj;
 
     if (getCode()
         != other.getCode()) return false;
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -271,69 +271,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static ru.pnhub.widgetsdk.model.MobileError parseFrom(
+  public static MobileError parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.pnhub.widgetsdk.model.MobileError parseFrom(
+  public static MobileError parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.pnhub.widgetsdk.model.MobileError parseFrom(
+  public static MobileError parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.pnhub.widgetsdk.model.MobileError parseFrom(
+  public static MobileError parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.pnhub.widgetsdk.model.MobileError parseFrom(byte[] data)
+  public static MobileError parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.pnhub.widgetsdk.model.MobileError parseFrom(
+  public static MobileError parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.pnhub.widgetsdk.model.MobileError parseFrom(java.io.InputStream input)
+  public static MobileError parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ru.pnhub.widgetsdk.model.MobileError parseFrom(
+  public static MobileError parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ru.pnhub.widgetsdk.model.MobileError parseDelimitedFrom(java.io.InputStream input)
+  public static MobileError parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ru.pnhub.widgetsdk.model.MobileError parseDelimitedFrom(
+  public static MobileError parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ru.pnhub.widgetsdk.model.MobileError parseFrom(
+  public static MobileError parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ru.pnhub.widgetsdk.model.MobileError parseFrom(
+  public static MobileError parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -341,23 +341,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ru.pnhub.widgetsdk.model.MobileError prototype) {
+  public static Builder newBuilder(MobileError prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -367,18 +367,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:pb.MobileError)
-      ru.pnhub.widgetsdk.model.MobileErrorOrBuilder {
+      MobileErrorOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_MobileError_descriptor;
+      return MobileModel.internal_static_pb_MobileError_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_MobileError_fieldAccessorTable
+      return MobileModel.internal_static_pb_MobileError_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ru.pnhub.widgetsdk.model.MobileError.class, ru.pnhub.widgetsdk.model.MobileError.Builder.class);
+              MobileError.class, Builder.class);
     }
 
     // Construct using ru.pnhub.widgetsdk.model.MobileError.newBuilder()
@@ -387,7 +387,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -396,7 +396,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       code_ = 0;
@@ -408,29 +408,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_MobileError_descriptor;
+      return MobileModel.internal_static_pb_MobileError_descriptor;
     }
 
-    @java.lang.Override
-    public ru.pnhub.widgetsdk.model.MobileError getDefaultInstanceForType() {
-      return ru.pnhub.widgetsdk.model.MobileError.getDefaultInstance();
+    @Override
+    public MobileError getDefaultInstanceForType() {
+      return MobileError.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public ru.pnhub.widgetsdk.model.MobileError build() {
-      ru.pnhub.widgetsdk.model.MobileError result = buildPartial();
+    @Override
+    public MobileError build() {
+      MobileError result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public ru.pnhub.widgetsdk.model.MobileError buildPartial() {
-      ru.pnhub.widgetsdk.model.MobileError result = new ru.pnhub.widgetsdk.model.MobileError(this);
+    @Override
+    public MobileError buildPartial() {
+      MobileError result = new MobileError(this);
       result.code_ = code_;
       result.message_ = message_;
       result.description_ = description_;
@@ -438,50 +438,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ru.pnhub.widgetsdk.model.MobileError) {
-        return mergeFrom((ru.pnhub.widgetsdk.model.MobileError)other);
+      if (other instanceof MobileError) {
+        return mergeFrom((MobileError)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ru.pnhub.widgetsdk.model.MobileError other) {
-      if (other == ru.pnhub.widgetsdk.model.MobileError.getDefaultInstance()) return this;
+    public Builder mergeFrom(MobileError other) {
+      if (other == MobileError.getDefaultInstance()) return this;
       if (other.getCode() != 0) {
         setCode(other.getCode());
       }
@@ -498,21 +498,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ru.pnhub.widgetsdk.model.MobileError parsedMessage = null;
+      MobileError parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ru.pnhub.widgetsdk.model.MobileError) e.getUnfinishedMessage();
+        parsedMessage = (MobileError) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -527,7 +527,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 code = 1;</code>
      * @return The code.
      */
-    @java.lang.Override
+    @Override
     public int getCode() {
       return code_;
     }
@@ -553,21 +553,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object message_ = "";
+    private Object message_ = "";
     /**
      * <code>string message = 2;</code>
      * @return The message.
      */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getMessage() {
+      Object ref = message_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         message_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -576,11 +576,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
-      java.lang.Object ref = message_;
+      Object ref = message_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         message_ = b;
         return b;
       } else {
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setMessage(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -629,21 +629,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object description_ = "";
+    private Object description_ = "";
     /**
      * <code>string description = 3;</code>
      * @return The description.
      */
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getDescription() {
+      Object ref = description_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         description_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -652,11 +652,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
-      java.lang.Object ref = description_;
+      Object ref = description_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         description_ = b;
         return b;
       } else {
@@ -669,7 +669,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setDescription(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -704,13 +704,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -721,18 +721,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:pb.MobileError)
-  private static final ru.pnhub.widgetsdk.model.MobileError DEFAULT_INSTANCE;
+  private static final MobileError DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ru.pnhub.widgetsdk.model.MobileError();
+    DEFAULT_INSTANCE = new MobileError();
   }
 
-  public static ru.pnhub.widgetsdk.model.MobileError getDefaultInstance() {
+  public static MobileError getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<MobileError>
       PARSER = new com.google.protobuf.AbstractParser<MobileError>() {
-    @java.lang.Override
+    @Override
     public MobileError parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -745,13 +745,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<MobileError> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public ru.pnhub.widgetsdk.model.MobileError getDefaultInstanceForType() {
+  @Override
+  public MobileError getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

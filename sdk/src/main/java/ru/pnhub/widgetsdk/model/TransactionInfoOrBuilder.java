@@ -11,7 +11,7 @@ public interface TransactionInfoOrBuilder extends
    * <code>string transaction_id = 1;</code>
    * @return The transactionId.
    */
-  java.lang.String getTransactionId();
+  String getTransactionId();
   /**
    * <code>string transaction_id = 1;</code>
    * @return The bytes for transactionId.
@@ -23,7 +23,7 @@ public interface TransactionInfoOrBuilder extends
    * <code>string currency_code = 2;</code>
    * @return The currencyCode.
    */
-  java.lang.String getCurrencyCode();
+  String getCurrencyCode();
   /**
    * <code>string currency_code = 2;</code>
    * @return The bytes for currencyCode.
@@ -35,7 +35,7 @@ public interface TransactionInfoOrBuilder extends
    * <code>string country_code = 3;</code>
    * @return The countryCode.
    */
-  java.lang.String getCountryCode();
+  String getCountryCode();
   /**
    * <code>string country_code = 3;</code>
    * @return The bytes for countryCode.
@@ -47,7 +47,7 @@ public interface TransactionInfoOrBuilder extends
    * <code>string total_price = 4;</code>
    * @return The totalPrice.
    */
-  java.lang.String getTotalPrice();
+  String getTotalPrice();
   /**
    * <code>string total_price = 4;</code>
    * @return The bytes for totalPrice.
@@ -59,7 +59,7 @@ public interface TransactionInfoOrBuilder extends
    * <code>string total_price_label = 5;</code>
    * @return The totalPriceLabel.
    */
-  java.lang.String getTotalPriceLabel();
+  String getTotalPriceLabel();
   /**
    * <code>string total_price_label = 5;</code>
    * @return The bytes for totalPriceLabel.
@@ -71,7 +71,7 @@ public interface TransactionInfoOrBuilder extends
    * <code>string total_price_status = 6;</code>
    * @return The totalPriceStatus.
    */
-  java.lang.String getTotalPriceStatus();
+  String getTotalPriceStatus();
   /**
    * <code>string total_price_status = 6;</code>
    * @return The bytes for totalPriceStatus.
@@ -83,7 +83,7 @@ public interface TransactionInfoOrBuilder extends
    * <code>string transaction_note = 7;</code>
    * @return The transactionNote.
    */
-  java.lang.String getTransactionNote();
+  String getTransactionNote();
   /**
    * <code>string transaction_note = 7;</code>
    * @return The bytes for transactionNote.
@@ -95,7 +95,7 @@ public interface TransactionInfoOrBuilder extends
    * <code>string checkout_option = 8;</code>
    * @return The checkoutOption.
    */
-  java.lang.String getCheckoutOption();
+  String getCheckoutOption();
   /**
    * <code>string checkout_option = 8;</code>
    * @return The bytes for checkoutOption.
@@ -106,12 +106,12 @@ public interface TransactionInfoOrBuilder extends
   /**
    * <code>repeated .pb.DisplayItem display_items = 9;</code>
    */
-  java.util.List<ru.pnhub.widgetsdk.model.DisplayItem> 
+  java.util.List<DisplayItem>
       getDisplayItemsList();
   /**
    * <code>repeated .pb.DisplayItem display_items = 9;</code>
    */
-  ru.pnhub.widgetsdk.model.DisplayItem getDisplayItems(int index);
+  DisplayItem getDisplayItems(int index);
   /**
    * <code>repeated .pb.DisplayItem display_items = 9;</code>
    */
@@ -119,11 +119,11 @@ public interface TransactionInfoOrBuilder extends
   /**
    * <code>repeated .pb.DisplayItem display_items = 9;</code>
    */
-  java.util.List<? extends ru.pnhub.widgetsdk.model.DisplayItemOrBuilder> 
+  java.util.List<? extends DisplayItemOrBuilder>
       getDisplayItemsOrBuilderList();
   /**
    * <code>repeated .pb.DisplayItem display_items = 9;</code>
    */
-  ru.pnhub.widgetsdk.model.DisplayItemOrBuilder getDisplayItemsOrBuilder(
+  DisplayItemOrBuilder getDisplayItemsOrBuilder(
       int index);
 }

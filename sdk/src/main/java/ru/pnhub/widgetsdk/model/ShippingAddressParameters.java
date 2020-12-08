@@ -19,14 +19,14 @@ private static final long serialVersionUID = 0L;
     allowedCountryCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new ShippingAddressParameters();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               allowedCountryCodes_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
@@ -88,15 +88,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ShippingAddressParameters_descriptor;
+    return MobileModel.internal_static_pb_ShippingAddressParameters_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ShippingAddressParameters_fieldAccessorTable
+    return MobileModel.internal_static_pb_ShippingAddressParameters_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ru.pnhub.widgetsdk.model.ShippingAddressParameters.class, ru.pnhub.widgetsdk.model.ShippingAddressParameters.Builder.class);
+            ShippingAddressParameters.class, Builder.class);
   }
 
   public static final int ALLOWED_COUNTRY_CODES_FIELD_NUMBER = 1;
@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
    * @param index The index of the element to return.
    * @return The allowedCountryCodes at the given index.
    */
-  public java.lang.String getAllowedCountryCodes(int index) {
+  public String getAllowedCountryCodes(int index) {
     return allowedCountryCodes_.get(index);
   }
   /**
@@ -140,13 +140,13 @@ private static final long serialVersionUID = 0L;
    * <code>bool phone_number_required = 2;</code>
    * @return The phoneNumberRequired.
    */
-  @java.lang.Override
+  @Override
   public boolean getPhoneNumberRequired() {
     return phoneNumberRequired_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < allowedCountryCodes_.size(); i++) {
@@ -168,7 +168,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -191,15 +191,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ru.pnhub.widgetsdk.model.ShippingAddressParameters)) {
+    if (!(obj instanceof ShippingAddressParameters)) {
       return super.equals(obj);
     }
-    ru.pnhub.widgetsdk.model.ShippingAddressParameters other = (ru.pnhub.widgetsdk.model.ShippingAddressParameters) obj;
+    ShippingAddressParameters other = (ShippingAddressParameters) obj;
 
     if (!getAllowedCountryCodesList()
         .equals(other.getAllowedCountryCodesList())) return false;
@@ -209,7 +209,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -228,69 +228,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseFrom(
+  public static ShippingAddressParameters parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseFrom(
+  public static ShippingAddressParameters parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseFrom(
+  public static ShippingAddressParameters parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseFrom(
+  public static ShippingAddressParameters parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseFrom(byte[] data)
+  public static ShippingAddressParameters parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseFrom(
+  public static ShippingAddressParameters parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseFrom(java.io.InputStream input)
+  public static ShippingAddressParameters parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseFrom(
+  public static ShippingAddressParameters parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseDelimitedFrom(java.io.InputStream input)
+  public static ShippingAddressParameters parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseDelimitedFrom(
+  public static ShippingAddressParameters parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseFrom(
+  public static ShippingAddressParameters parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters parseFrom(
+  public static ShippingAddressParameters parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -298,23 +298,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ru.pnhub.widgetsdk.model.ShippingAddressParameters prototype) {
+  public static Builder newBuilder(ShippingAddressParameters prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -324,18 +324,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:pb.ShippingAddressParameters)
-      ru.pnhub.widgetsdk.model.ShippingAddressParametersOrBuilder {
+      ShippingAddressParametersOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ShippingAddressParameters_descriptor;
+      return MobileModel.internal_static_pb_ShippingAddressParameters_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ShippingAddressParameters_fieldAccessorTable
+      return MobileModel.internal_static_pb_ShippingAddressParameters_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ru.pnhub.widgetsdk.model.ShippingAddressParameters.class, ru.pnhub.widgetsdk.model.ShippingAddressParameters.Builder.class);
+              ShippingAddressParameters.class, Builder.class);
     }
 
     // Construct using ru.pnhub.widgetsdk.model.ShippingAddressParameters.newBuilder()
@@ -344,7 +344,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -353,7 +353,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       allowedCountryCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -363,29 +363,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ShippingAddressParameters_descriptor;
+      return MobileModel.internal_static_pb_ShippingAddressParameters_descriptor;
     }
 
-    @java.lang.Override
-    public ru.pnhub.widgetsdk.model.ShippingAddressParameters getDefaultInstanceForType() {
-      return ru.pnhub.widgetsdk.model.ShippingAddressParameters.getDefaultInstance();
+    @Override
+    public ShippingAddressParameters getDefaultInstanceForType() {
+      return ShippingAddressParameters.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public ru.pnhub.widgetsdk.model.ShippingAddressParameters build() {
-      ru.pnhub.widgetsdk.model.ShippingAddressParameters result = buildPartial();
+    @Override
+    public ShippingAddressParameters build() {
+      ShippingAddressParameters result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public ru.pnhub.widgetsdk.model.ShippingAddressParameters buildPartial() {
-      ru.pnhub.widgetsdk.model.ShippingAddressParameters result = new ru.pnhub.widgetsdk.model.ShippingAddressParameters(this);
+    @Override
+    public ShippingAddressParameters buildPartial() {
+      ShippingAddressParameters result = new ShippingAddressParameters(this);
       int from_bitField0_ = bitField0_;
       if (((bitField0_ & 0x00000001) != 0)) {
         allowedCountryCodes_ = allowedCountryCodes_.getUnmodifiableView();
@@ -397,50 +397,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ru.pnhub.widgetsdk.model.ShippingAddressParameters) {
-        return mergeFrom((ru.pnhub.widgetsdk.model.ShippingAddressParameters)other);
+      if (other instanceof ShippingAddressParameters) {
+        return mergeFrom((ShippingAddressParameters)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ru.pnhub.widgetsdk.model.ShippingAddressParameters other) {
-      if (other == ru.pnhub.widgetsdk.model.ShippingAddressParameters.getDefaultInstance()) return this;
+    public Builder mergeFrom(ShippingAddressParameters other) {
+      if (other == ShippingAddressParameters.getDefaultInstance()) return this;
       if (!other.allowedCountryCodes_.isEmpty()) {
         if (allowedCountryCodes_.isEmpty()) {
           allowedCountryCodes_ = other.allowedCountryCodes_;
@@ -459,21 +459,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ru.pnhub.widgetsdk.model.ShippingAddressParameters parsedMessage = null;
+      ShippingAddressParameters parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ru.pnhub.widgetsdk.model.ShippingAddressParameters) e.getUnfinishedMessage();
+        parsedMessage = (ShippingAddressParameters) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * @param index The index of the element to return.
      * @return The allowedCountryCodes at the given index.
      */
-    public java.lang.String getAllowedCountryCodes(int index) {
+    public String getAllowedCountryCodes(int index) {
       return allowedCountryCodes_.get(index);
     }
     /**
@@ -530,7 +530,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setAllowedCountryCodes(
-        int index, java.lang.String value) {
+        int index, String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addAllowedCountryCodes(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -560,7 +560,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addAllAllowedCountryCodes(
-        java.lang.Iterable<java.lang.String> values) {
+        Iterable<String> values) {
       ensureAllowedCountryCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, allowedCountryCodes_);
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool phone_number_required = 2;</code>
      * @return The phoneNumberRequired.
      */
-    @java.lang.Override
+    @Override
     public boolean getPhoneNumberRequired() {
       return phoneNumberRequired_;
     }
@@ -624,13 +624,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -641,18 +641,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:pb.ShippingAddressParameters)
-  private static final ru.pnhub.widgetsdk.model.ShippingAddressParameters DEFAULT_INSTANCE;
+  private static final ShippingAddressParameters DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ru.pnhub.widgetsdk.model.ShippingAddressParameters();
+    DEFAULT_INSTANCE = new ShippingAddressParameters();
   }
 
-  public static ru.pnhub.widgetsdk.model.ShippingAddressParameters getDefaultInstance() {
+  public static ShippingAddressParameters getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<ShippingAddressParameters>
       PARSER = new com.google.protobuf.AbstractParser<ShippingAddressParameters>() {
-    @java.lang.Override
+    @Override
     public ShippingAddressParameters parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -665,13 +665,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<ShippingAddressParameters> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public ru.pnhub.widgetsdk.model.ShippingAddressParameters getDefaultInstanceForType() {
+  @Override
+  public ShippingAddressParameters getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

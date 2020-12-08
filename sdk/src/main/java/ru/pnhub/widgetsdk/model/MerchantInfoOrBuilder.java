@@ -11,7 +11,7 @@ public interface MerchantInfoOrBuilder extends
    * <code>string merchant_id = 1;</code>
    * @return The merchantId.
    */
-  java.lang.String getMerchantId();
+  String getMerchantId();
   /**
    * <code>string merchant_id = 1;</code>
    * @return The bytes for merchantId.
@@ -23,7 +23,7 @@ public interface MerchantInfoOrBuilder extends
    * <code>string merchant_name = 2;</code>
    * @return The merchantName.
    */
-  java.lang.String getMerchantName();
+  String getMerchantName();
   /**
    * <code>string merchant_name = 2;</code>
    * @return The bytes for merchantName.

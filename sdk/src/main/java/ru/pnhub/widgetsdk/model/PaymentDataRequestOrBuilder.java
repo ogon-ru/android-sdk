@@ -16,11 +16,11 @@ public interface PaymentDataRequestOrBuilder extends
    * <code>.pb.MerchantInfo merchant_info = 1;</code>
    * @return The merchantInfo.
    */
-  ru.pnhub.widgetsdk.model.MerchantInfo getMerchantInfo();
+  MerchantInfo getMerchantInfo();
   /**
    * <code>.pb.MerchantInfo merchant_info = 1;</code>
    */
-  ru.pnhub.widgetsdk.model.MerchantInfoOrBuilder getMerchantInfoOrBuilder();
+  MerchantInfoOrBuilder getMerchantInfoOrBuilder();
 
   /**
    * <code>uint32 api_version = 2;</code>
@@ -55,21 +55,21 @@ public interface PaymentDataRequestOrBuilder extends
    * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
    * @return The shippingAddressParameters.
    */
-  ru.pnhub.widgetsdk.model.ShippingAddressParameters getShippingAddressParameters();
+  ShippingAddressParameters getShippingAddressParameters();
   /**
    * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
    */
-  ru.pnhub.widgetsdk.model.ShippingAddressParametersOrBuilder getShippingAddressParametersOrBuilder();
+  ShippingAddressParametersOrBuilder getShippingAddressParametersOrBuilder();
 
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
    */
-  java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification> 
+  java.util.List<PaymentMethodSpecification>
       getAllowedPaymentMethodsList();
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
    */
-  ru.pnhub.widgetsdk.model.PaymentMethodSpecification getAllowedPaymentMethods(int index);
+  PaymentMethodSpecification getAllowedPaymentMethods(int index);
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
    */
@@ -77,12 +77,12 @@ public interface PaymentDataRequestOrBuilder extends
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
    */
-  java.util.List<? extends ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder> 
+  java.util.List<? extends PaymentMethodSpecificationOrBuilder>
       getAllowedPaymentMethodsOrBuilderList();
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
    */
-  ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
+  PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
       int index);
 
   /**
@@ -94,11 +94,11 @@ public interface PaymentDataRequestOrBuilder extends
    * <code>.pb.TransactionInfo transaction_info = 8;</code>
    * @return The transactionInfo.
    */
-  ru.pnhub.widgetsdk.model.TransactionInfo getTransactionInfo();
+  TransactionInfo getTransactionInfo();
   /**
    * <code>.pb.TransactionInfo transaction_info = 8;</code>
    */
-  ru.pnhub.widgetsdk.model.TransactionInfoOrBuilder getTransactionInfoOrBuilder();
+  TransactionInfoOrBuilder getTransactionInfoOrBuilder();
 
   /**
    * <code>bool shipping_option_required = 9;</code>
@@ -115,9 +115,9 @@ public interface PaymentDataRequestOrBuilder extends
    * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
    * @return The shippingOptionParameters.
    */
-  ru.pnhub.widgetsdk.model.ShippingOptionParameters getShippingOptionParameters();
+  ShippingOptionParameters getShippingOptionParameters();
   /**
    * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
    */
-  ru.pnhub.widgetsdk.model.ShippingOptionParametersOrBuilder getShippingOptionParametersOrBuilder();
+  ShippingOptionParametersOrBuilder getShippingOptionParametersOrBuilder();
 }

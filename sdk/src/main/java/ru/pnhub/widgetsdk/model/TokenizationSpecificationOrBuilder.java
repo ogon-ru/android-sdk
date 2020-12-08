@@ -11,7 +11,7 @@ public interface TokenizationSpecificationOrBuilder extends
    * <code>string type = 1;</code>
    * @return The type.
    */
-  java.lang.String getType();
+  String getType();
   /**
    * <code>string type = 1;</code>
    * @return The bytes for type.
@@ -27,29 +27,29 @@ public interface TokenizationSpecificationOrBuilder extends
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
   boolean containsParameters(
-      java.lang.String key);
+      String key);
   /**
    * Use {@link #getParametersMap()} instead.
    */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
+  @Deprecated
+  java.util.Map<String, String>
   getParameters();
   /**
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
+  java.util.Map<String, String>
   getParametersMap();
   /**
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
 
-  java.lang.String getParametersOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  String getParametersOrDefault(
+      String key,
+      String defaultValue);
   /**
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
 
-  java.lang.String getParametersOrThrow(
-      java.lang.String key);
+  String getParametersOrThrow(
+      String key);
 }

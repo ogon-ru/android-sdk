@@ -4,26 +4,27 @@
 package ru.pnhub.widgetsdk.model;
 
 /**
- * Protobuf type {@code pb.SelectionOptionData}
+ * Protobuf type {@code pb.ApplePaymentMethod}
  */
-public final class SelectionOptionData extends
+public final class ApplePaymentMethod extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.SelectionOptionData)
-    SelectionOptionDataOrBuilder {
+    // @@protoc_insertion_point(message_implements:pb.ApplePaymentMethod)
+    ApplePaymentMethodOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SelectionOptionData.newBuilder() to construct.
-  private SelectionOptionData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ApplePaymentMethod.newBuilder() to construct.
+  private ApplePaymentMethod(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SelectionOptionData() {
-    id_ = "";
+  private ApplePaymentMethod() {
+    displayName_ = "";
+    network_ = "";
   }
 
   @Override
   @SuppressWarnings({"unused"})
   protected Object newInstance(
       UnusedPrivateParameter unused) {
-    return new SelectionOptionData();
+    return new ApplePaymentMethod();
   }
 
   @Override
@@ -31,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SelectionOptionData(
+  private ApplePaymentMethod(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -52,7 +53,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             String s = input.readStringRequireUtf8();
 
-            id_ = s;
+            displayName_ = s;
+            break;
+          }
+          case 18: {
+            String s = input.readStringRequireUtf8();
+
+            network_ = s;
             break;
           }
           default: {
@@ -76,49 +83,87 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+    return MobileModel.internal_static_pb_ApplePaymentMethod_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MobileModel.internal_static_pb_SelectionOptionData_fieldAccessorTable
+    return MobileModel.internal_static_pb_ApplePaymentMethod_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            SelectionOptionData.class, Builder.class);
+            ApplePaymentMethod.class, Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private volatile Object id_;
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
+  private volatile Object displayName_;
   /**
-   * <code>string id = 1;</code>
-   * @return The id.
+   * <code>string display_name = 1;</code>
+   * @return The displayName.
    */
   @Override
-  public String getId() {
-    Object ref = id_;
+  public String getDisplayName() {
+    Object ref = displayName_;
     if (ref instanceof String) {
       return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       String s = bs.toStringUtf8();
-      id_ = s;
+      displayName_ = s;
       return s;
     }
   }
   /**
-   * <code>string id = 1;</code>
-   * @return The bytes for id.
+   * <code>string display_name = 1;</code>
+   * @return The bytes for displayName.
    */
   @Override
   public com.google.protobuf.ByteString
-      getIdBytes() {
-    Object ref = id_;
+      getDisplayNameBytes() {
+    Object ref = displayName_;
     if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (String) ref);
-      id_ = b;
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NETWORK_FIELD_NUMBER = 2;
+  private volatile Object network_;
+  /**
+   * <code>string network = 2;</code>
+   * @return The network.
+   */
+  @Override
+  public String getNetwork() {
+    Object ref = network_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
+      network_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string network = 2;</code>
+   * @return The bytes for network.
+   */
+  @Override
+  public com.google.protobuf.ByteString
+      getNetworkBytes() {
+    Object ref = network_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      network_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -139,8 +184,11 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+    if (!getDisplayNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
+    }
+    if (!getNetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, network_);
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +199,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+    if (!getDisplayNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayName_);
+    }
+    if (!getNetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, network_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,13 +215,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof SelectionOptionData)) {
+    if (!(obj instanceof ApplePaymentMethod)) {
       return super.equals(obj);
     }
-    SelectionOptionData other = (SelectionOptionData) obj;
+    ApplePaymentMethod other = (ApplePaymentMethod) obj;
 
-    if (!getId()
-        .equals(other.getId())) return false;
+    if (!getDisplayName()
+        .equals(other.getDisplayName())) return false;
+    if (!getNetwork()
+        .equals(other.getNetwork())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,76 +235,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getNetwork().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static SelectionOptionData parseFrom(
+  public static ApplePaymentMethod parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePaymentMethod parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePaymentMethod parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePaymentMethod parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(byte[] data)
+  public static ApplePaymentMethod parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePaymentMethod parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(java.io.InputStream input)
+  public static ApplePaymentMethod parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePaymentMethod parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static SelectionOptionData parseDelimitedFrom(java.io.InputStream input)
+  public static ApplePaymentMethod parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static SelectionOptionData parseDelimitedFrom(
+  public static ApplePaymentMethod parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePaymentMethod parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePaymentMethod parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -264,7 +319,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(SelectionOptionData prototype) {
+  public static Builder newBuilder(ApplePaymentMethod prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @Override
@@ -280,26 +335,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pb.SelectionOptionData}
+   * Protobuf type {@code pb.ApplePaymentMethod}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.SelectionOptionData)
-      SelectionOptionDataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pb.ApplePaymentMethod)
+      ApplePaymentMethodOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+      return MobileModel.internal_static_pb_ApplePaymentMethod_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MobileModel.internal_static_pb_SelectionOptionData_fieldAccessorTable
+      return MobileModel.internal_static_pb_ApplePaymentMethod_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SelectionOptionData.class, Builder.class);
+              ApplePaymentMethod.class, Builder.class);
     }
 
-    // Construct using ru.pnhub.widgetsdk.model.SelectionOptionData.newBuilder()
+    // Construct using ru.pnhub.widgetsdk.model.ApplePaymentMethod.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -317,7 +372,9 @@ private static final long serialVersionUID = 0L;
     @Override
     public Builder clear() {
       super.clear();
-      id_ = "";
+      displayName_ = "";
+
+      network_ = "";
 
       return this;
     }
@@ -325,17 +382,17 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+      return MobileModel.internal_static_pb_ApplePaymentMethod_descriptor;
     }
 
     @Override
-    public SelectionOptionData getDefaultInstanceForType() {
-      return SelectionOptionData.getDefaultInstance();
+    public ApplePaymentMethod getDefaultInstanceForType() {
+      return ApplePaymentMethod.getDefaultInstance();
     }
 
     @Override
-    public SelectionOptionData build() {
-      SelectionOptionData result = buildPartial();
+    public ApplePaymentMethod build() {
+      ApplePaymentMethod result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -343,9 +400,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @Override
-    public SelectionOptionData buildPartial() {
-      SelectionOptionData result = new SelectionOptionData(this);
-      result.id_ = id_;
+    public ApplePaymentMethod buildPartial() {
+      ApplePaymentMethod result = new ApplePaymentMethod(this);
+      result.displayName_ = displayName_;
+      result.network_ = network_;
       onBuilt();
       return result;
     }
@@ -384,18 +442,22 @@ private static final long serialVersionUID = 0L;
     }
     @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof SelectionOptionData) {
-        return mergeFrom((SelectionOptionData)other);
+      if (other instanceof ApplePaymentMethod) {
+        return mergeFrom((ApplePaymentMethod)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(SelectionOptionData other) {
-      if (other == SelectionOptionData.getDefaultInstance()) return this;
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
+    public Builder mergeFrom(ApplePaymentMethod other) {
+      if (other == ApplePaymentMethod.getDefaultInstance()) return this;
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        onChanged();
+      }
+      if (!other.getNetwork().isEmpty()) {
+        network_ = other.network_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -413,11 +475,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      SelectionOptionData parsedMessage = null;
+      ApplePaymentMethod parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (SelectionOptionData) e.getUnfinishedMessage();
+        parsedMessage = (ApplePaymentMethod) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -427,78 +489,154 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object id_ = "";
+    private Object displayName_ = "";
     /**
-     * <code>string id = 1;</code>
-     * @return The id.
+     * <code>string display_name = 1;</code>
+     * @return The displayName.
      */
-    public String getId() {
-      Object ref = id_;
+    public String getDisplayName() {
+      Object ref = displayName_;
       if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        id_ = s;
+        displayName_ = s;
         return s;
       } else {
         return (String) ref;
       }
     }
     /**
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
+     * <code>string display_name = 1;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
-        getIdBytes() {
-      Object ref = id_;
+        getDisplayNameBytes() {
+      Object ref = displayName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        id_ = b;
+        displayName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string id = 1;</code>
-     * @param value The id to set.
+     * <code>string display_name = 1;</code>
+     * @param value The displayName to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
+    public Builder setDisplayName(
         String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      id_ = value;
+      displayName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 1;</code>
+     * <code>string display_name = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearDisplayName() {
       
-      id_ = getDefaultInstance().getId();
+      displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 1;</code>
-     * @param value The bytes for id to set.
+     * <code>string display_name = 1;</code>
+     * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
+    public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      id_ = value;
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private Object network_ = "";
+    /**
+     * <code>string network = 2;</code>
+     * @return The network.
+     */
+    public String getNetwork() {
+      Object ref = network_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        network_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
+    }
+    /**
+     * <code>string network = 2;</code>
+     * @return The bytes for network.
+     */
+    public com.google.protobuf.ByteString
+        getNetworkBytes() {
+      Object ref = network_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        network_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string network = 2;</code>
+     * @param value The network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetwork(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      network_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string network = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNetwork() {
+      
+      network_ = getDefaultInstance().getNetwork();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string network = 2;</code>
+     * @param value The bytes for network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      network_ = value;
       onChanged();
       return this;
     }
@@ -515,41 +653,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.SelectionOptionData)
+    // @@protoc_insertion_point(builder_scope:pb.ApplePaymentMethod)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.SelectionOptionData)
-  private static final SelectionOptionData DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pb.ApplePaymentMethod)
+  private static final ApplePaymentMethod DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new SelectionOptionData();
+    DEFAULT_INSTANCE = new ApplePaymentMethod();
   }
 
-  public static SelectionOptionData getDefaultInstance() {
+  public static ApplePaymentMethod getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SelectionOptionData>
-      PARSER = new com.google.protobuf.AbstractParser<SelectionOptionData>() {
+  private static final com.google.protobuf.Parser<ApplePaymentMethod>
+      PARSER = new com.google.protobuf.AbstractParser<ApplePaymentMethod>() {
     @Override
-    public SelectionOptionData parsePartialFrom(
+    public ApplePaymentMethod parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SelectionOptionData(input, extensionRegistry);
+      return new ApplePaymentMethod(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SelectionOptionData> parser() {
+  public static com.google.protobuf.Parser<ApplePaymentMethod> parser() {
     return PARSER;
   }
 
   @Override
-  public com.google.protobuf.Parser<SelectionOptionData> getParserForType() {
+  public com.google.protobuf.Parser<ApplePaymentMethod> getParserForType() {
     return PARSER;
   }
 
   @Override
-  public SelectionOptionData getDefaultInstanceForType() {
+  public ApplePaymentMethod getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

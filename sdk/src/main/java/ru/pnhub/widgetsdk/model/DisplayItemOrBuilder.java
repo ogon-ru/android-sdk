@@ -11,7 +11,7 @@ public interface DisplayItemOrBuilder extends
    * <code>string label = 1;</code>
    * @return The label.
    */
-  java.lang.String getLabel();
+  String getLabel();
   /**
    * <code>string label = 1;</code>
    * @return The bytes for label.
@@ -23,7 +23,7 @@ public interface DisplayItemOrBuilder extends
    * <code>string type = 2;</code>
    * @return The type.
    */
-  java.lang.String getType();
+  String getType();
   /**
    * <code>string type = 2;</code>
    * @return The bytes for type.
@@ -35,7 +35,7 @@ public interface DisplayItemOrBuilder extends
    * <code>string price = 3;</code>
    * @return The price.
    */
-  java.lang.String getPrice();
+  String getPrice();
   /**
    * <code>string price = 3;</code>
    * @return The bytes for price.
@@ -47,7 +47,7 @@ public interface DisplayItemOrBuilder extends
    * <code>string status = 4;</code>
    * @return The status.
    */
-  java.lang.String getStatus();
+  String getStatus();
   /**
    * <code>string status = 4;</code>
    * @return The bytes for status.

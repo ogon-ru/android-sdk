@@ -4,28 +4,27 @@
 package ru.pnhub.widgetsdk.model;
 
 /**
- * Protobuf type {@code pb.CardNetworkParameters}
+ * Protobuf type {@code pb.ApplePayPaymentDataRequest}
  */
-public final class CardNetworkParameters extends
+public final class ApplePayPaymentDataRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.CardNetworkParameters)
-    CardNetworkParametersOrBuilder {
+    // @@protoc_insertion_point(message_implements:pb.ApplePayPaymentDataRequest)
+    ApplePayPaymentDataRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CardNetworkParameters.newBuilder() to construct.
-  private CardNetworkParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ApplePayPaymentDataRequest.newBuilder() to construct.
+  private ApplePayPaymentDataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CardNetworkParameters() {
-    cardNetwork_ = "";
-    acquirerBin_ = "";
-    acquirerMerchantId_ = "";
+  private ApplePayPaymentDataRequest() {
+    countryCode_ = "";
+    currencyCode_ = "";
   }
 
   @Override
   @SuppressWarnings({"unused"})
   protected Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CardNetworkParameters();
+    return new ApplePayPaymentDataRequest();
   }
 
   @Override
@@ -33,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CardNetworkParameters(
+  private ApplePayPaymentDataRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -54,19 +53,26 @@ private static final long serialVersionUID = 0L;
           case 10: {
             String s = input.readStringRequireUtf8();
 
-            cardNetwork_ = s;
+            countryCode_ = s;
             break;
           }
           case 18: {
             String s = input.readStringRequireUtf8();
 
-            acquirerBin_ = s;
+            currencyCode_ = s;
             break;
           }
           case 26: {
-            String s = input.readStringRequireUtf8();
+            ApplePayTotal.Builder subBuilder = null;
+            if (total_ != null) {
+              subBuilder = total_.toBuilder();
+            }
+            total_ = input.readMessage(ApplePayTotal.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(total_);
+              total_ = subBuilder.buildPartial();
+            }
 
-            acquirerMerchantId_ = s;
             break;
           }
           default: {
@@ -90,129 +96,117 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MobileModel.internal_static_pb_CardNetworkParameters_descriptor;
+    return MobileModel.internal_static_pb_ApplePayPaymentDataRequest_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MobileModel.internal_static_pb_CardNetworkParameters_fieldAccessorTable
+    return MobileModel.internal_static_pb_ApplePayPaymentDataRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            CardNetworkParameters.class, Builder.class);
+            ApplePayPaymentDataRequest.class, Builder.class);
   }
 
-  public static final int CARD_NETWORK_FIELD_NUMBER = 1;
-  private volatile Object cardNetwork_;
+  public static final int COUNTRY_CODE_FIELD_NUMBER = 1;
+  private volatile Object countryCode_;
   /**
-   * <code>string card_network = 1;</code>
-   * @return The cardNetwork.
+   * <code>string country_code = 1;</code>
+   * @return The countryCode.
    */
   @Override
-  public String getCardNetwork() {
-    Object ref = cardNetwork_;
+  public String getCountryCode() {
+    Object ref = countryCode_;
     if (ref instanceof String) {
       return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       String s = bs.toStringUtf8();
-      cardNetwork_ = s;
+      countryCode_ = s;
       return s;
     }
   }
   /**
-   * <code>string card_network = 1;</code>
-   * @return The bytes for cardNetwork.
+   * <code>string country_code = 1;</code>
+   * @return The bytes for countryCode.
    */
   @Override
   public com.google.protobuf.ByteString
-      getCardNetworkBytes() {
-    Object ref = cardNetwork_;
+      getCountryCodeBytes() {
+    Object ref = countryCode_;
     if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (String) ref);
-      cardNetwork_ = b;
+      countryCode_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int ACQUIRER_BIN_FIELD_NUMBER = 2;
-  private volatile Object acquirerBin_;
+  public static final int CURRENCY_CODE_FIELD_NUMBER = 2;
+  private volatile Object currencyCode_;
   /**
-   * <code>string acquirer_bin = 2;</code>
-   * @return The acquirerBin.
+   * <code>string currency_code = 2;</code>
+   * @return The currencyCode.
    */
   @Override
-  public String getAcquirerBin() {
-    Object ref = acquirerBin_;
+  public String getCurrencyCode() {
+    Object ref = currencyCode_;
     if (ref instanceof String) {
       return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       String s = bs.toStringUtf8();
-      acquirerBin_ = s;
+      currencyCode_ = s;
       return s;
     }
   }
   /**
-   * <code>string acquirer_bin = 2;</code>
-   * @return The bytes for acquirerBin.
+   * <code>string currency_code = 2;</code>
+   * @return The bytes for currencyCode.
    */
   @Override
   public com.google.protobuf.ByteString
-      getAcquirerBinBytes() {
-    Object ref = acquirerBin_;
+      getCurrencyCodeBytes() {
+    Object ref = currencyCode_;
     if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (String) ref);
-      acquirerBin_ = b;
+      currencyCode_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int ACQUIRER_MERCHANT_ID_FIELD_NUMBER = 3;
-  private volatile Object acquirerMerchantId_;
+  public static final int TOTAL_FIELD_NUMBER = 3;
+  private ApplePayTotal total_;
   /**
-   * <code>string acquirer_merchant_id = 3;</code>
-   * @return The acquirerMerchantId.
+   * <code>.pb.ApplePayTotal total = 3;</code>
+   * @return Whether the total field is set.
    */
   @Override
-  public String getAcquirerMerchantId() {
-    Object ref = acquirerMerchantId_;
-    if (ref instanceof String) {
-      return (String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
-      acquirerMerchantId_ = s;
-      return s;
-    }
+  public boolean hasTotal() {
+    return total_ != null;
   }
   /**
-   * <code>string acquirer_merchant_id = 3;</code>
-   * @return The bytes for acquirerMerchantId.
+   * <code>.pb.ApplePayTotal total = 3;</code>
+   * @return The total.
    */
   @Override
-  public com.google.protobuf.ByteString
-      getAcquirerMerchantIdBytes() {
-    Object ref = acquirerMerchantId_;
-    if (ref instanceof String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
-      acquirerMerchantId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public ApplePayTotal getTotal() {
+    return total_ == null ? ApplePayTotal.getDefaultInstance() : total_;
+  }
+  /**
+   * <code>.pb.ApplePayTotal total = 3;</code>
+   */
+  @Override
+  public ApplePayTotalOrBuilder getTotalOrBuilder() {
+    return getTotal();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -229,14 +223,14 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCardNetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cardNetwork_);
+    if (!getCountryCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, countryCode_);
     }
-    if (!getAcquirerBinBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, acquirerBin_);
+    if (!getCurrencyCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, currencyCode_);
     }
-    if (!getAcquirerMerchantIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, acquirerMerchantId_);
+    if (total_ != null) {
+      output.writeMessage(3, getTotal());
     }
     unknownFields.writeTo(output);
   }
@@ -247,14 +241,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCardNetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cardNetwork_);
+    if (!getCountryCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, countryCode_);
     }
-    if (!getAcquirerBinBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, acquirerBin_);
+    if (!getCurrencyCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, currencyCode_);
     }
-    if (!getAcquirerMerchantIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, acquirerMerchantId_);
+    if (total_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getTotal());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -266,17 +261,20 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof CardNetworkParameters)) {
+    if (!(obj instanceof ApplePayPaymentDataRequest)) {
       return super.equals(obj);
     }
-    CardNetworkParameters other = (CardNetworkParameters) obj;
+    ApplePayPaymentDataRequest other = (ApplePayPaymentDataRequest) obj;
 
-    if (!getCardNetwork()
-        .equals(other.getCardNetwork())) return false;
-    if (!getAcquirerBin()
-        .equals(other.getAcquirerBin())) return false;
-    if (!getAcquirerMerchantId()
-        .equals(other.getAcquirerMerchantId())) return false;
+    if (!getCountryCode()
+        .equals(other.getCountryCode())) return false;
+    if (!getCurrencyCode()
+        .equals(other.getCurrencyCode())) return false;
+    if (hasTotal() != other.hasTotal()) return false;
+    if (hasTotal()) {
+      if (!getTotal()
+          .equals(other.getTotal())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -288,80 +286,82 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CARD_NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + getCardNetwork().hashCode();
-    hash = (37 * hash) + ACQUIRER_BIN_FIELD_NUMBER;
-    hash = (53 * hash) + getAcquirerBin().hashCode();
-    hash = (37 * hash) + ACQUIRER_MERCHANT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getAcquirerMerchantId().hashCode();
+    hash = (37 * hash) + COUNTRY_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCountryCode().hashCode();
+    hash = (37 * hash) + CURRENCY_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCurrencyCode().hashCode();
+    if (hasTotal()) {
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + getTotal().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static CardNetworkParameters parseFrom(
+  public static ApplePayPaymentDataRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static CardNetworkParameters parseFrom(
+  public static ApplePayPaymentDataRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static CardNetworkParameters parseFrom(
+  public static ApplePayPaymentDataRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static CardNetworkParameters parseFrom(
+  public static ApplePayPaymentDataRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static CardNetworkParameters parseFrom(byte[] data)
+  public static ApplePayPaymentDataRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static CardNetworkParameters parseFrom(
+  public static ApplePayPaymentDataRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static CardNetworkParameters parseFrom(java.io.InputStream input)
+  public static ApplePayPaymentDataRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static CardNetworkParameters parseFrom(
+  public static ApplePayPaymentDataRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static CardNetworkParameters parseDelimitedFrom(java.io.InputStream input)
+  public static ApplePayPaymentDataRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static CardNetworkParameters parseDelimitedFrom(
+  public static ApplePayPaymentDataRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static CardNetworkParameters parseFrom(
+  public static ApplePayPaymentDataRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static CardNetworkParameters parseFrom(
+  public static ApplePayPaymentDataRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -374,7 +374,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(CardNetworkParameters prototype) {
+  public static Builder newBuilder(ApplePayPaymentDataRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @Override
@@ -390,26 +390,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pb.CardNetworkParameters}
+   * Protobuf type {@code pb.ApplePayPaymentDataRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.CardNetworkParameters)
-      CardNetworkParametersOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pb.ApplePayPaymentDataRequest)
+      ApplePayPaymentDataRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MobileModel.internal_static_pb_CardNetworkParameters_descriptor;
+      return MobileModel.internal_static_pb_ApplePayPaymentDataRequest_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MobileModel.internal_static_pb_CardNetworkParameters_fieldAccessorTable
+      return MobileModel.internal_static_pb_ApplePayPaymentDataRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              CardNetworkParameters.class, Builder.class);
+              ApplePayPaymentDataRequest.class, Builder.class);
     }
 
-    // Construct using ru.pnhub.widgetsdk.model.CardNetworkParameters.newBuilder()
+    // Construct using ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -427,29 +427,33 @@ private static final long serialVersionUID = 0L;
     @Override
     public Builder clear() {
       super.clear();
-      cardNetwork_ = "";
+      countryCode_ = "";
 
-      acquirerBin_ = "";
+      currencyCode_ = "";
 
-      acquirerMerchantId_ = "";
-
+      if (totalBuilder_ == null) {
+        total_ = null;
+      } else {
+        total_ = null;
+        totalBuilder_ = null;
+      }
       return this;
     }
 
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MobileModel.internal_static_pb_CardNetworkParameters_descriptor;
+      return MobileModel.internal_static_pb_ApplePayPaymentDataRequest_descriptor;
     }
 
     @Override
-    public CardNetworkParameters getDefaultInstanceForType() {
-      return CardNetworkParameters.getDefaultInstance();
+    public ApplePayPaymentDataRequest getDefaultInstanceForType() {
+      return ApplePayPaymentDataRequest.getDefaultInstance();
     }
 
     @Override
-    public CardNetworkParameters build() {
-      CardNetworkParameters result = buildPartial();
+    public ApplePayPaymentDataRequest build() {
+      ApplePayPaymentDataRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -457,11 +461,15 @@ private static final long serialVersionUID = 0L;
     }
 
     @Override
-    public CardNetworkParameters buildPartial() {
-      CardNetworkParameters result = new CardNetworkParameters(this);
-      result.cardNetwork_ = cardNetwork_;
-      result.acquirerBin_ = acquirerBin_;
-      result.acquirerMerchantId_ = acquirerMerchantId_;
+    public ApplePayPaymentDataRequest buildPartial() {
+      ApplePayPaymentDataRequest result = new ApplePayPaymentDataRequest(this);
+      result.countryCode_ = countryCode_;
+      result.currencyCode_ = currencyCode_;
+      if (totalBuilder_ == null) {
+        result.total_ = total_;
+      } else {
+        result.total_ = totalBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -500,27 +508,26 @@ private static final long serialVersionUID = 0L;
     }
     @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof CardNetworkParameters) {
-        return mergeFrom((CardNetworkParameters)other);
+      if (other instanceof ApplePayPaymentDataRequest) {
+        return mergeFrom((ApplePayPaymentDataRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(CardNetworkParameters other) {
-      if (other == CardNetworkParameters.getDefaultInstance()) return this;
-      if (!other.getCardNetwork().isEmpty()) {
-        cardNetwork_ = other.cardNetwork_;
+    public Builder mergeFrom(ApplePayPaymentDataRequest other) {
+      if (other == ApplePayPaymentDataRequest.getDefaultInstance()) return this;
+      if (!other.getCountryCode().isEmpty()) {
+        countryCode_ = other.countryCode_;
         onChanged();
       }
-      if (!other.getAcquirerBin().isEmpty()) {
-        acquirerBin_ = other.acquirerBin_;
+      if (!other.getCurrencyCode().isEmpty()) {
+        currencyCode_ = other.currencyCode_;
         onChanged();
       }
-      if (!other.getAcquirerMerchantId().isEmpty()) {
-        acquirerMerchantId_ = other.acquirerMerchantId_;
-        onChanged();
+      if (other.hasTotal()) {
+        mergeTotal(other.getTotal());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -537,11 +544,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      CardNetworkParameters parsedMessage = null;
+      ApplePayPaymentDataRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (CardNetworkParameters) e.getUnfinishedMessage();
+        parsedMessage = (ApplePayPaymentDataRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -551,232 +558,275 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object cardNetwork_ = "";
+    private Object countryCode_ = "";
     /**
-     * <code>string card_network = 1;</code>
-     * @return The cardNetwork.
+     * <code>string country_code = 1;</code>
+     * @return The countryCode.
      */
-    public String getCardNetwork() {
-      Object ref = cardNetwork_;
+    public String getCountryCode() {
+      Object ref = countryCode_;
       if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        cardNetwork_ = s;
+        countryCode_ = s;
         return s;
       } else {
         return (String) ref;
       }
     }
     /**
-     * <code>string card_network = 1;</code>
-     * @return The bytes for cardNetwork.
+     * <code>string country_code = 1;</code>
+     * @return The bytes for countryCode.
      */
     public com.google.protobuf.ByteString
-        getCardNetworkBytes() {
-      Object ref = cardNetwork_;
+        getCountryCodeBytes() {
+      Object ref = countryCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        cardNetwork_ = b;
+        countryCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string card_network = 1;</code>
-     * @param value The cardNetwork to set.
+     * <code>string country_code = 1;</code>
+     * @param value The countryCode to set.
      * @return This builder for chaining.
      */
-    public Builder setCardNetwork(
+    public Builder setCountryCode(
         String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      cardNetwork_ = value;
+      countryCode_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string card_network = 1;</code>
+     * <code>string country_code = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCardNetwork() {
+    public Builder clearCountryCode() {
       
-      cardNetwork_ = getDefaultInstance().getCardNetwork();
+      countryCode_ = getDefaultInstance().getCountryCode();
       onChanged();
       return this;
     }
     /**
-     * <code>string card_network = 1;</code>
-     * @param value The bytes for cardNetwork to set.
+     * <code>string country_code = 1;</code>
+     * @param value The bytes for countryCode to set.
      * @return This builder for chaining.
      */
-    public Builder setCardNetworkBytes(
+    public Builder setCountryCodeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      cardNetwork_ = value;
+      countryCode_ = value;
       onChanged();
       return this;
     }
 
-    private Object acquirerBin_ = "";
+    private Object currencyCode_ = "";
     /**
-     * <code>string acquirer_bin = 2;</code>
-     * @return The acquirerBin.
+     * <code>string currency_code = 2;</code>
+     * @return The currencyCode.
      */
-    public String getAcquirerBin() {
-      Object ref = acquirerBin_;
+    public String getCurrencyCode() {
+      Object ref = currencyCode_;
       if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        acquirerBin_ = s;
+        currencyCode_ = s;
         return s;
       } else {
         return (String) ref;
       }
     }
     /**
-     * <code>string acquirer_bin = 2;</code>
-     * @return The bytes for acquirerBin.
+     * <code>string currency_code = 2;</code>
+     * @return The bytes for currencyCode.
      */
     public com.google.protobuf.ByteString
-        getAcquirerBinBytes() {
-      Object ref = acquirerBin_;
+        getCurrencyCodeBytes() {
+      Object ref = currencyCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        acquirerBin_ = b;
+        currencyCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string acquirer_bin = 2;</code>
-     * @param value The acquirerBin to set.
+     * <code>string currency_code = 2;</code>
+     * @param value The currencyCode to set.
      * @return This builder for chaining.
      */
-    public Builder setAcquirerBin(
+    public Builder setCurrencyCode(
         String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      acquirerBin_ = value;
+      currencyCode_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string acquirer_bin = 2;</code>
+     * <code>string currency_code = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearAcquirerBin() {
+    public Builder clearCurrencyCode() {
       
-      acquirerBin_ = getDefaultInstance().getAcquirerBin();
+      currencyCode_ = getDefaultInstance().getCurrencyCode();
       onChanged();
       return this;
     }
     /**
-     * <code>string acquirer_bin = 2;</code>
-     * @param value The bytes for acquirerBin to set.
+     * <code>string currency_code = 2;</code>
+     * @param value The bytes for currencyCode to set.
      * @return This builder for chaining.
      */
-    public Builder setAcquirerBinBytes(
+    public Builder setCurrencyCodeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      acquirerBin_ = value;
+      currencyCode_ = value;
       onChanged();
       return this;
     }
 
-    private Object acquirerMerchantId_ = "";
+    private ApplePayTotal total_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ApplePayTotal, ApplePayTotal.Builder, ApplePayTotalOrBuilder> totalBuilder_;
     /**
-     * <code>string acquirer_merchant_id = 3;</code>
-     * @return The acquirerMerchantId.
+     * <code>.pb.ApplePayTotal total = 3;</code>
+     * @return Whether the total field is set.
      */
-    public String getAcquirerMerchantId() {
-      Object ref = acquirerMerchantId_;
-      if (!(ref instanceof String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        acquirerMerchantId_ = s;
-        return s;
+    public boolean hasTotal() {
+      return totalBuilder_ != null || total_ != null;
+    }
+    /**
+     * <code>.pb.ApplePayTotal total = 3;</code>
+     * @return The total.
+     */
+    public ApplePayTotal getTotal() {
+      if (totalBuilder_ == null) {
+        return total_ == null ? ApplePayTotal.getDefaultInstance() : total_;
       } else {
-        return (String) ref;
+        return totalBuilder_.getMessage();
       }
     }
     /**
-     * <code>string acquirer_merchant_id = 3;</code>
-     * @return The bytes for acquirerMerchantId.
+     * <code>.pb.ApplePayTotal total = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getAcquirerMerchantIdBytes() {
-      Object ref = acquirerMerchantId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        acquirerMerchantId_ = b;
-        return b;
+    public Builder setTotal(ApplePayTotal value) {
+      if (totalBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        total_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        totalBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pb.ApplePayTotal total = 3;</code>
+     */
+    public Builder setTotal(
+        ApplePayTotal.Builder builderForValue) {
+      if (totalBuilder_ == null) {
+        total_ = builderForValue.build();
+        onChanged();
+      } else {
+        totalBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pb.ApplePayTotal total = 3;</code>
+     */
+    public Builder mergeTotal(ApplePayTotal value) {
+      if (totalBuilder_ == null) {
+        if (total_ != null) {
+          total_ =
+            ApplePayTotal.newBuilder(total_).mergeFrom(value).buildPartial();
+        } else {
+          total_ = value;
+        }
+        onChanged();
+      } else {
+        totalBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pb.ApplePayTotal total = 3;</code>
+     */
+    public Builder clearTotal() {
+      if (totalBuilder_ == null) {
+        total_ = null;
+        onChanged();
+      } else {
+        total_ = null;
+        totalBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pb.ApplePayTotal total = 3;</code>
+     */
+    public ApplePayTotal.Builder getTotalBuilder() {
+      
+      onChanged();
+      return getTotalFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pb.ApplePayTotal total = 3;</code>
+     */
+    public ApplePayTotalOrBuilder getTotalOrBuilder() {
+      if (totalBuilder_ != null) {
+        return totalBuilder_.getMessageOrBuilder();
+      } else {
+        return total_ == null ?
+            ApplePayTotal.getDefaultInstance() : total_;
       }
     }
     /**
-     * <code>string acquirer_merchant_id = 3;</code>
-     * @param value The acquirerMerchantId to set.
-     * @return This builder for chaining.
+     * <code>.pb.ApplePayTotal total = 3;</code>
      */
-    public Builder setAcquirerMerchantId(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      acquirerMerchantId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string acquirer_merchant_id = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAcquirerMerchantId() {
-      
-      acquirerMerchantId_ = getDefaultInstance().getAcquirerMerchantId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string acquirer_merchant_id = 3;</code>
-     * @param value The bytes for acquirerMerchantId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAcquirerMerchantIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      acquirerMerchantId_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ApplePayTotal, ApplePayTotal.Builder, ApplePayTotalOrBuilder>
+        getTotalFieldBuilder() {
+      if (totalBuilder_ == null) {
+        totalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            ApplePayTotal, ApplePayTotal.Builder, ApplePayTotalOrBuilder>(
+                getTotal(),
+                getParentForChildren(),
+                isClean());
+        total_ = null;
+      }
+      return totalBuilder_;
     }
     @Override
     public final Builder setUnknownFields(
@@ -791,41 +841,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.CardNetworkParameters)
+    // @@protoc_insertion_point(builder_scope:pb.ApplePayPaymentDataRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.CardNetworkParameters)
-  private static final CardNetworkParameters DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pb.ApplePayPaymentDataRequest)
+  private static final ApplePayPaymentDataRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new CardNetworkParameters();
+    DEFAULT_INSTANCE = new ApplePayPaymentDataRequest();
   }
 
-  public static CardNetworkParameters getDefaultInstance() {
+  public static ApplePayPaymentDataRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CardNetworkParameters>
-      PARSER = new com.google.protobuf.AbstractParser<CardNetworkParameters>() {
+  private static final com.google.protobuf.Parser<ApplePayPaymentDataRequest>
+      PARSER = new com.google.protobuf.AbstractParser<ApplePayPaymentDataRequest>() {
     @Override
-    public CardNetworkParameters parsePartialFrom(
+    public ApplePayPaymentDataRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CardNetworkParameters(input, extensionRegistry);
+      return new ApplePayPaymentDataRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CardNetworkParameters> parser() {
+  public static com.google.protobuf.Parser<ApplePayPaymentDataRequest> parser() {
     return PARSER;
   }
 
   @Override
-  public com.google.protobuf.Parser<CardNetworkParameters> getParserForType() {
+  public com.google.protobuf.Parser<ApplePayPaymentDataRequest> getParserForType() {
     return PARSER;
   }
 
   @Override
-  public CardNetworkParameters getDefaultInstanceForType() {
+  public ApplePayPaymentDataRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

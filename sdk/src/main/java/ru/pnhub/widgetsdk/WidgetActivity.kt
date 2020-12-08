@@ -4,6 +4,7 @@ import android.annotation.TargetApi
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.net.Uri
 import android.net.http.SslError
 import android.os.Build
 import android.os.Bundle
@@ -169,6 +170,14 @@ class WidgetActivity : AppCompatActivity() {
         jsBridge.sendEvent(event)
     }
 
+    private fun openUrl(url: String) {
+        val webpage = Uri.parse(url)
+        val intent = Intent(Intent.ACTION_VIEW, webpage)
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
+    }
+
     private fun handleEvent(mobileEvent: MobileEvent) {
         when (mobileEvent.type) {
             MobileEventType.MOBILE_EVENT_GOOGLEPAY_IS_READY_TO_PAY_REQUEST -> {
@@ -176,6 +185,9 @@ class WidgetActivity : AppCompatActivity() {
             }
             MobileEventType.MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_REQUEST -> {
                 loadPaymentData(mobileEvent.paymentDataRequest)
+            }
+            MobileEventType.MOBILE_EVENT_OPEN_URL_REQUEST -> {
+                openUrl(mobileEvent.openUrlRequest)
             }
             else -> Log.i("[PNWidget]", "Unhandled event type: ${mobileEvent.type}")
         }
