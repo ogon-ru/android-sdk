@@ -11,7 +11,7 @@ public interface PaymentMethodTokenizationDataOrBuilder extends
    * <code>string type = 1;</code>
    * @return The type.
    */
-  java.lang.String getType();
+  String getType();
   /**
    * <code>string type = 1;</code>
    * @return The bytes for type.
@@ -23,7 +23,7 @@ public interface PaymentMethodTokenizationDataOrBuilder extends
    * <code>string token = 2;</code>
    * @return The token.
    */
-  java.lang.String getToken();
+  String getToken();
   /**
    * <code>string token = 2;</code>
    * @return The bytes for token.

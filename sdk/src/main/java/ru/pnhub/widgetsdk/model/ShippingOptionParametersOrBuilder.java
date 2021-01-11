@@ -10,12 +10,12 @@ public interface ShippingOptionParametersOrBuilder extends
   /**
    * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
    */
-  java.util.List<ru.pnhub.widgetsdk.model.ShippingOption> 
+  java.util.List<ShippingOption>
       getShippingOptionsList();
   /**
    * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
    */
-  ru.pnhub.widgetsdk.model.ShippingOption getShippingOptions(int index);
+  ShippingOption getShippingOptions(int index);
   /**
    * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
    */
@@ -23,19 +23,19 @@ public interface ShippingOptionParametersOrBuilder extends
   /**
    * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
    */
-  java.util.List<? extends ru.pnhub.widgetsdk.model.ShippingOptionOrBuilder> 
+  java.util.List<? extends ShippingOptionOrBuilder>
       getShippingOptionsOrBuilderList();
   /**
    * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
    */
-  ru.pnhub.widgetsdk.model.ShippingOptionOrBuilder getShippingOptionsOrBuilder(
+  ShippingOptionOrBuilder getShippingOptionsOrBuilder(
       int index);
 
   /**
    * <code>string default_selected_option_id = 2;</code>
    * @return The defaultSelectedOptionId.
    */
-  java.lang.String getDefaultSelectedOptionId();
+  String getDefaultSelectedOptionId();
   /**
    * <code>string default_selected_option_id = 2;</code>
    * @return The bytes for defaultSelectedOptionId.

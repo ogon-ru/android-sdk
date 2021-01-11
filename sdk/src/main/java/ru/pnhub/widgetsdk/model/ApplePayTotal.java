@@ -4,26 +4,27 @@
 package ru.pnhub.widgetsdk.model;
 
 /**
- * Protobuf type {@code pb.SelectionOptionData}
+ * Protobuf type {@code pb.ApplePayTotal}
  */
-public final class SelectionOptionData extends
+public final class ApplePayTotal extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.SelectionOptionData)
-    SelectionOptionDataOrBuilder {
+    // @@protoc_insertion_point(message_implements:pb.ApplePayTotal)
+    ApplePayTotalOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SelectionOptionData.newBuilder() to construct.
-  private SelectionOptionData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ApplePayTotal.newBuilder() to construct.
+  private ApplePayTotal(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SelectionOptionData() {
-    id_ = "";
+  private ApplePayTotal() {
+    label_ = "";
+    amount_ = "";
   }
 
   @Override
   @SuppressWarnings({"unused"})
   protected Object newInstance(
       UnusedPrivateParameter unused) {
-    return new SelectionOptionData();
+    return new ApplePayTotal();
   }
 
   @Override
@@ -31,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SelectionOptionData(
+  private ApplePayTotal(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -52,7 +53,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             String s = input.readStringRequireUtf8();
 
-            id_ = s;
+            label_ = s;
+            break;
+          }
+          case 18: {
+            String s = input.readStringRequireUtf8();
+
+            amount_ = s;
             break;
           }
           default: {
@@ -76,49 +83,87 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+    return MobileModel.internal_static_pb_ApplePayTotal_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MobileModel.internal_static_pb_SelectionOptionData_fieldAccessorTable
+    return MobileModel.internal_static_pb_ApplePayTotal_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            SelectionOptionData.class, Builder.class);
+            ApplePayTotal.class, Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private volatile Object id_;
+  public static final int LABEL_FIELD_NUMBER = 1;
+  private volatile Object label_;
   /**
-   * <code>string id = 1;</code>
-   * @return The id.
+   * <code>string label = 1;</code>
+   * @return The label.
    */
   @Override
-  public String getId() {
-    Object ref = id_;
+  public String getLabel() {
+    Object ref = label_;
     if (ref instanceof String) {
       return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       String s = bs.toStringUtf8();
-      id_ = s;
+      label_ = s;
       return s;
     }
   }
   /**
-   * <code>string id = 1;</code>
-   * @return The bytes for id.
+   * <code>string label = 1;</code>
+   * @return The bytes for label.
    */
   @Override
   public com.google.protobuf.ByteString
-      getIdBytes() {
-    Object ref = id_;
+      getLabelBytes() {
+    Object ref = label_;
     if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (String) ref);
-      id_ = b;
+      label_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AMOUNT_FIELD_NUMBER = 2;
+  private volatile Object amount_;
+  /**
+   * <code>string amount = 2;</code>
+   * @return The amount.
+   */
+  @Override
+  public String getAmount() {
+    Object ref = amount_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
+      amount_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string amount = 2;</code>
+   * @return The bytes for amount.
+   */
+  @Override
+  public com.google.protobuf.ByteString
+      getAmountBytes() {
+    Object ref = amount_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      amount_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -139,8 +184,11 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+    if (!getLabelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, label_);
+    }
+    if (!getAmountBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, amount_);
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +199,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+    if (!getLabelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, label_);
+    }
+    if (!getAmountBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, amount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,13 +215,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof SelectionOptionData)) {
+    if (!(obj instanceof ApplePayTotal)) {
       return super.equals(obj);
     }
-    SelectionOptionData other = (SelectionOptionData) obj;
+    ApplePayTotal other = (ApplePayTotal) obj;
 
-    if (!getId()
-        .equals(other.getId())) return false;
+    if (!getLabel()
+        .equals(other.getLabel())) return false;
+    if (!getAmount()
+        .equals(other.getAmount())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,76 +235,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + LABEL_FIELD_NUMBER;
+    hash = (53 * hash) + getLabel().hashCode();
+    hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getAmount().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static SelectionOptionData parseFrom(
+  public static ApplePayTotal parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayTotal parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayTotal parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayTotal parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(byte[] data)
+  public static ApplePayTotal parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayTotal parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(java.io.InputStream input)
+  public static ApplePayTotal parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayTotal parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static SelectionOptionData parseDelimitedFrom(java.io.InputStream input)
+  public static ApplePayTotal parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static SelectionOptionData parseDelimitedFrom(
+  public static ApplePayTotal parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayTotal parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayTotal parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -264,7 +319,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(SelectionOptionData prototype) {
+  public static Builder newBuilder(ApplePayTotal prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @Override
@@ -280,26 +335,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pb.SelectionOptionData}
+   * Protobuf type {@code pb.ApplePayTotal}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.SelectionOptionData)
-      SelectionOptionDataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pb.ApplePayTotal)
+      ApplePayTotalOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+      return MobileModel.internal_static_pb_ApplePayTotal_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MobileModel.internal_static_pb_SelectionOptionData_fieldAccessorTable
+      return MobileModel.internal_static_pb_ApplePayTotal_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SelectionOptionData.class, Builder.class);
+              ApplePayTotal.class, Builder.class);
     }
 
-    // Construct using ru.pnhub.widgetsdk.model.SelectionOptionData.newBuilder()
+    // Construct using ru.pnhub.widgetsdk.model.ApplePayTotal.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -317,7 +372,9 @@ private static final long serialVersionUID = 0L;
     @Override
     public Builder clear() {
       super.clear();
-      id_ = "";
+      label_ = "";
+
+      amount_ = "";
 
       return this;
     }
@@ -325,17 +382,17 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+      return MobileModel.internal_static_pb_ApplePayTotal_descriptor;
     }
 
     @Override
-    public SelectionOptionData getDefaultInstanceForType() {
-      return SelectionOptionData.getDefaultInstance();
+    public ApplePayTotal getDefaultInstanceForType() {
+      return ApplePayTotal.getDefaultInstance();
     }
 
     @Override
-    public SelectionOptionData build() {
-      SelectionOptionData result = buildPartial();
+    public ApplePayTotal build() {
+      ApplePayTotal result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -343,9 +400,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @Override
-    public SelectionOptionData buildPartial() {
-      SelectionOptionData result = new SelectionOptionData(this);
-      result.id_ = id_;
+    public ApplePayTotal buildPartial() {
+      ApplePayTotal result = new ApplePayTotal(this);
+      result.label_ = label_;
+      result.amount_ = amount_;
       onBuilt();
       return result;
     }
@@ -384,18 +442,22 @@ private static final long serialVersionUID = 0L;
     }
     @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof SelectionOptionData) {
-        return mergeFrom((SelectionOptionData)other);
+      if (other instanceof ApplePayTotal) {
+        return mergeFrom((ApplePayTotal)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(SelectionOptionData other) {
-      if (other == SelectionOptionData.getDefaultInstance()) return this;
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
+    public Builder mergeFrom(ApplePayTotal other) {
+      if (other == ApplePayTotal.getDefaultInstance()) return this;
+      if (!other.getLabel().isEmpty()) {
+        label_ = other.label_;
+        onChanged();
+      }
+      if (!other.getAmount().isEmpty()) {
+        amount_ = other.amount_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -413,11 +475,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      SelectionOptionData parsedMessage = null;
+      ApplePayTotal parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (SelectionOptionData) e.getUnfinishedMessage();
+        parsedMessage = (ApplePayTotal) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -427,78 +489,154 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object id_ = "";
+    private Object label_ = "";
     /**
-     * <code>string id = 1;</code>
-     * @return The id.
+     * <code>string label = 1;</code>
+     * @return The label.
      */
-    public String getId() {
-      Object ref = id_;
+    public String getLabel() {
+      Object ref = label_;
       if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        id_ = s;
+        label_ = s;
         return s;
       } else {
         return (String) ref;
       }
     }
     /**
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
+     * <code>string label = 1;</code>
+     * @return The bytes for label.
      */
     public com.google.protobuf.ByteString
-        getIdBytes() {
-      Object ref = id_;
+        getLabelBytes() {
+      Object ref = label_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        id_ = b;
+        label_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string id = 1;</code>
-     * @param value The id to set.
+     * <code>string label = 1;</code>
+     * @param value The label to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
+    public Builder setLabel(
         String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      id_ = value;
+      label_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 1;</code>
+     * <code>string label = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearLabel() {
       
-      id_ = getDefaultInstance().getId();
+      label_ = getDefaultInstance().getLabel();
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 1;</code>
-     * @param value The bytes for id to set.
+     * <code>string label = 1;</code>
+     * @param value The bytes for label to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
+    public Builder setLabelBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      id_ = value;
+      label_ = value;
+      onChanged();
+      return this;
+    }
+
+    private Object amount_ = "";
+    /**
+     * <code>string amount = 2;</code>
+     * @return The amount.
+     */
+    public String getAmount() {
+      Object ref = amount_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
+    }
+    /**
+     * <code>string amount = 2;</code>
+     * @return The bytes for amount.
+     */
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      Object ref = amount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string amount = 2;</code>
+     * @param value The amount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAmount(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      amount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string amount = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAmount() {
+      
+      amount_ = getDefaultInstance().getAmount();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string amount = 2;</code>
+     * @param value The bytes for amount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAmountBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      amount_ = value;
       onChanged();
       return this;
     }
@@ -515,41 +653,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.SelectionOptionData)
+    // @@protoc_insertion_point(builder_scope:pb.ApplePayTotal)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.SelectionOptionData)
-  private static final SelectionOptionData DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pb.ApplePayTotal)
+  private static final ApplePayTotal DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new SelectionOptionData();
+    DEFAULT_INSTANCE = new ApplePayTotal();
   }
 
-  public static SelectionOptionData getDefaultInstance() {
+  public static ApplePayTotal getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SelectionOptionData>
-      PARSER = new com.google.protobuf.AbstractParser<SelectionOptionData>() {
+  private static final com.google.protobuf.Parser<ApplePayTotal>
+      PARSER = new com.google.protobuf.AbstractParser<ApplePayTotal>() {
     @Override
-    public SelectionOptionData parsePartialFrom(
+    public ApplePayTotal parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SelectionOptionData(input, extensionRegistry);
+      return new ApplePayTotal(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SelectionOptionData> parser() {
+  public static com.google.protobuf.Parser<ApplePayTotal> parser() {
     return PARSER;
   }
 
   @Override
-  public com.google.protobuf.Parser<SelectionOptionData> getParserForType() {
+  public com.google.protobuf.Parser<ApplePayTotal> getParserForType() {
     return PARSER;
   }
 
   @Override
-  public SelectionOptionData getDefaultInstanceForType() {
+  public ApplePayTotal getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

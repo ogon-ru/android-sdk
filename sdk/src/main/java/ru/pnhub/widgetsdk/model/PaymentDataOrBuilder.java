@@ -23,7 +23,7 @@ public interface PaymentDataOrBuilder extends
    * <code>string email = 3;</code>
    * @return The email.
    */
-  java.lang.String getEmail();
+  String getEmail();
   /**
    * <code>string email = 3;</code>
    * @return The bytes for email.
@@ -40,11 +40,11 @@ public interface PaymentDataOrBuilder extends
    * <code>.pb.Address shipping_address = 4;</code>
    * @return The shippingAddress.
    */
-  ru.pnhub.widgetsdk.model.Address getShippingAddress();
+  Address getShippingAddress();
   /**
    * <code>.pb.Address shipping_address = 4;</code>
    */
-  ru.pnhub.widgetsdk.model.AddressOrBuilder getShippingAddressOrBuilder();
+  AddressOrBuilder getShippingAddressOrBuilder();
 
   /**
    * <code>.pb.PaymentMethodData payment_method_data = 5;</code>
@@ -55,11 +55,11 @@ public interface PaymentDataOrBuilder extends
    * <code>.pb.PaymentMethodData payment_method_data = 5;</code>
    * @return The paymentMethodData.
    */
-  ru.pnhub.widgetsdk.model.PaymentMethodData getPaymentMethodData();
+  PaymentMethodData getPaymentMethodData();
   /**
    * <code>.pb.PaymentMethodData payment_method_data = 5;</code>
    */
-  ru.pnhub.widgetsdk.model.PaymentMethodDataOrBuilder getPaymentMethodDataOrBuilder();
+  PaymentMethodDataOrBuilder getPaymentMethodDataOrBuilder();
 
   /**
    * <code>.pb.SelectionOptionData shipping_option_data = 6;</code>
@@ -70,9 +70,9 @@ public interface PaymentDataOrBuilder extends
    * <code>.pb.SelectionOptionData shipping_option_data = 6;</code>
    * @return The shippingOptionData.
    */
-  ru.pnhub.widgetsdk.model.SelectionOptionData getShippingOptionData();
+  SelectionOptionData getShippingOptionData();
   /**
    * <code>.pb.SelectionOptionData shipping_option_data = 6;</code>
    */
-  ru.pnhub.widgetsdk.model.SelectionOptionDataOrBuilder getShippingOptionDataOrBuilder();
+  SelectionOptionDataOrBuilder getShippingOptionDataOrBuilder();
 }

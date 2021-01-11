@@ -17,7 +17,7 @@ public interface MobileErrorOrBuilder extends
    * <code>string message = 2;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <code>string message = 2;</code>
    * @return The bytes for message.
@@ -29,7 +29,7 @@ public interface MobileErrorOrBuilder extends
    * <code>string description = 3;</code>
    * @return The description.
    */
-  java.lang.String getDescription();
+  String getDescription();
   /**
    * <code>string description = 3;</code>
    * @return The bytes for description.

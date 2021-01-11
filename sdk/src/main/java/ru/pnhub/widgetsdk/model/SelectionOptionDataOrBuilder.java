@@ -11,7 +11,7 @@ public interface SelectionOptionDataOrBuilder extends
    * <code>string id = 1;</code>
    * @return The id.
    */
-  java.lang.String getId();
+  String getId();
   /**
    * <code>string id = 1;</code>
    * @return The bytes for id.

@@ -16,7 +16,7 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.MobileEventType type = 1;</code>
    * @return The type.
    */
-  ru.pnhub.widgetsdk.model.MobileEventType getType();
+  MobileEventType getType();
 
   /**
    * <code>.pb.MobileError error = 2;</code>
@@ -27,11 +27,11 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.MobileError error = 2;</code>
    * @return The error.
    */
-  ru.pnhub.widgetsdk.model.MobileError getError();
+  MobileError getError();
   /**
    * <code>.pb.MobileError error = 2;</code>
    */
-  ru.pnhub.widgetsdk.model.MobileErrorOrBuilder getErrorOrBuilder();
+  MobileErrorOrBuilder getErrorOrBuilder();
 
   /**
    * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
@@ -42,11 +42,11 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
    * @return The isReadyToPayRequest.
    */
-  ru.pnhub.widgetsdk.model.IsReadyToPayRequest getIsReadyToPayRequest();
+  IsReadyToPayRequest getIsReadyToPayRequest();
   /**
    * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
    */
-  ru.pnhub.widgetsdk.model.IsReadyToPayRequestOrBuilder getIsReadyToPayRequestOrBuilder();
+  IsReadyToPayRequestOrBuilder getIsReadyToPayRequestOrBuilder();
 
   /**
    * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
@@ -57,11 +57,11 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
    * @return The paymentDataRequest.
    */
-  ru.pnhub.widgetsdk.model.PaymentDataRequest getPaymentDataRequest();
+  PaymentDataRequest getPaymentDataRequest();
   /**
    * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
    */
-  ru.pnhub.widgetsdk.model.PaymentDataRequestOrBuilder getPaymentDataRequestOrBuilder();
+  PaymentDataRequestOrBuilder getPaymentDataRequestOrBuilder();
 
   /**
    * <code>bool is_ready_to_pay = 5;</code>
@@ -78,11 +78,53 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.PaymentData payment_data = 6;</code>
    * @return The paymentData.
    */
-  ru.pnhub.widgetsdk.model.PaymentData getPaymentData();
+  PaymentData getPaymentData();
   /**
    * <code>.pb.PaymentData payment_data = 6;</code>
    */
-  ru.pnhub.widgetsdk.model.PaymentDataOrBuilder getPaymentDataOrBuilder();
+  PaymentDataOrBuilder getPaymentDataOrBuilder();
 
-  public ru.pnhub.widgetsdk.model.MobileEvent.PayloadCase getPayloadCase();
+  /**
+   * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
+   * @return Whether the applepayPaymentDataRequest field is set.
+   */
+  boolean hasApplepayPaymentDataRequest();
+  /**
+   * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
+   * @return The applepayPaymentDataRequest.
+   */
+  ApplePayPaymentDataRequest getApplepayPaymentDataRequest();
+  /**
+   * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
+   */
+  ApplePayPaymentDataRequestOrBuilder getApplepayPaymentDataRequestOrBuilder();
+
+  /**
+   * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
+   * @return Whether the applepayPaymentData field is set.
+   */
+  boolean hasApplepayPaymentData();
+  /**
+   * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
+   * @return The applepayPaymentData.
+   */
+  ApplePayPaymentData getApplepayPaymentData();
+  /**
+   * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
+   */
+  ApplePayPaymentDataOrBuilder getApplepayPaymentDataOrBuilder();
+
+  /**
+   * <code>string open_url_request = 9;</code>
+   * @return The openUrlRequest.
+   */
+  String getOpenUrlRequest();
+  /**
+   * <code>string open_url_request = 9;</code>
+   * @return The bytes for openUrlRequest.
+   */
+  com.google.protobuf.ByteString
+      getOpenUrlRequestBytes();
+
+  public MobileEvent.PayloadCase getPayloadCase();
 }

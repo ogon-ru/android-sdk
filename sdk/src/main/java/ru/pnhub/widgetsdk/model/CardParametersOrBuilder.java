@@ -11,7 +11,7 @@ public interface CardParametersOrBuilder extends
    * <code>repeated string allowed_auth_methods = 1;</code>
    * @return A list containing the allowedAuthMethods.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getAllowedAuthMethodsList();
   /**
    * <code>repeated string allowed_auth_methods = 1;</code>
@@ -23,7 +23,7 @@ public interface CardParametersOrBuilder extends
    * @param index The index of the element to return.
    * @return The allowedAuthMethods at the given index.
    */
-  java.lang.String getAllowedAuthMethods(int index);
+  String getAllowedAuthMethods(int index);
   /**
    * <code>repeated string allowed_auth_methods = 1;</code>
    * @param index The index of the value to return.
@@ -36,7 +36,7 @@ public interface CardParametersOrBuilder extends
    * <code>repeated string allowed_card_networks = 2;</code>
    * @return A list containing the allowedCardNetworks.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getAllowedCardNetworksList();
   /**
    * <code>repeated string allowed_card_networks = 2;</code>
@@ -48,7 +48,7 @@ public interface CardParametersOrBuilder extends
    * @param index The index of the element to return.
    * @return The allowedCardNetworks at the given index.
    */
-  java.lang.String getAllowedCardNetworks(int index);
+  String getAllowedCardNetworks(int index);
   /**
    * <code>repeated string allowed_card_networks = 2;</code>
    * @param index The index of the value to return.
@@ -84,11 +84,11 @@ public interface CardParametersOrBuilder extends
    * <code>.pb.BillingAddressParameters billing_address_parameters = 6;</code>
    * @return The billingAddressParameters.
    */
-  ru.pnhub.widgetsdk.model.BillingAddressParameters getBillingAddressParameters();
+  BillingAddressParameters getBillingAddressParameters();
   /**
    * <code>.pb.BillingAddressParameters billing_address_parameters = 6;</code>
    */
-  ru.pnhub.widgetsdk.model.BillingAddressParametersOrBuilder getBillingAddressParametersOrBuilder();
+  BillingAddressParametersOrBuilder getBillingAddressParametersOrBuilder();
 
   /**
    * <code>.pb.CardNetworkParameters card_network_parameters = 7;</code>
@@ -99,9 +99,9 @@ public interface CardParametersOrBuilder extends
    * <code>.pb.CardNetworkParameters card_network_parameters = 7;</code>
    * @return The cardNetworkParameters.
    */
-  ru.pnhub.widgetsdk.model.CardNetworkParameters getCardNetworkParameters();
+  CardNetworkParameters getCardNetworkParameters();
   /**
    * <code>.pb.CardNetworkParameters card_network_parameters = 7;</code>
    */
-  ru.pnhub.widgetsdk.model.CardNetworkParametersOrBuilder getCardNetworkParametersOrBuilder();
+  CardNetworkParametersOrBuilder getCardNetworkParametersOrBuilder();
 }

@@ -4,26 +4,25 @@
 package ru.pnhub.widgetsdk.model;
 
 /**
- * Protobuf type {@code pb.SelectionOptionData}
+ * Protobuf type {@code pb.ApplePayPaymentData}
  */
-public final class SelectionOptionData extends
+public final class ApplePayPaymentData extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.SelectionOptionData)
-    SelectionOptionDataOrBuilder {
+    // @@protoc_insertion_point(message_implements:pb.ApplePayPaymentData)
+    ApplePayPaymentDataOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SelectionOptionData.newBuilder() to construct.
-  private SelectionOptionData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ApplePayPaymentData.newBuilder() to construct.
+  private ApplePayPaymentData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SelectionOptionData() {
-    id_ = "";
+  private ApplePayPaymentData() {
   }
 
   @Override
   @SuppressWarnings({"unused"})
   protected Object newInstance(
       UnusedPrivateParameter unused) {
-    return new SelectionOptionData();
+    return new ApplePayPaymentData();
   }
 
   @Override
@@ -31,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SelectionOptionData(
+  private ApplePayPaymentData(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -50,9 +49,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            String s = input.readStringRequireUtf8();
+            ApplePayPaymentToken.Builder subBuilder = null;
+            if (token_ != null) {
+              subBuilder = token_.toBuilder();
+            }
+            token_ = input.readMessage(ApplePayPaymentToken.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(token_);
+              token_ = subBuilder.buildPartial();
+            }
 
-            id_ = s;
             break;
           }
           default: {
@@ -76,53 +82,41 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+    return MobileModel.internal_static_pb_ApplePayPaymentData_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MobileModel.internal_static_pb_SelectionOptionData_fieldAccessorTable
+    return MobileModel.internal_static_pb_ApplePayPaymentData_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            SelectionOptionData.class, Builder.class);
+            ApplePayPaymentData.class, Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private volatile Object id_;
+  public static final int TOKEN_FIELD_NUMBER = 1;
+  private ApplePayPaymentToken token_;
   /**
-   * <code>string id = 1;</code>
-   * @return The id.
+   * <code>.pb.ApplePayPaymentToken token = 1;</code>
+   * @return Whether the token field is set.
    */
   @Override
-  public String getId() {
-    Object ref = id_;
-    if (ref instanceof String) {
-      return (String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
+  public boolean hasToken() {
+    return token_ != null;
   }
   /**
-   * <code>string id = 1;</code>
-   * @return The bytes for id.
+   * <code>.pb.ApplePayPaymentToken token = 1;</code>
+   * @return The token.
    */
   @Override
-  public com.google.protobuf.ByteString
-      getIdBytes() {
-    Object ref = id_;
-    if (ref instanceof String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public ApplePayPaymentToken getToken() {
+    return token_ == null ? ApplePayPaymentToken.getDefaultInstance() : token_;
+  }
+  /**
+   * <code>.pb.ApplePayPaymentToken token = 1;</code>
+   */
+  @Override
+  public ApplePayPaymentTokenOrBuilder getTokenOrBuilder() {
+    return getToken();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -139,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+    if (token_ != null) {
+      output.writeMessage(1, getToken());
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+    if (token_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getToken());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,13 +159,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof SelectionOptionData)) {
+    if (!(obj instanceof ApplePayPaymentData)) {
       return super.equals(obj);
     }
-    SelectionOptionData other = (SelectionOptionData) obj;
+    ApplePayPaymentData other = (ApplePayPaymentData) obj;
 
-    if (!getId()
-        .equals(other.getId())) return false;
+    if (hasToken() != other.hasToken()) return false;
+    if (hasToken()) {
+      if (!getToken()
+          .equals(other.getToken())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,76 +180,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    if (hasToken()) {
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static SelectionOptionData parseFrom(
+  public static ApplePayPaymentData parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayPaymentData parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayPaymentData parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayPaymentData parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(byte[] data)
+  public static ApplePayPaymentData parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayPaymentData parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(java.io.InputStream input)
+  public static ApplePayPaymentData parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayPaymentData parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static SelectionOptionData parseDelimitedFrom(java.io.InputStream input)
+  public static ApplePayPaymentData parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static SelectionOptionData parseDelimitedFrom(
+  public static ApplePayPaymentData parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayPaymentData parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static SelectionOptionData parseFrom(
+  public static ApplePayPaymentData parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -264,7 +264,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(SelectionOptionData prototype) {
+  public static Builder newBuilder(ApplePayPaymentData prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @Override
@@ -280,26 +280,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pb.SelectionOptionData}
+   * Protobuf type {@code pb.ApplePayPaymentData}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.SelectionOptionData)
-      SelectionOptionDataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pb.ApplePayPaymentData)
+      ApplePayPaymentDataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+      return MobileModel.internal_static_pb_ApplePayPaymentData_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MobileModel.internal_static_pb_SelectionOptionData_fieldAccessorTable
+      return MobileModel.internal_static_pb_ApplePayPaymentData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SelectionOptionData.class, Builder.class);
+              ApplePayPaymentData.class, Builder.class);
     }
 
-    // Construct using ru.pnhub.widgetsdk.model.SelectionOptionData.newBuilder()
+    // Construct using ru.pnhub.widgetsdk.model.ApplePayPaymentData.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -317,25 +317,29 @@ private static final long serialVersionUID = 0L;
     @Override
     public Builder clear() {
       super.clear();
-      id_ = "";
-
+      if (tokenBuilder_ == null) {
+        token_ = null;
+      } else {
+        token_ = null;
+        tokenBuilder_ = null;
+      }
       return this;
     }
 
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+      return MobileModel.internal_static_pb_ApplePayPaymentData_descriptor;
     }
 
     @Override
-    public SelectionOptionData getDefaultInstanceForType() {
-      return SelectionOptionData.getDefaultInstance();
+    public ApplePayPaymentData getDefaultInstanceForType() {
+      return ApplePayPaymentData.getDefaultInstance();
     }
 
     @Override
-    public SelectionOptionData build() {
-      SelectionOptionData result = buildPartial();
+    public ApplePayPaymentData build() {
+      ApplePayPaymentData result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -343,9 +347,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @Override
-    public SelectionOptionData buildPartial() {
-      SelectionOptionData result = new SelectionOptionData(this);
-      result.id_ = id_;
+    public ApplePayPaymentData buildPartial() {
+      ApplePayPaymentData result = new ApplePayPaymentData(this);
+      if (tokenBuilder_ == null) {
+        result.token_ = token_;
+      } else {
+        result.token_ = tokenBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -384,19 +392,18 @@ private static final long serialVersionUID = 0L;
     }
     @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof SelectionOptionData) {
-        return mergeFrom((SelectionOptionData)other);
+      if (other instanceof ApplePayPaymentData) {
+        return mergeFrom((ApplePayPaymentData)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(SelectionOptionData other) {
-      if (other == SelectionOptionData.getDefaultInstance()) return this;
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
-        onChanged();
+    public Builder mergeFrom(ApplePayPaymentData other) {
+      if (other == ApplePayPaymentData.getDefaultInstance()) return this;
+      if (other.hasToken()) {
+        mergeToken(other.getToken());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -413,11 +420,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      SelectionOptionData parsedMessage = null;
+      ApplePayPaymentData parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (SelectionOptionData) e.getUnfinishedMessage();
+        parsedMessage = (ApplePayPaymentData) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -427,80 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object id_ = "";
+    private ApplePayPaymentToken token_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ApplePayPaymentToken, ApplePayPaymentToken.Builder, ApplePayPaymentTokenOrBuilder> tokenBuilder_;
     /**
-     * <code>string id = 1;</code>
-     * @return The id.
+     * <code>.pb.ApplePayPaymentToken token = 1;</code>
+     * @return Whether the token field is set.
      */
-    public String getId() {
-      Object ref = id_;
-      if (!(ref instanceof String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
+    public boolean hasToken() {
+      return tokenBuilder_ != null || token_ != null;
+    }
+    /**
+     * <code>.pb.ApplePayPaymentToken token = 1;</code>
+     * @return The token.
+     */
+    public ApplePayPaymentToken getToken() {
+      if (tokenBuilder_ == null) {
+        return token_ == null ? ApplePayPaymentToken.getDefaultInstance() : token_;
       } else {
-        return (String) ref;
+        return tokenBuilder_.getMessage();
       }
     }
     /**
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
+     * <code>.pb.ApplePayPaymentToken token = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        id_ = b;
-        return b;
+    public Builder setToken(ApplePayPaymentToken value) {
+      if (tokenBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        token_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        tokenBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pb.ApplePayPaymentToken token = 1;</code>
+     */
+    public Builder setToken(
+        ApplePayPaymentToken.Builder builderForValue) {
+      if (tokenBuilder_ == null) {
+        token_ = builderForValue.build();
+        onChanged();
+      } else {
+        tokenBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pb.ApplePayPaymentToken token = 1;</code>
+     */
+    public Builder mergeToken(ApplePayPaymentToken value) {
+      if (tokenBuilder_ == null) {
+        if (token_ != null) {
+          token_ =
+            ApplePayPaymentToken.newBuilder(token_).mergeFrom(value).buildPartial();
+        } else {
+          token_ = value;
+        }
+        onChanged();
+      } else {
+        tokenBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pb.ApplePayPaymentToken token = 1;</code>
+     */
+    public Builder clearToken() {
+      if (tokenBuilder_ == null) {
+        token_ = null;
+        onChanged();
+      } else {
+        token_ = null;
+        tokenBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.pb.ApplePayPaymentToken token = 1;</code>
+     */
+    public ApplePayPaymentToken.Builder getTokenBuilder() {
+      
+      onChanged();
+      return getTokenFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pb.ApplePayPaymentToken token = 1;</code>
+     */
+    public ApplePayPaymentTokenOrBuilder getTokenOrBuilder() {
+      if (tokenBuilder_ != null) {
+        return tokenBuilder_.getMessageOrBuilder();
+      } else {
+        return token_ == null ?
+            ApplePayPaymentToken.getDefaultInstance() : token_;
       }
     }
     /**
-     * <code>string id = 1;</code>
-     * @param value The id to set.
-     * @return This builder for chaining.
+     * <code>.pb.ApplePayPaymentToken token = 1;</code>
      */
-    public Builder setId(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      id_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string id = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearId() {
-      
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string id = 1;</code>
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      id_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ApplePayPaymentToken, ApplePayPaymentToken.Builder, ApplePayPaymentTokenOrBuilder>
+        getTokenFieldBuilder() {
+      if (tokenBuilder_ == null) {
+        tokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            ApplePayPaymentToken, ApplePayPaymentToken.Builder, ApplePayPaymentTokenOrBuilder>(
+                getToken(),
+                getParentForChildren(),
+                isClean());
+        token_ = null;
+      }
+      return tokenBuilder_;
     }
     @Override
     public final Builder setUnknownFields(
@@ -515,41 +565,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.SelectionOptionData)
+    // @@protoc_insertion_point(builder_scope:pb.ApplePayPaymentData)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.SelectionOptionData)
-  private static final SelectionOptionData DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pb.ApplePayPaymentData)
+  private static final ApplePayPaymentData DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new SelectionOptionData();
+    DEFAULT_INSTANCE = new ApplePayPaymentData();
   }
 
-  public static SelectionOptionData getDefaultInstance() {
+  public static ApplePayPaymentData getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SelectionOptionData>
-      PARSER = new com.google.protobuf.AbstractParser<SelectionOptionData>() {
+  private static final com.google.protobuf.Parser<ApplePayPaymentData>
+      PARSER = new com.google.protobuf.AbstractParser<ApplePayPaymentData>() {
     @Override
-    public SelectionOptionData parsePartialFrom(
+    public ApplePayPaymentData parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SelectionOptionData(input, extensionRegistry);
+      return new ApplePayPaymentData(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SelectionOptionData> parser() {
+  public static com.google.protobuf.Parser<ApplePayPaymentData> parser() {
     return PARSER;
   }
 
   @Override
-  public com.google.protobuf.Parser<SelectionOptionData> getParserForType() {
+  public com.google.protobuf.Parser<ApplePayPaymentData> getParserForType() {
     return PARSER;
   }
 
   @Override
-  public SelectionOptionData getDefaultInstanceForType() {
+  public ApplePayPaymentData getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
