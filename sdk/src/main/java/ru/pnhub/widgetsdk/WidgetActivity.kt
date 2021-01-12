@@ -8,6 +8,8 @@ import android.net.Uri
 import android.net.http.SslError
 import android.os.Build
 import android.os.Bundle
+import android.os.Environment
+import android.provider.MediaStore
 import android.util.Log
 import android.view.KeyEvent
 import android.webkit.*
@@ -17,12 +19,17 @@ import com.google.android.gms.common.api.Status
 import com.google.android.gms.wallet.*
 import ru.pnhub.widgetsdk.model.MobileEvent
 import ru.pnhub.widgetsdk.model.MobileEventType
+import java.io.File
+import java.text.SimpleDateFormat
+import java.util.*
 import ru.pnhub.widgetsdk.model.IsReadyToPayRequest as IsReadyToPayRequestModel
 import ru.pnhub.widgetsdk.model.PaymentDataRequest as PaymentDataRequestModel
 
 private const val BASE_URL = BuildConfig.BASE_URL
 private const val RECORD_AUDIO_REQUEST_CODE = 1
 private const val LOAD_PAYMENT_DATA_REQUEST_CODE = 2
+private const val INPUT_FILE_REQUEST_CODE = 3
+private const val CAMERA_REQUEST_CODE = 4
 private const val RESOURCE_AUDIO_CAPTURE = "android.webkit.resource.AUDIO_CAPTURE"
 
 class WidgetActivity : AppCompatActivity() {
@@ -34,6 +41,8 @@ class WidgetActivity : AppCompatActivity() {
     private lateinit var webView: WebView
     private lateinit var jsBridge: JSBridge
     private var permissionRequest: PermissionRequest? = null
+    private var filePathCallback: ValueCallback<Array<Uri>>? = null
+    private var cameraPhotoPath: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +53,7 @@ class WidgetActivity : AppCompatActivity() {
 
         webView = findViewById<WebView>(R.id.webView).apply {
             settings.javaScriptEnabled = true
+            settings.allowContentAccess = true
             settings.allowFileAccess = true
             settings.domStorageEnabled = true
             settings.javaScriptCanOpenWindowsAutomatically = true
@@ -52,9 +62,9 @@ class WidgetActivity : AppCompatActivity() {
             webChromeClient = WidgetWebChromeClient()
         }
         jsBridge = JSBridge(
-            webView = webView,
-            eventListener = ::handleEvent,
-            navigationStateChange = ::handleNavigation,
+                webView = webView,
+                eventListener = ::handleEvent,
+                navigationStateChange = ::handleNavigation,
         )
 
         webView.loadUrl("$baseUrl/?token=$token")
@@ -84,6 +94,7 @@ class WidgetActivity : AppCompatActivity() {
                     permissionRequest?.deny()
                 }
             }
+            CAMERA_REQUEST_CODE -> startActionChooser()
             else -> super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }
     }
@@ -97,6 +108,21 @@ class WidgetActivity : AppCompatActivity() {
                     AutoResolveHelper.RESULT_ERROR ->
                         AutoResolveHelper.getStatusFromIntent(data)?.let(::handlePaymentError)
                 }
+            }
+            INPUT_FILE_REQUEST_CODE -> {
+                if (resultCode == RESULT_OK) {
+                    val result = if (data == null || data.dataString == null) {
+                        cameraPhotoPath?.let { arrayOf(Uri.parse(it)) }
+                    } else {
+                        arrayOf(Uri.parse(data.dataString))
+                    }
+
+                    filePathCallback?.onReceiveValue(result)
+                } else {
+                    filePathCallback?.onReceiveValue(null)
+                }
+
+                filePathCallback = null
             }
             else -> super.onActivityResult(requestCode, resultCode, data)
         }
@@ -201,6 +227,76 @@ class WidgetActivity : AppCompatActivity() {
         }
     }
 
+    private fun startActionChooser() {
+        var takePictureIntent: Intent? = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        if (hasCameraPermission() && takePictureIntent!!.resolveActivity(packageManager) != null) {
+            // Create the File where the photo should go
+            var photoFile: File? = null
+            try {
+                photoFile = createImageFile()
+                takePictureIntent.putExtra("PhotoPath", cameraPhotoPath)
+            } catch (ex: Throwable) {
+                // Error occurred while creating the File
+                Log.e("WidgetActivity", "Unable to create Image File", ex)
+            }
+
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                cameraPhotoPath = "file:" + photoFile.getAbsolutePath()
+                takePictureIntent!!.putExtra(MediaStore.EXTRA_OUTPUT,
+                        Uri.fromFile(photoFile))
+            } else {
+                takePictureIntent = null
+            }
+        }
+
+        val contentSelectionIntent = Intent(Intent.ACTION_GET_CONTENT)
+        contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE)
+        contentSelectionIntent.type = "image/*"
+
+        val intentArray = takePictureIntent?.let { arrayOf(it) } ?: emptyArray()
+
+        val chooserIntent = Intent(Intent.ACTION_CHOOSER)
+        chooserIntent.putExtra(Intent.EXTRA_INTENT, contentSelectionIntent)
+        chooserIntent.putExtra(Intent.EXTRA_TITLE, "Image Chooser")
+        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentArray)
+
+        startActivityForResult(chooserIntent, INPUT_FILE_REQUEST_CODE)
+    }
+
+    private fun hasCameraPermission(): Boolean = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        checkSelfPermission(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
+    } else {
+        true
+    }
+
+    private fun openFileChooser(callback: ValueCallback<Array<Uri>>?): Boolean {
+        try {
+            filePathCallback?.onReceiveValue(null)
+            filePathCallback = callback
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !hasCameraPermission()) {
+                requestPermissions(arrayOf(android.Manifest.permission.CAMERA), CAMERA_REQUEST_CODE)
+            } else {
+                startActionChooser()
+            }
+
+            return true
+        } catch (e: Throwable) {
+            filePathCallback = null
+        }
+
+        return false
+    }
+
+    private fun createImageFile(): File? {
+        // Create an image file name
+        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+        val imageFileName = "JPEG_${timeStamp}_"
+        var dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        return File.createTempFile(imageFileName, ".jpg", dir)
+    }
+
     private inner class WidgetWebViewClient : WebViewClient() {
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
             view?.loadUrl(INJECT_JS_CODE)
@@ -226,5 +322,10 @@ class WidgetActivity : AppCompatActivity() {
                 }
             }
         }
+
+        override fun onShowFileChooser(webView: WebView?, callback: ValueCallback<Array<Uri>>?, params: FileChooserParams?): Boolean {
+            return openFileChooser(callback)
+        }
+
     }
 }
