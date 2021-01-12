@@ -20,14 +20,14 @@ private static final long serialVersionUID = 0L;
     currencyCode_ = "";
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new ApplePayPaymentDataRequest();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +38,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -51,23 +51,23 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             countryCode_ = s;
             break;
           }
           case 18: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             currencyCode_ = s;
             break;
           }
           case 26: {
-            ApplePayTotal.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.ApplePayTotal.Builder subBuilder = null;
             if (total_ != null) {
               subBuilder = total_.toBuilder();
             }
-            total_ = input.readMessage(ApplePayTotal.parser(), extensionRegistry);
+            total_ = input.readMessage(ru.pnhub.widgetsdk.model.ApplePayTotal.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(total_);
               total_ = subBuilder.buildPartial();
@@ -96,32 +96,32 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MobileModel.internal_static_pb_ApplePayPaymentDataRequest_descriptor;
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ApplePayPaymentDataRequest_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MobileModel.internal_static_pb_ApplePayPaymentDataRequest_fieldAccessorTable
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ApplePayPaymentDataRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ApplePayPaymentDataRequest.class, Builder.class);
+            ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.class, ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.Builder.class);
   }
 
   public static final int COUNTRY_CODE_FIELD_NUMBER = 1;
-  private volatile Object countryCode_;
+  private volatile java.lang.Object countryCode_;
   /**
    * <code>string country_code = 1;</code>
    * @return The countryCode.
    */
-  @Override
-  public String getCountryCode() {
-    Object ref = countryCode_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getCountryCode() {
+    java.lang.Object ref = countryCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       countryCode_ = s;
       return s;
     }
@@ -130,14 +130,14 @@ private static final long serialVersionUID = 0L;
    * <code>string country_code = 1;</code>
    * @return The bytes for countryCode.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getCountryCodeBytes() {
-    Object ref = countryCode_;
-    if (ref instanceof String) {
+    java.lang.Object ref = countryCode_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       countryCode_ = b;
       return b;
     } else {
@@ -146,20 +146,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CURRENCY_CODE_FIELD_NUMBER = 2;
-  private volatile Object currencyCode_;
+  private volatile java.lang.Object currencyCode_;
   /**
    * <code>string currency_code = 2;</code>
    * @return The currencyCode.
    */
-  @Override
-  public String getCurrencyCode() {
-    Object ref = currencyCode_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getCurrencyCode() {
+    java.lang.Object ref = currencyCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       currencyCode_ = s;
       return s;
     }
@@ -168,14 +168,14 @@ private static final long serialVersionUID = 0L;
    * <code>string currency_code = 2;</code>
    * @return The bytes for currencyCode.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getCurrencyCodeBytes() {
-    Object ref = currencyCode_;
-    if (ref instanceof String) {
+    java.lang.Object ref = currencyCode_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       currencyCode_ = b;
       return b;
     } else {
@@ -184,12 +184,12 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TOTAL_FIELD_NUMBER = 3;
-  private ApplePayTotal total_;
+  private ru.pnhub.widgetsdk.model.ApplePayTotal total_;
   /**
    * <code>.pb.ApplePayTotal total = 3;</code>
    * @return Whether the total field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasTotal() {
     return total_ != null;
   }
@@ -197,20 +197,20 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.ApplePayTotal total = 3;</code>
    * @return The total.
    */
-  @Override
-  public ApplePayTotal getTotal() {
-    return total_ == null ? ApplePayTotal.getDefaultInstance() : total_;
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ApplePayTotal getTotal() {
+    return total_ == null ? ru.pnhub.widgetsdk.model.ApplePayTotal.getDefaultInstance() : total_;
   }
   /**
    * <code>.pb.ApplePayTotal total = 3;</code>
    */
-  @Override
-  public ApplePayTotalOrBuilder getTotalOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ApplePayTotalOrBuilder getTotalOrBuilder() {
     return getTotal();
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -220,7 +220,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getCountryCodeBytes().isEmpty()) {
@@ -235,7 +235,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -256,15 +256,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ApplePayPaymentDataRequest)) {
+    if (!(obj instanceof ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest)) {
       return super.equals(obj);
     }
-    ApplePayPaymentDataRequest other = (ApplePayPaymentDataRequest) obj;
+    ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest other = (ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) obj;
 
     if (!getCountryCode()
         .equals(other.getCountryCode())) return false;
@@ -279,7 +279,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -299,69 +299,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static ApplePayPaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ApplePayPaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ApplePayPaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ApplePayPaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ApplePayPaymentDataRequest parseFrom(byte[] data)
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ApplePayPaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ApplePayPaymentDataRequest parseFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ApplePayPaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ApplePayPaymentDataRequest parseDelimitedFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ApplePayPaymentDataRequest parseDelimitedFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ApplePayPaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ApplePayPaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -369,23 +369,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ApplePayPaymentDataRequest prototype) {
+  public static Builder newBuilder(ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -395,18 +395,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:pb.ApplePayPaymentDataRequest)
-      ApplePayPaymentDataRequestOrBuilder {
+      ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MobileModel.internal_static_pb_ApplePayPaymentDataRequest_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ApplePayPaymentDataRequest_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MobileModel.internal_static_pb_ApplePayPaymentDataRequest_fieldAccessorTable
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ApplePayPaymentDataRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ApplePayPaymentDataRequest.class, Builder.class);
+              ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.class, ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.Builder.class);
     }
 
     // Construct using ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.newBuilder()
@@ -415,7 +415,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -424,7 +424,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       countryCode_ = "";
@@ -440,29 +440,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MobileModel.internal_static_pb_ApplePayPaymentDataRequest_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ApplePayPaymentDataRequest_descriptor;
     }
 
-    @Override
-    public ApplePayPaymentDataRequest getDefaultInstanceForType() {
-      return ApplePayPaymentDataRequest.getDefaultInstance();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest getDefaultInstanceForType() {
+      return ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.getDefaultInstance();
     }
 
-    @Override
-    public ApplePayPaymentDataRequest build() {
-      ApplePayPaymentDataRequest result = buildPartial();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest build() {
+      ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public ApplePayPaymentDataRequest buildPartial() {
-      ApplePayPaymentDataRequest result = new ApplePayPaymentDataRequest(this);
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest buildPartial() {
+      ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest result = new ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest(this);
       result.countryCode_ = countryCode_;
       result.currencyCode_ = currencyCode_;
       if (totalBuilder_ == null) {
@@ -474,50 +474,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ApplePayPaymentDataRequest) {
-        return mergeFrom((ApplePayPaymentDataRequest)other);
+      if (other instanceof ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) {
+        return mergeFrom((ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ApplePayPaymentDataRequest other) {
-      if (other == ApplePayPaymentDataRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest other) {
+      if (other == ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.getDefaultInstance()) return this;
       if (!other.getCountryCode().isEmpty()) {
         countryCode_ = other.countryCode_;
         onChanged();
@@ -534,21 +534,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ApplePayPaymentDataRequest parsedMessage = null;
+      ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ApplePayPaymentDataRequest) e.getUnfinishedMessage();
+        parsedMessage = (ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -558,21 +558,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object countryCode_ = "";
+    private java.lang.Object countryCode_ = "";
     /**
      * <code>string country_code = 1;</code>
      * @return The countryCode.
      */
-    public String getCountryCode() {
-      Object ref = countryCode_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getCountryCode() {
+      java.lang.Object ref = countryCode_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         countryCode_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -581,11 +581,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCountryCodeBytes() {
-      Object ref = countryCode_;
+      java.lang.Object ref = countryCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         countryCode_ = b;
         return b;
       } else {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setCountryCode(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -634,21 +634,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object currencyCode_ = "";
+    private java.lang.Object currencyCode_ = "";
     /**
      * <code>string currency_code = 2;</code>
      * @return The currencyCode.
      */
-    public String getCurrencyCode() {
-      Object ref = currencyCode_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getCurrencyCode() {
+      java.lang.Object ref = currencyCode_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         currencyCode_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -657,11 +657,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCurrencyCodeBytes() {
-      Object ref = currencyCode_;
+      java.lang.Object ref = currencyCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         currencyCode_ = b;
         return b;
       } else {
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setCurrencyCode(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -710,9 +710,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private ApplePayTotal total_;
+    private ru.pnhub.widgetsdk.model.ApplePayTotal total_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        ApplePayTotal, ApplePayTotal.Builder, ApplePayTotalOrBuilder> totalBuilder_;
+        ru.pnhub.widgetsdk.model.ApplePayTotal, ru.pnhub.widgetsdk.model.ApplePayTotal.Builder, ru.pnhub.widgetsdk.model.ApplePayTotalOrBuilder> totalBuilder_;
     /**
      * <code>.pb.ApplePayTotal total = 3;</code>
      * @return Whether the total field is set.
@@ -724,9 +724,9 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ApplePayTotal total = 3;</code>
      * @return The total.
      */
-    public ApplePayTotal getTotal() {
+    public ru.pnhub.widgetsdk.model.ApplePayTotal getTotal() {
       if (totalBuilder_ == null) {
-        return total_ == null ? ApplePayTotal.getDefaultInstance() : total_;
+        return total_ == null ? ru.pnhub.widgetsdk.model.ApplePayTotal.getDefaultInstance() : total_;
       } else {
         return totalBuilder_.getMessage();
       }
@@ -734,7 +734,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePayTotal total = 3;</code>
      */
-    public Builder setTotal(ApplePayTotal value) {
+    public Builder setTotal(ru.pnhub.widgetsdk.model.ApplePayTotal value) {
       if (totalBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ApplePayTotal total = 3;</code>
      */
     public Builder setTotal(
-        ApplePayTotal.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.ApplePayTotal.Builder builderForValue) {
       if (totalBuilder_ == null) {
         total_ = builderForValue.build();
         onChanged();
@@ -764,11 +764,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePayTotal total = 3;</code>
      */
-    public Builder mergeTotal(ApplePayTotal value) {
+    public Builder mergeTotal(ru.pnhub.widgetsdk.model.ApplePayTotal value) {
       if (totalBuilder_ == null) {
         if (total_ != null) {
           total_ =
-            ApplePayTotal.newBuilder(total_).mergeFrom(value).buildPartial();
+            ru.pnhub.widgetsdk.model.ApplePayTotal.newBuilder(total_).mergeFrom(value).buildPartial();
         } else {
           total_ = value;
         }
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePayTotal total = 3;</code>
      */
-    public ApplePayTotal.Builder getTotalBuilder() {
+    public ru.pnhub.widgetsdk.model.ApplePayTotal.Builder getTotalBuilder() {
       
       onChanged();
       return getTotalFieldBuilder().getBuilder();
@@ -804,23 +804,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePayTotal total = 3;</code>
      */
-    public ApplePayTotalOrBuilder getTotalOrBuilder() {
+    public ru.pnhub.widgetsdk.model.ApplePayTotalOrBuilder getTotalOrBuilder() {
       if (totalBuilder_ != null) {
         return totalBuilder_.getMessageOrBuilder();
       } else {
         return total_ == null ?
-            ApplePayTotal.getDefaultInstance() : total_;
+            ru.pnhub.widgetsdk.model.ApplePayTotal.getDefaultInstance() : total_;
       }
     }
     /**
      * <code>.pb.ApplePayTotal total = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        ApplePayTotal, ApplePayTotal.Builder, ApplePayTotalOrBuilder>
+        ru.pnhub.widgetsdk.model.ApplePayTotal, ru.pnhub.widgetsdk.model.ApplePayTotal.Builder, ru.pnhub.widgetsdk.model.ApplePayTotalOrBuilder> 
         getTotalFieldBuilder() {
       if (totalBuilder_ == null) {
         totalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            ApplePayTotal, ApplePayTotal.Builder, ApplePayTotalOrBuilder>(
+            ru.pnhub.widgetsdk.model.ApplePayTotal, ru.pnhub.widgetsdk.model.ApplePayTotal.Builder, ru.pnhub.widgetsdk.model.ApplePayTotalOrBuilder>(
                 getTotal(),
                 getParentForChildren(),
                 isClean());
@@ -828,13 +828,13 @@ private static final long serialVersionUID = 0L;
       }
       return totalBuilder_;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -845,18 +845,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:pb.ApplePayPaymentDataRequest)
-  private static final ApplePayPaymentDataRequest DEFAULT_INSTANCE;
+  private static final ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ApplePayPaymentDataRequest();
+    DEFAULT_INSTANCE = new ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest();
   }
 
-  public static ApplePayPaymentDataRequest getDefaultInstance() {
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<ApplePayPaymentDataRequest>
       PARSER = new com.google.protobuf.AbstractParser<ApplePayPaymentDataRequest>() {
-    @Override
+    @java.lang.Override
     public ApplePayPaymentDataRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -869,13 +869,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<ApplePayPaymentDataRequest> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public ApplePayPaymentDataRequest getDefaultInstanceForType() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -16,9 +16,9 @@ public interface ApplePayPaymentDataOrBuilder extends
    * <code>.pb.ApplePayPaymentToken token = 1;</code>
    * @return The token.
    */
-  ApplePayPaymentToken getToken();
+  ru.pnhub.widgetsdk.model.ApplePayPaymentToken getToken();
   /**
    * <code>.pb.ApplePayPaymentToken token = 1;</code>
    */
-  ApplePayPaymentTokenOrBuilder getTokenOrBuilder();
+  ru.pnhub.widgetsdk.model.ApplePayPaymentTokenOrBuilder getTokenOrBuilder();
 }

@@ -16,7 +16,7 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.MobileEventType type = 1;</code>
    * @return The type.
    */
-  MobileEventType getType();
+  ru.pnhub.widgetsdk.model.MobileEventType getType();
 
   /**
    * <code>.pb.MobileError error = 2;</code>
@@ -27,11 +27,11 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.MobileError error = 2;</code>
    * @return The error.
    */
-  MobileError getError();
+  ru.pnhub.widgetsdk.model.MobileError getError();
   /**
    * <code>.pb.MobileError error = 2;</code>
    */
-  MobileErrorOrBuilder getErrorOrBuilder();
+  ru.pnhub.widgetsdk.model.MobileErrorOrBuilder getErrorOrBuilder();
 
   /**
    * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
@@ -42,11 +42,11 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
    * @return The isReadyToPayRequest.
    */
-  IsReadyToPayRequest getIsReadyToPayRequest();
+  ru.pnhub.widgetsdk.model.IsReadyToPayRequest getIsReadyToPayRequest();
   /**
    * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
    */
-  IsReadyToPayRequestOrBuilder getIsReadyToPayRequestOrBuilder();
+  ru.pnhub.widgetsdk.model.IsReadyToPayRequestOrBuilder getIsReadyToPayRequestOrBuilder();
 
   /**
    * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
@@ -57,11 +57,11 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
    * @return The paymentDataRequest.
    */
-  PaymentDataRequest getPaymentDataRequest();
+  ru.pnhub.widgetsdk.model.PaymentDataRequest getPaymentDataRequest();
   /**
    * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
    */
-  PaymentDataRequestOrBuilder getPaymentDataRequestOrBuilder();
+  ru.pnhub.widgetsdk.model.PaymentDataRequestOrBuilder getPaymentDataRequestOrBuilder();
 
   /**
    * <code>bool is_ready_to_pay = 5;</code>
@@ -78,11 +78,11 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.PaymentData payment_data = 6;</code>
    * @return The paymentData.
    */
-  PaymentData getPaymentData();
+  ru.pnhub.widgetsdk.model.PaymentData getPaymentData();
   /**
    * <code>.pb.PaymentData payment_data = 6;</code>
    */
-  PaymentDataOrBuilder getPaymentDataOrBuilder();
+  ru.pnhub.widgetsdk.model.PaymentDataOrBuilder getPaymentDataOrBuilder();
 
   /**
    * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
@@ -93,11 +93,11 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
    * @return The applepayPaymentDataRequest.
    */
-  ApplePayPaymentDataRequest getApplepayPaymentDataRequest();
+  ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest getApplepayPaymentDataRequest();
   /**
    * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
    */
-  ApplePayPaymentDataRequestOrBuilder getApplepayPaymentDataRequestOrBuilder();
+  ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequestOrBuilder getApplepayPaymentDataRequestOrBuilder();
 
   /**
    * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
@@ -108,17 +108,17 @@ public interface MobileEventOrBuilder extends
    * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
    * @return The applepayPaymentData.
    */
-  ApplePayPaymentData getApplepayPaymentData();
+  ru.pnhub.widgetsdk.model.ApplePayPaymentData getApplepayPaymentData();
   /**
    * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
    */
-  ApplePayPaymentDataOrBuilder getApplepayPaymentDataOrBuilder();
+  ru.pnhub.widgetsdk.model.ApplePayPaymentDataOrBuilder getApplepayPaymentDataOrBuilder();
 
   /**
    * <code>string open_url_request = 9;</code>
    * @return The openUrlRequest.
    */
-  String getOpenUrlRequest();
+  java.lang.String getOpenUrlRequest();
   /**
    * <code>string open_url_request = 9;</code>
    * @return The bytes for openUrlRequest.
@@ -126,5 +126,5 @@ public interface MobileEventOrBuilder extends
   com.google.protobuf.ByteString
       getOpenUrlRequestBytes();
 
-  public MobileEvent.PayloadCase getPayloadCase();
+  public ru.pnhub.widgetsdk.model.MobileEvent.PayloadCase getPayloadCase();
 }
