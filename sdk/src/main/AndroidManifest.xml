@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <application>
@@ -19,6 +20,16 @@
             android:label="@string/title_activity_widget"
             android:theme="@style/Theme.WidgetSDK"
             android:configChanges="orientation|screenSize|screenLayout"/>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="ru.pnhub.widgetsdk.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/sdk_provider_paths" />
+        </provider>
     </application>
 
 </manifest>
