@@ -157,7 +157,7 @@ public final class MobileModel {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\032pb/apis/mobile.model.proto\022\002pb\"\264\003\n\013Mob" +
       "ileEvent\022!\n\004type\030\001 \001(\0162\023.pb.MobileEventT" +
       "ype\022 \n\005error\030\002 \001(\0132\017.pb.MobileErrorH\000\022:\n" +
@@ -252,7 +252,7 @@ public final class MobileModel {
       "ment_data\030\001 \001(\t\022\036\n\026transaction_identifie" +
       "r\030\002 \001(\t\022.\n\016payment_method\030\003 \001(\0132\026.pb.App" +
       "lePaymentMethod\";\n\022ApplePaymentMethod\022\024\n" +
-      "\014display_name\030\001 \001(\t\022\017\n\007network\030\002 \001(\t*\303\004\n" +
+      "\014display_name\030\001 \001(\t\022\017\n\007network\030\002 \001(\t*\332\004\n" +
       "\017MobileEventType\022\034\n\030MOBILE_EVENT_UNSPECI" +
       "FIED\020\000\0222\n.MOBILE_EVENT_GOOGLEPAY_IS_READ" +
       "Y_TO_PAY_REQUEST\020\001\0223\n/MOBILE_EVENT_GOOGL" +
@@ -267,8 +267,8 @@ public final class MobileModel {
       "EQUEST\020\010\022/\n+MOBILE_EVENT_APPLEPAY_PAYMEN" +
       "T_DATA_RESPONSE\020\t\022,\n(MOBILE_EVENT_APPLEP" +
       "AY_PAYMENT_DATA_ERROR\020\n\022!\n\035MOBILE_EVENT_" +
-      "OPEN_URL_REQUEST\020\013B\034\n\030ru.pnhub.widgetsdk" +
-      ".modelP\001b\006proto3"
+      "OPEN_URL_REQUEST\020\013\022\025\n\021MOBILE_EVENT_BACK\020" +
+      "\014B\034\n\030ru.pnhub.widgetsdk.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -279,163 +279,163 @@ public final class MobileModel {
     internal_static_pb_MobileEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_MobileEvent_descriptor,
-        new String[] { "Type", "Error", "IsReadyToPayRequest", "PaymentDataRequest", "IsReadyToPay", "PaymentData", "ApplepayPaymentDataRequest", "ApplepayPaymentData", "OpenUrlRequest", "Payload", });
+        new java.lang.String[] { "Type", "Error", "IsReadyToPayRequest", "PaymentDataRequest", "IsReadyToPay", "PaymentData", "ApplepayPaymentDataRequest", "ApplepayPaymentData", "OpenUrlRequest", "Payload", });
     internal_static_pb_IsReadyToPayRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_pb_IsReadyToPayRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_IsReadyToPayRequest_descriptor,
-        new String[] { "ApiVersion", "ApiVersionMinor", "AllowedPaymentMethods", "ExistingPaymentMethodRequired", });
+        new java.lang.String[] { "ApiVersion", "ApiVersionMinor", "AllowedPaymentMethods", "ExistingPaymentMethodRequired", });
     internal_static_pb_PaymentDataRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_pb_PaymentDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_PaymentDataRequest_descriptor,
-        new String[] { "MerchantInfo", "ApiVersion", "ApiVersionMinor", "EmailRequired", "ShippingAddressRequired", "ShippingAddressParameters", "AllowedPaymentMethods", "TransactionInfo", "ShippingOptionRequired", "ShippingOptionParameters", });
+        new java.lang.String[] { "MerchantInfo", "ApiVersion", "ApiVersionMinor", "EmailRequired", "ShippingAddressRequired", "ShippingAddressParameters", "AllowedPaymentMethods", "TransactionInfo", "ShippingOptionRequired", "ShippingOptionParameters", });
     internal_static_pb_MerchantInfo_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_pb_MerchantInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_MerchantInfo_descriptor,
-        new String[] { "MerchantId", "MerchantName", });
+        new java.lang.String[] { "MerchantId", "MerchantName", });
     internal_static_pb_ShippingAddressParameters_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_pb_ShippingAddressParameters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_ShippingAddressParameters_descriptor,
-        new String[] { "AllowedCountryCodes", "PhoneNumberRequired", });
+        new java.lang.String[] { "AllowedCountryCodes", "PhoneNumberRequired", });
     internal_static_pb_TransactionInfo_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_pb_TransactionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_TransactionInfo_descriptor,
-        new String[] { "TransactionId", "CurrencyCode", "CountryCode", "TotalPrice", "TotalPriceLabel", "TotalPriceStatus", "TransactionNote", "CheckoutOption", "DisplayItems", });
+        new java.lang.String[] { "TransactionId", "CurrencyCode", "CountryCode", "TotalPrice", "TotalPriceLabel", "TotalPriceStatus", "TransactionNote", "CheckoutOption", "DisplayItems", });
     internal_static_pb_DisplayItem_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_pb_DisplayItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_DisplayItem_descriptor,
-        new String[] { "Label", "Type", "Price", "Status", });
+        new java.lang.String[] { "Label", "Type", "Price", "Status", });
     internal_static_pb_ShippingOptionParameters_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_pb_ShippingOptionParameters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_ShippingOptionParameters_descriptor,
-        new String[] { "ShippingOptions", "DefaultSelectedOptionId", });
+        new java.lang.String[] { "ShippingOptions", "DefaultSelectedOptionId", });
     internal_static_pb_ShippingOption_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_pb_ShippingOption_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_ShippingOption_descriptor,
-        new String[] { "Id", "Label", "Description", });
+        new java.lang.String[] { "Id", "Label", "Description", });
     internal_static_pb_PaymentData_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_pb_PaymentData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_PaymentData_descriptor,
-        new String[] { "ApiVersion", "ApiVersionMinor", "Email", "ShippingAddress", "PaymentMethodData", "ShippingOptionData", });
+        new java.lang.String[] { "ApiVersion", "ApiVersionMinor", "Email", "ShippingAddress", "PaymentMethodData", "ShippingOptionData", });
     internal_static_pb_SelectionOptionData_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_pb_SelectionOptionData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_SelectionOptionData_descriptor,
-        new String[] { "Id", });
+        new java.lang.String[] { "Id", });
     internal_static_pb_PaymentMethodData_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_pb_PaymentMethodData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_PaymentMethodData_descriptor,
-        new String[] { "Type", "Info", "Description", "TokenizationData", });
+        new java.lang.String[] { "Type", "Info", "Description", "TokenizationData", });
     internal_static_pb_CardInfo_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_pb_CardInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_CardInfo_descriptor,
-        new String[] { "CardNetwork", "CardDetails", "BillingAddress", });
+        new java.lang.String[] { "CardNetwork", "CardDetails", "BillingAddress", });
     internal_static_pb_Address_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_pb_Address_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_Address_descriptor,
-        new String[] { "Name", "Address1", "Address2", "Address3", "Locality", "AdministrativeArea", "CountryCode", "PostalCode", "SortingCode", "PhoneNumber", });
+        new java.lang.String[] { "Name", "Address1", "Address2", "Address3", "Locality", "AdministrativeArea", "CountryCode", "PostalCode", "SortingCode", "PhoneNumber", });
     internal_static_pb_PaymentMethodTokenizationData_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_pb_PaymentMethodTokenizationData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_PaymentMethodTokenizationData_descriptor,
-        new String[] { "Type", "Token", });
+        new java.lang.String[] { "Type", "Token", });
     internal_static_pb_PaymentMethodSpecification_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_pb_PaymentMethodSpecification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_PaymentMethodSpecification_descriptor,
-        new String[] { "Type", "Parameters", "TokenizationSpecification", });
+        new java.lang.String[] { "Type", "Parameters", "TokenizationSpecification", });
     internal_static_pb_CardParameters_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_pb_CardParameters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_CardParameters_descriptor,
-        new String[] { "AllowedAuthMethods", "AllowedCardNetworks", "AllowPrepaidCards", "AllowCreditCards", "BillingAddressRequired", "BillingAddressParameters", "CardNetworkParameters", });
+        new java.lang.String[] { "AllowedAuthMethods", "AllowedCardNetworks", "AllowPrepaidCards", "AllowCreditCards", "BillingAddressRequired", "BillingAddressParameters", "CardNetworkParameters", });
     internal_static_pb_TokenizationSpecification_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_pb_TokenizationSpecification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_TokenizationSpecification_descriptor,
-        new String[] { "Type", "Parameters", });
+        new java.lang.String[] { "Type", "Parameters", });
     internal_static_pb_TokenizationSpecification_ParametersEntry_descriptor =
       internal_static_pb_TokenizationSpecification_descriptor.getNestedTypes().get(0);
     internal_static_pb_TokenizationSpecification_ParametersEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_TokenizationSpecification_ParametersEntry_descriptor,
-        new String[] { "Key", "Value", });
+        new java.lang.String[] { "Key", "Value", });
     internal_static_pb_BillingAddressParameters_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_pb_BillingAddressParameters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_BillingAddressParameters_descriptor,
-        new String[] { "Format", "PhoneNumberRequired", });
+        new java.lang.String[] { "Format", "PhoneNumberRequired", });
     internal_static_pb_CardNetworkParameters_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_pb_CardNetworkParameters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_CardNetworkParameters_descriptor,
-        new String[] { "CardNetwork", "AcquirerBin", "AcquirerMerchantId", });
+        new java.lang.String[] { "CardNetwork", "AcquirerBin", "AcquirerMerchantId", });
     internal_static_pb_MobileError_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_pb_MobileError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_MobileError_descriptor,
-        new String[] { "Code", "Message", "Description", });
+        new java.lang.String[] { "Code", "Message", "Description", });
     internal_static_pb_ApplePayPaymentDataRequest_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_pb_ApplePayPaymentDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_ApplePayPaymentDataRequest_descriptor,
-        new String[] { "CountryCode", "CurrencyCode", "Total", });
+        new java.lang.String[] { "CountryCode", "CurrencyCode", "Total", });
     internal_static_pb_ApplePayTotal_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_pb_ApplePayTotal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_ApplePayTotal_descriptor,
-        new String[] { "Label", "Amount", });
+        new java.lang.String[] { "Label", "Amount", });
     internal_static_pb_ApplePayPaymentData_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_pb_ApplePayPaymentData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_ApplePayPaymentData_descriptor,
-        new String[] { "Token", });
+        new java.lang.String[] { "Token", });
     internal_static_pb_ApplePayPaymentToken_descriptor =
       getDescriptor().getMessageTypes().get(24);
     internal_static_pb_ApplePayPaymentToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_ApplePayPaymentToken_descriptor,
-        new String[] { "PaymentData", "TransactionIdentifier", "PaymentMethod", });
+        new java.lang.String[] { "PaymentData", "TransactionIdentifier", "PaymentMethod", });
     internal_static_pb_ApplePaymentMethod_descriptor =
       getDescriptor().getMessageTypes().get(25);
     internal_static_pb_ApplePaymentMethod_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_ApplePaymentMethod_descriptor,
-        new String[] { "DisplayName", "Network", });
+        new java.lang.String[] { "DisplayName", "Network", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -56,6 +56,10 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_OPEN_URL_REQUEST = 11;</code>
    */
   MOBILE_EVENT_OPEN_URL_REQUEST(11),
+  /**
+   * <code>MOBILE_EVENT_BACK = 12;</code>
+   */
+  MOBILE_EVENT_BACK(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -107,11 +111,15 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_OPEN_URL_REQUEST = 11;</code>
    */
   public static final int MOBILE_EVENT_OPEN_URL_REQUEST_VALUE = 11;
+  /**
+   * <code>MOBILE_EVENT_BACK = 12;</code>
+   */
+  public static final int MOBILE_EVENT_BACK_VALUE = 12;
 
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
-      throw new IllegalArgumentException(
+      throw new java.lang.IllegalArgumentException(
           "Can't get the number of an unknown enum value.");
     }
     return value;
@@ -122,7 +130,7 @@ public enum MobileEventType
    * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
-  @Deprecated
+  @java.lang.Deprecated
   public static MobileEventType valueOf(int value) {
     return forNumber(value);
   }
@@ -145,6 +153,7 @@ public enum MobileEventType
       case 9: return MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_RESPONSE;
       case 10: return MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_ERROR;
       case 11: return MOBILE_EVENT_OPEN_URL_REQUEST;
+      case 12: return MOBILE_EVENT_BACK;
       default: return null;
     }
   }
@@ -164,7 +173,7 @@ public enum MobileEventType
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
     if (this == UNRECOGNIZED) {
-      throw new IllegalStateException(
+      throw new java.lang.IllegalStateException(
           "Can't get the descriptor of an unrecognized enum value.");
     }
     return getDescriptor().getValues().get(ordinal());
@@ -175,7 +184,7 @@ public enum MobileEventType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return MobileModel.getDescriptor().getEnumTypes().get(0);
+    return ru.pnhub.widgetsdk.model.MobileModel.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final MobileEventType[] VALUES = values();
@@ -183,7 +192,7 @@ public enum MobileEventType
   public static MobileEventType valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new IllegalArgumentException(
+      throw new java.lang.IllegalArgumentException(
         "EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {

@@ -20,14 +20,14 @@ private static final long serialVersionUID = 0L;
     transactionIdentifier_ = "";
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new ApplePayPaymentToken();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +38,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -51,23 +51,23 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             paymentData_ = s;
             break;
           }
           case 18: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             transactionIdentifier_ = s;
             break;
           }
           case 26: {
-            ApplePaymentMethod.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.ApplePaymentMethod.Builder subBuilder = null;
             if (paymentMethod_ != null) {
               subBuilder = paymentMethod_.toBuilder();
             }
-            paymentMethod_ = input.readMessage(ApplePaymentMethod.parser(), extensionRegistry);
+            paymentMethod_ = input.readMessage(ru.pnhub.widgetsdk.model.ApplePaymentMethod.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(paymentMethod_);
               paymentMethod_ = subBuilder.buildPartial();
@@ -96,32 +96,32 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MobileModel.internal_static_pb_ApplePayPaymentToken_descriptor;
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ApplePayPaymentToken_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MobileModel.internal_static_pb_ApplePayPaymentToken_fieldAccessorTable
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ApplePayPaymentToken_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ApplePayPaymentToken.class, Builder.class);
+            ru.pnhub.widgetsdk.model.ApplePayPaymentToken.class, ru.pnhub.widgetsdk.model.ApplePayPaymentToken.Builder.class);
   }
 
   public static final int PAYMENT_DATA_FIELD_NUMBER = 1;
-  private volatile Object paymentData_;
+  private volatile java.lang.Object paymentData_;
   /**
    * <code>string payment_data = 1;</code>
    * @return The paymentData.
    */
-  @Override
-  public String getPaymentData() {
-    Object ref = paymentData_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getPaymentData() {
+    java.lang.Object ref = paymentData_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       paymentData_ = s;
       return s;
     }
@@ -130,14 +130,14 @@ private static final long serialVersionUID = 0L;
    * <code>string payment_data = 1;</code>
    * @return The bytes for paymentData.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getPaymentDataBytes() {
-    Object ref = paymentData_;
-    if (ref instanceof String) {
+    java.lang.Object ref = paymentData_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       paymentData_ = b;
       return b;
     } else {
@@ -146,20 +146,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TRANSACTION_IDENTIFIER_FIELD_NUMBER = 2;
-  private volatile Object transactionIdentifier_;
+  private volatile java.lang.Object transactionIdentifier_;
   /**
    * <code>string transaction_identifier = 2;</code>
    * @return The transactionIdentifier.
    */
-  @Override
-  public String getTransactionIdentifier() {
-    Object ref = transactionIdentifier_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getTransactionIdentifier() {
+    java.lang.Object ref = transactionIdentifier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       transactionIdentifier_ = s;
       return s;
     }
@@ -168,14 +168,14 @@ private static final long serialVersionUID = 0L;
    * <code>string transaction_identifier = 2;</code>
    * @return The bytes for transactionIdentifier.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTransactionIdentifierBytes() {
-    Object ref = transactionIdentifier_;
-    if (ref instanceof String) {
+    java.lang.Object ref = transactionIdentifier_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       transactionIdentifier_ = b;
       return b;
     } else {
@@ -184,12 +184,12 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PAYMENT_METHOD_FIELD_NUMBER = 3;
-  private ApplePaymentMethod paymentMethod_;
+  private ru.pnhub.widgetsdk.model.ApplePaymentMethod paymentMethod_;
   /**
    * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
    * @return Whether the paymentMethod field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasPaymentMethod() {
     return paymentMethod_ != null;
   }
@@ -197,20 +197,20 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
    * @return The paymentMethod.
    */
-  @Override
-  public ApplePaymentMethod getPaymentMethod() {
-    return paymentMethod_ == null ? ApplePaymentMethod.getDefaultInstance() : paymentMethod_;
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ApplePaymentMethod getPaymentMethod() {
+    return paymentMethod_ == null ? ru.pnhub.widgetsdk.model.ApplePaymentMethod.getDefaultInstance() : paymentMethod_;
   }
   /**
    * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
    */
-  @Override
-  public ApplePaymentMethodOrBuilder getPaymentMethodOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ApplePaymentMethodOrBuilder getPaymentMethodOrBuilder() {
     return getPaymentMethod();
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -220,7 +220,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getPaymentDataBytes().isEmpty()) {
@@ -235,7 +235,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -256,15 +256,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ApplePayPaymentToken)) {
+    if (!(obj instanceof ru.pnhub.widgetsdk.model.ApplePayPaymentToken)) {
       return super.equals(obj);
     }
-    ApplePayPaymentToken other = (ApplePayPaymentToken) obj;
+    ru.pnhub.widgetsdk.model.ApplePayPaymentToken other = (ru.pnhub.widgetsdk.model.ApplePayPaymentToken) obj;
 
     if (!getPaymentData()
         .equals(other.getPaymentData())) return false;
@@ -279,7 +279,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -299,69 +299,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static ApplePayPaymentToken parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ApplePayPaymentToken parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ApplePayPaymentToken parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ApplePayPaymentToken parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ApplePayPaymentToken parseFrom(byte[] data)
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ApplePayPaymentToken parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ApplePayPaymentToken parseFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ApplePayPaymentToken parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ApplePayPaymentToken parseDelimitedFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ApplePayPaymentToken parseDelimitedFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ApplePayPaymentToken parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ApplePayPaymentToken parseFrom(
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -369,23 +369,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ApplePayPaymentToken prototype) {
+  public static Builder newBuilder(ru.pnhub.widgetsdk.model.ApplePayPaymentToken prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -395,18 +395,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:pb.ApplePayPaymentToken)
-      ApplePayPaymentTokenOrBuilder {
+      ru.pnhub.widgetsdk.model.ApplePayPaymentTokenOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MobileModel.internal_static_pb_ApplePayPaymentToken_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ApplePayPaymentToken_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MobileModel.internal_static_pb_ApplePayPaymentToken_fieldAccessorTable
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ApplePayPaymentToken_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ApplePayPaymentToken.class, Builder.class);
+              ru.pnhub.widgetsdk.model.ApplePayPaymentToken.class, ru.pnhub.widgetsdk.model.ApplePayPaymentToken.Builder.class);
     }
 
     // Construct using ru.pnhub.widgetsdk.model.ApplePayPaymentToken.newBuilder()
@@ -415,7 +415,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -424,7 +424,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       paymentData_ = "";
@@ -440,29 +440,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MobileModel.internal_static_pb_ApplePayPaymentToken_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ApplePayPaymentToken_descriptor;
     }
 
-    @Override
-    public ApplePayPaymentToken getDefaultInstanceForType() {
-      return ApplePayPaymentToken.getDefaultInstance();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentToken getDefaultInstanceForType() {
+      return ru.pnhub.widgetsdk.model.ApplePayPaymentToken.getDefaultInstance();
     }
 
-    @Override
-    public ApplePayPaymentToken build() {
-      ApplePayPaymentToken result = buildPartial();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentToken build() {
+      ru.pnhub.widgetsdk.model.ApplePayPaymentToken result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public ApplePayPaymentToken buildPartial() {
-      ApplePayPaymentToken result = new ApplePayPaymentToken(this);
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentToken buildPartial() {
+      ru.pnhub.widgetsdk.model.ApplePayPaymentToken result = new ru.pnhub.widgetsdk.model.ApplePayPaymentToken(this);
       result.paymentData_ = paymentData_;
       result.transactionIdentifier_ = transactionIdentifier_;
       if (paymentMethodBuilder_ == null) {
@@ -474,50 +474,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ApplePayPaymentToken) {
-        return mergeFrom((ApplePayPaymentToken)other);
+      if (other instanceof ru.pnhub.widgetsdk.model.ApplePayPaymentToken) {
+        return mergeFrom((ru.pnhub.widgetsdk.model.ApplePayPaymentToken)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ApplePayPaymentToken other) {
-      if (other == ApplePayPaymentToken.getDefaultInstance()) return this;
+    public Builder mergeFrom(ru.pnhub.widgetsdk.model.ApplePayPaymentToken other) {
+      if (other == ru.pnhub.widgetsdk.model.ApplePayPaymentToken.getDefaultInstance()) return this;
       if (!other.getPaymentData().isEmpty()) {
         paymentData_ = other.paymentData_;
         onChanged();
@@ -534,21 +534,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ApplePayPaymentToken parsedMessage = null;
+      ru.pnhub.widgetsdk.model.ApplePayPaymentToken parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ApplePayPaymentToken) e.getUnfinishedMessage();
+        parsedMessage = (ru.pnhub.widgetsdk.model.ApplePayPaymentToken) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -558,21 +558,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object paymentData_ = "";
+    private java.lang.Object paymentData_ = "";
     /**
      * <code>string payment_data = 1;</code>
      * @return The paymentData.
      */
-    public String getPaymentData() {
-      Object ref = paymentData_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getPaymentData() {
+      java.lang.Object ref = paymentData_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         paymentData_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -581,11 +581,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getPaymentDataBytes() {
-      Object ref = paymentData_;
+      java.lang.Object ref = paymentData_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         paymentData_ = b;
         return b;
       } else {
@@ -598,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setPaymentData(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -634,21 +634,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object transactionIdentifier_ = "";
+    private java.lang.Object transactionIdentifier_ = "";
     /**
      * <code>string transaction_identifier = 2;</code>
      * @return The transactionIdentifier.
      */
-    public String getTransactionIdentifier() {
-      Object ref = transactionIdentifier_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getTransactionIdentifier() {
+      java.lang.Object ref = transactionIdentifier_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         transactionIdentifier_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -657,11 +657,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTransactionIdentifierBytes() {
-      Object ref = transactionIdentifier_;
+      java.lang.Object ref = transactionIdentifier_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         transactionIdentifier_ = b;
         return b;
       } else {
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTransactionIdentifier(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -710,9 +710,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private ApplePaymentMethod paymentMethod_;
+    private ru.pnhub.widgetsdk.model.ApplePaymentMethod paymentMethod_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        ApplePaymentMethod, ApplePaymentMethod.Builder, ApplePaymentMethodOrBuilder> paymentMethodBuilder_;
+        ru.pnhub.widgetsdk.model.ApplePaymentMethod, ru.pnhub.widgetsdk.model.ApplePaymentMethod.Builder, ru.pnhub.widgetsdk.model.ApplePaymentMethodOrBuilder> paymentMethodBuilder_;
     /**
      * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
      * @return Whether the paymentMethod field is set.
@@ -724,9 +724,9 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
      * @return The paymentMethod.
      */
-    public ApplePaymentMethod getPaymentMethod() {
+    public ru.pnhub.widgetsdk.model.ApplePaymentMethod getPaymentMethod() {
       if (paymentMethodBuilder_ == null) {
-        return paymentMethod_ == null ? ApplePaymentMethod.getDefaultInstance() : paymentMethod_;
+        return paymentMethod_ == null ? ru.pnhub.widgetsdk.model.ApplePaymentMethod.getDefaultInstance() : paymentMethod_;
       } else {
         return paymentMethodBuilder_.getMessage();
       }
@@ -734,7 +734,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
      */
-    public Builder setPaymentMethod(ApplePaymentMethod value) {
+    public Builder setPaymentMethod(ru.pnhub.widgetsdk.model.ApplePaymentMethod value) {
       if (paymentMethodBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
      */
     public Builder setPaymentMethod(
-        ApplePaymentMethod.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.ApplePaymentMethod.Builder builderForValue) {
       if (paymentMethodBuilder_ == null) {
         paymentMethod_ = builderForValue.build();
         onChanged();
@@ -764,11 +764,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
      */
-    public Builder mergePaymentMethod(ApplePaymentMethod value) {
+    public Builder mergePaymentMethod(ru.pnhub.widgetsdk.model.ApplePaymentMethod value) {
       if (paymentMethodBuilder_ == null) {
         if (paymentMethod_ != null) {
           paymentMethod_ =
-            ApplePaymentMethod.newBuilder(paymentMethod_).mergeFrom(value).buildPartial();
+            ru.pnhub.widgetsdk.model.ApplePaymentMethod.newBuilder(paymentMethod_).mergeFrom(value).buildPartial();
         } else {
           paymentMethod_ = value;
         }
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
      */
-    public ApplePaymentMethod.Builder getPaymentMethodBuilder() {
+    public ru.pnhub.widgetsdk.model.ApplePaymentMethod.Builder getPaymentMethodBuilder() {
       
       onChanged();
       return getPaymentMethodFieldBuilder().getBuilder();
@@ -804,23 +804,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
      */
-    public ApplePaymentMethodOrBuilder getPaymentMethodOrBuilder() {
+    public ru.pnhub.widgetsdk.model.ApplePaymentMethodOrBuilder getPaymentMethodOrBuilder() {
       if (paymentMethodBuilder_ != null) {
         return paymentMethodBuilder_.getMessageOrBuilder();
       } else {
         return paymentMethod_ == null ?
-            ApplePaymentMethod.getDefaultInstance() : paymentMethod_;
+            ru.pnhub.widgetsdk.model.ApplePaymentMethod.getDefaultInstance() : paymentMethod_;
       }
     }
     /**
      * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        ApplePaymentMethod, ApplePaymentMethod.Builder, ApplePaymentMethodOrBuilder>
+        ru.pnhub.widgetsdk.model.ApplePaymentMethod, ru.pnhub.widgetsdk.model.ApplePaymentMethod.Builder, ru.pnhub.widgetsdk.model.ApplePaymentMethodOrBuilder> 
         getPaymentMethodFieldBuilder() {
       if (paymentMethodBuilder_ == null) {
         paymentMethodBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            ApplePaymentMethod, ApplePaymentMethod.Builder, ApplePaymentMethodOrBuilder>(
+            ru.pnhub.widgetsdk.model.ApplePaymentMethod, ru.pnhub.widgetsdk.model.ApplePaymentMethod.Builder, ru.pnhub.widgetsdk.model.ApplePaymentMethodOrBuilder>(
                 getPaymentMethod(),
                 getParentForChildren(),
                 isClean());
@@ -828,13 +828,13 @@ private static final long serialVersionUID = 0L;
       }
       return paymentMethodBuilder_;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -845,18 +845,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:pb.ApplePayPaymentToken)
-  private static final ApplePayPaymentToken DEFAULT_INSTANCE;
+  private static final ru.pnhub.widgetsdk.model.ApplePayPaymentToken DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ApplePayPaymentToken();
+    DEFAULT_INSTANCE = new ru.pnhub.widgetsdk.model.ApplePayPaymentToken();
   }
 
-  public static ApplePayPaymentToken getDefaultInstance() {
+  public static ru.pnhub.widgetsdk.model.ApplePayPaymentToken getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<ApplePayPaymentToken>
       PARSER = new com.google.protobuf.AbstractParser<ApplePayPaymentToken>() {
-    @Override
+    @java.lang.Override
     public ApplePayPaymentToken parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -869,13 +869,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<ApplePayPaymentToken> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public ApplePayPaymentToken getDefaultInstanceForType() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ApplePayPaymentToken getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -70,18 +70,19 @@ class WidgetActivity : AppCompatActivity() {
         webView.loadUrl("$baseUrl/?token=$token")
     }
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+    override fun onKeyDown(keyCode: Int, keyEvent: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (webView.canGoBack()) {
-                webView.goBack()
-            } else {
-                finish()
+            val event = MobileEvent.newBuilder().run {
+                type = MobileEventType.MOBILE_EVENT_BACK
+                build()
             }
+
+            jsBridge.sendEvent(event)
 
             return true
         }
 
-        return super.onKeyDown(keyCode, event)
+        return super.onKeyDown(keyCode, keyEvent)
     }
 
     @TargetApi(Build.VERSION_CODES.M)

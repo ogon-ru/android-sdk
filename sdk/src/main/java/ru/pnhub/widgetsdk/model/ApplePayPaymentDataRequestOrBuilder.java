@@ -11,7 +11,7 @@ public interface ApplePayPaymentDataRequestOrBuilder extends
    * <code>string country_code = 1;</code>
    * @return The countryCode.
    */
-  String getCountryCode();
+  java.lang.String getCountryCode();
   /**
    * <code>string country_code = 1;</code>
    * @return The bytes for countryCode.
@@ -23,7 +23,7 @@ public interface ApplePayPaymentDataRequestOrBuilder extends
    * <code>string currency_code = 2;</code>
    * @return The currencyCode.
    */
-  String getCurrencyCode();
+  java.lang.String getCurrencyCode();
   /**
    * <code>string currency_code = 2;</code>
    * @return The bytes for currencyCode.
@@ -40,9 +40,9 @@ public interface ApplePayPaymentDataRequestOrBuilder extends
    * <code>.pb.ApplePayTotal total = 3;</code>
    * @return The total.
    */
-  ApplePayTotal getTotal();
+  ru.pnhub.widgetsdk.model.ApplePayTotal getTotal();
   /**
    * <code>.pb.ApplePayTotal total = 3;</code>
    */
-  ApplePayTotalOrBuilder getTotalOrBuilder();
+  ru.pnhub.widgetsdk.model.ApplePayTotalOrBuilder getTotalOrBuilder();
 }

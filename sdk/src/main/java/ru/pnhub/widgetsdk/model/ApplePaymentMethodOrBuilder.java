@@ -11,7 +11,7 @@ public interface ApplePaymentMethodOrBuilder extends
    * <code>string display_name = 1;</code>
    * @return The displayName.
    */
-  String getDisplayName();
+  java.lang.String getDisplayName();
   /**
    * <code>string display_name = 1;</code>
    * @return The bytes for displayName.
@@ -23,7 +23,7 @@ public interface ApplePaymentMethodOrBuilder extends
    * <code>string network = 2;</code>
    * @return The network.
    */
-  String getNetwork();
+  java.lang.String getNetwork();
   /**
    * <code>string network = 2;</code>
    * @return The bytes for network.

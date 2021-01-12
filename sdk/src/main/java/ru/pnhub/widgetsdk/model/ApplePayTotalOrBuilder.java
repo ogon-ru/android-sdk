@@ -11,7 +11,7 @@ public interface ApplePayTotalOrBuilder extends
    * <code>string label = 1;</code>
    * @return The label.
    */
-  String getLabel();
+  java.lang.String getLabel();
   /**
    * <code>string label = 1;</code>
    * @return The bytes for label.
@@ -23,7 +23,7 @@ public interface ApplePayTotalOrBuilder extends
    * <code>string amount = 2;</code>
    * @return The amount.
    */
-  String getAmount();
+  java.lang.String getAmount();
   /**
    * <code>string amount = 2;</code>
    * @return The bytes for amount.

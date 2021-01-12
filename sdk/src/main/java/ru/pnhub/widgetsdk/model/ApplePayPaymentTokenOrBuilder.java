@@ -11,7 +11,7 @@ public interface ApplePayPaymentTokenOrBuilder extends
    * <code>string payment_data = 1;</code>
    * @return The paymentData.
    */
-  String getPaymentData();
+  java.lang.String getPaymentData();
   /**
    * <code>string payment_data = 1;</code>
    * @return The bytes for paymentData.
@@ -23,7 +23,7 @@ public interface ApplePayPaymentTokenOrBuilder extends
    * <code>string transaction_identifier = 2;</code>
    * @return The transactionIdentifier.
    */
-  String getTransactionIdentifier();
+  java.lang.String getTransactionIdentifier();
   /**
    * <code>string transaction_identifier = 2;</code>
    * @return The bytes for transactionIdentifier.
@@ -40,9 +40,9 @@ public interface ApplePayPaymentTokenOrBuilder extends
    * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
    * @return The paymentMethod.
    */
-  ApplePaymentMethod getPaymentMethod();
+  ru.pnhub.widgetsdk.model.ApplePaymentMethod getPaymentMethod();
   /**
    * <code>.pb.ApplePaymentMethod payment_method = 3;</code>
    */
-  ApplePaymentMethodOrBuilder getPaymentMethodOrBuilder();
+  ru.pnhub.widgetsdk.model.ApplePaymentMethodOrBuilder getPaymentMethodOrBuilder();
 }

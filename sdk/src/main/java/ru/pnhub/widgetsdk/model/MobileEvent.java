@@ -19,14 +19,14 @@ private static final long serialVersionUID = 0L;
     type_ = 0;
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new MobileEvent();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -56,42 +56,42 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            MobileError.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.MobileError.Builder subBuilder = null;
             if (payloadCase_ == 2) {
-              subBuilder = ((MobileError) payload_).toBuilder();
+              subBuilder = ((ru.pnhub.widgetsdk.model.MobileError) payload_).toBuilder();
             }
             payload_ =
-                input.readMessage(MobileError.parser(), extensionRegistry);
+                input.readMessage(ru.pnhub.widgetsdk.model.MobileError.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((MobileError) payload_);
+              subBuilder.mergeFrom((ru.pnhub.widgetsdk.model.MobileError) payload_);
               payload_ = subBuilder.buildPartial();
             }
             payloadCase_ = 2;
             break;
           }
           case 26: {
-            IsReadyToPayRequest.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.IsReadyToPayRequest.Builder subBuilder = null;
             if (payloadCase_ == 3) {
-              subBuilder = ((IsReadyToPayRequest) payload_).toBuilder();
+              subBuilder = ((ru.pnhub.widgetsdk.model.IsReadyToPayRequest) payload_).toBuilder();
             }
             payload_ =
-                input.readMessage(IsReadyToPayRequest.parser(), extensionRegistry);
+                input.readMessage(ru.pnhub.widgetsdk.model.IsReadyToPayRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((IsReadyToPayRequest) payload_);
+              subBuilder.mergeFrom((ru.pnhub.widgetsdk.model.IsReadyToPayRequest) payload_);
               payload_ = subBuilder.buildPartial();
             }
             payloadCase_ = 3;
             break;
           }
           case 34: {
-            PaymentDataRequest.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.PaymentDataRequest.Builder subBuilder = null;
             if (payloadCase_ == 4) {
-              subBuilder = ((PaymentDataRequest) payload_).toBuilder();
+              subBuilder = ((ru.pnhub.widgetsdk.model.PaymentDataRequest) payload_).toBuilder();
             }
             payload_ =
-                input.readMessage(PaymentDataRequest.parser(), extensionRegistry);
+                input.readMessage(ru.pnhub.widgetsdk.model.PaymentDataRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((PaymentDataRequest) payload_);
+              subBuilder.mergeFrom((ru.pnhub.widgetsdk.model.PaymentDataRequest) payload_);
               payload_ = subBuilder.buildPartial();
             }
             payloadCase_ = 4;
@@ -103,49 +103,49 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            PaymentData.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.PaymentData.Builder subBuilder = null;
             if (payloadCase_ == 6) {
-              subBuilder = ((PaymentData) payload_).toBuilder();
+              subBuilder = ((ru.pnhub.widgetsdk.model.PaymentData) payload_).toBuilder();
             }
             payload_ =
-                input.readMessage(PaymentData.parser(), extensionRegistry);
+                input.readMessage(ru.pnhub.widgetsdk.model.PaymentData.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((PaymentData) payload_);
+              subBuilder.mergeFrom((ru.pnhub.widgetsdk.model.PaymentData) payload_);
               payload_ = subBuilder.buildPartial();
             }
             payloadCase_ = 6;
             break;
           }
           case 58: {
-            ApplePayPaymentDataRequest.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.Builder subBuilder = null;
             if (payloadCase_ == 7) {
-              subBuilder = ((ApplePayPaymentDataRequest) payload_).toBuilder();
+              subBuilder = ((ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) payload_).toBuilder();
             }
             payload_ =
-                input.readMessage(ApplePayPaymentDataRequest.parser(), extensionRegistry);
+                input.readMessage(ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((ApplePayPaymentDataRequest) payload_);
+              subBuilder.mergeFrom((ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) payload_);
               payload_ = subBuilder.buildPartial();
             }
             payloadCase_ = 7;
             break;
           }
           case 66: {
-            ApplePayPaymentData.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.ApplePayPaymentData.Builder subBuilder = null;
             if (payloadCase_ == 8) {
-              subBuilder = ((ApplePayPaymentData) payload_).toBuilder();
+              subBuilder = ((ru.pnhub.widgetsdk.model.ApplePayPaymentData) payload_).toBuilder();
             }
             payload_ =
-                input.readMessage(ApplePayPaymentData.parser(), extensionRegistry);
+                input.readMessage(ru.pnhub.widgetsdk.model.ApplePayPaymentData.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((ApplePayPaymentData) payload_);
+              subBuilder.mergeFrom((ru.pnhub.widgetsdk.model.ApplePayPaymentData) payload_);
               payload_ = subBuilder.buildPartial();
             }
             payloadCase_ = 8;
             break;
           }
           case 74: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
             payloadCase_ = 9;
             payload_ = s;
             break;
@@ -171,22 +171,22 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MobileModel.internal_static_pb_MobileEvent_descriptor;
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_MobileEvent_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MobileModel.internal_static_pb_MobileEvent_fieldAccessorTable
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_MobileEvent_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            MobileEvent.class, Builder.class);
+            ru.pnhub.widgetsdk.model.MobileEvent.class, ru.pnhub.widgetsdk.model.MobileEvent.Builder.class);
   }
 
   private int payloadCase_ = 0;
-  private Object payload_;
+  private java.lang.Object payload_;
   public enum PayloadCase
       implements com.google.protobuf.Internal.EnumLite,
-          InternalOneOfEnum {
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ERROR(2),
     IS_READY_TO_PAY_REQUEST(3),
     PAYMENT_DATA_REQUEST(4),
@@ -205,7 +205,7 @@ private static final long serialVersionUID = 0L;
      * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @Deprecated
+    @java.lang.Deprecated
     public static PayloadCase valueOf(int value) {
       return forNumber(value);
     }
@@ -241,17 +241,17 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.MobileEventType type = 1;</code>
    * @return The enum numeric value on the wire for type.
    */
-  @Override public int getTypeValue() {
+  @java.lang.Override public int getTypeValue() {
     return type_;
   }
   /**
    * <code>.pb.MobileEventType type = 1;</code>
    * @return The type.
    */
-  @Override public MobileEventType getType() {
+  @java.lang.Override public ru.pnhub.widgetsdk.model.MobileEventType getType() {
     @SuppressWarnings("deprecation")
-    MobileEventType result = MobileEventType.valueOf(type_);
-    return result == null ? MobileEventType.UNRECOGNIZED : result;
+    ru.pnhub.widgetsdk.model.MobileEventType result = ru.pnhub.widgetsdk.model.MobileEventType.valueOf(type_);
+    return result == null ? ru.pnhub.widgetsdk.model.MobileEventType.UNRECOGNIZED : result;
   }
 
   public static final int ERROR_FIELD_NUMBER = 2;
@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.MobileError error = 2;</code>
    * @return Whether the error field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasError() {
     return payloadCase_ == 2;
   }
@@ -267,22 +267,22 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.MobileError error = 2;</code>
    * @return The error.
    */
-  @Override
-  public MobileError getError() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.MobileError getError() {
     if (payloadCase_ == 2) {
-       return (MobileError) payload_;
+       return (ru.pnhub.widgetsdk.model.MobileError) payload_;
     }
-    return MobileError.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.MobileError.getDefaultInstance();
   }
   /**
    * <code>.pb.MobileError error = 2;</code>
    */
-  @Override
-  public MobileErrorOrBuilder getErrorOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.MobileErrorOrBuilder getErrorOrBuilder() {
     if (payloadCase_ == 2) {
-       return (MobileError) payload_;
+       return (ru.pnhub.widgetsdk.model.MobileError) payload_;
     }
-    return MobileError.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.MobileError.getDefaultInstance();
   }
 
   public static final int IS_READY_TO_PAY_REQUEST_FIELD_NUMBER = 3;
@@ -290,7 +290,7 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
    * @return Whether the isReadyToPayRequest field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasIsReadyToPayRequest() {
     return payloadCase_ == 3;
   }
@@ -298,22 +298,22 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
    * @return The isReadyToPayRequest.
    */
-  @Override
-  public IsReadyToPayRequest getIsReadyToPayRequest() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.IsReadyToPayRequest getIsReadyToPayRequest() {
     if (payloadCase_ == 3) {
-       return (IsReadyToPayRequest) payload_;
+       return (ru.pnhub.widgetsdk.model.IsReadyToPayRequest) payload_;
     }
-    return IsReadyToPayRequest.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.IsReadyToPayRequest.getDefaultInstance();
   }
   /**
    * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
    */
-  @Override
-  public IsReadyToPayRequestOrBuilder getIsReadyToPayRequestOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.IsReadyToPayRequestOrBuilder getIsReadyToPayRequestOrBuilder() {
     if (payloadCase_ == 3) {
-       return (IsReadyToPayRequest) payload_;
+       return (ru.pnhub.widgetsdk.model.IsReadyToPayRequest) payload_;
     }
-    return IsReadyToPayRequest.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.IsReadyToPayRequest.getDefaultInstance();
   }
 
   public static final int PAYMENT_DATA_REQUEST_FIELD_NUMBER = 4;
@@ -321,7 +321,7 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
    * @return Whether the paymentDataRequest field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasPaymentDataRequest() {
     return payloadCase_ == 4;
   }
@@ -329,22 +329,22 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
    * @return The paymentDataRequest.
    */
-  @Override
-  public PaymentDataRequest getPaymentDataRequest() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.PaymentDataRequest getPaymentDataRequest() {
     if (payloadCase_ == 4) {
-       return (PaymentDataRequest) payload_;
+       return (ru.pnhub.widgetsdk.model.PaymentDataRequest) payload_;
     }
-    return PaymentDataRequest.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.PaymentDataRequest.getDefaultInstance();
   }
   /**
    * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
    */
-  @Override
-  public PaymentDataRequestOrBuilder getPaymentDataRequestOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.PaymentDataRequestOrBuilder getPaymentDataRequestOrBuilder() {
     if (payloadCase_ == 4) {
-       return (PaymentDataRequest) payload_;
+       return (ru.pnhub.widgetsdk.model.PaymentDataRequest) payload_;
     }
-    return PaymentDataRequest.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.PaymentDataRequest.getDefaultInstance();
   }
 
   public static final int IS_READY_TO_PAY_FIELD_NUMBER = 5;
@@ -352,10 +352,10 @@ private static final long serialVersionUID = 0L;
    * <code>bool is_ready_to_pay = 5;</code>
    * @return The isReadyToPay.
    */
-  @Override
+  @java.lang.Override
   public boolean getIsReadyToPay() {
     if (payloadCase_ == 5) {
-      return (Boolean) payload_;
+      return (java.lang.Boolean) payload_;
     }
     return false;
   }
@@ -365,7 +365,7 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.PaymentData payment_data = 6;</code>
    * @return Whether the paymentData field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasPaymentData() {
     return payloadCase_ == 6;
   }
@@ -373,22 +373,22 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.PaymentData payment_data = 6;</code>
    * @return The paymentData.
    */
-  @Override
-  public PaymentData getPaymentData() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.PaymentData getPaymentData() {
     if (payloadCase_ == 6) {
-       return (PaymentData) payload_;
+       return (ru.pnhub.widgetsdk.model.PaymentData) payload_;
     }
-    return PaymentData.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.PaymentData.getDefaultInstance();
   }
   /**
    * <code>.pb.PaymentData payment_data = 6;</code>
    */
-  @Override
-  public PaymentDataOrBuilder getPaymentDataOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.PaymentDataOrBuilder getPaymentDataOrBuilder() {
     if (payloadCase_ == 6) {
-       return (PaymentData) payload_;
+       return (ru.pnhub.widgetsdk.model.PaymentData) payload_;
     }
-    return PaymentData.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.PaymentData.getDefaultInstance();
   }
 
   public static final int APPLEPAY_PAYMENT_DATA_REQUEST_FIELD_NUMBER = 7;
@@ -396,7 +396,7 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
    * @return Whether the applepayPaymentDataRequest field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasApplepayPaymentDataRequest() {
     return payloadCase_ == 7;
   }
@@ -404,22 +404,22 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
    * @return The applepayPaymentDataRequest.
    */
-  @Override
-  public ApplePayPaymentDataRequest getApplepayPaymentDataRequest() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest getApplepayPaymentDataRequest() {
     if (payloadCase_ == 7) {
-       return (ApplePayPaymentDataRequest) payload_;
+       return (ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) payload_;
     }
-    return ApplePayPaymentDataRequest.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.getDefaultInstance();
   }
   /**
    * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
    */
-  @Override
-  public ApplePayPaymentDataRequestOrBuilder getApplepayPaymentDataRequestOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequestOrBuilder getApplepayPaymentDataRequestOrBuilder() {
     if (payloadCase_ == 7) {
-       return (ApplePayPaymentDataRequest) payload_;
+       return (ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) payload_;
     }
-    return ApplePayPaymentDataRequest.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.getDefaultInstance();
   }
 
   public static final int APPLEPAY_PAYMENT_DATA_FIELD_NUMBER = 8;
@@ -427,7 +427,7 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
    * @return Whether the applepayPaymentData field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasApplepayPaymentData() {
     return payloadCase_ == 8;
   }
@@ -435,22 +435,22 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
    * @return The applepayPaymentData.
    */
-  @Override
-  public ApplePayPaymentData getApplepayPaymentData() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ApplePayPaymentData getApplepayPaymentData() {
     if (payloadCase_ == 8) {
-       return (ApplePayPaymentData) payload_;
+       return (ru.pnhub.widgetsdk.model.ApplePayPaymentData) payload_;
     }
-    return ApplePayPaymentData.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.ApplePayPaymentData.getDefaultInstance();
   }
   /**
    * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
    */
-  @Override
-  public ApplePayPaymentDataOrBuilder getApplepayPaymentDataOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ApplePayPaymentDataOrBuilder getApplepayPaymentDataOrBuilder() {
     if (payloadCase_ == 8) {
-       return (ApplePayPaymentData) payload_;
+       return (ru.pnhub.widgetsdk.model.ApplePayPaymentData) payload_;
     }
-    return ApplePayPaymentData.getDefaultInstance();
+    return ru.pnhub.widgetsdk.model.ApplePayPaymentData.getDefaultInstance();
   }
 
   public static final int OPEN_URL_REQUEST_FIELD_NUMBER = 9;
@@ -458,17 +458,17 @@ private static final long serialVersionUID = 0L;
    * <code>string open_url_request = 9;</code>
    * @return The openUrlRequest.
    */
-  public String getOpenUrlRequest() {
-    Object ref = "";
+  public java.lang.String getOpenUrlRequest() {
+    java.lang.Object ref = "";
     if (payloadCase_ == 9) {
       ref = payload_;
     }
-    if (ref instanceof String) {
-      return (String) ref;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       if (payloadCase_ == 9) {
         payload_ = s;
       }
@@ -481,14 +481,14 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getOpenUrlRequestBytes() {
-    Object ref = "";
+    java.lang.Object ref = "";
     if (payloadCase_ == 9) {
       ref = payload_;
     }
-    if (ref instanceof String) {
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       if (payloadCase_ == 9) {
         payload_ = b;
       }
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -509,33 +509,33 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (type_ != MobileEventType.MOBILE_EVENT_UNSPECIFIED.getNumber()) {
+    if (type_ != ru.pnhub.widgetsdk.model.MobileEventType.MOBILE_EVENT_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, type_);
     }
     if (payloadCase_ == 2) {
-      output.writeMessage(2, (MobileError) payload_);
+      output.writeMessage(2, (ru.pnhub.widgetsdk.model.MobileError) payload_);
     }
     if (payloadCase_ == 3) {
-      output.writeMessage(3, (IsReadyToPayRequest) payload_);
+      output.writeMessage(3, (ru.pnhub.widgetsdk.model.IsReadyToPayRequest) payload_);
     }
     if (payloadCase_ == 4) {
-      output.writeMessage(4, (PaymentDataRequest) payload_);
+      output.writeMessage(4, (ru.pnhub.widgetsdk.model.PaymentDataRequest) payload_);
     }
     if (payloadCase_ == 5) {
       output.writeBool(
-          5, (boolean)((Boolean) payload_));
+          5, (boolean)((java.lang.Boolean) payload_));
     }
     if (payloadCase_ == 6) {
-      output.writeMessage(6, (PaymentData) payload_);
+      output.writeMessage(6, (ru.pnhub.widgetsdk.model.PaymentData) payload_);
     }
     if (payloadCase_ == 7) {
-      output.writeMessage(7, (ApplePayPaymentDataRequest) payload_);
+      output.writeMessage(7, (ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) payload_);
     }
     if (payloadCase_ == 8) {
-      output.writeMessage(8, (ApplePayPaymentData) payload_);
+      output.writeMessage(8, (ru.pnhub.widgetsdk.model.ApplePayPaymentData) payload_);
     }
     if (payloadCase_ == 9) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, payload_);
@@ -543,44 +543,44 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    if (type_ != MobileEventType.MOBILE_EVENT_UNSPECIFIED.getNumber()) {
+    if (type_ != ru.pnhub.widgetsdk.model.MobileEventType.MOBILE_EVENT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, type_);
     }
     if (payloadCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (MobileError) payload_);
+        .computeMessageSize(2, (ru.pnhub.widgetsdk.model.MobileError) payload_);
     }
     if (payloadCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (IsReadyToPayRequest) payload_);
+        .computeMessageSize(3, (ru.pnhub.widgetsdk.model.IsReadyToPayRequest) payload_);
     }
     if (payloadCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (PaymentDataRequest) payload_);
+        .computeMessageSize(4, (ru.pnhub.widgetsdk.model.PaymentDataRequest) payload_);
     }
     if (payloadCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(
-            5, (boolean)((Boolean) payload_));
+            5, (boolean)((java.lang.Boolean) payload_));
     }
     if (payloadCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (PaymentData) payload_);
+        .computeMessageSize(6, (ru.pnhub.widgetsdk.model.PaymentData) payload_);
     }
     if (payloadCase_ == 7) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (ApplePayPaymentDataRequest) payload_);
+        .computeMessageSize(7, (ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) payload_);
     }
     if (payloadCase_ == 8) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, (ApplePayPaymentData) payload_);
+        .computeMessageSize(8, (ru.pnhub.widgetsdk.model.ApplePayPaymentData) payload_);
     }
     if (payloadCase_ == 9) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, payload_);
@@ -590,15 +590,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof MobileEvent)) {
+    if (!(obj instanceof ru.pnhub.widgetsdk.model.MobileEvent)) {
       return super.equals(obj);
     }
-    MobileEvent other = (MobileEvent) obj;
+    ru.pnhub.widgetsdk.model.MobileEvent other = (ru.pnhub.widgetsdk.model.MobileEvent) obj;
 
     if (type_ != other.type_) return false;
     if (!getPayloadCase().equals(other.getPayloadCase())) return false;
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -693,69 +693,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static MobileEvent parseFrom(
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static MobileEvent parseFrom(
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static MobileEvent parseFrom(
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static MobileEvent parseFrom(
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static MobileEvent parseFrom(byte[] data)
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static MobileEvent parseFrom(
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static MobileEvent parseFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static MobileEvent parseFrom(
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static MobileEvent parseDelimitedFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static MobileEvent parseDelimitedFrom(
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static MobileEvent parseFrom(
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static MobileEvent parseFrom(
+  public static ru.pnhub.widgetsdk.model.MobileEvent parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -763,23 +763,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(MobileEvent prototype) {
+  public static Builder newBuilder(ru.pnhub.widgetsdk.model.MobileEvent prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -789,18 +789,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:pb.MobileEvent)
-      MobileEventOrBuilder {
+      ru.pnhub.widgetsdk.model.MobileEventOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MobileModel.internal_static_pb_MobileEvent_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_MobileEvent_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MobileModel.internal_static_pb_MobileEvent_fieldAccessorTable
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_MobileEvent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MobileEvent.class, Builder.class);
+              ru.pnhub.widgetsdk.model.MobileEvent.class, ru.pnhub.widgetsdk.model.MobileEvent.Builder.class);
     }
 
     // Construct using ru.pnhub.widgetsdk.model.MobileEvent.newBuilder()
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       type_ = 0;
@@ -828,29 +828,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MobileModel.internal_static_pb_MobileEvent_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_MobileEvent_descriptor;
     }
 
-    @Override
-    public MobileEvent getDefaultInstanceForType() {
-      return MobileEvent.getDefaultInstance();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.MobileEvent getDefaultInstanceForType() {
+      return ru.pnhub.widgetsdk.model.MobileEvent.getDefaultInstance();
     }
 
-    @Override
-    public MobileEvent build() {
-      MobileEvent result = buildPartial();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.MobileEvent build() {
+      ru.pnhub.widgetsdk.model.MobileEvent result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public MobileEvent buildPartial() {
-      MobileEvent result = new MobileEvent(this);
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.MobileEvent buildPartial() {
+      ru.pnhub.widgetsdk.model.MobileEvent result = new ru.pnhub.widgetsdk.model.MobileEvent(this);
       result.type_ = type_;
       if (payloadCase_ == 2) {
         if (errorBuilder_ == null) {
@@ -905,50 +905,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof MobileEvent) {
-        return mergeFrom((MobileEvent)other);
+      if (other instanceof ru.pnhub.widgetsdk.model.MobileEvent) {
+        return mergeFrom((ru.pnhub.widgetsdk.model.MobileEvent)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(MobileEvent other) {
-      if (other == MobileEvent.getDefaultInstance()) return this;
+    public Builder mergeFrom(ru.pnhub.widgetsdk.model.MobileEvent other) {
+      if (other == ru.pnhub.widgetsdk.model.MobileEvent.getDefaultInstance()) return this;
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
@@ -996,21 +996,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      MobileEvent parsedMessage = null;
+      ru.pnhub.widgetsdk.model.MobileEvent parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (MobileEvent) e.getUnfinishedMessage();
+        parsedMessage = (ru.pnhub.widgetsdk.model.MobileEvent) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1020,7 +1020,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int payloadCase_ = 0;
-    private Object payload_;
+    private java.lang.Object payload_;
     public PayloadCase
         getPayloadCase() {
       return PayloadCase.forNumber(
@@ -1040,7 +1040,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.MobileEventType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
-    @Override public int getTypeValue() {
+    @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
@@ -1058,18 +1058,18 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.MobileEventType type = 1;</code>
      * @return The type.
      */
-    @Override
-    public MobileEventType getType() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.MobileEventType getType() {
       @SuppressWarnings("deprecation")
-      MobileEventType result = MobileEventType.valueOf(type_);
-      return result == null ? MobileEventType.UNRECOGNIZED : result;
+      ru.pnhub.widgetsdk.model.MobileEventType result = ru.pnhub.widgetsdk.model.MobileEventType.valueOf(type_);
+      return result == null ? ru.pnhub.widgetsdk.model.MobileEventType.UNRECOGNIZED : result;
     }
     /**
      * <code>.pb.MobileEventType type = 1;</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setType(MobileEventType value) {
+    public Builder setType(ru.pnhub.widgetsdk.model.MobileEventType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1090,12 +1090,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        MobileError, MobileError.Builder, MobileErrorOrBuilder> errorBuilder_;
+        ru.pnhub.widgetsdk.model.MobileError, ru.pnhub.widgetsdk.model.MobileError.Builder, ru.pnhub.widgetsdk.model.MobileErrorOrBuilder> errorBuilder_;
     /**
      * <code>.pb.MobileError error = 2;</code>
      * @return Whether the error field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasError() {
       return payloadCase_ == 2;
     }
@@ -1103,24 +1103,24 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.MobileError error = 2;</code>
      * @return The error.
      */
-    @Override
-    public MobileError getError() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.MobileError getError() {
       if (errorBuilder_ == null) {
         if (payloadCase_ == 2) {
-          return (MobileError) payload_;
+          return (ru.pnhub.widgetsdk.model.MobileError) payload_;
         }
-        return MobileError.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.MobileError.getDefaultInstance();
       } else {
         if (payloadCase_ == 2) {
           return errorBuilder_.getMessage();
         }
-        return MobileError.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.MobileError.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.MobileError error = 2;</code>
      */
-    public Builder setError(MobileError value) {
+    public Builder setError(ru.pnhub.widgetsdk.model.MobileError value) {
       if (errorBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1137,7 +1137,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.MobileError error = 2;</code>
      */
     public Builder setError(
-        MobileError.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.MobileError.Builder builderForValue) {
       if (errorBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
@@ -1150,11 +1150,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.MobileError error = 2;</code>
      */
-    public Builder mergeError(MobileError value) {
+    public Builder mergeError(ru.pnhub.widgetsdk.model.MobileError value) {
       if (errorBuilder_ == null) {
         if (payloadCase_ == 2 &&
-            payload_ != MobileError.getDefaultInstance()) {
-          payload_ = MobileError.newBuilder((MobileError) payload_)
+            payload_ != ru.pnhub.widgetsdk.model.MobileError.getDefaultInstance()) {
+          payload_ = ru.pnhub.widgetsdk.model.MobileError.newBuilder((ru.pnhub.widgetsdk.model.MobileError) payload_)
               .mergeFrom(value).buildPartial();
         } else {
           payload_ = value;
@@ -1191,36 +1191,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.MobileError error = 2;</code>
      */
-    public MobileError.Builder getErrorBuilder() {
+    public ru.pnhub.widgetsdk.model.MobileError.Builder getErrorBuilder() {
       return getErrorFieldBuilder().getBuilder();
     }
     /**
      * <code>.pb.MobileError error = 2;</code>
      */
-    @Override
-    public MobileErrorOrBuilder getErrorOrBuilder() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.MobileErrorOrBuilder getErrorOrBuilder() {
       if ((payloadCase_ == 2) && (errorBuilder_ != null)) {
         return errorBuilder_.getMessageOrBuilder();
       } else {
         if (payloadCase_ == 2) {
-          return (MobileError) payload_;
+          return (ru.pnhub.widgetsdk.model.MobileError) payload_;
         }
-        return MobileError.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.MobileError.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.MobileError error = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        MobileError, MobileError.Builder, MobileErrorOrBuilder>
+        ru.pnhub.widgetsdk.model.MobileError, ru.pnhub.widgetsdk.model.MobileError.Builder, ru.pnhub.widgetsdk.model.MobileErrorOrBuilder> 
         getErrorFieldBuilder() {
       if (errorBuilder_ == null) {
         if (!(payloadCase_ == 2)) {
-          payload_ = MobileError.getDefaultInstance();
+          payload_ = ru.pnhub.widgetsdk.model.MobileError.getDefaultInstance();
         }
         errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            MobileError, MobileError.Builder, MobileErrorOrBuilder>(
-                (MobileError) payload_,
+            ru.pnhub.widgetsdk.model.MobileError, ru.pnhub.widgetsdk.model.MobileError.Builder, ru.pnhub.widgetsdk.model.MobileErrorOrBuilder>(
+                (ru.pnhub.widgetsdk.model.MobileError) payload_,
                 getParentForChildren(),
                 isClean());
         payload_ = null;
@@ -1231,12 +1231,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        IsReadyToPayRequest, IsReadyToPayRequest.Builder, IsReadyToPayRequestOrBuilder> isReadyToPayRequestBuilder_;
+        ru.pnhub.widgetsdk.model.IsReadyToPayRequest, ru.pnhub.widgetsdk.model.IsReadyToPayRequest.Builder, ru.pnhub.widgetsdk.model.IsReadyToPayRequestOrBuilder> isReadyToPayRequestBuilder_;
     /**
      * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
      * @return Whether the isReadyToPayRequest field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasIsReadyToPayRequest() {
       return payloadCase_ == 3;
     }
@@ -1244,24 +1244,24 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
      * @return The isReadyToPayRequest.
      */
-    @Override
-    public IsReadyToPayRequest getIsReadyToPayRequest() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.IsReadyToPayRequest getIsReadyToPayRequest() {
       if (isReadyToPayRequestBuilder_ == null) {
         if (payloadCase_ == 3) {
-          return (IsReadyToPayRequest) payload_;
+          return (ru.pnhub.widgetsdk.model.IsReadyToPayRequest) payload_;
         }
-        return IsReadyToPayRequest.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.IsReadyToPayRequest.getDefaultInstance();
       } else {
         if (payloadCase_ == 3) {
           return isReadyToPayRequestBuilder_.getMessage();
         }
-        return IsReadyToPayRequest.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.IsReadyToPayRequest.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
      */
-    public Builder setIsReadyToPayRequest(IsReadyToPayRequest value) {
+    public Builder setIsReadyToPayRequest(ru.pnhub.widgetsdk.model.IsReadyToPayRequest value) {
       if (isReadyToPayRequestBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1278,7 +1278,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
      */
     public Builder setIsReadyToPayRequest(
-        IsReadyToPayRequest.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.IsReadyToPayRequest.Builder builderForValue) {
       if (isReadyToPayRequestBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
@@ -1291,11 +1291,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
      */
-    public Builder mergeIsReadyToPayRequest(IsReadyToPayRequest value) {
+    public Builder mergeIsReadyToPayRequest(ru.pnhub.widgetsdk.model.IsReadyToPayRequest value) {
       if (isReadyToPayRequestBuilder_ == null) {
         if (payloadCase_ == 3 &&
-            payload_ != IsReadyToPayRequest.getDefaultInstance()) {
-          payload_ = IsReadyToPayRequest.newBuilder((IsReadyToPayRequest) payload_)
+            payload_ != ru.pnhub.widgetsdk.model.IsReadyToPayRequest.getDefaultInstance()) {
+          payload_ = ru.pnhub.widgetsdk.model.IsReadyToPayRequest.newBuilder((ru.pnhub.widgetsdk.model.IsReadyToPayRequest) payload_)
               .mergeFrom(value).buildPartial();
         } else {
           payload_ = value;
@@ -1332,36 +1332,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
      */
-    public IsReadyToPayRequest.Builder getIsReadyToPayRequestBuilder() {
+    public ru.pnhub.widgetsdk.model.IsReadyToPayRequest.Builder getIsReadyToPayRequestBuilder() {
       return getIsReadyToPayRequestFieldBuilder().getBuilder();
     }
     /**
      * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
      */
-    @Override
-    public IsReadyToPayRequestOrBuilder getIsReadyToPayRequestOrBuilder() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.IsReadyToPayRequestOrBuilder getIsReadyToPayRequestOrBuilder() {
       if ((payloadCase_ == 3) && (isReadyToPayRequestBuilder_ != null)) {
         return isReadyToPayRequestBuilder_.getMessageOrBuilder();
       } else {
         if (payloadCase_ == 3) {
-          return (IsReadyToPayRequest) payload_;
+          return (ru.pnhub.widgetsdk.model.IsReadyToPayRequest) payload_;
         }
-        return IsReadyToPayRequest.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.IsReadyToPayRequest.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.IsReadyToPayRequest is_ready_to_pay_request = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        IsReadyToPayRequest, IsReadyToPayRequest.Builder, IsReadyToPayRequestOrBuilder>
+        ru.pnhub.widgetsdk.model.IsReadyToPayRequest, ru.pnhub.widgetsdk.model.IsReadyToPayRequest.Builder, ru.pnhub.widgetsdk.model.IsReadyToPayRequestOrBuilder> 
         getIsReadyToPayRequestFieldBuilder() {
       if (isReadyToPayRequestBuilder_ == null) {
         if (!(payloadCase_ == 3)) {
-          payload_ = IsReadyToPayRequest.getDefaultInstance();
+          payload_ = ru.pnhub.widgetsdk.model.IsReadyToPayRequest.getDefaultInstance();
         }
         isReadyToPayRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            IsReadyToPayRequest, IsReadyToPayRequest.Builder, IsReadyToPayRequestOrBuilder>(
-                (IsReadyToPayRequest) payload_,
+            ru.pnhub.widgetsdk.model.IsReadyToPayRequest, ru.pnhub.widgetsdk.model.IsReadyToPayRequest.Builder, ru.pnhub.widgetsdk.model.IsReadyToPayRequestOrBuilder>(
+                (ru.pnhub.widgetsdk.model.IsReadyToPayRequest) payload_,
                 getParentForChildren(),
                 isClean());
         payload_ = null;
@@ -1372,12 +1372,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        PaymentDataRequest, PaymentDataRequest.Builder, PaymentDataRequestOrBuilder> paymentDataRequestBuilder_;
+        ru.pnhub.widgetsdk.model.PaymentDataRequest, ru.pnhub.widgetsdk.model.PaymentDataRequest.Builder, ru.pnhub.widgetsdk.model.PaymentDataRequestOrBuilder> paymentDataRequestBuilder_;
     /**
      * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
      * @return Whether the paymentDataRequest field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasPaymentDataRequest() {
       return payloadCase_ == 4;
     }
@@ -1385,24 +1385,24 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
      * @return The paymentDataRequest.
      */
-    @Override
-    public PaymentDataRequest getPaymentDataRequest() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.PaymentDataRequest getPaymentDataRequest() {
       if (paymentDataRequestBuilder_ == null) {
         if (payloadCase_ == 4) {
-          return (PaymentDataRequest) payload_;
+          return (ru.pnhub.widgetsdk.model.PaymentDataRequest) payload_;
         }
-        return PaymentDataRequest.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.PaymentDataRequest.getDefaultInstance();
       } else {
         if (payloadCase_ == 4) {
           return paymentDataRequestBuilder_.getMessage();
         }
-        return PaymentDataRequest.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.PaymentDataRequest.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
      */
-    public Builder setPaymentDataRequest(PaymentDataRequest value) {
+    public Builder setPaymentDataRequest(ru.pnhub.widgetsdk.model.PaymentDataRequest value) {
       if (paymentDataRequestBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1419,7 +1419,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
      */
     public Builder setPaymentDataRequest(
-        PaymentDataRequest.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.PaymentDataRequest.Builder builderForValue) {
       if (paymentDataRequestBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
@@ -1432,11 +1432,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
      */
-    public Builder mergePaymentDataRequest(PaymentDataRequest value) {
+    public Builder mergePaymentDataRequest(ru.pnhub.widgetsdk.model.PaymentDataRequest value) {
       if (paymentDataRequestBuilder_ == null) {
         if (payloadCase_ == 4 &&
-            payload_ != PaymentDataRequest.getDefaultInstance()) {
-          payload_ = PaymentDataRequest.newBuilder((PaymentDataRequest) payload_)
+            payload_ != ru.pnhub.widgetsdk.model.PaymentDataRequest.getDefaultInstance()) {
+          payload_ = ru.pnhub.widgetsdk.model.PaymentDataRequest.newBuilder((ru.pnhub.widgetsdk.model.PaymentDataRequest) payload_)
               .mergeFrom(value).buildPartial();
         } else {
           payload_ = value;
@@ -1473,36 +1473,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
      */
-    public PaymentDataRequest.Builder getPaymentDataRequestBuilder() {
+    public ru.pnhub.widgetsdk.model.PaymentDataRequest.Builder getPaymentDataRequestBuilder() {
       return getPaymentDataRequestFieldBuilder().getBuilder();
     }
     /**
      * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
      */
-    @Override
-    public PaymentDataRequestOrBuilder getPaymentDataRequestOrBuilder() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.PaymentDataRequestOrBuilder getPaymentDataRequestOrBuilder() {
       if ((payloadCase_ == 4) && (paymentDataRequestBuilder_ != null)) {
         return paymentDataRequestBuilder_.getMessageOrBuilder();
       } else {
         if (payloadCase_ == 4) {
-          return (PaymentDataRequest) payload_;
+          return (ru.pnhub.widgetsdk.model.PaymentDataRequest) payload_;
         }
-        return PaymentDataRequest.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.PaymentDataRequest.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.PaymentDataRequest payment_data_request = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        PaymentDataRequest, PaymentDataRequest.Builder, PaymentDataRequestOrBuilder>
+        ru.pnhub.widgetsdk.model.PaymentDataRequest, ru.pnhub.widgetsdk.model.PaymentDataRequest.Builder, ru.pnhub.widgetsdk.model.PaymentDataRequestOrBuilder> 
         getPaymentDataRequestFieldBuilder() {
       if (paymentDataRequestBuilder_ == null) {
         if (!(payloadCase_ == 4)) {
-          payload_ = PaymentDataRequest.getDefaultInstance();
+          payload_ = ru.pnhub.widgetsdk.model.PaymentDataRequest.getDefaultInstance();
         }
         paymentDataRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            PaymentDataRequest, PaymentDataRequest.Builder, PaymentDataRequestOrBuilder>(
-                (PaymentDataRequest) payload_,
+            ru.pnhub.widgetsdk.model.PaymentDataRequest, ru.pnhub.widgetsdk.model.PaymentDataRequest.Builder, ru.pnhub.widgetsdk.model.PaymentDataRequestOrBuilder>(
+                (ru.pnhub.widgetsdk.model.PaymentDataRequest) payload_,
                 getParentForChildren(),
                 isClean());
         payload_ = null;
@@ -1518,7 +1518,7 @@ private static final long serialVersionUID = 0L;
      */
     public boolean getIsReadyToPay() {
       if (payloadCase_ == 5) {
-        return (Boolean) payload_;
+        return (java.lang.Boolean) payload_;
       }
       return false;
     }
@@ -1547,12 +1547,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        PaymentData, PaymentData.Builder, PaymentDataOrBuilder> paymentDataBuilder_;
+        ru.pnhub.widgetsdk.model.PaymentData, ru.pnhub.widgetsdk.model.PaymentData.Builder, ru.pnhub.widgetsdk.model.PaymentDataOrBuilder> paymentDataBuilder_;
     /**
      * <code>.pb.PaymentData payment_data = 6;</code>
      * @return Whether the paymentData field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasPaymentData() {
       return payloadCase_ == 6;
     }
@@ -1560,24 +1560,24 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.PaymentData payment_data = 6;</code>
      * @return The paymentData.
      */
-    @Override
-    public PaymentData getPaymentData() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.PaymentData getPaymentData() {
       if (paymentDataBuilder_ == null) {
         if (payloadCase_ == 6) {
-          return (PaymentData) payload_;
+          return (ru.pnhub.widgetsdk.model.PaymentData) payload_;
         }
-        return PaymentData.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.PaymentData.getDefaultInstance();
       } else {
         if (payloadCase_ == 6) {
           return paymentDataBuilder_.getMessage();
         }
-        return PaymentData.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.PaymentData.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.PaymentData payment_data = 6;</code>
      */
-    public Builder setPaymentData(PaymentData value) {
+    public Builder setPaymentData(ru.pnhub.widgetsdk.model.PaymentData value) {
       if (paymentDataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1594,7 +1594,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.PaymentData payment_data = 6;</code>
      */
     public Builder setPaymentData(
-        PaymentData.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.PaymentData.Builder builderForValue) {
       if (paymentDataBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
@@ -1607,11 +1607,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.PaymentData payment_data = 6;</code>
      */
-    public Builder mergePaymentData(PaymentData value) {
+    public Builder mergePaymentData(ru.pnhub.widgetsdk.model.PaymentData value) {
       if (paymentDataBuilder_ == null) {
         if (payloadCase_ == 6 &&
-            payload_ != PaymentData.getDefaultInstance()) {
-          payload_ = PaymentData.newBuilder((PaymentData) payload_)
+            payload_ != ru.pnhub.widgetsdk.model.PaymentData.getDefaultInstance()) {
+          payload_ = ru.pnhub.widgetsdk.model.PaymentData.newBuilder((ru.pnhub.widgetsdk.model.PaymentData) payload_)
               .mergeFrom(value).buildPartial();
         } else {
           payload_ = value;
@@ -1648,36 +1648,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.PaymentData payment_data = 6;</code>
      */
-    public PaymentData.Builder getPaymentDataBuilder() {
+    public ru.pnhub.widgetsdk.model.PaymentData.Builder getPaymentDataBuilder() {
       return getPaymentDataFieldBuilder().getBuilder();
     }
     /**
      * <code>.pb.PaymentData payment_data = 6;</code>
      */
-    @Override
-    public PaymentDataOrBuilder getPaymentDataOrBuilder() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.PaymentDataOrBuilder getPaymentDataOrBuilder() {
       if ((payloadCase_ == 6) && (paymentDataBuilder_ != null)) {
         return paymentDataBuilder_.getMessageOrBuilder();
       } else {
         if (payloadCase_ == 6) {
-          return (PaymentData) payload_;
+          return (ru.pnhub.widgetsdk.model.PaymentData) payload_;
         }
-        return PaymentData.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.PaymentData.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.PaymentData payment_data = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        PaymentData, PaymentData.Builder, PaymentDataOrBuilder>
+        ru.pnhub.widgetsdk.model.PaymentData, ru.pnhub.widgetsdk.model.PaymentData.Builder, ru.pnhub.widgetsdk.model.PaymentDataOrBuilder> 
         getPaymentDataFieldBuilder() {
       if (paymentDataBuilder_ == null) {
         if (!(payloadCase_ == 6)) {
-          payload_ = PaymentData.getDefaultInstance();
+          payload_ = ru.pnhub.widgetsdk.model.PaymentData.getDefaultInstance();
         }
         paymentDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            PaymentData, PaymentData.Builder, PaymentDataOrBuilder>(
-                (PaymentData) payload_,
+            ru.pnhub.widgetsdk.model.PaymentData, ru.pnhub.widgetsdk.model.PaymentData.Builder, ru.pnhub.widgetsdk.model.PaymentDataOrBuilder>(
+                (ru.pnhub.widgetsdk.model.PaymentData) payload_,
                 getParentForChildren(),
                 isClean());
         payload_ = null;
@@ -1688,12 +1688,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        ApplePayPaymentDataRequest, ApplePayPaymentDataRequest.Builder, ApplePayPaymentDataRequestOrBuilder> applepayPaymentDataRequestBuilder_;
+        ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest, ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.Builder, ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequestOrBuilder> applepayPaymentDataRequestBuilder_;
     /**
      * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
      * @return Whether the applepayPaymentDataRequest field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasApplepayPaymentDataRequest() {
       return payloadCase_ == 7;
     }
@@ -1701,24 +1701,24 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
      * @return The applepayPaymentDataRequest.
      */
-    @Override
-    public ApplePayPaymentDataRequest getApplepayPaymentDataRequest() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest getApplepayPaymentDataRequest() {
       if (applepayPaymentDataRequestBuilder_ == null) {
         if (payloadCase_ == 7) {
-          return (ApplePayPaymentDataRequest) payload_;
+          return (ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) payload_;
         }
-        return ApplePayPaymentDataRequest.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.getDefaultInstance();
       } else {
         if (payloadCase_ == 7) {
           return applepayPaymentDataRequestBuilder_.getMessage();
         }
-        return ApplePayPaymentDataRequest.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
      */
-    public Builder setApplepayPaymentDataRequest(ApplePayPaymentDataRequest value) {
+    public Builder setApplepayPaymentDataRequest(ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest value) {
       if (applepayPaymentDataRequestBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1735,7 +1735,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
      */
     public Builder setApplepayPaymentDataRequest(
-        ApplePayPaymentDataRequest.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.Builder builderForValue) {
       if (applepayPaymentDataRequestBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
@@ -1748,11 +1748,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
      */
-    public Builder mergeApplepayPaymentDataRequest(ApplePayPaymentDataRequest value) {
+    public Builder mergeApplepayPaymentDataRequest(ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest value) {
       if (applepayPaymentDataRequestBuilder_ == null) {
         if (payloadCase_ == 7 &&
-            payload_ != ApplePayPaymentDataRequest.getDefaultInstance()) {
-          payload_ = ApplePayPaymentDataRequest.newBuilder((ApplePayPaymentDataRequest) payload_)
+            payload_ != ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.getDefaultInstance()) {
+          payload_ = ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.newBuilder((ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) payload_)
               .mergeFrom(value).buildPartial();
         } else {
           payload_ = value;
@@ -1789,36 +1789,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
      */
-    public ApplePayPaymentDataRequest.Builder getApplepayPaymentDataRequestBuilder() {
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.Builder getApplepayPaymentDataRequestBuilder() {
       return getApplepayPaymentDataRequestFieldBuilder().getBuilder();
     }
     /**
      * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
      */
-    @Override
-    public ApplePayPaymentDataRequestOrBuilder getApplepayPaymentDataRequestOrBuilder() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequestOrBuilder getApplepayPaymentDataRequestOrBuilder() {
       if ((payloadCase_ == 7) && (applepayPaymentDataRequestBuilder_ != null)) {
         return applepayPaymentDataRequestBuilder_.getMessageOrBuilder();
       } else {
         if (payloadCase_ == 7) {
-          return (ApplePayPaymentDataRequest) payload_;
+          return (ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) payload_;
         }
-        return ApplePayPaymentDataRequest.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.ApplePayPaymentDataRequest applepay_payment_data_request = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        ApplePayPaymentDataRequest, ApplePayPaymentDataRequest.Builder, ApplePayPaymentDataRequestOrBuilder>
+        ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest, ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.Builder, ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequestOrBuilder> 
         getApplepayPaymentDataRequestFieldBuilder() {
       if (applepayPaymentDataRequestBuilder_ == null) {
         if (!(payloadCase_ == 7)) {
-          payload_ = ApplePayPaymentDataRequest.getDefaultInstance();
+          payload_ = ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.getDefaultInstance();
         }
         applepayPaymentDataRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            ApplePayPaymentDataRequest, ApplePayPaymentDataRequest.Builder, ApplePayPaymentDataRequestOrBuilder>(
-                (ApplePayPaymentDataRequest) payload_,
+            ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest, ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest.Builder, ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequestOrBuilder>(
+                (ru.pnhub.widgetsdk.model.ApplePayPaymentDataRequest) payload_,
                 getParentForChildren(),
                 isClean());
         payload_ = null;
@@ -1829,12 +1829,12 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        ApplePayPaymentData, ApplePayPaymentData.Builder, ApplePayPaymentDataOrBuilder> applepayPaymentDataBuilder_;
+        ru.pnhub.widgetsdk.model.ApplePayPaymentData, ru.pnhub.widgetsdk.model.ApplePayPaymentData.Builder, ru.pnhub.widgetsdk.model.ApplePayPaymentDataOrBuilder> applepayPaymentDataBuilder_;
     /**
      * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
      * @return Whether the applepayPaymentData field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasApplepayPaymentData() {
       return payloadCase_ == 8;
     }
@@ -1842,24 +1842,24 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
      * @return The applepayPaymentData.
      */
-    @Override
-    public ApplePayPaymentData getApplepayPaymentData() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentData getApplepayPaymentData() {
       if (applepayPaymentDataBuilder_ == null) {
         if (payloadCase_ == 8) {
-          return (ApplePayPaymentData) payload_;
+          return (ru.pnhub.widgetsdk.model.ApplePayPaymentData) payload_;
         }
-        return ApplePayPaymentData.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.ApplePayPaymentData.getDefaultInstance();
       } else {
         if (payloadCase_ == 8) {
           return applepayPaymentDataBuilder_.getMessage();
         }
-        return ApplePayPaymentData.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.ApplePayPaymentData.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
      */
-    public Builder setApplepayPaymentData(ApplePayPaymentData value) {
+    public Builder setApplepayPaymentData(ru.pnhub.widgetsdk.model.ApplePayPaymentData value) {
       if (applepayPaymentDataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1876,7 +1876,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
      */
     public Builder setApplepayPaymentData(
-        ApplePayPaymentData.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.ApplePayPaymentData.Builder builderForValue) {
       if (applepayPaymentDataBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
@@ -1889,11 +1889,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
      */
-    public Builder mergeApplepayPaymentData(ApplePayPaymentData value) {
+    public Builder mergeApplepayPaymentData(ru.pnhub.widgetsdk.model.ApplePayPaymentData value) {
       if (applepayPaymentDataBuilder_ == null) {
         if (payloadCase_ == 8 &&
-            payload_ != ApplePayPaymentData.getDefaultInstance()) {
-          payload_ = ApplePayPaymentData.newBuilder((ApplePayPaymentData) payload_)
+            payload_ != ru.pnhub.widgetsdk.model.ApplePayPaymentData.getDefaultInstance()) {
+          payload_ = ru.pnhub.widgetsdk.model.ApplePayPaymentData.newBuilder((ru.pnhub.widgetsdk.model.ApplePayPaymentData) payload_)
               .mergeFrom(value).buildPartial();
         } else {
           payload_ = value;
@@ -1930,36 +1930,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
      */
-    public ApplePayPaymentData.Builder getApplepayPaymentDataBuilder() {
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentData.Builder getApplepayPaymentDataBuilder() {
       return getApplepayPaymentDataFieldBuilder().getBuilder();
     }
     /**
      * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
      */
-    @Override
-    public ApplePayPaymentDataOrBuilder getApplepayPaymentDataOrBuilder() {
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ApplePayPaymentDataOrBuilder getApplepayPaymentDataOrBuilder() {
       if ((payloadCase_ == 8) && (applepayPaymentDataBuilder_ != null)) {
         return applepayPaymentDataBuilder_.getMessageOrBuilder();
       } else {
         if (payloadCase_ == 8) {
-          return (ApplePayPaymentData) payload_;
+          return (ru.pnhub.widgetsdk.model.ApplePayPaymentData) payload_;
         }
-        return ApplePayPaymentData.getDefaultInstance();
+        return ru.pnhub.widgetsdk.model.ApplePayPaymentData.getDefaultInstance();
       }
     }
     /**
      * <code>.pb.ApplePayPaymentData applepay_payment_data = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        ApplePayPaymentData, ApplePayPaymentData.Builder, ApplePayPaymentDataOrBuilder>
+        ru.pnhub.widgetsdk.model.ApplePayPaymentData, ru.pnhub.widgetsdk.model.ApplePayPaymentData.Builder, ru.pnhub.widgetsdk.model.ApplePayPaymentDataOrBuilder> 
         getApplepayPaymentDataFieldBuilder() {
       if (applepayPaymentDataBuilder_ == null) {
         if (!(payloadCase_ == 8)) {
-          payload_ = ApplePayPaymentData.getDefaultInstance();
+          payload_ = ru.pnhub.widgetsdk.model.ApplePayPaymentData.getDefaultInstance();
         }
         applepayPaymentDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            ApplePayPaymentData, ApplePayPaymentData.Builder, ApplePayPaymentDataOrBuilder>(
-                (ApplePayPaymentData) payload_,
+            ru.pnhub.widgetsdk.model.ApplePayPaymentData, ru.pnhub.widgetsdk.model.ApplePayPaymentData.Builder, ru.pnhub.widgetsdk.model.ApplePayPaymentDataOrBuilder>(
+                (ru.pnhub.widgetsdk.model.ApplePayPaymentData) payload_,
                 getParentForChildren(),
                 isClean());
         payload_ = null;
@@ -1973,39 +1973,39 @@ private static final long serialVersionUID = 0L;
      * <code>string open_url_request = 9;</code>
      * @return The openUrlRequest.
      */
-    @Override
-    public String getOpenUrlRequest() {
-      Object ref = "";
+    @java.lang.Override
+    public java.lang.String getOpenUrlRequest() {
+      java.lang.Object ref = "";
       if (payloadCase_ == 9) {
         ref = payload_;
       }
-      if (!(ref instanceof String)) {
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (payloadCase_ == 9) {
           payload_ = s;
         }
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
      * <code>string open_url_request = 9;</code>
      * @return The bytes for openUrlRequest.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getOpenUrlRequestBytes() {
-      Object ref = "";
+      java.lang.Object ref = "";
       if (payloadCase_ == 9) {
         ref = payload_;
       }
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         if (payloadCase_ == 9) {
           payload_ = b;
         }
@@ -2020,7 +2020,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setOpenUrlRequest(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -2057,13 +2057,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -2074,18 +2074,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:pb.MobileEvent)
-  private static final MobileEvent DEFAULT_INSTANCE;
+  private static final ru.pnhub.widgetsdk.model.MobileEvent DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new MobileEvent();
+    DEFAULT_INSTANCE = new ru.pnhub.widgetsdk.model.MobileEvent();
   }
 
-  public static MobileEvent getDefaultInstance() {
+  public static ru.pnhub.widgetsdk.model.MobileEvent getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<MobileEvent>
       PARSER = new com.google.protobuf.AbstractParser<MobileEvent>() {
-    @Override
+    @java.lang.Override
     public MobileEvent parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2098,13 +2098,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<MobileEvent> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public MobileEvent getDefaultInstanceForType() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.MobileEvent getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
