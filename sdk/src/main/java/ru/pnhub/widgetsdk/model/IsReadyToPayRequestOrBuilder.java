@@ -22,12 +22,12 @@ public interface IsReadyToPayRequestOrBuilder extends
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
    */
-  java.util.List<PaymentMethodSpecification>
+  java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification> 
       getAllowedPaymentMethodsList();
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
    */
-  PaymentMethodSpecification getAllowedPaymentMethods(int index);
+  ru.pnhub.widgetsdk.model.PaymentMethodSpecification getAllowedPaymentMethods(int index);
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
    */
@@ -35,12 +35,12 @@ public interface IsReadyToPayRequestOrBuilder extends
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
    */
-  java.util.List<? extends PaymentMethodSpecificationOrBuilder>
+  java.util.List<? extends ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder> 
       getAllowedPaymentMethodsOrBuilderList();
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
    */
-  PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
+  ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
       int index);
 
   /**

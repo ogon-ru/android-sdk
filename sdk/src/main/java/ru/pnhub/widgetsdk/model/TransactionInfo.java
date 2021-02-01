@@ -27,14 +27,14 @@ private static final long serialVersionUID = 0L;
     displayItems_ = java.util.Collections.emptyList();
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new TransactionInfo();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -45,7 +45,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -59,60 +59,60 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             transactionId_ = s;
             break;
           }
           case 18: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             currencyCode_ = s;
             break;
           }
           case 26: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             countryCode_ = s;
             break;
           }
           case 34: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             totalPrice_ = s;
             break;
           }
           case 42: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             totalPriceLabel_ = s;
             break;
           }
           case 50: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             totalPriceStatus_ = s;
             break;
           }
           case 58: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             transactionNote_ = s;
             break;
           }
           case 66: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             checkoutOption_ = s;
             break;
           }
           case 74: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              displayItems_ = new java.util.ArrayList<DisplayItem>();
+              displayItems_ = new java.util.ArrayList<ru.pnhub.widgetsdk.model.DisplayItem>();
               mutable_bitField0_ |= 0x00000001;
             }
             displayItems_.add(
-                input.readMessage(DisplayItem.parser(), extensionRegistry));
+                input.readMessage(ru.pnhub.widgetsdk.model.DisplayItem.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -139,32 +139,32 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MobileModel.internal_static_pb_TransactionInfo_descriptor;
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_TransactionInfo_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MobileModel.internal_static_pb_TransactionInfo_fieldAccessorTable
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_TransactionInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            TransactionInfo.class, Builder.class);
+            ru.pnhub.widgetsdk.model.TransactionInfo.class, ru.pnhub.widgetsdk.model.TransactionInfo.Builder.class);
   }
 
   public static final int TRANSACTION_ID_FIELD_NUMBER = 1;
-  private volatile Object transactionId_;
+  private volatile java.lang.Object transactionId_;
   /**
    * <code>string transaction_id = 1;</code>
    * @return The transactionId.
    */
-  @Override
-  public String getTransactionId() {
-    Object ref = transactionId_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getTransactionId() {
+    java.lang.Object ref = transactionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       transactionId_ = s;
       return s;
     }
@@ -173,14 +173,14 @@ private static final long serialVersionUID = 0L;
    * <code>string transaction_id = 1;</code>
    * @return The bytes for transactionId.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTransactionIdBytes() {
-    Object ref = transactionId_;
-    if (ref instanceof String) {
+    java.lang.Object ref = transactionId_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       transactionId_ = b;
       return b;
     } else {
@@ -189,20 +189,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CURRENCY_CODE_FIELD_NUMBER = 2;
-  private volatile Object currencyCode_;
+  private volatile java.lang.Object currencyCode_;
   /**
    * <code>string currency_code = 2;</code>
    * @return The currencyCode.
    */
-  @Override
-  public String getCurrencyCode() {
-    Object ref = currencyCode_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getCurrencyCode() {
+    java.lang.Object ref = currencyCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       currencyCode_ = s;
       return s;
     }
@@ -211,14 +211,14 @@ private static final long serialVersionUID = 0L;
    * <code>string currency_code = 2;</code>
    * @return The bytes for currencyCode.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getCurrencyCodeBytes() {
-    Object ref = currencyCode_;
-    if (ref instanceof String) {
+    java.lang.Object ref = currencyCode_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       currencyCode_ = b;
       return b;
     } else {
@@ -227,20 +227,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COUNTRY_CODE_FIELD_NUMBER = 3;
-  private volatile Object countryCode_;
+  private volatile java.lang.Object countryCode_;
   /**
    * <code>string country_code = 3;</code>
    * @return The countryCode.
    */
-  @Override
-  public String getCountryCode() {
-    Object ref = countryCode_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getCountryCode() {
+    java.lang.Object ref = countryCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       countryCode_ = s;
       return s;
     }
@@ -249,14 +249,14 @@ private static final long serialVersionUID = 0L;
    * <code>string country_code = 3;</code>
    * @return The bytes for countryCode.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getCountryCodeBytes() {
-    Object ref = countryCode_;
-    if (ref instanceof String) {
+    java.lang.Object ref = countryCode_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       countryCode_ = b;
       return b;
     } else {
@@ -265,20 +265,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TOTAL_PRICE_FIELD_NUMBER = 4;
-  private volatile Object totalPrice_;
+  private volatile java.lang.Object totalPrice_;
   /**
    * <code>string total_price = 4;</code>
    * @return The totalPrice.
    */
-  @Override
-  public String getTotalPrice() {
-    Object ref = totalPrice_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getTotalPrice() {
+    java.lang.Object ref = totalPrice_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       totalPrice_ = s;
       return s;
     }
@@ -287,14 +287,14 @@ private static final long serialVersionUID = 0L;
    * <code>string total_price = 4;</code>
    * @return The bytes for totalPrice.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTotalPriceBytes() {
-    Object ref = totalPrice_;
-    if (ref instanceof String) {
+    java.lang.Object ref = totalPrice_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       totalPrice_ = b;
       return b;
     } else {
@@ -303,20 +303,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TOTAL_PRICE_LABEL_FIELD_NUMBER = 5;
-  private volatile Object totalPriceLabel_;
+  private volatile java.lang.Object totalPriceLabel_;
   /**
    * <code>string total_price_label = 5;</code>
    * @return The totalPriceLabel.
    */
-  @Override
-  public String getTotalPriceLabel() {
-    Object ref = totalPriceLabel_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getTotalPriceLabel() {
+    java.lang.Object ref = totalPriceLabel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       totalPriceLabel_ = s;
       return s;
     }
@@ -325,14 +325,14 @@ private static final long serialVersionUID = 0L;
    * <code>string total_price_label = 5;</code>
    * @return The bytes for totalPriceLabel.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTotalPriceLabelBytes() {
-    Object ref = totalPriceLabel_;
-    if (ref instanceof String) {
+    java.lang.Object ref = totalPriceLabel_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       totalPriceLabel_ = b;
       return b;
     } else {
@@ -341,20 +341,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TOTAL_PRICE_STATUS_FIELD_NUMBER = 6;
-  private volatile Object totalPriceStatus_;
+  private volatile java.lang.Object totalPriceStatus_;
   /**
    * <code>string total_price_status = 6;</code>
    * @return The totalPriceStatus.
    */
-  @Override
-  public String getTotalPriceStatus() {
-    Object ref = totalPriceStatus_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getTotalPriceStatus() {
+    java.lang.Object ref = totalPriceStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       totalPriceStatus_ = s;
       return s;
     }
@@ -363,14 +363,14 @@ private static final long serialVersionUID = 0L;
    * <code>string total_price_status = 6;</code>
    * @return The bytes for totalPriceStatus.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTotalPriceStatusBytes() {
-    Object ref = totalPriceStatus_;
-    if (ref instanceof String) {
+    java.lang.Object ref = totalPriceStatus_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       totalPriceStatus_ = b;
       return b;
     } else {
@@ -379,20 +379,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TRANSACTION_NOTE_FIELD_NUMBER = 7;
-  private volatile Object transactionNote_;
+  private volatile java.lang.Object transactionNote_;
   /**
    * <code>string transaction_note = 7;</code>
    * @return The transactionNote.
    */
-  @Override
-  public String getTransactionNote() {
-    Object ref = transactionNote_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getTransactionNote() {
+    java.lang.Object ref = transactionNote_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       transactionNote_ = s;
       return s;
     }
@@ -401,14 +401,14 @@ private static final long serialVersionUID = 0L;
    * <code>string transaction_note = 7;</code>
    * @return The bytes for transactionNote.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTransactionNoteBytes() {
-    Object ref = transactionNote_;
-    if (ref instanceof String) {
+    java.lang.Object ref = transactionNote_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       transactionNote_ = b;
       return b;
     } else {
@@ -417,20 +417,20 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CHECKOUT_OPTION_FIELD_NUMBER = 8;
-  private volatile Object checkoutOption_;
+  private volatile java.lang.Object checkoutOption_;
   /**
    * <code>string checkout_option = 8;</code>
    * @return The checkoutOption.
    */
-  @Override
-  public String getCheckoutOption() {
-    Object ref = checkoutOption_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getCheckoutOption() {
+    java.lang.Object ref = checkoutOption_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       checkoutOption_ = s;
       return s;
     }
@@ -439,14 +439,14 @@ private static final long serialVersionUID = 0L;
    * <code>string checkout_option = 8;</code>
    * @return The bytes for checkoutOption.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getCheckoutOptionBytes() {
-    Object ref = checkoutOption_;
-    if (ref instanceof String) {
+    java.lang.Object ref = checkoutOption_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       checkoutOption_ = b;
       return b;
     } else {
@@ -455,47 +455,47 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DISPLAY_ITEMS_FIELD_NUMBER = 9;
-  private java.util.List<DisplayItem> displayItems_;
+  private java.util.List<ru.pnhub.widgetsdk.model.DisplayItem> displayItems_;
   /**
    * <code>repeated .pb.DisplayItem display_items = 9;</code>
    */
-  @Override
-  public java.util.List<DisplayItem> getDisplayItemsList() {
+  @java.lang.Override
+  public java.util.List<ru.pnhub.widgetsdk.model.DisplayItem> getDisplayItemsList() {
     return displayItems_;
   }
   /**
    * <code>repeated .pb.DisplayItem display_items = 9;</code>
    */
-  @Override
-  public java.util.List<? extends DisplayItemOrBuilder>
+  @java.lang.Override
+  public java.util.List<? extends ru.pnhub.widgetsdk.model.DisplayItemOrBuilder> 
       getDisplayItemsOrBuilderList() {
     return displayItems_;
   }
   /**
    * <code>repeated .pb.DisplayItem display_items = 9;</code>
    */
-  @Override
+  @java.lang.Override
   public int getDisplayItemsCount() {
     return displayItems_.size();
   }
   /**
    * <code>repeated .pb.DisplayItem display_items = 9;</code>
    */
-  @Override
-  public DisplayItem getDisplayItems(int index) {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.DisplayItem getDisplayItems(int index) {
     return displayItems_.get(index);
   }
   /**
    * <code>repeated .pb.DisplayItem display_items = 9;</code>
    */
-  @Override
-  public DisplayItemOrBuilder getDisplayItemsOrBuilder(
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.DisplayItemOrBuilder getDisplayItemsOrBuilder(
       int index) {
     return displayItems_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -505,7 +505,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getTransactionIdBytes().isEmpty()) {
@@ -538,7 +538,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -577,15 +577,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof TransactionInfo)) {
+    if (!(obj instanceof ru.pnhub.widgetsdk.model.TransactionInfo)) {
       return super.equals(obj);
     }
-    TransactionInfo other = (TransactionInfo) obj;
+    ru.pnhub.widgetsdk.model.TransactionInfo other = (ru.pnhub.widgetsdk.model.TransactionInfo) obj;
 
     if (!getTransactionId()
         .equals(other.getTransactionId())) return false;
@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -641,69 +641,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static TransactionInfo parseFrom(
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static TransactionInfo parseFrom(
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static TransactionInfo parseFrom(
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static TransactionInfo parseFrom(
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static TransactionInfo parseFrom(byte[] data)
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static TransactionInfo parseFrom(
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static TransactionInfo parseFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static TransactionInfo parseFrom(
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static TransactionInfo parseDelimitedFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static TransactionInfo parseDelimitedFrom(
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static TransactionInfo parseFrom(
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static TransactionInfo parseFrom(
+  public static ru.pnhub.widgetsdk.model.TransactionInfo parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -711,23 +711,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(TransactionInfo prototype) {
+  public static Builder newBuilder(ru.pnhub.widgetsdk.model.TransactionInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -737,18 +737,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:pb.TransactionInfo)
-      TransactionInfoOrBuilder {
+      ru.pnhub.widgetsdk.model.TransactionInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MobileModel.internal_static_pb_TransactionInfo_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_TransactionInfo_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MobileModel.internal_static_pb_TransactionInfo_fieldAccessorTable
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_TransactionInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              TransactionInfo.class, Builder.class);
+              ru.pnhub.widgetsdk.model.TransactionInfo.class, ru.pnhub.widgetsdk.model.TransactionInfo.Builder.class);
     }
 
     // Construct using ru.pnhub.widgetsdk.model.TransactionInfo.newBuilder()
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
         getDisplayItemsFieldBuilder();
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       transactionId_ = "";
@@ -795,29 +795,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MobileModel.internal_static_pb_TransactionInfo_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_TransactionInfo_descriptor;
     }
 
-    @Override
-    public TransactionInfo getDefaultInstanceForType() {
-      return TransactionInfo.getDefaultInstance();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.TransactionInfo getDefaultInstanceForType() {
+      return ru.pnhub.widgetsdk.model.TransactionInfo.getDefaultInstance();
     }
 
-    @Override
-    public TransactionInfo build() {
-      TransactionInfo result = buildPartial();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.TransactionInfo build() {
+      ru.pnhub.widgetsdk.model.TransactionInfo result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public TransactionInfo buildPartial() {
-      TransactionInfo result = new TransactionInfo(this);
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.TransactionInfo buildPartial() {
+      ru.pnhub.widgetsdk.model.TransactionInfo result = new ru.pnhub.widgetsdk.model.TransactionInfo(this);
       int from_bitField0_ = bitField0_;
       result.transactionId_ = transactionId_;
       result.currencyCode_ = currencyCode_;
@@ -840,50 +840,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof TransactionInfo) {
-        return mergeFrom((TransactionInfo)other);
+      if (other instanceof ru.pnhub.widgetsdk.model.TransactionInfo) {
+        return mergeFrom((ru.pnhub.widgetsdk.model.TransactionInfo)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(TransactionInfo other) {
-      if (other == TransactionInfo.getDefaultInstance()) return this;
+    public Builder mergeFrom(ru.pnhub.widgetsdk.model.TransactionInfo other) {
+      if (other == ru.pnhub.widgetsdk.model.TransactionInfo.getDefaultInstance()) return this;
       if (!other.getTransactionId().isEmpty()) {
         transactionId_ = other.transactionId_;
         onChanged();
@@ -947,21 +947,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      TransactionInfo parsedMessage = null;
+      ru.pnhub.widgetsdk.model.TransactionInfo parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (TransactionInfo) e.getUnfinishedMessage();
+        parsedMessage = (ru.pnhub.widgetsdk.model.TransactionInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -972,21 +972,21 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private Object transactionId_ = "";
+    private java.lang.Object transactionId_ = "";
     /**
      * <code>string transaction_id = 1;</code>
      * @return The transactionId.
      */
-    public String getTransactionId() {
-      Object ref = transactionId_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getTransactionId() {
+      java.lang.Object ref = transactionId_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         transactionId_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -995,11 +995,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTransactionIdBytes() {
-      Object ref = transactionId_;
+      java.lang.Object ref = transactionId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         transactionId_ = b;
         return b;
       } else {
@@ -1012,7 +1012,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTransactionId(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1048,21 +1048,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object currencyCode_ = "";
+    private java.lang.Object currencyCode_ = "";
     /**
      * <code>string currency_code = 2;</code>
      * @return The currencyCode.
      */
-    public String getCurrencyCode() {
-      Object ref = currencyCode_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getCurrencyCode() {
+      java.lang.Object ref = currencyCode_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         currencyCode_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1071,11 +1071,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCurrencyCodeBytes() {
-      Object ref = currencyCode_;
+      java.lang.Object ref = currencyCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         currencyCode_ = b;
         return b;
       } else {
@@ -1088,7 +1088,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setCurrencyCode(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1124,21 +1124,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object countryCode_ = "";
+    private java.lang.Object countryCode_ = "";
     /**
      * <code>string country_code = 3;</code>
      * @return The countryCode.
      */
-    public String getCountryCode() {
-      Object ref = countryCode_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getCountryCode() {
+      java.lang.Object ref = countryCode_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         countryCode_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1147,11 +1147,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCountryCodeBytes() {
-      Object ref = countryCode_;
+      java.lang.Object ref = countryCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         countryCode_ = b;
         return b;
       } else {
@@ -1164,7 +1164,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setCountryCode(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1200,21 +1200,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object totalPrice_ = "";
+    private java.lang.Object totalPrice_ = "";
     /**
      * <code>string total_price = 4;</code>
      * @return The totalPrice.
      */
-    public String getTotalPrice() {
-      Object ref = totalPrice_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getTotalPrice() {
+      java.lang.Object ref = totalPrice_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         totalPrice_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1223,11 +1223,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTotalPriceBytes() {
-      Object ref = totalPrice_;
+      java.lang.Object ref = totalPrice_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         totalPrice_ = b;
         return b;
       } else {
@@ -1240,7 +1240,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTotalPrice(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1276,21 +1276,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object totalPriceLabel_ = "";
+    private java.lang.Object totalPriceLabel_ = "";
     /**
      * <code>string total_price_label = 5;</code>
      * @return The totalPriceLabel.
      */
-    public String getTotalPriceLabel() {
-      Object ref = totalPriceLabel_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getTotalPriceLabel() {
+      java.lang.Object ref = totalPriceLabel_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         totalPriceLabel_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1299,11 +1299,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTotalPriceLabelBytes() {
-      Object ref = totalPriceLabel_;
+      java.lang.Object ref = totalPriceLabel_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         totalPriceLabel_ = b;
         return b;
       } else {
@@ -1316,7 +1316,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTotalPriceLabel(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1352,21 +1352,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object totalPriceStatus_ = "";
+    private java.lang.Object totalPriceStatus_ = "";
     /**
      * <code>string total_price_status = 6;</code>
      * @return The totalPriceStatus.
      */
-    public String getTotalPriceStatus() {
-      Object ref = totalPriceStatus_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getTotalPriceStatus() {
+      java.lang.Object ref = totalPriceStatus_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         totalPriceStatus_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1375,11 +1375,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTotalPriceStatusBytes() {
-      Object ref = totalPriceStatus_;
+      java.lang.Object ref = totalPriceStatus_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         totalPriceStatus_ = b;
         return b;
       } else {
@@ -1392,7 +1392,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTotalPriceStatus(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1428,21 +1428,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object transactionNote_ = "";
+    private java.lang.Object transactionNote_ = "";
     /**
      * <code>string transaction_note = 7;</code>
      * @return The transactionNote.
      */
-    public String getTransactionNote() {
-      Object ref = transactionNote_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getTransactionNote() {
+      java.lang.Object ref = transactionNote_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         transactionNote_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1451,11 +1451,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTransactionNoteBytes() {
-      Object ref = transactionNote_;
+      java.lang.Object ref = transactionNote_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         transactionNote_ = b;
         return b;
       } else {
@@ -1468,7 +1468,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTransactionNote(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1504,21 +1504,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object checkoutOption_ = "";
+    private java.lang.Object checkoutOption_ = "";
     /**
      * <code>string checkout_option = 8;</code>
      * @return The checkoutOption.
      */
-    public String getCheckoutOption() {
-      Object ref = checkoutOption_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getCheckoutOption() {
+      java.lang.Object ref = checkoutOption_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         checkoutOption_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1527,11 +1527,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCheckoutOptionBytes() {
-      Object ref = checkoutOption_;
+      java.lang.Object ref = checkoutOption_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         checkoutOption_ = b;
         return b;
       } else {
@@ -1544,7 +1544,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setCheckoutOption(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1580,22 +1580,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<DisplayItem> displayItems_ =
+    private java.util.List<ru.pnhub.widgetsdk.model.DisplayItem> displayItems_ =
       java.util.Collections.emptyList();
     private void ensureDisplayItemsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        displayItems_ = new java.util.ArrayList<DisplayItem>(displayItems_);
+        displayItems_ = new java.util.ArrayList<ru.pnhub.widgetsdk.model.DisplayItem>(displayItems_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        DisplayItem, DisplayItem.Builder, DisplayItemOrBuilder> displayItemsBuilder_;
+        ru.pnhub.widgetsdk.model.DisplayItem, ru.pnhub.widgetsdk.model.DisplayItem.Builder, ru.pnhub.widgetsdk.model.DisplayItemOrBuilder> displayItemsBuilder_;
 
     /**
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
-    public java.util.List<DisplayItem> getDisplayItemsList() {
+    public java.util.List<ru.pnhub.widgetsdk.model.DisplayItem> getDisplayItemsList() {
       if (displayItemsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(displayItems_);
       } else {
@@ -1615,7 +1615,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
-    public DisplayItem getDisplayItems(int index) {
+    public ru.pnhub.widgetsdk.model.DisplayItem getDisplayItems(int index) {
       if (displayItemsBuilder_ == null) {
         return displayItems_.get(index);
       } else {
@@ -1626,7 +1626,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
     public Builder setDisplayItems(
-        int index, DisplayItem value) {
+        int index, ru.pnhub.widgetsdk.model.DisplayItem value) {
       if (displayItemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1643,7 +1643,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
     public Builder setDisplayItems(
-        int index, DisplayItem.Builder builderForValue) {
+        int index, ru.pnhub.widgetsdk.model.DisplayItem.Builder builderForValue) {
       if (displayItemsBuilder_ == null) {
         ensureDisplayItemsIsMutable();
         displayItems_.set(index, builderForValue.build());
@@ -1656,7 +1656,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
-    public Builder addDisplayItems(DisplayItem value) {
+    public Builder addDisplayItems(ru.pnhub.widgetsdk.model.DisplayItem value) {
       if (displayItemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1673,7 +1673,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
     public Builder addDisplayItems(
-        int index, DisplayItem value) {
+        int index, ru.pnhub.widgetsdk.model.DisplayItem value) {
       if (displayItemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1690,7 +1690,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
     public Builder addDisplayItems(
-        DisplayItem.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.DisplayItem.Builder builderForValue) {
       if (displayItemsBuilder_ == null) {
         ensureDisplayItemsIsMutable();
         displayItems_.add(builderForValue.build());
@@ -1704,7 +1704,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
     public Builder addDisplayItems(
-        int index, DisplayItem.Builder builderForValue) {
+        int index, ru.pnhub.widgetsdk.model.DisplayItem.Builder builderForValue) {
       if (displayItemsBuilder_ == null) {
         ensureDisplayItemsIsMutable();
         displayItems_.add(index, builderForValue.build());
@@ -1718,7 +1718,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
     public Builder addAllDisplayItems(
-        Iterable<? extends DisplayItem> values) {
+        java.lang.Iterable<? extends ru.pnhub.widgetsdk.model.DisplayItem> values) {
       if (displayItemsBuilder_ == null) {
         ensureDisplayItemsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1758,14 +1758,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
-    public DisplayItem.Builder getDisplayItemsBuilder(
+    public ru.pnhub.widgetsdk.model.DisplayItem.Builder getDisplayItemsBuilder(
         int index) {
       return getDisplayItemsFieldBuilder().getBuilder(index);
     }
     /**
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
-    public DisplayItemOrBuilder getDisplayItemsOrBuilder(
+    public ru.pnhub.widgetsdk.model.DisplayItemOrBuilder getDisplayItemsOrBuilder(
         int index) {
       if (displayItemsBuilder_ == null) {
         return displayItems_.get(index);  } else {
@@ -1775,7 +1775,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
-    public java.util.List<? extends DisplayItemOrBuilder>
+    public java.util.List<? extends ru.pnhub.widgetsdk.model.DisplayItemOrBuilder> 
          getDisplayItemsOrBuilderList() {
       if (displayItemsBuilder_ != null) {
         return displayItemsBuilder_.getMessageOrBuilderList();
@@ -1786,31 +1786,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
-    public DisplayItem.Builder addDisplayItemsBuilder() {
+    public ru.pnhub.widgetsdk.model.DisplayItem.Builder addDisplayItemsBuilder() {
       return getDisplayItemsFieldBuilder().addBuilder(
-          DisplayItem.getDefaultInstance());
+          ru.pnhub.widgetsdk.model.DisplayItem.getDefaultInstance());
     }
     /**
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
-    public DisplayItem.Builder addDisplayItemsBuilder(
+    public ru.pnhub.widgetsdk.model.DisplayItem.Builder addDisplayItemsBuilder(
         int index) {
       return getDisplayItemsFieldBuilder().addBuilder(
-          index, DisplayItem.getDefaultInstance());
+          index, ru.pnhub.widgetsdk.model.DisplayItem.getDefaultInstance());
     }
     /**
      * <code>repeated .pb.DisplayItem display_items = 9;</code>
      */
-    public java.util.List<DisplayItem.Builder>
+    public java.util.List<ru.pnhub.widgetsdk.model.DisplayItem.Builder> 
          getDisplayItemsBuilderList() {
       return getDisplayItemsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        DisplayItem, DisplayItem.Builder, DisplayItemOrBuilder>
+        ru.pnhub.widgetsdk.model.DisplayItem, ru.pnhub.widgetsdk.model.DisplayItem.Builder, ru.pnhub.widgetsdk.model.DisplayItemOrBuilder> 
         getDisplayItemsFieldBuilder() {
       if (displayItemsBuilder_ == null) {
         displayItemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            DisplayItem, DisplayItem.Builder, DisplayItemOrBuilder>(
+            ru.pnhub.widgetsdk.model.DisplayItem, ru.pnhub.widgetsdk.model.DisplayItem.Builder, ru.pnhub.widgetsdk.model.DisplayItemOrBuilder>(
                 displayItems_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -1819,13 +1819,13 @@ private static final long serialVersionUID = 0L;
       }
       return displayItemsBuilder_;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1836,18 +1836,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:pb.TransactionInfo)
-  private static final TransactionInfo DEFAULT_INSTANCE;
+  private static final ru.pnhub.widgetsdk.model.TransactionInfo DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new TransactionInfo();
+    DEFAULT_INSTANCE = new ru.pnhub.widgetsdk.model.TransactionInfo();
   }
 
-  public static TransactionInfo getDefaultInstance() {
+  public static ru.pnhub.widgetsdk.model.TransactionInfo getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<TransactionInfo>
       PARSER = new com.google.protobuf.AbstractParser<TransactionInfo>() {
-    @Override
+    @java.lang.Override
     public TransactionInfo parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1860,13 +1860,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<TransactionInfo> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public TransactionInfo getDefaultInstanceForType() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.TransactionInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

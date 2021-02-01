@@ -11,7 +11,7 @@ public interface CardNetworkParametersOrBuilder extends
    * <code>string card_network = 1;</code>
    * @return The cardNetwork.
    */
-  String getCardNetwork();
+  java.lang.String getCardNetwork();
   /**
    * <code>string card_network = 1;</code>
    * @return The bytes for cardNetwork.
@@ -23,7 +23,7 @@ public interface CardNetworkParametersOrBuilder extends
    * <code>string acquirer_bin = 2;</code>
    * @return The acquirerBin.
    */
-  String getAcquirerBin();
+  java.lang.String getAcquirerBin();
   /**
    * <code>string acquirer_bin = 2;</code>
    * @return The bytes for acquirerBin.
@@ -35,7 +35,7 @@ public interface CardNetworkParametersOrBuilder extends
    * <code>string acquirer_merchant_id = 3;</code>
    * @return The acquirerMerchantId.
    */
-  String getAcquirerMerchantId();
+  java.lang.String getAcquirerMerchantId();
   /**
    * <code>string acquirer_merchant_id = 3;</code>
    * @return The bytes for acquirerMerchantId.

@@ -19,14 +19,14 @@ private static final long serialVersionUID = 0L;
     allowedPaymentMethods_ = java.util.Collections.emptyList();
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new PaymentDataRequest();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -51,11 +51,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            MerchantInfo.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.MerchantInfo.Builder subBuilder = null;
             if (merchantInfo_ != null) {
               subBuilder = merchantInfo_.toBuilder();
             }
-            merchantInfo_ = input.readMessage(MerchantInfo.parser(), extensionRegistry);
+            merchantInfo_ = input.readMessage(ru.pnhub.widgetsdk.model.MerchantInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(merchantInfo_);
               merchantInfo_ = subBuilder.buildPartial();
@@ -84,11 +84,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            ShippingAddressParameters.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.ShippingAddressParameters.Builder subBuilder = null;
             if (shippingAddressParameters_ != null) {
               subBuilder = shippingAddressParameters_.toBuilder();
             }
-            shippingAddressParameters_ = input.readMessage(ShippingAddressParameters.parser(), extensionRegistry);
+            shippingAddressParameters_ = input.readMessage(ru.pnhub.widgetsdk.model.ShippingAddressParameters.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(shippingAddressParameters_);
               shippingAddressParameters_ = subBuilder.buildPartial();
@@ -98,19 +98,19 @@ private static final long serialVersionUID = 0L;
           }
           case 58: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              allowedPaymentMethods_ = new java.util.ArrayList<PaymentMethodSpecification>();
+              allowedPaymentMethods_ = new java.util.ArrayList<ru.pnhub.widgetsdk.model.PaymentMethodSpecification>();
               mutable_bitField0_ |= 0x00000001;
             }
             allowedPaymentMethods_.add(
-                input.readMessage(PaymentMethodSpecification.parser(), extensionRegistry));
+                input.readMessage(ru.pnhub.widgetsdk.model.PaymentMethodSpecification.parser(), extensionRegistry));
             break;
           }
           case 66: {
-            TransactionInfo.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.TransactionInfo.Builder subBuilder = null;
             if (transactionInfo_ != null) {
               subBuilder = transactionInfo_.toBuilder();
             }
-            transactionInfo_ = input.readMessage(TransactionInfo.parser(), extensionRegistry);
+            transactionInfo_ = input.readMessage(ru.pnhub.widgetsdk.model.TransactionInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(transactionInfo_);
               transactionInfo_ = subBuilder.buildPartial();
@@ -124,11 +124,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 82: {
-            ShippingOptionParameters.Builder subBuilder = null;
+            ru.pnhub.widgetsdk.model.ShippingOptionParameters.Builder subBuilder = null;
             if (shippingOptionParameters_ != null) {
               subBuilder = shippingOptionParameters_.toBuilder();
             }
-            shippingOptionParameters_ = input.readMessage(ShippingOptionParameters.parser(), extensionRegistry);
+            shippingOptionParameters_ = input.readMessage(ru.pnhub.widgetsdk.model.ShippingOptionParameters.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(shippingOptionParameters_);
               shippingOptionParameters_ = subBuilder.buildPartial();
@@ -160,24 +160,24 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MobileModel.internal_static_pb_PaymentDataRequest_descriptor;
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_PaymentDataRequest_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MobileModel.internal_static_pb_PaymentDataRequest_fieldAccessorTable
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_PaymentDataRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            PaymentDataRequest.class, Builder.class);
+            ru.pnhub.widgetsdk.model.PaymentDataRequest.class, ru.pnhub.widgetsdk.model.PaymentDataRequest.Builder.class);
   }
 
   public static final int MERCHANT_INFO_FIELD_NUMBER = 1;
-  private MerchantInfo merchantInfo_;
+  private ru.pnhub.widgetsdk.model.MerchantInfo merchantInfo_;
   /**
    * <code>.pb.MerchantInfo merchant_info = 1;</code>
    * @return Whether the merchantInfo field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasMerchantInfo() {
     return merchantInfo_ != null;
   }
@@ -185,15 +185,15 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.MerchantInfo merchant_info = 1;</code>
    * @return The merchantInfo.
    */
-  @Override
-  public MerchantInfo getMerchantInfo() {
-    return merchantInfo_ == null ? MerchantInfo.getDefaultInstance() : merchantInfo_;
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.MerchantInfo getMerchantInfo() {
+    return merchantInfo_ == null ? ru.pnhub.widgetsdk.model.MerchantInfo.getDefaultInstance() : merchantInfo_;
   }
   /**
    * <code>.pb.MerchantInfo merchant_info = 1;</code>
    */
-  @Override
-  public MerchantInfoOrBuilder getMerchantInfoOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.MerchantInfoOrBuilder getMerchantInfoOrBuilder() {
     return getMerchantInfo();
   }
 
@@ -203,7 +203,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 api_version = 2;</code>
    * @return The apiVersion.
    */
-  @Override
+  @java.lang.Override
   public int getApiVersion() {
     return apiVersion_;
   }
@@ -214,7 +214,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 api_version_minor = 3;</code>
    * @return The apiVersionMinor.
    */
-  @Override
+  @java.lang.Override
   public int getApiVersionMinor() {
     return apiVersionMinor_;
   }
@@ -225,7 +225,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool email_required = 4;</code>
    * @return The emailRequired.
    */
-  @Override
+  @java.lang.Override
   public boolean getEmailRequired() {
     return emailRequired_;
   }
@@ -236,18 +236,18 @@ private static final long serialVersionUID = 0L;
    * <code>bool shipping_address_required = 5;</code>
    * @return The shippingAddressRequired.
    */
-  @Override
+  @java.lang.Override
   public boolean getShippingAddressRequired() {
     return shippingAddressRequired_;
   }
 
   public static final int SHIPPING_ADDRESS_PARAMETERS_FIELD_NUMBER = 6;
-  private ShippingAddressParameters shippingAddressParameters_;
+  private ru.pnhub.widgetsdk.model.ShippingAddressParameters shippingAddressParameters_;
   /**
    * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
    * @return Whether the shippingAddressParameters field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasShippingAddressParameters() {
     return shippingAddressParameters_ != null;
   }
@@ -255,65 +255,65 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
    * @return The shippingAddressParameters.
    */
-  @Override
-  public ShippingAddressParameters getShippingAddressParameters() {
-    return shippingAddressParameters_ == null ? ShippingAddressParameters.getDefaultInstance() : shippingAddressParameters_;
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ShippingAddressParameters getShippingAddressParameters() {
+    return shippingAddressParameters_ == null ? ru.pnhub.widgetsdk.model.ShippingAddressParameters.getDefaultInstance() : shippingAddressParameters_;
   }
   /**
    * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
    */
-  @Override
-  public ShippingAddressParametersOrBuilder getShippingAddressParametersOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ShippingAddressParametersOrBuilder getShippingAddressParametersOrBuilder() {
     return getShippingAddressParameters();
   }
 
   public static final int ALLOWED_PAYMENT_METHODS_FIELD_NUMBER = 7;
-  private java.util.List<PaymentMethodSpecification> allowedPaymentMethods_;
+  private java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification> allowedPaymentMethods_;
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
    */
-  @Override
-  public java.util.List<PaymentMethodSpecification> getAllowedPaymentMethodsList() {
+  @java.lang.Override
+  public java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification> getAllowedPaymentMethodsList() {
     return allowedPaymentMethods_;
   }
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
    */
-  @Override
-  public java.util.List<? extends PaymentMethodSpecificationOrBuilder>
+  @java.lang.Override
+  public java.util.List<? extends ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder> 
       getAllowedPaymentMethodsOrBuilderList() {
     return allowedPaymentMethods_;
   }
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
    */
-  @Override
+  @java.lang.Override
   public int getAllowedPaymentMethodsCount() {
     return allowedPaymentMethods_.size();
   }
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
    */
-  @Override
-  public PaymentMethodSpecification getAllowedPaymentMethods(int index) {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.PaymentMethodSpecification getAllowedPaymentMethods(int index) {
     return allowedPaymentMethods_.get(index);
   }
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
    */
-  @Override
-  public PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
       int index) {
     return allowedPaymentMethods_.get(index);
   }
 
   public static final int TRANSACTION_INFO_FIELD_NUMBER = 8;
-  private TransactionInfo transactionInfo_;
+  private ru.pnhub.widgetsdk.model.TransactionInfo transactionInfo_;
   /**
    * <code>.pb.TransactionInfo transaction_info = 8;</code>
    * @return Whether the transactionInfo field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasTransactionInfo() {
     return transactionInfo_ != null;
   }
@@ -321,15 +321,15 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.TransactionInfo transaction_info = 8;</code>
    * @return The transactionInfo.
    */
-  @Override
-  public TransactionInfo getTransactionInfo() {
-    return transactionInfo_ == null ? TransactionInfo.getDefaultInstance() : transactionInfo_;
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.TransactionInfo getTransactionInfo() {
+    return transactionInfo_ == null ? ru.pnhub.widgetsdk.model.TransactionInfo.getDefaultInstance() : transactionInfo_;
   }
   /**
    * <code>.pb.TransactionInfo transaction_info = 8;</code>
    */
-  @Override
-  public TransactionInfoOrBuilder getTransactionInfoOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.TransactionInfoOrBuilder getTransactionInfoOrBuilder() {
     return getTransactionInfo();
   }
 
@@ -339,18 +339,18 @@ private static final long serialVersionUID = 0L;
    * <code>bool shipping_option_required = 9;</code>
    * @return The shippingOptionRequired.
    */
-  @Override
+  @java.lang.Override
   public boolean getShippingOptionRequired() {
     return shippingOptionRequired_;
   }
 
   public static final int SHIPPING_OPTION_PARAMETERS_FIELD_NUMBER = 10;
-  private ShippingOptionParameters shippingOptionParameters_;
+  private ru.pnhub.widgetsdk.model.ShippingOptionParameters shippingOptionParameters_;
   /**
    * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
    * @return Whether the shippingOptionParameters field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasShippingOptionParameters() {
     return shippingOptionParameters_ != null;
   }
@@ -358,20 +358,20 @@ private static final long serialVersionUID = 0L;
    * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
    * @return The shippingOptionParameters.
    */
-  @Override
-  public ShippingOptionParameters getShippingOptionParameters() {
-    return shippingOptionParameters_ == null ? ShippingOptionParameters.getDefaultInstance() : shippingOptionParameters_;
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ShippingOptionParameters getShippingOptionParameters() {
+    return shippingOptionParameters_ == null ? ru.pnhub.widgetsdk.model.ShippingOptionParameters.getDefaultInstance() : shippingOptionParameters_;
   }
   /**
    * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
    */
-  @Override
-  public ShippingOptionParametersOrBuilder getShippingOptionParametersOrBuilder() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ShippingOptionParametersOrBuilder getShippingOptionParametersOrBuilder() {
     return getShippingOptionParameters();
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -381,7 +381,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (merchantInfo_ != null) {
@@ -417,7 +417,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -468,15 +468,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof PaymentDataRequest)) {
+    if (!(obj instanceof ru.pnhub.widgetsdk.model.PaymentDataRequest)) {
       return super.equals(obj);
     }
-    PaymentDataRequest other = (PaymentDataRequest) obj;
+    ru.pnhub.widgetsdk.model.PaymentDataRequest other = (ru.pnhub.widgetsdk.model.PaymentDataRequest) obj;
 
     if (hasMerchantInfo() != other.hasMerchantInfo()) return false;
     if (hasMerchantInfo()) {
@@ -514,7 +514,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -559,69 +559,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static PaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static PaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static PaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static PaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static PaymentDataRequest parseFrom(byte[] data)
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static PaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static PaymentDataRequest parseFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static PaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static PaymentDataRequest parseDelimitedFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static PaymentDataRequest parseDelimitedFrom(
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static PaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static PaymentDataRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -629,23 +629,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(PaymentDataRequest prototype) {
+  public static Builder newBuilder(ru.pnhub.widgetsdk.model.PaymentDataRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -655,18 +655,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:pb.PaymentDataRequest)
-      PaymentDataRequestOrBuilder {
+      ru.pnhub.widgetsdk.model.PaymentDataRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MobileModel.internal_static_pb_PaymentDataRequest_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_PaymentDataRequest_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MobileModel.internal_static_pb_PaymentDataRequest_fieldAccessorTable
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_PaymentDataRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              PaymentDataRequest.class, Builder.class);
+              ru.pnhub.widgetsdk.model.PaymentDataRequest.class, ru.pnhub.widgetsdk.model.PaymentDataRequest.Builder.class);
     }
 
     // Construct using ru.pnhub.widgetsdk.model.PaymentDataRequest.newBuilder()
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -685,7 +685,7 @@ private static final long serialVersionUID = 0L;
         getAllowedPaymentMethodsFieldBuilder();
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (merchantInfoBuilder_ == null) {
@@ -731,29 +731,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MobileModel.internal_static_pb_PaymentDataRequest_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_PaymentDataRequest_descriptor;
     }
 
-    @Override
-    public PaymentDataRequest getDefaultInstanceForType() {
-      return PaymentDataRequest.getDefaultInstance();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.PaymentDataRequest getDefaultInstanceForType() {
+      return ru.pnhub.widgetsdk.model.PaymentDataRequest.getDefaultInstance();
     }
 
-    @Override
-    public PaymentDataRequest build() {
-      PaymentDataRequest result = buildPartial();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.PaymentDataRequest build() {
+      ru.pnhub.widgetsdk.model.PaymentDataRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public PaymentDataRequest buildPartial() {
-      PaymentDataRequest result = new PaymentDataRequest(this);
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.PaymentDataRequest buildPartial() {
+      ru.pnhub.widgetsdk.model.PaymentDataRequest result = new ru.pnhub.widgetsdk.model.PaymentDataRequest(this);
       int from_bitField0_ = bitField0_;
       if (merchantInfoBuilder_ == null) {
         result.merchantInfo_ = merchantInfo_;
@@ -793,50 +793,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof PaymentDataRequest) {
-        return mergeFrom((PaymentDataRequest)other);
+      if (other instanceof ru.pnhub.widgetsdk.model.PaymentDataRequest) {
+        return mergeFrom((ru.pnhub.widgetsdk.model.PaymentDataRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(PaymentDataRequest other) {
-      if (other == PaymentDataRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(ru.pnhub.widgetsdk.model.PaymentDataRequest other) {
+      if (other == ru.pnhub.widgetsdk.model.PaymentDataRequest.getDefaultInstance()) return this;
       if (other.hasMerchantInfo()) {
         mergeMerchantInfo(other.getMerchantInfo());
       }
@@ -895,21 +895,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      PaymentDataRequest parsedMessage = null;
+      ru.pnhub.widgetsdk.model.PaymentDataRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (PaymentDataRequest) e.getUnfinishedMessage();
+        parsedMessage = (ru.pnhub.widgetsdk.model.PaymentDataRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -920,9 +920,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private MerchantInfo merchantInfo_;
+    private ru.pnhub.widgetsdk.model.MerchantInfo merchantInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        MerchantInfo, MerchantInfo.Builder, MerchantInfoOrBuilder> merchantInfoBuilder_;
+        ru.pnhub.widgetsdk.model.MerchantInfo, ru.pnhub.widgetsdk.model.MerchantInfo.Builder, ru.pnhub.widgetsdk.model.MerchantInfoOrBuilder> merchantInfoBuilder_;
     /**
      * <code>.pb.MerchantInfo merchant_info = 1;</code>
      * @return Whether the merchantInfo field is set.
@@ -934,9 +934,9 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.MerchantInfo merchant_info = 1;</code>
      * @return The merchantInfo.
      */
-    public MerchantInfo getMerchantInfo() {
+    public ru.pnhub.widgetsdk.model.MerchantInfo getMerchantInfo() {
       if (merchantInfoBuilder_ == null) {
-        return merchantInfo_ == null ? MerchantInfo.getDefaultInstance() : merchantInfo_;
+        return merchantInfo_ == null ? ru.pnhub.widgetsdk.model.MerchantInfo.getDefaultInstance() : merchantInfo_;
       } else {
         return merchantInfoBuilder_.getMessage();
       }
@@ -944,7 +944,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.MerchantInfo merchant_info = 1;</code>
      */
-    public Builder setMerchantInfo(MerchantInfo value) {
+    public Builder setMerchantInfo(ru.pnhub.widgetsdk.model.MerchantInfo value) {
       if (merchantInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -961,7 +961,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.MerchantInfo merchant_info = 1;</code>
      */
     public Builder setMerchantInfo(
-        MerchantInfo.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.MerchantInfo.Builder builderForValue) {
       if (merchantInfoBuilder_ == null) {
         merchantInfo_ = builderForValue.build();
         onChanged();
@@ -974,11 +974,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.MerchantInfo merchant_info = 1;</code>
      */
-    public Builder mergeMerchantInfo(MerchantInfo value) {
+    public Builder mergeMerchantInfo(ru.pnhub.widgetsdk.model.MerchantInfo value) {
       if (merchantInfoBuilder_ == null) {
         if (merchantInfo_ != null) {
           merchantInfo_ =
-            MerchantInfo.newBuilder(merchantInfo_).mergeFrom(value).buildPartial();
+            ru.pnhub.widgetsdk.model.MerchantInfo.newBuilder(merchantInfo_).mergeFrom(value).buildPartial();
         } else {
           merchantInfo_ = value;
         }
@@ -1006,7 +1006,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.MerchantInfo merchant_info = 1;</code>
      */
-    public MerchantInfo.Builder getMerchantInfoBuilder() {
+    public ru.pnhub.widgetsdk.model.MerchantInfo.Builder getMerchantInfoBuilder() {
       
       onChanged();
       return getMerchantInfoFieldBuilder().getBuilder();
@@ -1014,23 +1014,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.MerchantInfo merchant_info = 1;</code>
      */
-    public MerchantInfoOrBuilder getMerchantInfoOrBuilder() {
+    public ru.pnhub.widgetsdk.model.MerchantInfoOrBuilder getMerchantInfoOrBuilder() {
       if (merchantInfoBuilder_ != null) {
         return merchantInfoBuilder_.getMessageOrBuilder();
       } else {
         return merchantInfo_ == null ?
-            MerchantInfo.getDefaultInstance() : merchantInfo_;
+            ru.pnhub.widgetsdk.model.MerchantInfo.getDefaultInstance() : merchantInfo_;
       }
     }
     /**
      * <code>.pb.MerchantInfo merchant_info = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        MerchantInfo, MerchantInfo.Builder, MerchantInfoOrBuilder>
+        ru.pnhub.widgetsdk.model.MerchantInfo, ru.pnhub.widgetsdk.model.MerchantInfo.Builder, ru.pnhub.widgetsdk.model.MerchantInfoOrBuilder> 
         getMerchantInfoFieldBuilder() {
       if (merchantInfoBuilder_ == null) {
         merchantInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            MerchantInfo, MerchantInfo.Builder, MerchantInfoOrBuilder>(
+            ru.pnhub.widgetsdk.model.MerchantInfo, ru.pnhub.widgetsdk.model.MerchantInfo.Builder, ru.pnhub.widgetsdk.model.MerchantInfoOrBuilder>(
                 getMerchantInfo(),
                 getParentForChildren(),
                 isClean());
@@ -1044,7 +1044,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 api_version = 2;</code>
      * @return The apiVersion.
      */
-    @Override
+    @java.lang.Override
     public int getApiVersion() {
       return apiVersion_;
     }
@@ -1075,7 +1075,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 api_version_minor = 3;</code>
      * @return The apiVersionMinor.
      */
-    @Override
+    @java.lang.Override
     public int getApiVersionMinor() {
       return apiVersionMinor_;
     }
@@ -1106,7 +1106,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool email_required = 4;</code>
      * @return The emailRequired.
      */
-    @Override
+    @java.lang.Override
     public boolean getEmailRequired() {
       return emailRequired_;
     }
@@ -1137,7 +1137,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool shipping_address_required = 5;</code>
      * @return The shippingAddressRequired.
      */
-    @Override
+    @java.lang.Override
     public boolean getShippingAddressRequired() {
       return shippingAddressRequired_;
     }
@@ -1163,9 +1163,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private ShippingAddressParameters shippingAddressParameters_;
+    private ru.pnhub.widgetsdk.model.ShippingAddressParameters shippingAddressParameters_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        ShippingAddressParameters, ShippingAddressParameters.Builder, ShippingAddressParametersOrBuilder> shippingAddressParametersBuilder_;
+        ru.pnhub.widgetsdk.model.ShippingAddressParameters, ru.pnhub.widgetsdk.model.ShippingAddressParameters.Builder, ru.pnhub.widgetsdk.model.ShippingAddressParametersOrBuilder> shippingAddressParametersBuilder_;
     /**
      * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
      * @return Whether the shippingAddressParameters field is set.
@@ -1177,9 +1177,9 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
      * @return The shippingAddressParameters.
      */
-    public ShippingAddressParameters getShippingAddressParameters() {
+    public ru.pnhub.widgetsdk.model.ShippingAddressParameters getShippingAddressParameters() {
       if (shippingAddressParametersBuilder_ == null) {
-        return shippingAddressParameters_ == null ? ShippingAddressParameters.getDefaultInstance() : shippingAddressParameters_;
+        return shippingAddressParameters_ == null ? ru.pnhub.widgetsdk.model.ShippingAddressParameters.getDefaultInstance() : shippingAddressParameters_;
       } else {
         return shippingAddressParametersBuilder_.getMessage();
       }
@@ -1187,7 +1187,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
      */
-    public Builder setShippingAddressParameters(ShippingAddressParameters value) {
+    public Builder setShippingAddressParameters(ru.pnhub.widgetsdk.model.ShippingAddressParameters value) {
       if (shippingAddressParametersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1204,7 +1204,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
      */
     public Builder setShippingAddressParameters(
-        ShippingAddressParameters.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.ShippingAddressParameters.Builder builderForValue) {
       if (shippingAddressParametersBuilder_ == null) {
         shippingAddressParameters_ = builderForValue.build();
         onChanged();
@@ -1217,11 +1217,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
      */
-    public Builder mergeShippingAddressParameters(ShippingAddressParameters value) {
+    public Builder mergeShippingAddressParameters(ru.pnhub.widgetsdk.model.ShippingAddressParameters value) {
       if (shippingAddressParametersBuilder_ == null) {
         if (shippingAddressParameters_ != null) {
           shippingAddressParameters_ =
-            ShippingAddressParameters.newBuilder(shippingAddressParameters_).mergeFrom(value).buildPartial();
+            ru.pnhub.widgetsdk.model.ShippingAddressParameters.newBuilder(shippingAddressParameters_).mergeFrom(value).buildPartial();
         } else {
           shippingAddressParameters_ = value;
         }
@@ -1249,7 +1249,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
      */
-    public ShippingAddressParameters.Builder getShippingAddressParametersBuilder() {
+    public ru.pnhub.widgetsdk.model.ShippingAddressParameters.Builder getShippingAddressParametersBuilder() {
       
       onChanged();
       return getShippingAddressParametersFieldBuilder().getBuilder();
@@ -1257,23 +1257,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
      */
-    public ShippingAddressParametersOrBuilder getShippingAddressParametersOrBuilder() {
+    public ru.pnhub.widgetsdk.model.ShippingAddressParametersOrBuilder getShippingAddressParametersOrBuilder() {
       if (shippingAddressParametersBuilder_ != null) {
         return shippingAddressParametersBuilder_.getMessageOrBuilder();
       } else {
         return shippingAddressParameters_ == null ?
-            ShippingAddressParameters.getDefaultInstance() : shippingAddressParameters_;
+            ru.pnhub.widgetsdk.model.ShippingAddressParameters.getDefaultInstance() : shippingAddressParameters_;
       }
     }
     /**
      * <code>.pb.ShippingAddressParameters shipping_address_parameters = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        ShippingAddressParameters, ShippingAddressParameters.Builder, ShippingAddressParametersOrBuilder>
+        ru.pnhub.widgetsdk.model.ShippingAddressParameters, ru.pnhub.widgetsdk.model.ShippingAddressParameters.Builder, ru.pnhub.widgetsdk.model.ShippingAddressParametersOrBuilder> 
         getShippingAddressParametersFieldBuilder() {
       if (shippingAddressParametersBuilder_ == null) {
         shippingAddressParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            ShippingAddressParameters, ShippingAddressParameters.Builder, ShippingAddressParametersOrBuilder>(
+            ru.pnhub.widgetsdk.model.ShippingAddressParameters, ru.pnhub.widgetsdk.model.ShippingAddressParameters.Builder, ru.pnhub.widgetsdk.model.ShippingAddressParametersOrBuilder>(
                 getShippingAddressParameters(),
                 getParentForChildren(),
                 isClean());
@@ -1282,22 +1282,22 @@ private static final long serialVersionUID = 0L;
       return shippingAddressParametersBuilder_;
     }
 
-    private java.util.List<PaymentMethodSpecification> allowedPaymentMethods_ =
+    private java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification> allowedPaymentMethods_ =
       java.util.Collections.emptyList();
     private void ensureAllowedPaymentMethodsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        allowedPaymentMethods_ = new java.util.ArrayList<PaymentMethodSpecification>(allowedPaymentMethods_);
+        allowedPaymentMethods_ = new java.util.ArrayList<ru.pnhub.widgetsdk.model.PaymentMethodSpecification>(allowedPaymentMethods_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        PaymentMethodSpecification, PaymentMethodSpecification.Builder, PaymentMethodSpecificationOrBuilder> allowedPaymentMethodsBuilder_;
+        ru.pnhub.widgetsdk.model.PaymentMethodSpecification, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder, ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder> allowedPaymentMethodsBuilder_;
 
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
-    public java.util.List<PaymentMethodSpecification> getAllowedPaymentMethodsList() {
+    public java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification> getAllowedPaymentMethodsList() {
       if (allowedPaymentMethodsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(allowedPaymentMethods_);
       } else {
@@ -1317,7 +1317,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
-    public PaymentMethodSpecification getAllowedPaymentMethods(int index) {
+    public ru.pnhub.widgetsdk.model.PaymentMethodSpecification getAllowedPaymentMethods(int index) {
       if (allowedPaymentMethodsBuilder_ == null) {
         return allowedPaymentMethods_.get(index);
       } else {
@@ -1328,7 +1328,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
     public Builder setAllowedPaymentMethods(
-        int index, PaymentMethodSpecification value) {
+        int index, ru.pnhub.widgetsdk.model.PaymentMethodSpecification value) {
       if (allowedPaymentMethodsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1345,7 +1345,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
     public Builder setAllowedPaymentMethods(
-        int index, PaymentMethodSpecification.Builder builderForValue) {
+        int index, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder builderForValue) {
       if (allowedPaymentMethodsBuilder_ == null) {
         ensureAllowedPaymentMethodsIsMutable();
         allowedPaymentMethods_.set(index, builderForValue.build());
@@ -1358,7 +1358,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
-    public Builder addAllowedPaymentMethods(PaymentMethodSpecification value) {
+    public Builder addAllowedPaymentMethods(ru.pnhub.widgetsdk.model.PaymentMethodSpecification value) {
       if (allowedPaymentMethodsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1375,7 +1375,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
     public Builder addAllowedPaymentMethods(
-        int index, PaymentMethodSpecification value) {
+        int index, ru.pnhub.widgetsdk.model.PaymentMethodSpecification value) {
       if (allowedPaymentMethodsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1392,7 +1392,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
     public Builder addAllowedPaymentMethods(
-        PaymentMethodSpecification.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder builderForValue) {
       if (allowedPaymentMethodsBuilder_ == null) {
         ensureAllowedPaymentMethodsIsMutable();
         allowedPaymentMethods_.add(builderForValue.build());
@@ -1406,7 +1406,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
     public Builder addAllowedPaymentMethods(
-        int index, PaymentMethodSpecification.Builder builderForValue) {
+        int index, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder builderForValue) {
       if (allowedPaymentMethodsBuilder_ == null) {
         ensureAllowedPaymentMethodsIsMutable();
         allowedPaymentMethods_.add(index, builderForValue.build());
@@ -1420,7 +1420,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
     public Builder addAllAllowedPaymentMethods(
-        Iterable<? extends PaymentMethodSpecification> values) {
+        java.lang.Iterable<? extends ru.pnhub.widgetsdk.model.PaymentMethodSpecification> values) {
       if (allowedPaymentMethodsBuilder_ == null) {
         ensureAllowedPaymentMethodsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1460,14 +1460,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
-    public PaymentMethodSpecification.Builder getAllowedPaymentMethodsBuilder(
+    public ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder getAllowedPaymentMethodsBuilder(
         int index) {
       return getAllowedPaymentMethodsFieldBuilder().getBuilder(index);
     }
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
-    public PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
+    public ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
         int index) {
       if (allowedPaymentMethodsBuilder_ == null) {
         return allowedPaymentMethods_.get(index);  } else {
@@ -1477,7 +1477,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
-    public java.util.List<? extends PaymentMethodSpecificationOrBuilder>
+    public java.util.List<? extends ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder> 
          getAllowedPaymentMethodsOrBuilderList() {
       if (allowedPaymentMethodsBuilder_ != null) {
         return allowedPaymentMethodsBuilder_.getMessageOrBuilderList();
@@ -1488,31 +1488,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
-    public PaymentMethodSpecification.Builder addAllowedPaymentMethodsBuilder() {
+    public ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder addAllowedPaymentMethodsBuilder() {
       return getAllowedPaymentMethodsFieldBuilder().addBuilder(
-          PaymentMethodSpecification.getDefaultInstance());
+          ru.pnhub.widgetsdk.model.PaymentMethodSpecification.getDefaultInstance());
     }
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
-    public PaymentMethodSpecification.Builder addAllowedPaymentMethodsBuilder(
+    public ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder addAllowedPaymentMethodsBuilder(
         int index) {
       return getAllowedPaymentMethodsFieldBuilder().addBuilder(
-          index, PaymentMethodSpecification.getDefaultInstance());
+          index, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.getDefaultInstance());
     }
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 7;</code>
      */
-    public java.util.List<PaymentMethodSpecification.Builder>
+    public java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder> 
          getAllowedPaymentMethodsBuilderList() {
       return getAllowedPaymentMethodsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        PaymentMethodSpecification, PaymentMethodSpecification.Builder, PaymentMethodSpecificationOrBuilder>
+        ru.pnhub.widgetsdk.model.PaymentMethodSpecification, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder, ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder> 
         getAllowedPaymentMethodsFieldBuilder() {
       if (allowedPaymentMethodsBuilder_ == null) {
         allowedPaymentMethodsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            PaymentMethodSpecification, PaymentMethodSpecification.Builder, PaymentMethodSpecificationOrBuilder>(
+            ru.pnhub.widgetsdk.model.PaymentMethodSpecification, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder, ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder>(
                 allowedPaymentMethods_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -1522,9 +1522,9 @@ private static final long serialVersionUID = 0L;
       return allowedPaymentMethodsBuilder_;
     }
 
-    private TransactionInfo transactionInfo_;
+    private ru.pnhub.widgetsdk.model.TransactionInfo transactionInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        TransactionInfo, TransactionInfo.Builder, TransactionInfoOrBuilder> transactionInfoBuilder_;
+        ru.pnhub.widgetsdk.model.TransactionInfo, ru.pnhub.widgetsdk.model.TransactionInfo.Builder, ru.pnhub.widgetsdk.model.TransactionInfoOrBuilder> transactionInfoBuilder_;
     /**
      * <code>.pb.TransactionInfo transaction_info = 8;</code>
      * @return Whether the transactionInfo field is set.
@@ -1536,9 +1536,9 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.TransactionInfo transaction_info = 8;</code>
      * @return The transactionInfo.
      */
-    public TransactionInfo getTransactionInfo() {
+    public ru.pnhub.widgetsdk.model.TransactionInfo getTransactionInfo() {
       if (transactionInfoBuilder_ == null) {
-        return transactionInfo_ == null ? TransactionInfo.getDefaultInstance() : transactionInfo_;
+        return transactionInfo_ == null ? ru.pnhub.widgetsdk.model.TransactionInfo.getDefaultInstance() : transactionInfo_;
       } else {
         return transactionInfoBuilder_.getMessage();
       }
@@ -1546,7 +1546,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.TransactionInfo transaction_info = 8;</code>
      */
-    public Builder setTransactionInfo(TransactionInfo value) {
+    public Builder setTransactionInfo(ru.pnhub.widgetsdk.model.TransactionInfo value) {
       if (transactionInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1563,7 +1563,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.TransactionInfo transaction_info = 8;</code>
      */
     public Builder setTransactionInfo(
-        TransactionInfo.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.TransactionInfo.Builder builderForValue) {
       if (transactionInfoBuilder_ == null) {
         transactionInfo_ = builderForValue.build();
         onChanged();
@@ -1576,11 +1576,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.TransactionInfo transaction_info = 8;</code>
      */
-    public Builder mergeTransactionInfo(TransactionInfo value) {
+    public Builder mergeTransactionInfo(ru.pnhub.widgetsdk.model.TransactionInfo value) {
       if (transactionInfoBuilder_ == null) {
         if (transactionInfo_ != null) {
           transactionInfo_ =
-            TransactionInfo.newBuilder(transactionInfo_).mergeFrom(value).buildPartial();
+            ru.pnhub.widgetsdk.model.TransactionInfo.newBuilder(transactionInfo_).mergeFrom(value).buildPartial();
         } else {
           transactionInfo_ = value;
         }
@@ -1608,7 +1608,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.TransactionInfo transaction_info = 8;</code>
      */
-    public TransactionInfo.Builder getTransactionInfoBuilder() {
+    public ru.pnhub.widgetsdk.model.TransactionInfo.Builder getTransactionInfoBuilder() {
       
       onChanged();
       return getTransactionInfoFieldBuilder().getBuilder();
@@ -1616,23 +1616,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.TransactionInfo transaction_info = 8;</code>
      */
-    public TransactionInfoOrBuilder getTransactionInfoOrBuilder() {
+    public ru.pnhub.widgetsdk.model.TransactionInfoOrBuilder getTransactionInfoOrBuilder() {
       if (transactionInfoBuilder_ != null) {
         return transactionInfoBuilder_.getMessageOrBuilder();
       } else {
         return transactionInfo_ == null ?
-            TransactionInfo.getDefaultInstance() : transactionInfo_;
+            ru.pnhub.widgetsdk.model.TransactionInfo.getDefaultInstance() : transactionInfo_;
       }
     }
     /**
      * <code>.pb.TransactionInfo transaction_info = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        TransactionInfo, TransactionInfo.Builder, TransactionInfoOrBuilder>
+        ru.pnhub.widgetsdk.model.TransactionInfo, ru.pnhub.widgetsdk.model.TransactionInfo.Builder, ru.pnhub.widgetsdk.model.TransactionInfoOrBuilder> 
         getTransactionInfoFieldBuilder() {
       if (transactionInfoBuilder_ == null) {
         transactionInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            TransactionInfo, TransactionInfo.Builder, TransactionInfoOrBuilder>(
+            ru.pnhub.widgetsdk.model.TransactionInfo, ru.pnhub.widgetsdk.model.TransactionInfo.Builder, ru.pnhub.widgetsdk.model.TransactionInfoOrBuilder>(
                 getTransactionInfo(),
                 getParentForChildren(),
                 isClean());
@@ -1646,7 +1646,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool shipping_option_required = 9;</code>
      * @return The shippingOptionRequired.
      */
-    @Override
+    @java.lang.Override
     public boolean getShippingOptionRequired() {
       return shippingOptionRequired_;
     }
@@ -1672,9 +1672,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private ShippingOptionParameters shippingOptionParameters_;
+    private ru.pnhub.widgetsdk.model.ShippingOptionParameters shippingOptionParameters_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        ShippingOptionParameters, ShippingOptionParameters.Builder, ShippingOptionParametersOrBuilder> shippingOptionParametersBuilder_;
+        ru.pnhub.widgetsdk.model.ShippingOptionParameters, ru.pnhub.widgetsdk.model.ShippingOptionParameters.Builder, ru.pnhub.widgetsdk.model.ShippingOptionParametersOrBuilder> shippingOptionParametersBuilder_;
     /**
      * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
      * @return Whether the shippingOptionParameters field is set.
@@ -1686,9 +1686,9 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
      * @return The shippingOptionParameters.
      */
-    public ShippingOptionParameters getShippingOptionParameters() {
+    public ru.pnhub.widgetsdk.model.ShippingOptionParameters getShippingOptionParameters() {
       if (shippingOptionParametersBuilder_ == null) {
-        return shippingOptionParameters_ == null ? ShippingOptionParameters.getDefaultInstance() : shippingOptionParameters_;
+        return shippingOptionParameters_ == null ? ru.pnhub.widgetsdk.model.ShippingOptionParameters.getDefaultInstance() : shippingOptionParameters_;
       } else {
         return shippingOptionParametersBuilder_.getMessage();
       }
@@ -1696,7 +1696,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
      */
-    public Builder setShippingOptionParameters(ShippingOptionParameters value) {
+    public Builder setShippingOptionParameters(ru.pnhub.widgetsdk.model.ShippingOptionParameters value) {
       if (shippingOptionParametersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1713,7 +1713,7 @@ private static final long serialVersionUID = 0L;
      * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
      */
     public Builder setShippingOptionParameters(
-        ShippingOptionParameters.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.ShippingOptionParameters.Builder builderForValue) {
       if (shippingOptionParametersBuilder_ == null) {
         shippingOptionParameters_ = builderForValue.build();
         onChanged();
@@ -1726,11 +1726,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
      */
-    public Builder mergeShippingOptionParameters(ShippingOptionParameters value) {
+    public Builder mergeShippingOptionParameters(ru.pnhub.widgetsdk.model.ShippingOptionParameters value) {
       if (shippingOptionParametersBuilder_ == null) {
         if (shippingOptionParameters_ != null) {
           shippingOptionParameters_ =
-            ShippingOptionParameters.newBuilder(shippingOptionParameters_).mergeFrom(value).buildPartial();
+            ru.pnhub.widgetsdk.model.ShippingOptionParameters.newBuilder(shippingOptionParameters_).mergeFrom(value).buildPartial();
         } else {
           shippingOptionParameters_ = value;
         }
@@ -1758,7 +1758,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
      */
-    public ShippingOptionParameters.Builder getShippingOptionParametersBuilder() {
+    public ru.pnhub.widgetsdk.model.ShippingOptionParameters.Builder getShippingOptionParametersBuilder() {
       
       onChanged();
       return getShippingOptionParametersFieldBuilder().getBuilder();
@@ -1766,23 +1766,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
      */
-    public ShippingOptionParametersOrBuilder getShippingOptionParametersOrBuilder() {
+    public ru.pnhub.widgetsdk.model.ShippingOptionParametersOrBuilder getShippingOptionParametersOrBuilder() {
       if (shippingOptionParametersBuilder_ != null) {
         return shippingOptionParametersBuilder_.getMessageOrBuilder();
       } else {
         return shippingOptionParameters_ == null ?
-            ShippingOptionParameters.getDefaultInstance() : shippingOptionParameters_;
+            ru.pnhub.widgetsdk.model.ShippingOptionParameters.getDefaultInstance() : shippingOptionParameters_;
       }
     }
     /**
      * <code>.pb.ShippingOptionParameters shipping_option_parameters = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        ShippingOptionParameters, ShippingOptionParameters.Builder, ShippingOptionParametersOrBuilder>
+        ru.pnhub.widgetsdk.model.ShippingOptionParameters, ru.pnhub.widgetsdk.model.ShippingOptionParameters.Builder, ru.pnhub.widgetsdk.model.ShippingOptionParametersOrBuilder> 
         getShippingOptionParametersFieldBuilder() {
       if (shippingOptionParametersBuilder_ == null) {
         shippingOptionParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            ShippingOptionParameters, ShippingOptionParameters.Builder, ShippingOptionParametersOrBuilder>(
+            ru.pnhub.widgetsdk.model.ShippingOptionParameters, ru.pnhub.widgetsdk.model.ShippingOptionParameters.Builder, ru.pnhub.widgetsdk.model.ShippingOptionParametersOrBuilder>(
                 getShippingOptionParameters(),
                 getParentForChildren(),
                 isClean());
@@ -1790,13 +1790,13 @@ private static final long serialVersionUID = 0L;
       }
       return shippingOptionParametersBuilder_;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1807,18 +1807,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:pb.PaymentDataRequest)
-  private static final PaymentDataRequest DEFAULT_INSTANCE;
+  private static final ru.pnhub.widgetsdk.model.PaymentDataRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new PaymentDataRequest();
+    DEFAULT_INSTANCE = new ru.pnhub.widgetsdk.model.PaymentDataRequest();
   }
 
-  public static PaymentDataRequest getDefaultInstance() {
+  public static ru.pnhub.widgetsdk.model.PaymentDataRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<PaymentDataRequest>
       PARSER = new com.google.protobuf.AbstractParser<PaymentDataRequest>() {
-    @Override
+    @java.lang.Override
     public PaymentDataRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1831,13 +1831,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<PaymentDataRequest> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public PaymentDataRequest getDefaultInstanceForType() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.PaymentDataRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

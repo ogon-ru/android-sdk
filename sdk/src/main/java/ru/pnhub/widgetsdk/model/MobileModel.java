@@ -158,7 +158,7 @@ public final class MobileModel {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032pb/apis/mobile.model.proto\022\002pb\"\264\003\n\013Mob" +
+      "\n\032pb/apis/mobile.model.proto\022\002pb\"\321\003\n\013Mob" +
       "ileEvent\022!\n\004type\030\001 \001(\0162\023.pb.MobileEventT" +
       "ype\022 \n\005error\030\002 \001(\0132\017.pb.MobileErrorH\000\022:\n" +
       "\027is_ready_to_pay_request\030\003 \001(\0132\027.pb.IsRe" +
@@ -169,106 +169,108 @@ public final class MobileModel {
       "t_data_request\030\007 \001(\0132\036.pb.ApplePayPaymen" +
       "tDataRequestH\000\0228\n\025applepay_payment_data\030" +
       "\010 \001(\0132\027.pb.ApplePayPaymentDataH\000\022\032\n\020open" +
-      "_url_request\030\t \001(\tH\000B\t\n\007payload\"\260\001\n\023IsRe" +
-      "adyToPayRequest\022\023\n\013api_version\030\001 \001(\r\022\031\n\021" +
-      "api_version_minor\030\002 \001(\r\022?\n\027allowed_payme" +
-      "nt_methods\030\003 \003(\0132\036.pb.PaymentMethodSpeci" +
-      "fication\022(\n existing_payment_method_requ" +
-      "ired\030\004 \001(\010\"\300\003\n\022PaymentDataRequest\022\'\n\rmer" +
-      "chant_info\030\001 \001(\0132\020.pb.MerchantInfo\022\023\n\013ap" +
-      "i_version\030\002 \001(\r\022\031\n\021api_version_minor\030\003 \001" +
-      "(\r\022\026\n\016email_required\030\004 \001(\010\022!\n\031shipping_a" +
-      "ddress_required\030\005 \001(\010\022B\n\033shipping_addres" +
-      "s_parameters\030\006 \001(\0132\035.pb.ShippingAddressP" +
-      "arameters\022?\n\027allowed_payment_methods\030\007 \003" +
-      "(\0132\036.pb.PaymentMethodSpecification\022-\n\020tr" +
-      "ansaction_info\030\010 \001(\0132\023.pb.TransactionInf" +
-      "o\022 \n\030shipping_option_required\030\t \001(\010\022@\n\032s" +
-      "hipping_option_parameters\030\n \001(\0132\034.pb.Shi" +
-      "ppingOptionParameters\":\n\014MerchantInfo\022\023\n" +
-      "\013merchant_id\030\001 \001(\t\022\025\n\rmerchant_name\030\002 \001(" +
-      "\t\"Y\n\031ShippingAddressParameters\022\035\n\025allowe" +
-      "d_country_codes\030\001 \003(\t\022\035\n\025phone_number_re" +
-      "quired\030\002 \001(\010\"\375\001\n\017TransactionInfo\022\026\n\016tran" +
-      "saction_id\030\001 \001(\t\022\025\n\rcurrency_code\030\002 \001(\t\022" +
-      "\024\n\014country_code\030\003 \001(\t\022\023\n\013total_price\030\004 \001" +
-      "(\t\022\031\n\021total_price_label\030\005 \001(\t\022\032\n\022total_p" +
-      "rice_status\030\006 \001(\t\022\030\n\020transaction_note\030\007 " +
-      "\001(\t\022\027\n\017checkout_option\030\010 \001(\t\022&\n\rdisplay_" +
-      "items\030\t \003(\0132\017.pb.DisplayItem\"I\n\013DisplayI" +
-      "tem\022\r\n\005label\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\r\n\005pric" +
-      "e\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\"l\n\030ShippingOptio" +
-      "nParameters\022,\n\020shipping_options\030\001 \003(\0132\022." +
-      "pb.ShippingOption\022\"\n\032default_selected_op" +
-      "tion_id\030\002 \001(\t\"@\n\016ShippingOption\022\n\n\002id\030\001 " +
-      "\001(\t\022\r\n\005label\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"" +
-      "\336\001\n\013PaymentData\022\023\n\013api_version\030\001 \001(\r\022\031\n\021" +
-      "api_version_minor\030\002 \001(\r\022\r\n\005email\030\003 \001(\t\022%" +
-      "\n\020shipping_address\030\004 \001(\0132\013.pb.Address\0222\n" +
-      "\023payment_method_data\030\005 \001(\0132\025.pb.PaymentM" +
-      "ethodData\0225\n\024shipping_option_data\030\006 \001(\0132" +
-      "\027.pb.SelectionOptionData\"!\n\023SelectionOpt" +
-      "ionData\022\n\n\002id\030\001 \001(\t\"\220\001\n\021PaymentMethodDat" +
-      "a\022\014\n\004type\030\001 \001(\t\022\032\n\004info\030\002 \001(\0132\014.pb.CardI" +
-      "nfo\022\023\n\013description\030\003 \001(\t\022<\n\021tokenization" +
-      "_data\030\004 \001(\0132!.pb.PaymentMethodTokenizati" +
-      "onData\"\\\n\010CardInfo\022\024\n\014card_network\030\001 \001(\t" +
-      "\022\024\n\014card_details\030\002 \001(\t\022$\n\017billing_addres" +
-      "s\030\003 \001(\0132\013.pb.Address\"\323\001\n\007Address\022\014\n\004name" +
-      "\030\001 \001(\t\022\020\n\010address1\030\002 \001(\t\022\020\n\010address2\030\003 \001" +
-      "(\t\022\020\n\010address3\030\004 \001(\t\022\020\n\010locality\030\005 \001(\t\022\033" +
-      "\n\023administrative_area\030\006 \001(\t\022\024\n\014country_c" +
-      "ode\030\007 \001(\t\022\023\n\013postal_code\030\010 \001(\t\022\024\n\014sortin" +
-      "g_code\030\t \001(\t\022\024\n\014phone_number\030\n \001(\t\"<\n\035Pa" +
-      "ymentMethodTokenizationData\022\014\n\004type\030\001 \001(" +
-      "\t\022\r\n\005token\030\002 \001(\t\"\225\001\n\032PaymentMethodSpecif" +
-      "ication\022\014\n\004type\030\001 \001(\t\022&\n\nparameters\030\002 \001(" +
-      "\0132\022.pb.CardParameters\022A\n\032tokenization_sp" +
-      "ecification\030\003 \001(\0132\035.pb.TokenizationSpeci" +
-      "fication\"\246\002\n\016CardParameters\022\034\n\024allowed_a" +
-      "uth_methods\030\001 \003(\t\022\035\n\025allowed_card_networ" +
-      "ks\030\002 \003(\t\022\033\n\023allow_prepaid_cards\030\003 \001(\010\022\032\n" +
-      "\022allow_credit_cards\030\004 \001(\010\022 \n\030billing_add" +
-      "ress_required\030\005 \001(\010\022@\n\032billing_address_p" +
-      "arameters\030\006 \001(\0132\034.pb.BillingAddressParam" +
-      "eters\022:\n\027card_network_parameters\030\007 \001(\0132\031" +
-      ".pb.CardNetworkParameters\"\237\001\n\031Tokenizati" +
-      "onSpecification\022\014\n\004type\030\001 \001(\t\022A\n\nparamet" +
-      "ers\030\002 \003(\0132-.pb.TokenizationSpecification" +
-      ".ParametersEntry\0321\n\017ParametersEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"I\n\030BillingAd" +
-      "dressParameters\022\016\n\006format\030\001 \001(\t\022\035\n\025phone" +
-      "_number_required\030\002 \001(\010\"a\n\025CardNetworkPar" +
-      "ameters\022\024\n\014card_network\030\001 \001(\t\022\024\n\014acquire" +
-      "r_bin\030\002 \001(\t\022\034\n\024acquirer_merchant_id\030\003 \001(" +
-      "\t\"A\n\013MobileError\022\014\n\004code\030\001 \001(\r\022\017\n\007messag" +
-      "e\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"k\n\032ApplePay" +
-      "PaymentDataRequest\022\024\n\014country_code\030\001 \001(\t" +
-      "\022\025\n\rcurrency_code\030\002 \001(\t\022 \n\005total\030\003 \001(\0132\021" +
-      ".pb.ApplePayTotal\".\n\rApplePayTotal\022\r\n\005la" +
-      "bel\030\001 \001(\t\022\016\n\006amount\030\002 \001(\t\">\n\023ApplePayPay" +
-      "mentData\022\'\n\005token\030\001 \001(\0132\030.pb.ApplePayPay" +
-      "mentToken\"|\n\024ApplePayPaymentToken\022\024\n\014pay" +
-      "ment_data\030\001 \001(\t\022\036\n\026transaction_identifie" +
-      "r\030\002 \001(\t\022.\n\016payment_method\030\003 \001(\0132\026.pb.App" +
-      "lePaymentMethod\";\n\022ApplePaymentMethod\022\024\n" +
-      "\014display_name\030\001 \001(\t\022\017\n\007network\030\002 \001(\t*\332\004\n" +
-      "\017MobileEventType\022\034\n\030MOBILE_EVENT_UNSPECI" +
-      "FIED\020\000\0222\n.MOBILE_EVENT_GOOGLEPAY_IS_READ" +
-      "Y_TO_PAY_REQUEST\020\001\0223\n/MOBILE_EVENT_GOOGL" +
-      "EPAY_IS_READY_TO_PAY_RESPONSE\020\002\022/\n+MOBIL" +
-      "E_EVENT_GOOGLEPAY_PAYMENT_DATA_REQUEST\020\003" +
-      "\0220\n,MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_" +
-      "RESPONSE\020\004\022-\n)MOBILE_EVENT_GOOGLEPAY_PAY" +
-      "MENT_DATA_ERROR\020\005\0221\n-MOBILE_EVENT_APPLEP" +
-      "AY_IS_READY_TO_PAY_REQUEST\020\006\0222\n.MOBILE_E" +
-      "VENT_APPLEPAY_IS_READY_TO_PAY_RESPONSE\020\007" +
-      "\022.\n*MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_R" +
-      "EQUEST\020\010\022/\n+MOBILE_EVENT_APPLEPAY_PAYMEN" +
-      "T_DATA_RESPONSE\020\t\022,\n(MOBILE_EVENT_APPLEP" +
-      "AY_PAYMENT_DATA_ERROR\020\n\022!\n\035MOBILE_EVENT_" +
-      "OPEN_URL_REQUEST\020\013\022\025\n\021MOBILE_EVENT_BACK\020" +
-      "\014B\034\n\030ru.pnhub.widgetsdk.modelP\001b\006proto3"
+      "_url_request\030\t \001(\tH\000\022\033\n\021share_url_reques" +
+      "t\030\n \001(\tH\000B\t\n\007payload\"\260\001\n\023IsReadyToPayReq" +
+      "uest\022\023\n\013api_version\030\001 \001(\r\022\031\n\021api_version" +
+      "_minor\030\002 \001(\r\022?\n\027allowed_payment_methods\030" +
+      "\003 \003(\0132\036.pb.PaymentMethodSpecification\022(\n" +
+      " existing_payment_method_required\030\004 \001(\010\"" +
+      "\300\003\n\022PaymentDataRequest\022\'\n\rmerchant_info\030" +
+      "\001 \001(\0132\020.pb.MerchantInfo\022\023\n\013api_version\030\002" +
+      " \001(\r\022\031\n\021api_version_minor\030\003 \001(\r\022\026\n\016email" +
+      "_required\030\004 \001(\010\022!\n\031shipping_address_requ" +
+      "ired\030\005 \001(\010\022B\n\033shipping_address_parameter" +
+      "s\030\006 \001(\0132\035.pb.ShippingAddressParameters\022?" +
+      "\n\027allowed_payment_methods\030\007 \003(\0132\036.pb.Pay" +
+      "mentMethodSpecification\022-\n\020transaction_i" +
+      "nfo\030\010 \001(\0132\023.pb.TransactionInfo\022 \n\030shippi" +
+      "ng_option_required\030\t \001(\010\022@\n\032shipping_opt" +
+      "ion_parameters\030\n \001(\0132\034.pb.ShippingOption" +
+      "Parameters\":\n\014MerchantInfo\022\023\n\013merchant_i" +
+      "d\030\001 \001(\t\022\025\n\rmerchant_name\030\002 \001(\t\"Y\n\031Shippi" +
+      "ngAddressParameters\022\035\n\025allowed_country_c" +
+      "odes\030\001 \003(\t\022\035\n\025phone_number_required\030\002 \001(" +
+      "\010\"\375\001\n\017TransactionInfo\022\026\n\016transaction_id\030" +
+      "\001 \001(\t\022\025\n\rcurrency_code\030\002 \001(\t\022\024\n\014country_" +
+      "code\030\003 \001(\t\022\023\n\013total_price\030\004 \001(\t\022\031\n\021total" +
+      "_price_label\030\005 \001(\t\022\032\n\022total_price_status" +
+      "\030\006 \001(\t\022\030\n\020transaction_note\030\007 \001(\t\022\027\n\017chec" +
+      "kout_option\030\010 \001(\t\022&\n\rdisplay_items\030\t \003(\013" +
+      "2\017.pb.DisplayItem\"I\n\013DisplayItem\022\r\n\005labe" +
+      "l\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\r\n\005price\030\003 \001(\t\022\016\n\006" +
+      "status\030\004 \001(\t\"l\n\030ShippingOptionParameters" +
+      "\022,\n\020shipping_options\030\001 \003(\0132\022.pb.Shipping" +
+      "Option\022\"\n\032default_selected_option_id\030\002 \001" +
+      "(\t\"@\n\016ShippingOption\022\n\n\002id\030\001 \001(\t\022\r\n\005labe" +
+      "l\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"\336\001\n\013Payment" +
+      "Data\022\023\n\013api_version\030\001 \001(\r\022\031\n\021api_version" +
+      "_minor\030\002 \001(\r\022\r\n\005email\030\003 \001(\t\022%\n\020shipping_" +
+      "address\030\004 \001(\0132\013.pb.Address\0222\n\023payment_me" +
+      "thod_data\030\005 \001(\0132\025.pb.PaymentMethodData\0225" +
+      "\n\024shipping_option_data\030\006 \001(\0132\027.pb.Select" +
+      "ionOptionData\"!\n\023SelectionOptionData\022\n\n\002" +
+      "id\030\001 \001(\t\"\220\001\n\021PaymentMethodData\022\014\n\004type\030\001" +
+      " \001(\t\022\032\n\004info\030\002 \001(\0132\014.pb.CardInfo\022\023\n\013desc" +
+      "ription\030\003 \001(\t\022<\n\021tokenization_data\030\004 \001(\013" +
+      "2!.pb.PaymentMethodTokenizationData\"\\\n\010C" +
+      "ardInfo\022\024\n\014card_network\030\001 \001(\t\022\024\n\014card_de" +
+      "tails\030\002 \001(\t\022$\n\017billing_address\030\003 \001(\0132\013.p" +
+      "b.Address\"\323\001\n\007Address\022\014\n\004name\030\001 \001(\t\022\020\n\010a" +
+      "ddress1\030\002 \001(\t\022\020\n\010address2\030\003 \001(\t\022\020\n\010addre" +
+      "ss3\030\004 \001(\t\022\020\n\010locality\030\005 \001(\t\022\033\n\023administr" +
+      "ative_area\030\006 \001(\t\022\024\n\014country_code\030\007 \001(\t\022\023" +
+      "\n\013postal_code\030\010 \001(\t\022\024\n\014sorting_code\030\t \001(" +
+      "\t\022\024\n\014phone_number\030\n \001(\t\"<\n\035PaymentMethod" +
+      "TokenizationData\022\014\n\004type\030\001 \001(\t\022\r\n\005token\030" +
+      "\002 \001(\t\"\225\001\n\032PaymentMethodSpecification\022\014\n\004" +
+      "type\030\001 \001(\t\022&\n\nparameters\030\002 \001(\0132\022.pb.Card" +
+      "Parameters\022A\n\032tokenization_specification" +
+      "\030\003 \001(\0132\035.pb.TokenizationSpecification\"\246\002" +
+      "\n\016CardParameters\022\034\n\024allowed_auth_methods" +
+      "\030\001 \003(\t\022\035\n\025allowed_card_networks\030\002 \003(\t\022\033\n" +
+      "\023allow_prepaid_cards\030\003 \001(\010\022\032\n\022allow_cred" +
+      "it_cards\030\004 \001(\010\022 \n\030billing_address_requir" +
+      "ed\030\005 \001(\010\022@\n\032billing_address_parameters\030\006" +
+      " \001(\0132\034.pb.BillingAddressParameters\022:\n\027ca" +
+      "rd_network_parameters\030\007 \001(\0132\031.pb.CardNet" +
+      "workParameters\"\237\001\n\031TokenizationSpecifica" +
+      "tion\022\014\n\004type\030\001 \001(\t\022A\n\nparameters\030\002 \003(\0132-" +
+      ".pb.TokenizationSpecification.Parameters" +
+      "Entry\0321\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"I\n\030BillingAddressParame" +
+      "ters\022\016\n\006format\030\001 \001(\t\022\035\n\025phone_number_req" +
+      "uired\030\002 \001(\010\"a\n\025CardNetworkParameters\022\024\n\014" +
+      "card_network\030\001 \001(\t\022\024\n\014acquirer_bin\030\002 \001(\t" +
+      "\022\034\n\024acquirer_merchant_id\030\003 \001(\t\"A\n\013Mobile" +
+      "Error\022\014\n\004code\030\001 \001(\r\022\017\n\007message\030\002 \001(\t\022\023\n\013" +
+      "description\030\003 \001(\t\"k\n\032ApplePayPaymentData" +
+      "Request\022\024\n\014country_code\030\001 \001(\t\022\025\n\rcurrenc" +
+      "y_code\030\002 \001(\t\022 \n\005total\030\003 \001(\0132\021.pb.ApplePa" +
+      "yTotal\".\n\rApplePayTotal\022\r\n\005label\030\001 \001(\t\022\016" +
+      "\n\006amount\030\002 \001(\t\">\n\023ApplePayPaymentData\022\'\n" +
+      "\005token\030\001 \001(\0132\030.pb.ApplePayPaymentToken\"|" +
+      "\n\024ApplePayPaymentToken\022\024\n\014payment_data\030\001" +
+      " \001(\t\022\036\n\026transaction_identifier\030\002 \001(\t\022.\n\016" +
+      "payment_method\030\003 \001(\0132\026.pb.ApplePaymentMe" +
+      "thod\";\n\022ApplePaymentMethod\022\024\n\014display_na" +
+      "me\030\001 \001(\t\022\017\n\007network\030\002 \001(\t*\376\004\n\017MobileEven" +
+      "tType\022\034\n\030MOBILE_EVENT_UNSPECIFIED\020\000\0222\n.M" +
+      "OBILE_EVENT_GOOGLEPAY_IS_READY_TO_PAY_RE" +
+      "QUEST\020\001\0223\n/MOBILE_EVENT_GOOGLEPAY_IS_REA" +
+      "DY_TO_PAY_RESPONSE\020\002\022/\n+MOBILE_EVENT_GOO" +
+      "GLEPAY_PAYMENT_DATA_REQUEST\020\003\0220\n,MOBILE_" +
+      "EVENT_GOOGLEPAY_PAYMENT_DATA_RESPONSE\020\004\022" +
+      "-\n)MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_E" +
+      "RROR\020\005\0221\n-MOBILE_EVENT_APPLEPAY_IS_READY" +
+      "_TO_PAY_REQUEST\020\006\0222\n.MOBILE_EVENT_APPLEP" +
+      "AY_IS_READY_TO_PAY_RESPONSE\020\007\022.\n*MOBILE_" +
+      "EVENT_APPLEPAY_PAYMENT_DATA_REQUEST\020\010\022/\n" +
+      "+MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_RESP" +
+      "ONSE\020\t\022,\n(MOBILE_EVENT_APPLEPAY_PAYMENT_" +
+      "DATA_ERROR\020\n\022!\n\035MOBILE_EVENT_OPEN_URL_RE" +
+      "QUEST\020\013\022\025\n\021MOBILE_EVENT_BACK\020\014\022\"\n\036MOBILE" +
+      "_EVENT_SHARE_URL_REQUEST\020\rB\034\n\030ru.pnhub.w" +
+      "idgetsdk.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -279,7 +281,7 @@ public final class MobileModel {
     internal_static_pb_MobileEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_MobileEvent_descriptor,
-        new java.lang.String[] { "Type", "Error", "IsReadyToPayRequest", "PaymentDataRequest", "IsReadyToPay", "PaymentData", "ApplepayPaymentDataRequest", "ApplepayPaymentData", "OpenUrlRequest", "Payload", });
+        new java.lang.String[] { "Type", "Error", "IsReadyToPayRequest", "PaymentDataRequest", "IsReadyToPay", "PaymentData", "ApplepayPaymentDataRequest", "ApplepayPaymentData", "OpenUrlRequest", "ShareUrlRequest", "Payload", });
     internal_static_pb_IsReadyToPayRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_pb_IsReadyToPayRequest_fieldAccessorTable = new

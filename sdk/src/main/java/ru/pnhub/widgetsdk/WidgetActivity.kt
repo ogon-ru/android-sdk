@@ -205,6 +205,16 @@ class WidgetActivity : AppCompatActivity() {
         }
     }
 
+    private fun shareUrl(url: String) {
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, url)
+            type = "text/plain"
+        }
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
+    }
+
     private fun handleEvent(mobileEvent: MobileEvent) {
         when (mobileEvent.type) {
             MobileEventType.MOBILE_EVENT_GOOGLEPAY_IS_READY_TO_PAY_REQUEST -> {
@@ -215,6 +225,9 @@ class WidgetActivity : AppCompatActivity() {
             }
             MobileEventType.MOBILE_EVENT_OPEN_URL_REQUEST -> {
                 openUrl(mobileEvent.openUrlRequest)
+            }
+            MobileEventType.MOBILE_EVENT_SHARE_URL_REQUEST -> {
+                shareUrl(mobileEvent.shareUrlRequest)
             }
             else -> Log.i("[PNWidget]", "Unhandled event type: ${mobileEvent.type}")
         }
