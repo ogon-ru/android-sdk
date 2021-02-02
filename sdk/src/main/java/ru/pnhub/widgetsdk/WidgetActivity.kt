@@ -3,6 +3,7 @@ package ru.pnhub.widgetsdk
 import android.annotation.TargetApi
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.pm.ResolveInfo
 import android.graphics.Bitmap
 import android.net.Uri
 import android.net.http.SslError
@@ -14,6 +15,7 @@ import android.util.Log
 import android.view.KeyEvent
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Status
 import com.google.android.gms.wallet.*
@@ -24,6 +26,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import ru.pnhub.widgetsdk.model.IsReadyToPayRequest as IsReadyToPayRequestModel
 import ru.pnhub.widgetsdk.model.PaymentDataRequest as PaymentDataRequestModel
+
 
 private const val BASE_URL = BuildConfig.BASE_URL
 private const val RECORD_AUDIO_REQUEST_CODE = 1
@@ -229,25 +232,30 @@ class WidgetActivity : AppCompatActivity() {
     }
 
     private fun startActionChooser() {
-        var takePictureIntent: Intent? = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        if (hasCameraPermission() && takePictureIntent!!.resolveActivity(packageManager) != null) {
+        var cameraIntent: Intent? = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        if (hasCameraPermission() && cameraIntent!!.resolveActivity(packageManager) != null) {
             // Create the File where the photo should go
-            var photoFile: File? = null
-            try {
-                photoFile = createImageFile()
-                takePictureIntent.putExtra("PhotoPath", cameraPhotoPath)
+            val photoFile: File? = try {
+                createImageFile()
             } catch (ex: Throwable) {
-                // Error occurred while creating the File
                 Log.e("WidgetActivity", "Unable to create Image File", ex)
+                null
             }
 
             // Continue only if the File was successfully created
             if (photoFile != null) {
-                cameraPhotoPath = "file:" + photoFile.getAbsolutePath()
-                takePictureIntent!!.putExtra(MediaStore.EXTRA_OUTPUT,
-                        Uri.fromFile(photoFile))
+                val fileUri = FileProvider.getUriForFile(this, "ru.pnhub.widgetsdk.fileprovider", photoFile)
+                cameraPhotoPath = "file:" + photoFile.absolutePath
+                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri)
+//                cameraIntent.putExtra("PhotoPath", cameraPhotoPath)
+
+                val resInfoList: List<ResolveInfo> = packageManager.queryIntentActivities(cameraIntent, PackageManager.MATCH_DEFAULT_ONLY)
+                for (resolveInfo in resInfoList) {
+                    val packageName = resolveInfo.activityInfo.packageName
+                    grantUriPermission(packageName, fileUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION or Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                }
             } else {
-                takePictureIntent = null
+                cameraIntent = null
             }
         }
 
@@ -255,7 +263,7 @@ class WidgetActivity : AppCompatActivity() {
         contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE)
         contentSelectionIntent.type = "image/*"
 
-        val intentArray = takePictureIntent?.let { arrayOf(it) } ?: emptyArray()
+        val intentArray = cameraIntent?.let { arrayOf(it) } ?: emptyArray()
 
         val chooserIntent = Intent(Intent.ACTION_CHOOSER)
         chooserIntent.putExtra(Intent.EXTRA_INTENT, contentSelectionIntent)
@@ -266,7 +274,9 @@ class WidgetActivity : AppCompatActivity() {
     }
 
     private fun hasCameraPermission(): Boolean = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        checkSelfPermission(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
+        checkSelfPermission(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED &&
+        checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
+        checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
     } else {
         true
     }
@@ -277,7 +287,12 @@ class WidgetActivity : AppCompatActivity() {
             filePathCallback = callback
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !hasCameraPermission()) {
-                requestPermissions(arrayOf(android.Manifest.permission.CAMERA), CAMERA_REQUEST_CODE)
+                val permissions = arrayOf(
+                        android.Manifest.permission.CAMERA,
+                        android.Manifest.permission.READ_EXTERNAL_STORAGE,
+                        android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+                )
+                requestPermissions(permissions, CAMERA_REQUEST_CODE)
             } else {
                 startActionChooser()
             }
@@ -292,9 +307,9 @@ class WidgetActivity : AppCompatActivity() {
 
     private fun createImageFile(): File? {
         // Create an image file name
-        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+        val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         val imageFileName = "JPEG_${timeStamp}_"
-        var dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        val dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return File.createTempFile(imageFileName, ".jpg", dir)
     }
 
