@@ -11,7 +11,7 @@ public interface ShippingOptionOrBuilder extends
    * <code>string id = 1;</code>
    * @return The id.
    */
-  String getId();
+  java.lang.String getId();
   /**
    * <code>string id = 1;</code>
    * @return The bytes for id.
@@ -23,7 +23,7 @@ public interface ShippingOptionOrBuilder extends
    * <code>string label = 2;</code>
    * @return The label.
    */
-  String getLabel();
+  java.lang.String getLabel();
   /**
    * <code>string label = 2;</code>
    * @return The bytes for label.
@@ -35,7 +35,7 @@ public interface ShippingOptionOrBuilder extends
    * <code>string description = 3;</code>
    * @return The description.
    */
-  String getDescription();
+  java.lang.String getDescription();
   /**
    * <code>string description = 3;</code>
    * @return The bytes for description.

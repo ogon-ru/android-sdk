@@ -11,7 +11,7 @@ public interface PaymentMethodSpecificationOrBuilder extends
    * <code>string type = 1;</code>
    * @return The type.
    */
-  String getType();
+  java.lang.String getType();
   /**
    * <code>string type = 1;</code>
    * @return The bytes for type.
@@ -28,11 +28,11 @@ public interface PaymentMethodSpecificationOrBuilder extends
    * <code>.pb.CardParameters parameters = 2;</code>
    * @return The parameters.
    */
-  CardParameters getParameters();
+  ru.pnhub.widgetsdk.model.CardParameters getParameters();
   /**
    * <code>.pb.CardParameters parameters = 2;</code>
    */
-  CardParametersOrBuilder getParametersOrBuilder();
+  ru.pnhub.widgetsdk.model.CardParametersOrBuilder getParametersOrBuilder();
 
   /**
    * <code>.pb.TokenizationSpecification tokenization_specification = 3;</code>
@@ -43,9 +43,9 @@ public interface PaymentMethodSpecificationOrBuilder extends
    * <code>.pb.TokenizationSpecification tokenization_specification = 3;</code>
    * @return The tokenizationSpecification.
    */
-  TokenizationSpecification getTokenizationSpecification();
+  ru.pnhub.widgetsdk.model.TokenizationSpecification getTokenizationSpecification();
   /**
    * <code>.pb.TokenizationSpecification tokenization_specification = 3;</code>
    */
-  TokenizationSpecificationOrBuilder getTokenizationSpecificationOrBuilder();
+  ru.pnhub.widgetsdk.model.TokenizationSpecificationOrBuilder getTokenizationSpecificationOrBuilder();
 }

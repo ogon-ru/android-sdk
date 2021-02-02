@@ -11,7 +11,7 @@ public interface CardInfoOrBuilder extends
    * <code>string card_network = 1;</code>
    * @return The cardNetwork.
    */
-  String getCardNetwork();
+  java.lang.String getCardNetwork();
   /**
    * <code>string card_network = 1;</code>
    * @return The bytes for cardNetwork.
@@ -23,7 +23,7 @@ public interface CardInfoOrBuilder extends
    * <code>string card_details = 2;</code>
    * @return The cardDetails.
    */
-  String getCardDetails();
+  java.lang.String getCardDetails();
   /**
    * <code>string card_details = 2;</code>
    * @return The bytes for cardDetails.
@@ -40,9 +40,9 @@ public interface CardInfoOrBuilder extends
    * <code>.pb.Address billing_address = 3;</code>
    * @return The billingAddress.
    */
-  Address getBillingAddress();
+  ru.pnhub.widgetsdk.model.Address getBillingAddress();
   /**
    * <code>.pb.Address billing_address = 3;</code>
    */
-  AddressOrBuilder getBillingAddressOrBuilder();
+  ru.pnhub.widgetsdk.model.AddressOrBuilder getBillingAddressOrBuilder();
 }

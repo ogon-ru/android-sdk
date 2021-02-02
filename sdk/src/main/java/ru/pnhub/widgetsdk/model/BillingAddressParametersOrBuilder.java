@@ -11,7 +11,7 @@ public interface BillingAddressParametersOrBuilder extends
    * <code>string format = 1;</code>
    * @return The format.
    */
-  String getFormat();
+  java.lang.String getFormat();
   /**
    * <code>string format = 1;</code>
    * @return The bytes for format.

@@ -60,6 +60,10 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_BACK = 12;</code>
    */
   MOBILE_EVENT_BACK(12),
+  /**
+   * <code>MOBILE_EVENT_SHARE_URL_REQUEST = 13;</code>
+   */
+  MOBILE_EVENT_SHARE_URL_REQUEST(13),
   UNRECOGNIZED(-1),
   ;
 
@@ -115,6 +119,10 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_BACK = 12;</code>
    */
   public static final int MOBILE_EVENT_BACK_VALUE = 12;
+  /**
+   * <code>MOBILE_EVENT_SHARE_URL_REQUEST = 13;</code>
+   */
+  public static final int MOBILE_EVENT_SHARE_URL_REQUEST_VALUE = 13;
 
 
   public final int getNumber() {
@@ -154,6 +162,7 @@ public enum MobileEventType
       case 10: return MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_ERROR;
       case 11: return MOBILE_EVENT_OPEN_URL_REQUEST;
       case 12: return MOBILE_EVENT_BACK;
+      case 13: return MOBILE_EVENT_SHARE_URL_REQUEST;
       default: return null;
     }
   }

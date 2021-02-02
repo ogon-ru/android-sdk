@@ -20,14 +20,14 @@ private static final long serialVersionUID = 0L;
     defaultSelectedOptionId_ = "";
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new ShippingOptionParameters();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +38,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -53,15 +53,15 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              shippingOptions_ = new java.util.ArrayList<ShippingOption>();
+              shippingOptions_ = new java.util.ArrayList<ru.pnhub.widgetsdk.model.ShippingOption>();
               mutable_bitField0_ |= 0x00000001;
             }
             shippingOptions_.add(
-                input.readMessage(ShippingOption.parser(), extensionRegistry));
+                input.readMessage(ru.pnhub.widgetsdk.model.ShippingOption.parser(), extensionRegistry));
             break;
           }
           case 18: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             defaultSelectedOptionId_ = s;
             break;
@@ -90,72 +90,72 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MobileModel.internal_static_pb_ShippingOptionParameters_descriptor;
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ShippingOptionParameters_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MobileModel.internal_static_pb_ShippingOptionParameters_fieldAccessorTable
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ShippingOptionParameters_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ShippingOptionParameters.class, Builder.class);
+            ru.pnhub.widgetsdk.model.ShippingOptionParameters.class, ru.pnhub.widgetsdk.model.ShippingOptionParameters.Builder.class);
   }
 
   public static final int SHIPPING_OPTIONS_FIELD_NUMBER = 1;
-  private java.util.List<ShippingOption> shippingOptions_;
+  private java.util.List<ru.pnhub.widgetsdk.model.ShippingOption> shippingOptions_;
   /**
    * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
    */
-  @Override
-  public java.util.List<ShippingOption> getShippingOptionsList() {
+  @java.lang.Override
+  public java.util.List<ru.pnhub.widgetsdk.model.ShippingOption> getShippingOptionsList() {
     return shippingOptions_;
   }
   /**
    * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
    */
-  @Override
-  public java.util.List<? extends ShippingOptionOrBuilder>
+  @java.lang.Override
+  public java.util.List<? extends ru.pnhub.widgetsdk.model.ShippingOptionOrBuilder> 
       getShippingOptionsOrBuilderList() {
     return shippingOptions_;
   }
   /**
    * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
    */
-  @Override
+  @java.lang.Override
   public int getShippingOptionsCount() {
     return shippingOptions_.size();
   }
   /**
    * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
    */
-  @Override
-  public ShippingOption getShippingOptions(int index) {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ShippingOption getShippingOptions(int index) {
     return shippingOptions_.get(index);
   }
   /**
    * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
    */
-  @Override
-  public ShippingOptionOrBuilder getShippingOptionsOrBuilder(
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ShippingOptionOrBuilder getShippingOptionsOrBuilder(
       int index) {
     return shippingOptions_.get(index);
   }
 
   public static final int DEFAULT_SELECTED_OPTION_ID_FIELD_NUMBER = 2;
-  private volatile Object defaultSelectedOptionId_;
+  private volatile java.lang.Object defaultSelectedOptionId_;
   /**
    * <code>string default_selected_option_id = 2;</code>
    * @return The defaultSelectedOptionId.
    */
-  @Override
-  public String getDefaultSelectedOptionId() {
-    Object ref = defaultSelectedOptionId_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getDefaultSelectedOptionId() {
+    java.lang.Object ref = defaultSelectedOptionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       defaultSelectedOptionId_ = s;
       return s;
     }
@@ -164,14 +164,14 @@ private static final long serialVersionUID = 0L;
    * <code>string default_selected_option_id = 2;</code>
    * @return The bytes for defaultSelectedOptionId.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDefaultSelectedOptionIdBytes() {
-    Object ref = defaultSelectedOptionId_;
-    if (ref instanceof String) {
+    java.lang.Object ref = defaultSelectedOptionId_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       defaultSelectedOptionId_ = b;
       return b;
     } else {
@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < shippingOptions_.size(); i++) {
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -220,15 +220,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ShippingOptionParameters)) {
+    if (!(obj instanceof ru.pnhub.widgetsdk.model.ShippingOptionParameters)) {
       return super.equals(obj);
     }
-    ShippingOptionParameters other = (ShippingOptionParameters) obj;
+    ru.pnhub.widgetsdk.model.ShippingOptionParameters other = (ru.pnhub.widgetsdk.model.ShippingOptionParameters) obj;
 
     if (!getShippingOptionsList()
         .equals(other.getShippingOptionsList())) return false;
@@ -238,7 +238,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -256,69 +256,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static ShippingOptionParameters parseFrom(
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ShippingOptionParameters parseFrom(
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ShippingOptionParameters parseFrom(
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ShippingOptionParameters parseFrom(
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ShippingOptionParameters parseFrom(byte[] data)
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ShippingOptionParameters parseFrom(
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ShippingOptionParameters parseFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ShippingOptionParameters parseFrom(
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ShippingOptionParameters parseDelimitedFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ShippingOptionParameters parseDelimitedFrom(
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ShippingOptionParameters parseFrom(
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ShippingOptionParameters parseFrom(
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -326,23 +326,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ShippingOptionParameters prototype) {
+  public static Builder newBuilder(ru.pnhub.widgetsdk.model.ShippingOptionParameters prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -352,18 +352,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:pb.ShippingOptionParameters)
-      ShippingOptionParametersOrBuilder {
+      ru.pnhub.widgetsdk.model.ShippingOptionParametersOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MobileModel.internal_static_pb_ShippingOptionParameters_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ShippingOptionParameters_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MobileModel.internal_static_pb_ShippingOptionParameters_fieldAccessorTable
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ShippingOptionParameters_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ShippingOptionParameters.class, Builder.class);
+              ru.pnhub.widgetsdk.model.ShippingOptionParameters.class, ru.pnhub.widgetsdk.model.ShippingOptionParameters.Builder.class);
     }
 
     // Construct using ru.pnhub.widgetsdk.model.ShippingOptionParameters.newBuilder()
@@ -372,7 +372,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -382,7 +382,7 @@ private static final long serialVersionUID = 0L;
         getShippingOptionsFieldBuilder();
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (shippingOptionsBuilder_ == null) {
@@ -396,29 +396,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MobileModel.internal_static_pb_ShippingOptionParameters_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_ShippingOptionParameters_descriptor;
     }
 
-    @Override
-    public ShippingOptionParameters getDefaultInstanceForType() {
-      return ShippingOptionParameters.getDefaultInstance();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ShippingOptionParameters getDefaultInstanceForType() {
+      return ru.pnhub.widgetsdk.model.ShippingOptionParameters.getDefaultInstance();
     }
 
-    @Override
-    public ShippingOptionParameters build() {
-      ShippingOptionParameters result = buildPartial();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ShippingOptionParameters build() {
+      ru.pnhub.widgetsdk.model.ShippingOptionParameters result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public ShippingOptionParameters buildPartial() {
-      ShippingOptionParameters result = new ShippingOptionParameters(this);
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.ShippingOptionParameters buildPartial() {
+      ru.pnhub.widgetsdk.model.ShippingOptionParameters result = new ru.pnhub.widgetsdk.model.ShippingOptionParameters(this);
       int from_bitField0_ = bitField0_;
       if (shippingOptionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -434,50 +434,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ShippingOptionParameters) {
-        return mergeFrom((ShippingOptionParameters)other);
+      if (other instanceof ru.pnhub.widgetsdk.model.ShippingOptionParameters) {
+        return mergeFrom((ru.pnhub.widgetsdk.model.ShippingOptionParameters)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ShippingOptionParameters other) {
-      if (other == ShippingOptionParameters.getDefaultInstance()) return this;
+    public Builder mergeFrom(ru.pnhub.widgetsdk.model.ShippingOptionParameters other) {
+      if (other == ru.pnhub.widgetsdk.model.ShippingOptionParameters.getDefaultInstance()) return this;
       if (shippingOptionsBuilder_ == null) {
         if (!other.shippingOptions_.isEmpty()) {
           if (shippingOptions_.isEmpty()) {
@@ -513,21 +513,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ShippingOptionParameters parsedMessage = null;
+      ru.pnhub.widgetsdk.model.ShippingOptionParameters parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ShippingOptionParameters) e.getUnfinishedMessage();
+        parsedMessage = (ru.pnhub.widgetsdk.model.ShippingOptionParameters) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -538,22 +538,22 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<ShippingOption> shippingOptions_ =
+    private java.util.List<ru.pnhub.widgetsdk.model.ShippingOption> shippingOptions_ =
       java.util.Collections.emptyList();
     private void ensureShippingOptionsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        shippingOptions_ = new java.util.ArrayList<ShippingOption>(shippingOptions_);
+        shippingOptions_ = new java.util.ArrayList<ru.pnhub.widgetsdk.model.ShippingOption>(shippingOptions_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        ShippingOption, ShippingOption.Builder, ShippingOptionOrBuilder> shippingOptionsBuilder_;
+        ru.pnhub.widgetsdk.model.ShippingOption, ru.pnhub.widgetsdk.model.ShippingOption.Builder, ru.pnhub.widgetsdk.model.ShippingOptionOrBuilder> shippingOptionsBuilder_;
 
     /**
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
-    public java.util.List<ShippingOption> getShippingOptionsList() {
+    public java.util.List<ru.pnhub.widgetsdk.model.ShippingOption> getShippingOptionsList() {
       if (shippingOptionsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(shippingOptions_);
       } else {
@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
-    public ShippingOption getShippingOptions(int index) {
+    public ru.pnhub.widgetsdk.model.ShippingOption getShippingOptions(int index) {
       if (shippingOptionsBuilder_ == null) {
         return shippingOptions_.get(index);
       } else {
@@ -584,7 +584,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
     public Builder setShippingOptions(
-        int index, ShippingOption value) {
+        int index, ru.pnhub.widgetsdk.model.ShippingOption value) {
       if (shippingOptionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -601,7 +601,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
     public Builder setShippingOptions(
-        int index, ShippingOption.Builder builderForValue) {
+        int index, ru.pnhub.widgetsdk.model.ShippingOption.Builder builderForValue) {
       if (shippingOptionsBuilder_ == null) {
         ensureShippingOptionsIsMutable();
         shippingOptions_.set(index, builderForValue.build());
@@ -614,7 +614,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
-    public Builder addShippingOptions(ShippingOption value) {
+    public Builder addShippingOptions(ru.pnhub.widgetsdk.model.ShippingOption value) {
       if (shippingOptionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -631,7 +631,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
     public Builder addShippingOptions(
-        int index, ShippingOption value) {
+        int index, ru.pnhub.widgetsdk.model.ShippingOption value) {
       if (shippingOptionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
     public Builder addShippingOptions(
-        ShippingOption.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.ShippingOption.Builder builderForValue) {
       if (shippingOptionsBuilder_ == null) {
         ensureShippingOptionsIsMutable();
         shippingOptions_.add(builderForValue.build());
@@ -662,7 +662,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
     public Builder addShippingOptions(
-        int index, ShippingOption.Builder builderForValue) {
+        int index, ru.pnhub.widgetsdk.model.ShippingOption.Builder builderForValue) {
       if (shippingOptionsBuilder_ == null) {
         ensureShippingOptionsIsMutable();
         shippingOptions_.add(index, builderForValue.build());
@@ -676,7 +676,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
     public Builder addAllShippingOptions(
-        Iterable<? extends ShippingOption> values) {
+        java.lang.Iterable<? extends ru.pnhub.widgetsdk.model.ShippingOption> values) {
       if (shippingOptionsBuilder_ == null) {
         ensureShippingOptionsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -716,14 +716,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
-    public ShippingOption.Builder getShippingOptionsBuilder(
+    public ru.pnhub.widgetsdk.model.ShippingOption.Builder getShippingOptionsBuilder(
         int index) {
       return getShippingOptionsFieldBuilder().getBuilder(index);
     }
     /**
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
-    public ShippingOptionOrBuilder getShippingOptionsOrBuilder(
+    public ru.pnhub.widgetsdk.model.ShippingOptionOrBuilder getShippingOptionsOrBuilder(
         int index) {
       if (shippingOptionsBuilder_ == null) {
         return shippingOptions_.get(index);  } else {
@@ -733,7 +733,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
-    public java.util.List<? extends ShippingOptionOrBuilder>
+    public java.util.List<? extends ru.pnhub.widgetsdk.model.ShippingOptionOrBuilder> 
          getShippingOptionsOrBuilderList() {
       if (shippingOptionsBuilder_ != null) {
         return shippingOptionsBuilder_.getMessageOrBuilderList();
@@ -744,31 +744,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
-    public ShippingOption.Builder addShippingOptionsBuilder() {
+    public ru.pnhub.widgetsdk.model.ShippingOption.Builder addShippingOptionsBuilder() {
       return getShippingOptionsFieldBuilder().addBuilder(
-          ShippingOption.getDefaultInstance());
+          ru.pnhub.widgetsdk.model.ShippingOption.getDefaultInstance());
     }
     /**
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
-    public ShippingOption.Builder addShippingOptionsBuilder(
+    public ru.pnhub.widgetsdk.model.ShippingOption.Builder addShippingOptionsBuilder(
         int index) {
       return getShippingOptionsFieldBuilder().addBuilder(
-          index, ShippingOption.getDefaultInstance());
+          index, ru.pnhub.widgetsdk.model.ShippingOption.getDefaultInstance());
     }
     /**
      * <code>repeated .pb.ShippingOption shipping_options = 1;</code>
      */
-    public java.util.List<ShippingOption.Builder>
+    public java.util.List<ru.pnhub.widgetsdk.model.ShippingOption.Builder> 
          getShippingOptionsBuilderList() {
       return getShippingOptionsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        ShippingOption, ShippingOption.Builder, ShippingOptionOrBuilder>
+        ru.pnhub.widgetsdk.model.ShippingOption, ru.pnhub.widgetsdk.model.ShippingOption.Builder, ru.pnhub.widgetsdk.model.ShippingOptionOrBuilder> 
         getShippingOptionsFieldBuilder() {
       if (shippingOptionsBuilder_ == null) {
         shippingOptionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            ShippingOption, ShippingOption.Builder, ShippingOptionOrBuilder>(
+            ru.pnhub.widgetsdk.model.ShippingOption, ru.pnhub.widgetsdk.model.ShippingOption.Builder, ru.pnhub.widgetsdk.model.ShippingOptionOrBuilder>(
                 shippingOptions_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -778,21 +778,21 @@ private static final long serialVersionUID = 0L;
       return shippingOptionsBuilder_;
     }
 
-    private Object defaultSelectedOptionId_ = "";
+    private java.lang.Object defaultSelectedOptionId_ = "";
     /**
      * <code>string default_selected_option_id = 2;</code>
      * @return The defaultSelectedOptionId.
      */
-    public String getDefaultSelectedOptionId() {
-      Object ref = defaultSelectedOptionId_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getDefaultSelectedOptionId() {
+      java.lang.Object ref = defaultSelectedOptionId_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         defaultSelectedOptionId_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -801,11 +801,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDefaultSelectedOptionIdBytes() {
-      Object ref = defaultSelectedOptionId_;
+      java.lang.Object ref = defaultSelectedOptionId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         defaultSelectedOptionId_ = b;
         return b;
       } else {
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setDefaultSelectedOptionId(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -853,13 +853,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -870,18 +870,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:pb.ShippingOptionParameters)
-  private static final ShippingOptionParameters DEFAULT_INSTANCE;
+  private static final ru.pnhub.widgetsdk.model.ShippingOptionParameters DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ShippingOptionParameters();
+    DEFAULT_INSTANCE = new ru.pnhub.widgetsdk.model.ShippingOptionParameters();
   }
 
-  public static ShippingOptionParameters getDefaultInstance() {
+  public static ru.pnhub.widgetsdk.model.ShippingOptionParameters getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<ShippingOptionParameters>
       PARSER = new com.google.protobuf.AbstractParser<ShippingOptionParameters>() {
-    @Override
+    @java.lang.Override
     public ShippingOptionParameters parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -894,13 +894,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<ShippingOptionParameters> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public ShippingOptionParameters getDefaultInstanceForType() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.ShippingOptionParameters getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

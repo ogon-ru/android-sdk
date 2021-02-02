@@ -11,7 +11,7 @@ public interface AddressOrBuilder extends
    * <code>string name = 1;</code>
    * @return The name.
    */
-  String getName();
+  java.lang.String getName();
   /**
    * <code>string name = 1;</code>
    * @return The bytes for name.
@@ -23,7 +23,7 @@ public interface AddressOrBuilder extends
    * <code>string address1 = 2;</code>
    * @return The address1.
    */
-  String getAddress1();
+  java.lang.String getAddress1();
   /**
    * <code>string address1 = 2;</code>
    * @return The bytes for address1.
@@ -35,7 +35,7 @@ public interface AddressOrBuilder extends
    * <code>string address2 = 3;</code>
    * @return The address2.
    */
-  String getAddress2();
+  java.lang.String getAddress2();
   /**
    * <code>string address2 = 3;</code>
    * @return The bytes for address2.
@@ -47,7 +47,7 @@ public interface AddressOrBuilder extends
    * <code>string address3 = 4;</code>
    * @return The address3.
    */
-  String getAddress3();
+  java.lang.String getAddress3();
   /**
    * <code>string address3 = 4;</code>
    * @return The bytes for address3.
@@ -59,7 +59,7 @@ public interface AddressOrBuilder extends
    * <code>string locality = 5;</code>
    * @return The locality.
    */
-  String getLocality();
+  java.lang.String getLocality();
   /**
    * <code>string locality = 5;</code>
    * @return The bytes for locality.
@@ -71,7 +71,7 @@ public interface AddressOrBuilder extends
    * <code>string administrative_area = 6;</code>
    * @return The administrativeArea.
    */
-  String getAdministrativeArea();
+  java.lang.String getAdministrativeArea();
   /**
    * <code>string administrative_area = 6;</code>
    * @return The bytes for administrativeArea.
@@ -83,7 +83,7 @@ public interface AddressOrBuilder extends
    * <code>string country_code = 7;</code>
    * @return The countryCode.
    */
-  String getCountryCode();
+  java.lang.String getCountryCode();
   /**
    * <code>string country_code = 7;</code>
    * @return The bytes for countryCode.
@@ -95,7 +95,7 @@ public interface AddressOrBuilder extends
    * <code>string postal_code = 8;</code>
    * @return The postalCode.
    */
-  String getPostalCode();
+  java.lang.String getPostalCode();
   /**
    * <code>string postal_code = 8;</code>
    * @return The bytes for postalCode.
@@ -107,7 +107,7 @@ public interface AddressOrBuilder extends
    * <code>string sorting_code = 9;</code>
    * @return The sortingCode.
    */
-  String getSortingCode();
+  java.lang.String getSortingCode();
   /**
    * <code>string sorting_code = 9;</code>
    * @return The bytes for sortingCode.
@@ -119,7 +119,7 @@ public interface AddressOrBuilder extends
    * <code>string phone_number = 10;</code>
    * @return The phoneNumber.
    */
-  String getPhoneNumber();
+  java.lang.String getPhoneNumber();
   /**
    * <code>string phone_number = 10;</code>
    * @return The bytes for phoneNumber.

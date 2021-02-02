@@ -126,5 +126,17 @@ public interface MobileEventOrBuilder extends
   com.google.protobuf.ByteString
       getOpenUrlRequestBytes();
 
+  /**
+   * <code>string share_url_request = 10;</code>
+   * @return The shareUrlRequest.
+   */
+  java.lang.String getShareUrlRequest();
+  /**
+   * <code>string share_url_request = 10;</code>
+   * @return The bytes for shareUrlRequest.
+   */
+  com.google.protobuf.ByteString
+      getShareUrlRequestBytes();
+
   public ru.pnhub.widgetsdk.model.MobileEvent.PayloadCase getPayloadCase();
 }

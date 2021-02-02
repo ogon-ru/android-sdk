@@ -19,14 +19,14 @@ private static final long serialVersionUID = 0L;
     allowedPaymentMethods_ = java.util.Collections.emptyList();
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new IsReadyToPayRequest();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -62,11 +62,11 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              allowedPaymentMethods_ = new java.util.ArrayList<PaymentMethodSpecification>();
+              allowedPaymentMethods_ = new java.util.ArrayList<ru.pnhub.widgetsdk.model.PaymentMethodSpecification>();
               mutable_bitField0_ |= 0x00000001;
             }
             allowedPaymentMethods_.add(
-                input.readMessage(PaymentMethodSpecification.parser(), extensionRegistry));
+                input.readMessage(ru.pnhub.widgetsdk.model.PaymentMethodSpecification.parser(), extensionRegistry));
             break;
           }
           case 32: {
@@ -98,15 +98,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MobileModel.internal_static_pb_IsReadyToPayRequest_descriptor;
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_IsReadyToPayRequest_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MobileModel.internal_static_pb_IsReadyToPayRequest_fieldAccessorTable
+    return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_IsReadyToPayRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            IsReadyToPayRequest.class, Builder.class);
+            ru.pnhub.widgetsdk.model.IsReadyToPayRequest.class, ru.pnhub.widgetsdk.model.IsReadyToPayRequest.Builder.class);
   }
 
   public static final int API_VERSION_FIELD_NUMBER = 1;
@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 api_version = 1;</code>
    * @return The apiVersion.
    */
-  @Override
+  @java.lang.Override
   public int getApiVersion() {
     return apiVersion_;
   }
@@ -126,47 +126,47 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 api_version_minor = 2;</code>
    * @return The apiVersionMinor.
    */
-  @Override
+  @java.lang.Override
   public int getApiVersionMinor() {
     return apiVersionMinor_;
   }
 
   public static final int ALLOWED_PAYMENT_METHODS_FIELD_NUMBER = 3;
-  private java.util.List<PaymentMethodSpecification> allowedPaymentMethods_;
+  private java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification> allowedPaymentMethods_;
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
    */
-  @Override
-  public java.util.List<PaymentMethodSpecification> getAllowedPaymentMethodsList() {
+  @java.lang.Override
+  public java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification> getAllowedPaymentMethodsList() {
     return allowedPaymentMethods_;
   }
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
    */
-  @Override
-  public java.util.List<? extends PaymentMethodSpecificationOrBuilder>
+  @java.lang.Override
+  public java.util.List<? extends ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder> 
       getAllowedPaymentMethodsOrBuilderList() {
     return allowedPaymentMethods_;
   }
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
    */
-  @Override
+  @java.lang.Override
   public int getAllowedPaymentMethodsCount() {
     return allowedPaymentMethods_.size();
   }
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
    */
-  @Override
-  public PaymentMethodSpecification getAllowedPaymentMethods(int index) {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.PaymentMethodSpecification getAllowedPaymentMethods(int index) {
     return allowedPaymentMethods_.get(index);
   }
   /**
    * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
    */
-  @Override
-  public PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
       int index) {
     return allowedPaymentMethods_.get(index);
   }
@@ -177,13 +177,13 @@ private static final long serialVersionUID = 0L;
    * <code>bool existing_payment_method_required = 4;</code>
    * @return The existingPaymentMethodRequired.
    */
-  @Override
+  @java.lang.Override
   public boolean getExistingPaymentMethodRequired() {
     return existingPaymentMethodRequired_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -193,7 +193,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (apiVersion_ != 0) {
@@ -211,7 +211,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -238,15 +238,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof IsReadyToPayRequest)) {
+    if (!(obj instanceof ru.pnhub.widgetsdk.model.IsReadyToPayRequest)) {
       return super.equals(obj);
     }
-    IsReadyToPayRequest other = (IsReadyToPayRequest) obj;
+    ru.pnhub.widgetsdk.model.IsReadyToPayRequest other = (ru.pnhub.widgetsdk.model.IsReadyToPayRequest) obj;
 
     if (getApiVersion()
         != other.getApiVersion()) return false;
@@ -260,7 +260,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -283,69 +283,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static IsReadyToPayRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static IsReadyToPayRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static IsReadyToPayRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static IsReadyToPayRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static IsReadyToPayRequest parseFrom(byte[] data)
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static IsReadyToPayRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static IsReadyToPayRequest parseFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static IsReadyToPayRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static IsReadyToPayRequest parseDelimitedFrom(java.io.InputStream input)
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static IsReadyToPayRequest parseDelimitedFrom(
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static IsReadyToPayRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static IsReadyToPayRequest parseFrom(
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -353,23 +353,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(IsReadyToPayRequest prototype) {
+  public static Builder newBuilder(ru.pnhub.widgetsdk.model.IsReadyToPayRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -379,18 +379,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:pb.IsReadyToPayRequest)
-      IsReadyToPayRequestOrBuilder {
+      ru.pnhub.widgetsdk.model.IsReadyToPayRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MobileModel.internal_static_pb_IsReadyToPayRequest_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_IsReadyToPayRequest_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MobileModel.internal_static_pb_IsReadyToPayRequest_fieldAccessorTable
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_IsReadyToPayRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              IsReadyToPayRequest.class, Builder.class);
+              ru.pnhub.widgetsdk.model.IsReadyToPayRequest.class, ru.pnhub.widgetsdk.model.IsReadyToPayRequest.Builder.class);
     }
 
     // Construct using ru.pnhub.widgetsdk.model.IsReadyToPayRequest.newBuilder()
@@ -399,7 +399,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -409,7 +409,7 @@ private static final long serialVersionUID = 0L;
         getAllowedPaymentMethodsFieldBuilder();
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       apiVersion_ = 0;
@@ -427,29 +427,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MobileModel.internal_static_pb_IsReadyToPayRequest_descriptor;
+      return ru.pnhub.widgetsdk.model.MobileModel.internal_static_pb_IsReadyToPayRequest_descriptor;
     }
 
-    @Override
-    public IsReadyToPayRequest getDefaultInstanceForType() {
-      return IsReadyToPayRequest.getDefaultInstance();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.IsReadyToPayRequest getDefaultInstanceForType() {
+      return ru.pnhub.widgetsdk.model.IsReadyToPayRequest.getDefaultInstance();
     }
 
-    @Override
-    public IsReadyToPayRequest build() {
-      IsReadyToPayRequest result = buildPartial();
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.IsReadyToPayRequest build() {
+      ru.pnhub.widgetsdk.model.IsReadyToPayRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public IsReadyToPayRequest buildPartial() {
-      IsReadyToPayRequest result = new IsReadyToPayRequest(this);
+    @java.lang.Override
+    public ru.pnhub.widgetsdk.model.IsReadyToPayRequest buildPartial() {
+      ru.pnhub.widgetsdk.model.IsReadyToPayRequest result = new ru.pnhub.widgetsdk.model.IsReadyToPayRequest(this);
       int from_bitField0_ = bitField0_;
       result.apiVersion_ = apiVersion_;
       result.apiVersionMinor_ = apiVersionMinor_;
@@ -467,50 +467,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof IsReadyToPayRequest) {
-        return mergeFrom((IsReadyToPayRequest)other);
+      if (other instanceof ru.pnhub.widgetsdk.model.IsReadyToPayRequest) {
+        return mergeFrom((ru.pnhub.widgetsdk.model.IsReadyToPayRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(IsReadyToPayRequest other) {
-      if (other == IsReadyToPayRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(ru.pnhub.widgetsdk.model.IsReadyToPayRequest other) {
+      if (other == ru.pnhub.widgetsdk.model.IsReadyToPayRequest.getDefaultInstance()) return this;
       if (other.getApiVersion() != 0) {
         setApiVersion(other.getApiVersion());
       }
@@ -551,21 +551,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      IsReadyToPayRequest parsedMessage = null;
+      ru.pnhub.widgetsdk.model.IsReadyToPayRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (IsReadyToPayRequest) e.getUnfinishedMessage();
+        parsedMessage = (ru.pnhub.widgetsdk.model.IsReadyToPayRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -581,7 +581,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 api_version = 1;</code>
      * @return The apiVersion.
      */
-    @Override
+    @java.lang.Override
     public int getApiVersion() {
       return apiVersion_;
     }
@@ -612,7 +612,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 api_version_minor = 2;</code>
      * @return The apiVersionMinor.
      */
-    @Override
+    @java.lang.Override
     public int getApiVersionMinor() {
       return apiVersionMinor_;
     }
@@ -638,22 +638,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<PaymentMethodSpecification> allowedPaymentMethods_ =
+    private java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification> allowedPaymentMethods_ =
       java.util.Collections.emptyList();
     private void ensureAllowedPaymentMethodsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        allowedPaymentMethods_ = new java.util.ArrayList<PaymentMethodSpecification>(allowedPaymentMethods_);
+        allowedPaymentMethods_ = new java.util.ArrayList<ru.pnhub.widgetsdk.model.PaymentMethodSpecification>(allowedPaymentMethods_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        PaymentMethodSpecification, PaymentMethodSpecification.Builder, PaymentMethodSpecificationOrBuilder> allowedPaymentMethodsBuilder_;
+        ru.pnhub.widgetsdk.model.PaymentMethodSpecification, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder, ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder> allowedPaymentMethodsBuilder_;
 
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
-    public java.util.List<PaymentMethodSpecification> getAllowedPaymentMethodsList() {
+    public java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification> getAllowedPaymentMethodsList() {
       if (allowedPaymentMethodsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(allowedPaymentMethods_);
       } else {
@@ -673,7 +673,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
-    public PaymentMethodSpecification getAllowedPaymentMethods(int index) {
+    public ru.pnhub.widgetsdk.model.PaymentMethodSpecification getAllowedPaymentMethods(int index) {
       if (allowedPaymentMethodsBuilder_ == null) {
         return allowedPaymentMethods_.get(index);
       } else {
@@ -684,7 +684,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
     public Builder setAllowedPaymentMethods(
-        int index, PaymentMethodSpecification value) {
+        int index, ru.pnhub.widgetsdk.model.PaymentMethodSpecification value) {
       if (allowedPaymentMethodsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -701,7 +701,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
     public Builder setAllowedPaymentMethods(
-        int index, PaymentMethodSpecification.Builder builderForValue) {
+        int index, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder builderForValue) {
       if (allowedPaymentMethodsBuilder_ == null) {
         ensureAllowedPaymentMethodsIsMutable();
         allowedPaymentMethods_.set(index, builderForValue.build());
@@ -714,7 +714,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
-    public Builder addAllowedPaymentMethods(PaymentMethodSpecification value) {
+    public Builder addAllowedPaymentMethods(ru.pnhub.widgetsdk.model.PaymentMethodSpecification value) {
       if (allowedPaymentMethodsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -731,7 +731,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
     public Builder addAllowedPaymentMethods(
-        int index, PaymentMethodSpecification value) {
+        int index, ru.pnhub.widgetsdk.model.PaymentMethodSpecification value) {
       if (allowedPaymentMethodsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
     public Builder addAllowedPaymentMethods(
-        PaymentMethodSpecification.Builder builderForValue) {
+        ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder builderForValue) {
       if (allowedPaymentMethodsBuilder_ == null) {
         ensureAllowedPaymentMethodsIsMutable();
         allowedPaymentMethods_.add(builderForValue.build());
@@ -762,7 +762,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
     public Builder addAllowedPaymentMethods(
-        int index, PaymentMethodSpecification.Builder builderForValue) {
+        int index, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder builderForValue) {
       if (allowedPaymentMethodsBuilder_ == null) {
         ensureAllowedPaymentMethodsIsMutable();
         allowedPaymentMethods_.add(index, builderForValue.build());
@@ -776,7 +776,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
     public Builder addAllAllowedPaymentMethods(
-        Iterable<? extends PaymentMethodSpecification> values) {
+        java.lang.Iterable<? extends ru.pnhub.widgetsdk.model.PaymentMethodSpecification> values) {
       if (allowedPaymentMethodsBuilder_ == null) {
         ensureAllowedPaymentMethodsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -816,14 +816,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
-    public PaymentMethodSpecification.Builder getAllowedPaymentMethodsBuilder(
+    public ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder getAllowedPaymentMethodsBuilder(
         int index) {
       return getAllowedPaymentMethodsFieldBuilder().getBuilder(index);
     }
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
-    public PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
+    public ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder getAllowedPaymentMethodsOrBuilder(
         int index) {
       if (allowedPaymentMethodsBuilder_ == null) {
         return allowedPaymentMethods_.get(index);  } else {
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
-    public java.util.List<? extends PaymentMethodSpecificationOrBuilder>
+    public java.util.List<? extends ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder> 
          getAllowedPaymentMethodsOrBuilderList() {
       if (allowedPaymentMethodsBuilder_ != null) {
         return allowedPaymentMethodsBuilder_.getMessageOrBuilderList();
@@ -844,31 +844,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
-    public PaymentMethodSpecification.Builder addAllowedPaymentMethodsBuilder() {
+    public ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder addAllowedPaymentMethodsBuilder() {
       return getAllowedPaymentMethodsFieldBuilder().addBuilder(
-          PaymentMethodSpecification.getDefaultInstance());
+          ru.pnhub.widgetsdk.model.PaymentMethodSpecification.getDefaultInstance());
     }
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
-    public PaymentMethodSpecification.Builder addAllowedPaymentMethodsBuilder(
+    public ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder addAllowedPaymentMethodsBuilder(
         int index) {
       return getAllowedPaymentMethodsFieldBuilder().addBuilder(
-          index, PaymentMethodSpecification.getDefaultInstance());
+          index, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.getDefaultInstance());
     }
     /**
      * <code>repeated .pb.PaymentMethodSpecification allowed_payment_methods = 3;</code>
      */
-    public java.util.List<PaymentMethodSpecification.Builder>
+    public java.util.List<ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder> 
          getAllowedPaymentMethodsBuilderList() {
       return getAllowedPaymentMethodsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        PaymentMethodSpecification, PaymentMethodSpecification.Builder, PaymentMethodSpecificationOrBuilder>
+        ru.pnhub.widgetsdk.model.PaymentMethodSpecification, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder, ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder> 
         getAllowedPaymentMethodsFieldBuilder() {
       if (allowedPaymentMethodsBuilder_ == null) {
         allowedPaymentMethodsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            PaymentMethodSpecification, PaymentMethodSpecification.Builder, PaymentMethodSpecificationOrBuilder>(
+            ru.pnhub.widgetsdk.model.PaymentMethodSpecification, ru.pnhub.widgetsdk.model.PaymentMethodSpecification.Builder, ru.pnhub.widgetsdk.model.PaymentMethodSpecificationOrBuilder>(
                 allowedPaymentMethods_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool existing_payment_method_required = 4;</code>
      * @return The existingPaymentMethodRequired.
      */
-    @Override
+    @java.lang.Override
     public boolean getExistingPaymentMethodRequired() {
       return existingPaymentMethodRequired_;
     }
@@ -908,13 +908,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -925,18 +925,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:pb.IsReadyToPayRequest)
-  private static final IsReadyToPayRequest DEFAULT_INSTANCE;
+  private static final ru.pnhub.widgetsdk.model.IsReadyToPayRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new IsReadyToPayRequest();
+    DEFAULT_INSTANCE = new ru.pnhub.widgetsdk.model.IsReadyToPayRequest();
   }
 
-  public static IsReadyToPayRequest getDefaultInstance() {
+  public static ru.pnhub.widgetsdk.model.IsReadyToPayRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<IsReadyToPayRequest>
       PARSER = new com.google.protobuf.AbstractParser<IsReadyToPayRequest>() {
-    @Override
+    @java.lang.Override
     public IsReadyToPayRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -949,13 +949,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<IsReadyToPayRequest> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public IsReadyToPayRequest getDefaultInstanceForType() {
+  @java.lang.Override
+  public ru.pnhub.widgetsdk.model.IsReadyToPayRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

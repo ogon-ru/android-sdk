@@ -150,6 +150,12 @@ private static final long serialVersionUID = 0L;
             payload_ = s;
             break;
           }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+            payloadCase_ = 10;
+            payload_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -195,6 +201,7 @@ private static final long serialVersionUID = 0L;
     APPLEPAY_PAYMENT_DATA_REQUEST(7),
     APPLEPAY_PAYMENT_DATA(8),
     OPEN_URL_REQUEST(9),
+    SHARE_URL_REQUEST(10),
     PAYLOAD_NOT_SET(0);
     private final int value;
     private PayloadCase(int value) {
@@ -220,6 +227,7 @@ private static final long serialVersionUID = 0L;
         case 7: return APPLEPAY_PAYMENT_DATA_REQUEST;
         case 8: return APPLEPAY_PAYMENT_DATA;
         case 9: return OPEN_URL_REQUEST;
+        case 10: return SHARE_URL_REQUEST;
         case 0: return PAYLOAD_NOT_SET;
         default: return null;
       }
@@ -498,6 +506,51 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SHARE_URL_REQUEST_FIELD_NUMBER = 10;
+  /**
+   * <code>string share_url_request = 10;</code>
+   * @return The shareUrlRequest.
+   */
+  public java.lang.String getShareUrlRequest() {
+    java.lang.Object ref = "";
+    if (payloadCase_ == 10) {
+      ref = payload_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (payloadCase_ == 10) {
+        payload_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <code>string share_url_request = 10;</code>
+   * @return The bytes for shareUrlRequest.
+   */
+  public com.google.protobuf.ByteString
+      getShareUrlRequestBytes() {
+    java.lang.Object ref = "";
+    if (payloadCase_ == 10) {
+      ref = payload_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (payloadCase_ == 10) {
+        payload_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -539,6 +592,9 @@ private static final long serialVersionUID = 0L;
     }
     if (payloadCase_ == 9) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, payload_);
+    }
+    if (payloadCase_ == 10) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, payload_);
     }
     unknownFields.writeTo(output);
   }
@@ -584,6 +640,9 @@ private static final long serialVersionUID = 0L;
     }
     if (payloadCase_ == 9) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, payload_);
+    }
+    if (payloadCase_ == 10) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, payload_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -635,6 +694,10 @@ private static final long serialVersionUID = 0L;
         if (!getOpenUrlRequest()
             .equals(other.getOpenUrlRequest())) return false;
         break;
+      case 10:
+        if (!getShareUrlRequest()
+            .equals(other.getShareUrlRequest())) return false;
+        break;
       case 0:
       default:
     }
@@ -684,6 +747,10 @@ private static final long serialVersionUID = 0L;
       case 9:
         hash = (37 * hash) + OPEN_URL_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getOpenUrlRequest().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + SHARE_URL_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getShareUrlRequest().hashCode();
         break;
       case 0:
       default:
@@ -900,6 +967,9 @@ private static final long serialVersionUID = 0L;
       if (payloadCase_ == 9) {
         result.payload_ = payload_;
       }
+      if (payloadCase_ == 10) {
+        result.payload_ = payload_;
+      }
       result.payloadCase_ = payloadCase_;
       onBuilt();
       return result;
@@ -983,6 +1053,12 @@ private static final long serialVersionUID = 0L;
         }
         case OPEN_URL_REQUEST: {
           payloadCase_ = 9;
+          payload_ = other.payload_;
+          onChanged();
+          break;
+        }
+        case SHARE_URL_REQUEST: {
+          payloadCase_ = 10;
           payload_ = other.payload_;
           onChanged();
           break;
@@ -2053,6 +2129,95 @@ private static final long serialVersionUID = 0L;
   }
   checkByteStringIsUtf8(value);
       payloadCase_ = 9;
+      payload_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>string share_url_request = 10;</code>
+     * @return The shareUrlRequest.
+     */
+    @java.lang.Override
+    public java.lang.String getShareUrlRequest() {
+      java.lang.Object ref = "";
+      if (payloadCase_ == 10) {
+        ref = payload_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (payloadCase_ == 10) {
+          payload_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string share_url_request = 10;</code>
+     * @return The bytes for shareUrlRequest.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getShareUrlRequestBytes() {
+      java.lang.Object ref = "";
+      if (payloadCase_ == 10) {
+        ref = payload_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (payloadCase_ == 10) {
+          payload_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string share_url_request = 10;</code>
+     * @param value The shareUrlRequest to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShareUrlRequest(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  payloadCase_ = 10;
+      payload_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string share_url_request = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShareUrlRequest() {
+      if (payloadCase_ == 10) {
+        payloadCase_ = 0;
+        payload_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>string share_url_request = 10;</code>
+     * @param value The bytes for shareUrlRequest to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShareUrlRequestBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      payloadCase_ = 10;
       payload_ = value;
       onChanged();
       return this;
