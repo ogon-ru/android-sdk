@@ -14,6 +14,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.KeyEvent
 import android.webkit.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import com.google.android.gms.common.api.ApiException
@@ -43,16 +44,18 @@ class WidgetActivity : AppCompatActivity() {
 
     private lateinit var webView: WebView
     private lateinit var jsBridge: JSBridge
+    private lateinit var baseUrl: String
     private var permissionRequest: PermissionRequest? = null
     private var filePathCallback: ValueCallback<Array<Uri>>? = null
     private var cameraPhotoPath: String? = null
+    private var httpError = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_widget)
 
         val token = intent.getStringExtra(EXTRA_TOKEN)
-        val baseUrl = intent.getStringExtra(EXTRA_BASE_URL) ?: BASE_URL
+        baseUrl = intent.getStringExtra(EXTRA_BASE_URL) ?: BASE_URL
 
         webView = findViewById<WebView>(R.id.webView).apply {
             settings.javaScriptEnabled = true
@@ -75,14 +78,20 @@ class WidgetActivity : AppCompatActivity() {
 
     override fun onKeyDown(keyCode: Int, keyEvent: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val event = MobileEvent.newBuilder().run {
-                type = MobileEventType.MOBILE_EVENT_BACK
-                build()
+            if (webView.url.startsWith(baseUrl, true) && !httpError) {
+                val event = MobileEvent.newBuilder().run {
+                    type = MobileEventType.MOBILE_EVENT_BACK
+                    build()
+                }
+
+                jsBridge.sendEvent(event)
+                return true
             }
 
-            jsBridge.sendEvent(event)
-
-            return true
+            if (webView.canGoBack()) {
+                webView.goBack()
+                return true
+            }
         }
 
         return super.onKeyDown(keyCode, keyEvent)
@@ -337,6 +346,16 @@ class WidgetActivity : AppCompatActivity() {
             } else {
                 super.onReceivedSslError(view, handler, error)
             }
+        }
+
+        override fun onReceivedHttpError(view: WebView?, request: WebResourceRequest?, errorResponse: WebResourceResponse?) {
+            if (request !== null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                if (request.method.equals("get", true) && request.isForMainFrame) {
+                    httpError = true
+                }
+            }
+
+            super.onReceivedHttpError(view, request, errorResponse)
         }
     }
 
