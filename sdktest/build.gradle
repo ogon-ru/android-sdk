@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'co.uzzu.dotenv.gradle' version '1.1.0'
 }
 
 android {
@@ -19,6 +20,10 @@ android {
     }
 
     buildTypes {
+        all {
+            buildConfigField "String", "BASE_URL", "\"$env.BASE_URL.value\""
+            buildConfigField "String", "TOKEN", "\"$env.TOKEN.value\""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
