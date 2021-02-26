@@ -14,7 +14,6 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.KeyEvent
 import android.webkit.*
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import com.google.android.gms.common.api.ApiException
@@ -40,11 +39,15 @@ class WidgetActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_TOKEN = "EXTRA_TOKEN"
         const val EXTRA_BASE_URL = "EXTRA_BASE_URL"
+        const val EXTRA_HTTP_USERNAME = "EXTRA_HTTP_USERNAME"
+        const val EXTRA_HTTP_PASSWORD = "EXTRA_HTTP_PASSWORD"
     }
 
     private lateinit var webView: WebView
     private lateinit var jsBridge: JSBridge
     private lateinit var baseUrl: String
+    private var httpUsername: String? = null
+    private var httpPassword: String? = null
     private var permissionRequest: PermissionRequest? = null
     private var filePathCallback: ValueCallback<Array<Uri>>? = null
     private var cameraPhotoPath: String? = null
@@ -56,6 +59,8 @@ class WidgetActivity : AppCompatActivity() {
 
         val token = intent.getStringExtra(EXTRA_TOKEN)
         baseUrl = intent.getStringExtra(EXTRA_BASE_URL) ?: BASE_URL
+        httpUsername = intent.getStringExtra(EXTRA_HTTP_USERNAME)
+        httpPassword = intent.getStringExtra(EXTRA_HTTP_PASSWORD)
 
         webView = findViewById<WebView>(R.id.webView).apply {
             settings.javaScriptEnabled = true
@@ -356,6 +361,14 @@ class WidgetActivity : AppCompatActivity() {
             }
 
             super.onReceivedHttpError(view, request, errorResponse)
+        }
+
+        override fun onReceivedHttpAuthRequest(view: WebView?, handler: HttpAuthHandler?, host: String?, realm: String?) {
+            if (httpUsername.isNullOrEmpty() || httpPassword.isNullOrEmpty()) {
+                super.onReceivedHttpAuthRequest(view, handler, host, realm)
+            } else {
+                handler?.proceed(httpUsername, httpPassword)
+            }
         }
     }
 
