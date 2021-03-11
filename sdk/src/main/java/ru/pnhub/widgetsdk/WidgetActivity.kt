@@ -41,6 +41,8 @@ class WidgetActivity : AppCompatActivity() {
         const val EXTRA_BASE_URL = "EXTRA_BASE_URL"
         const val EXTRA_HTTP_USERNAME = "EXTRA_HTTP_USERNAME"
         const val EXTRA_HTTP_PASSWORD = "EXTRA_HTTP_PASSWORD"
+
+        const val RESULT_ERROR = 100
     }
 
     private lateinit var webView: WebView
@@ -79,6 +81,7 @@ class WidgetActivity : AppCompatActivity() {
         )
 
         webView.loadUrl("$baseUrl/?token=$token")
+        setResult(RESULT_OK)
     }
 
     override fun onKeyDown(keyCode: Int, keyEvent: KeyEvent?): Boolean {
@@ -345,6 +348,15 @@ class WidgetActivity : AppCompatActivity() {
             view?.loadUrl(INJECT_JS_CODE)
         }
 
+        override fun onPageFinished(view: WebView?, url: String?) {
+            if (httpError && view?.canGoBack() != true && callingActivity != null) {
+                setResult(RESULT_ERROR)
+                finish()
+            } else {
+                super.onPageFinished(view, url)
+            }
+        }
+
         override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
             if (BuildConfig.DEBUG) { // handle local ssl
                 handler?.proceed();
@@ -361,6 +373,16 @@ class WidgetActivity : AppCompatActivity() {
             }
 
             super.onReceivedHttpError(view, request, errorResponse)
+        }
+
+        override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
+            if (request !== null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                if (request.method.equals("get", true) && request.isForMainFrame) {
+                    httpError = true
+                }
+            }
+
+            super.onReceivedError(view, request, error)
         }
 
         override fun onReceivedHttpAuthRequest(view: WebView?, handler: HttpAuthHandler?, host: String?, realm: String?) {
