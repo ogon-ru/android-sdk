@@ -261,6 +261,8 @@ class WidgetActivity : AppCompatActivity() {
         }
     }
 
+   private fun getAuthority(): String = application.packageName + getString(R.string.provider_package)
+
     private fun startActionChooser() {
         var cameraIntent: Intent? = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         if (hasCameraPermission() && cameraIntent!!.resolveActivity(packageManager) != null) {
@@ -274,7 +276,7 @@ class WidgetActivity : AppCompatActivity() {
 
             // Continue only if the File was successfully created
             if (photoFile != null) {
-                val fileUri = FileProvider.getUriForFile(this, "ru.pnhub.widgetsdk.fileprovider", photoFile)
+                val fileUri = FileProvider.getUriForFile(this, getAuthority(), photoFile)
                 cameraPhotoPath = "file:" + photoFile.absolutePath
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri)
 //                cameraIntent.putExtra("PhotoPath", cameraPhotoPath)

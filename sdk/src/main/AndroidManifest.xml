@@ -23,7 +23,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="ru.pnhub.widgetsdk.fileprovider"
+            android:authorities="${applicationId}.ru.pnhub.widgetsdk.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
