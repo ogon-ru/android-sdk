@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.graphics.Bitmap
+import android.net.MailTo
 import android.net.Uri
 import android.net.http.SslError
 import android.os.Build
@@ -14,6 +15,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.KeyEvent
 import android.webkit.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import com.google.android.gms.common.api.ApiException
@@ -345,6 +347,29 @@ class WidgetActivity : AppCompatActivity() {
         return File.createTempFile(imageFileName, ".jpg", dir)
     }
 
+    private fun openMailLink(url: String) = try {
+        val mt = MailTo.parse(url)
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_EMAIL, arrayOf(mt.to))
+            putExtra(Intent.EXTRA_TEXT, mt.body)
+            putExtra(Intent.EXTRA_SUBJECT, mt.subject)
+            putExtra(Intent.EXTRA_CC, mt.cc)
+        }
+        startActivity(intent)
+    } catch (e: Throwable) {
+        Log.e("[WidgetActivity]", "open mail link failed", e)
+    }
+
+    private fun openTelLink(url: String) = try {
+        val intent = Intent(Intent.ACTION_VIEW).apply {
+            data = Uri.parse(url)
+        }
+        startActivity(intent)
+    } catch (e: Throwable) {
+        Log.e("[WidgetActivity]", "open phone link failed", e)
+    }
+
     private inner class WidgetWebViewClient : WebViewClient() {
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
             view?.loadUrl(INJECT_JS_CODE)
@@ -393,6 +418,24 @@ class WidgetActivity : AppCompatActivity() {
             } else {
                 handler?.proceed(httpUsername, httpPassword)
             }
+        }
+
+        @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+        override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+            val url = request?.url?.toString() ?: ""
+
+            if (MailTo.isMailTo(url)) {
+                openMailLink(url)
+                return true
+            } else if (url.startsWith(WebView.SCHEME_TEL, true)) {
+                openTelLink(url)
+                return true
+            } else if (!url.startsWith(baseUrl, true)) {
+                openUrl(url)
+                return true
+            }
+
+            return super.shouldOverrideUrlLoading(view, request)
         }
     }
 

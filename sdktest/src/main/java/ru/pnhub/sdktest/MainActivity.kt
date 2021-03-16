@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this@MainActivity, WidgetActivity::class.java).apply {
                     putExtra(WidgetActivity.EXTRA_TOKEN, TOKEN)
                     putExtra(WidgetActivity.EXTRA_BASE_URL, BASE_URL)
-                    putExtra(WidgetActivity.EXTRA_HTTP_USERNAME, "test")
-                    putExtra(WidgetActivity.EXTRA_HTTP_PASSWORD, "password")
+                    putExtra(WidgetActivity.EXTRA_HTTP_USERNAME, "sp")
+                    putExtra(WidgetActivity.EXTRA_HTTP_PASSWORD, "BolshayaSet!")
                 }
 
                 startActivityForResult(intent, SDK_REQUEST_CODE)
