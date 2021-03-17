@@ -347,7 +347,9 @@ class WidgetActivity : AppCompatActivity() {
 
     private inner class WidgetWebViewClient : WebViewClient() {
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
-            view?.loadUrl(INJECT_JS_CODE)
+            if (url?.startsWith(baseUrl, true) == true) {
+                jsBridge.injectJsCode()
+            }
         }
 
         override fun onPageFinished(view: WebView?, url: String?) {
@@ -361,7 +363,7 @@ class WidgetActivity : AppCompatActivity() {
 
         override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
             if (BuildConfig.DEBUG) { // handle local ssl
-                handler?.proceed();
+                handler?.proceed()
             } else {
                 super.onReceivedSslError(view, handler, error)
             }

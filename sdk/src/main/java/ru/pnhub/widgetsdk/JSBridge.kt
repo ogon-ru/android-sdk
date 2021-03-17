@@ -8,7 +8,7 @@ import ru.pnhub.widgetsdk.model.MobileEvent
 typealias EventListener = (MobileEvent) -> Unit
 
 internal const val INJECT_JS_CODE = """
-    javascript:(function (){
+    (function (){
         window.PNWidget._listeners = new Set();
     
         window.PNWidget.sendMobileEvent = function sendMobileEvent(event) {
@@ -53,14 +53,18 @@ class JSBridge(
         val json = event.toJson(
             preservingProtoFieldNames = true,
         )
-        val js = """javascript:(function() {
+        val js = """(function() {
             const event = $json;
             for (let listener of window.PNWidget._listeners.values()) {
                 listener(event);
             }
         })()""".trimMargin()
 
-        webView.loadUrl(js)
+        webView.evaluateJavascript(js, null)
+    }
+
+    fun injectJsCode() {
+        webView.evaluateJavascript(INJECT_JS_CODE, null)
     }
 
     private fun handleEvent(json: String) {
