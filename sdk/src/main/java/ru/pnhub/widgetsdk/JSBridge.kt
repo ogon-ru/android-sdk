@@ -36,6 +36,10 @@ internal const val INJECT_JS_CODE = """
         window.addEventListener('popstate', function() {
             window.PNWidget._navigationStateChange();
         });
+        
+        if (window.PNWidget.onready) {
+            window.PNWidget.onready();
+        }
     })();
 """
 
