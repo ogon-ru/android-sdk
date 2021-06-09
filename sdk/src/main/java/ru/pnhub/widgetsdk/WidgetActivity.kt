@@ -82,11 +82,15 @@ class WidgetActivity : AppCompatActivity() {
 
         webView.loadUrl("$baseUrl/?token=$token")
         setResult(RESULT_OK)
+
+        if (BuildConfig.DEBUG) {
+            Log.d("[OgonWidget]", "init; baseUrl: $baseUrl;")
+        }
     }
 
     override fun onKeyDown(keyCode: Int, keyEvent: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (webView.url.startsWith(baseUrl, true) && !httpError) {
+            if (isWidgetUrl(webView.url) && !httpError) {
                 val event = MobileEvent.newBuilder().run {
                     type = MobileEventType.MOBILE_EVENT_BACK
                     build()
@@ -345,9 +349,19 @@ class WidgetActivity : AppCompatActivity() {
         return File.createTempFile(imageFileName, ".jpg", dir)
     }
 
+    private fun isWidgetUrl(url: String?): Boolean = url?.let {
+        it.startsWith(baseUrl, true) || it.contains("widget.ogon.ru", true)
+    } ?: false
+
     private inner class WidgetWebViewClient : WebViewClient() {
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
-            if (url?.startsWith(baseUrl, true) == true) {
+            super.onPageStarted(view, url, favicon)
+
+            if (BuildConfig.DEBUG) {
+                Log.d("[OgonWidget]", "onPageStarted; url: $url")
+            }
+
+            if (isWidgetUrl(url)) {
                 jsBridge.injectJsCode()
             }
         }
@@ -358,6 +372,10 @@ class WidgetActivity : AppCompatActivity() {
                 finish()
             } else {
                 super.onPageFinished(view, url)
+
+                if (isWidgetUrl(url)) {
+                    jsBridge.injectJsCode()
+                }
             }
         }
 

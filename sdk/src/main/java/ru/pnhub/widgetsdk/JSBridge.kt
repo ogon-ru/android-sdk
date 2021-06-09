@@ -9,6 +9,10 @@ typealias EventListener = (MobileEvent) -> Unit
 
 internal const val INJECT_JS_CODE = """
     (function (){
+        if (window.PNWidget._listeners) {
+            return;
+        }
+        
         window.PNWidget._listeners = new Set();
     
         window.PNWidget.sendMobileEvent = function sendMobileEvent(event) {
@@ -65,10 +69,22 @@ class JSBridge(
         })()""".trimMargin()
 
         webView.evaluateJavascript(js, null)
+
+        if (BuildConfig.DEBUG) {
+            Log.d("[OgonWidget]", "sendEvent; json: $json;")
+        }
     }
 
     fun injectJsCode() {
-        webView.evaluateJavascript(INJECT_JS_CODE, null)
+        try {
+            webView.evaluateJavascript(INJECT_JS_CODE, null)
+        } catch (exception: Throwable) {
+            Log.e("[OgonWidget]", "JS code injection failed", exception)
+        }
+
+        if (BuildConfig.DEBUG) {
+            Log.d("[OgonWidget]", "injectJsCode;")
+        }
     }
 
     private fun handleEvent(json: String) {
@@ -79,8 +95,12 @@ class JSBridge(
             }
 
             eventListener(event)
+
+            if (BuildConfig.DEBUG) {
+                Log.d("[OgonWidget]", "handleEvent; json: $json;")
+            }
         } catch (exception: Throwable) {
-            Log.e("[SDKWidget]", "Mobile event parse error", exception)
+            Log.e("[OgonWidget]", "Mobile event parse error", exception)
         }
     }
 
