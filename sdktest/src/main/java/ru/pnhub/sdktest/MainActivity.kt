@@ -9,7 +9,6 @@ import android.widget.Button
 import ru.pnhub.widgetsdk.WidgetActivity
 
 private const val BASE_URL = BuildConfig.BASE_URL
-private const val TOKEN = BuildConfig.TOKEN
 private const val SDK_REQUEST_CODE = 1
 
 class MainActivity : AppCompatActivity() {
@@ -20,10 +19,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.button).apply {
             setOnClickListener {
                 val intent = Intent(this@MainActivity, WidgetActivity::class.java).apply {
-                    putExtra(WidgetActivity.EXTRA_TOKEN, TOKEN)
                     putExtra(WidgetActivity.EXTRA_BASE_URL, BASE_URL)
                     putExtra(WidgetActivity.EXTRA_HTTP_USERNAME, "sp")
                     putExtra(WidgetActivity.EXTRA_HTTP_PASSWORD, "BolshayaSet!")
+                    putExtra(WidgetActivity.EXTRA_GOOGLE_PAY_ENABLED, true)
                 }
 
                 startActivityForResult(intent, SDK_REQUEST_CODE)
