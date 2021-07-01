@@ -14,6 +14,7 @@ internal const val INJECT_JS_CODE = """
         }
         
         window.PNWidget._listeners = new Set();
+        window.PNWidget.version = "${BuildConfig.VERSION}";
     
         window.PNWidget.sendMobileEvent = function sendMobileEvent(event) {
             window.PNWidget._sendMobileEvent(JSON.stringify(event));
@@ -68,7 +69,9 @@ class JSBridge(
             }
         })()""".trimMargin()
 
-        webView.evaluateJavascript(js, null)
+        webView.post {
+            webView.evaluateJavascript(js, null)
+        }
 
         if (BuildConfig.DEBUG) {
             Log.d("[OgonWidget]", "sendEvent; json: $json;")

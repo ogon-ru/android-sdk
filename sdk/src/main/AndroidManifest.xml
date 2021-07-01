@@ -12,9 +12,6 @@
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <application>
-        <meta-data
-            android:name="com.google.android.gms.wallet.api.enabled"
-            android:value="true" />
         <activity
             android:name=".WidgetActivity"
             android:label="@string/title_activity_widget"

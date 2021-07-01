@@ -22,7 +22,6 @@ android {
     buildTypes {
         all {
             buildConfigField "String", "BASE_URL", "\"$env.BASE_URL.value\""
-            buildConfigField "String", "TOKEN", "\"$env.TOKEN.value\""
         }
         release {
             minifyEnabled false
