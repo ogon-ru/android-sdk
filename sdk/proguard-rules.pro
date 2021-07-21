@@ -19,4 +19,4 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep class ru.pnhub.widgetsdk.model.* { *; }
+-keep class ru.ogon.sdk.model.* { *; }
