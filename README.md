@@ -5,7 +5,7 @@
 
 ## Установка зависимостей
 
-Для установки зависимостей необходим [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager) (является частью [Command line tools](https://developer.android.com/studio#downloads).
+Для установки зависимостей необходим [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager) (является частью [Command line tools](https://developer.android.com/studio#downloads)).
 Ручная установка зависимостей не требуется т.к. для этого используется Gradle Wrapper.
 
 ## Сборка
