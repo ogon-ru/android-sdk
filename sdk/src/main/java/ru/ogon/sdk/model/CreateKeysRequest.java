@@ -4,26 +4,26 @@
 package ru.ogon.sdk.model;
 
 /**
- * Protobuf type {@code pb.SelectionOptionData}
+ * Protobuf type {@code pb.CreateKeysRequest}
  */
-public final class SelectionOptionData extends
+public final class CreateKeysRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.SelectionOptionData)
-    SelectionOptionDataOrBuilder {
+    // @@protoc_insertion_point(message_implements:pb.CreateKeysRequest)
+    CreateKeysRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SelectionOptionData.newBuilder() to construct.
-  private SelectionOptionData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CreateKeysRequest.newBuilder() to construct.
+  private CreateKeysRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SelectionOptionData() {
-    id_ = "";
+  private CreateKeysRequest() {
+    password_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new SelectionOptionData();
+    return new CreateKeysRequest();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SelectionOptionData(
+  private CreateKeysRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -52,7 +52,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            id_ = s;
+            password_ = s;
             break;
           }
           default: {
@@ -76,49 +76,49 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return ru.ogon.sdk.model.MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+    return ru.ogon.sdk.model.MobileModel.internal_static_pb_CreateKeysRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return ru.ogon.sdk.model.MobileModel.internal_static_pb_SelectionOptionData_fieldAccessorTable
+    return ru.ogon.sdk.model.MobileModel.internal_static_pb_CreateKeysRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ru.ogon.sdk.model.SelectionOptionData.class, ru.ogon.sdk.model.SelectionOptionData.Builder.class);
+            ru.ogon.sdk.model.CreateKeysRequest.class, ru.ogon.sdk.model.CreateKeysRequest.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+  public static final int PASSWORD_FIELD_NUMBER = 1;
+  private volatile java.lang.Object password_;
   /**
-   * <code>string id = 1;</code>
-   * @return The id.
+   * <code>string password = 1;</code>
+   * @return The password.
    */
   @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
+  public java.lang.String getPassword() {
+    java.lang.Object ref = password_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      id_ = s;
+      password_ = s;
       return s;
     }
   }
   /**
-   * <code>string id = 1;</code>
-   * @return The bytes for id.
+   * <code>string password = 1;</code>
+   * @return The bytes for password.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
+      getPasswordBytes() {
+    java.lang.Object ref = password_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      id_ = b;
+      password_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -139,8 +139,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, password_);
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +151,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, password_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,13 +164,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ru.ogon.sdk.model.SelectionOptionData)) {
+    if (!(obj instanceof ru.ogon.sdk.model.CreateKeysRequest)) {
       return super.equals(obj);
     }
-    ru.ogon.sdk.model.SelectionOptionData other = (ru.ogon.sdk.model.SelectionOptionData) obj;
+    ru.ogon.sdk.model.CreateKeysRequest other = (ru.ogon.sdk.model.CreateKeysRequest) obj;
 
-    if (!getId()
-        .equals(other.getId())) return false;
+    if (!getPassword()
+        .equals(other.getPassword())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,76 +182,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+    hash = (53 * hash) + getPassword().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static ru.ogon.sdk.model.SelectionOptionData parseFrom(
+  public static ru.ogon.sdk.model.CreateKeysRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.ogon.sdk.model.SelectionOptionData parseFrom(
+  public static ru.ogon.sdk.model.CreateKeysRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.SelectionOptionData parseFrom(
+  public static ru.ogon.sdk.model.CreateKeysRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.ogon.sdk.model.SelectionOptionData parseFrom(
+  public static ru.ogon.sdk.model.CreateKeysRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.SelectionOptionData parseFrom(byte[] data)
+  public static ru.ogon.sdk.model.CreateKeysRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.ogon.sdk.model.SelectionOptionData parseFrom(
+  public static ru.ogon.sdk.model.CreateKeysRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.SelectionOptionData parseFrom(java.io.InputStream input)
+  public static ru.ogon.sdk.model.CreateKeysRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ru.ogon.sdk.model.SelectionOptionData parseFrom(
+  public static ru.ogon.sdk.model.CreateKeysRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.SelectionOptionData parseDelimitedFrom(java.io.InputStream input)
+  public static ru.ogon.sdk.model.CreateKeysRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ru.ogon.sdk.model.SelectionOptionData parseDelimitedFrom(
+  public static ru.ogon.sdk.model.CreateKeysRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.SelectionOptionData parseFrom(
+  public static ru.ogon.sdk.model.CreateKeysRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ru.ogon.sdk.model.SelectionOptionData parseFrom(
+  public static ru.ogon.sdk.model.CreateKeysRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -264,7 +264,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ru.ogon.sdk.model.SelectionOptionData prototype) {
+  public static Builder newBuilder(ru.ogon.sdk.model.CreateKeysRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -280,26 +280,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pb.SelectionOptionData}
+   * Protobuf type {@code pb.CreateKeysRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.SelectionOptionData)
-      ru.ogon.sdk.model.SelectionOptionDataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pb.CreateKeysRequest)
+      ru.ogon.sdk.model.CreateKeysRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ru.ogon.sdk.model.MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+      return ru.ogon.sdk.model.MobileModel.internal_static_pb_CreateKeysRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ru.ogon.sdk.model.MobileModel.internal_static_pb_SelectionOptionData_fieldAccessorTable
+      return ru.ogon.sdk.model.MobileModel.internal_static_pb_CreateKeysRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ru.ogon.sdk.model.SelectionOptionData.class, ru.ogon.sdk.model.SelectionOptionData.Builder.class);
+              ru.ogon.sdk.model.CreateKeysRequest.class, ru.ogon.sdk.model.CreateKeysRequest.Builder.class);
     }
 
-    // Construct using ru.ogon.sdk.model.SelectionOptionData.newBuilder()
+    // Construct using ru.ogon.sdk.model.CreateKeysRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -317,7 +317,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = "";
+      password_ = "";
 
       return this;
     }
@@ -325,17 +325,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return ru.ogon.sdk.model.MobileModel.internal_static_pb_SelectionOptionData_descriptor;
+      return ru.ogon.sdk.model.MobileModel.internal_static_pb_CreateKeysRequest_descriptor;
     }
 
     @java.lang.Override
-    public ru.ogon.sdk.model.SelectionOptionData getDefaultInstanceForType() {
-      return ru.ogon.sdk.model.SelectionOptionData.getDefaultInstance();
+    public ru.ogon.sdk.model.CreateKeysRequest getDefaultInstanceForType() {
+      return ru.ogon.sdk.model.CreateKeysRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public ru.ogon.sdk.model.SelectionOptionData build() {
-      ru.ogon.sdk.model.SelectionOptionData result = buildPartial();
+    public ru.ogon.sdk.model.CreateKeysRequest build() {
+      ru.ogon.sdk.model.CreateKeysRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -343,9 +343,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public ru.ogon.sdk.model.SelectionOptionData buildPartial() {
-      ru.ogon.sdk.model.SelectionOptionData result = new ru.ogon.sdk.model.SelectionOptionData(this);
-      result.id_ = id_;
+    public ru.ogon.sdk.model.CreateKeysRequest buildPartial() {
+      ru.ogon.sdk.model.CreateKeysRequest result = new ru.ogon.sdk.model.CreateKeysRequest(this);
+      result.password_ = password_;
       onBuilt();
       return result;
     }
@@ -384,18 +384,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ru.ogon.sdk.model.SelectionOptionData) {
-        return mergeFrom((ru.ogon.sdk.model.SelectionOptionData)other);
+      if (other instanceof ru.ogon.sdk.model.CreateKeysRequest) {
+        return mergeFrom((ru.ogon.sdk.model.CreateKeysRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ru.ogon.sdk.model.SelectionOptionData other) {
-      if (other == ru.ogon.sdk.model.SelectionOptionData.getDefaultInstance()) return this;
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
+    public Builder mergeFrom(ru.ogon.sdk.model.CreateKeysRequest other) {
+      if (other == ru.ogon.sdk.model.CreateKeysRequest.getDefaultInstance()) return this;
+      if (!other.getPassword().isEmpty()) {
+        password_ = other.password_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -413,11 +413,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ru.ogon.sdk.model.SelectionOptionData parsedMessage = null;
+      ru.ogon.sdk.model.CreateKeysRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ru.ogon.sdk.model.SelectionOptionData) e.getUnfinishedMessage();
+        parsedMessage = (ru.ogon.sdk.model.CreateKeysRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -427,78 +427,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private java.lang.Object password_ = "";
     /**
-     * <code>string id = 1;</code>
-     * @return The id.
+     * <code>string password = 1;</code>
+     * @return The password.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        password_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
+     * <code>string password = 1;</code>
+     * @return The bytes for password.
      */
     public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        id_ = b;
+        password_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string id = 1;</code>
-     * @param value The id to set.
+     * <code>string password = 1;</code>
+     * @param value The password to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
+    public Builder setPassword(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      id_ = value;
+      password_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 1;</code>
+     * <code>string password = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearPassword() {
       
-      id_ = getDefaultInstance().getId();
+      password_ = getDefaultInstance().getPassword();
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 1;</code>
-     * @param value The bytes for id to set.
+     * <code>string password = 1;</code>
+     * @param value The bytes for password to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
+    public Builder setPasswordBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      id_ = value;
+      password_ = value;
       onChanged();
       return this;
     }
@@ -515,41 +515,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.SelectionOptionData)
+    // @@protoc_insertion_point(builder_scope:pb.CreateKeysRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.SelectionOptionData)
-  private static final ru.ogon.sdk.model.SelectionOptionData DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pb.CreateKeysRequest)
+  private static final ru.ogon.sdk.model.CreateKeysRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ru.ogon.sdk.model.SelectionOptionData();
+    DEFAULT_INSTANCE = new ru.ogon.sdk.model.CreateKeysRequest();
   }
 
-  public static ru.ogon.sdk.model.SelectionOptionData getDefaultInstance() {
+  public static ru.ogon.sdk.model.CreateKeysRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SelectionOptionData>
-      PARSER = new com.google.protobuf.AbstractParser<SelectionOptionData>() {
+  private static final com.google.protobuf.Parser<CreateKeysRequest>
+      PARSER = new com.google.protobuf.AbstractParser<CreateKeysRequest>() {
     @java.lang.Override
-    public SelectionOptionData parsePartialFrom(
+    public CreateKeysRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SelectionOptionData(input, extensionRegistry);
+      return new CreateKeysRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SelectionOptionData> parser() {
+  public static com.google.protobuf.Parser<CreateKeysRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SelectionOptionData> getParserForType() {
+  public com.google.protobuf.Parser<CreateKeysRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public ru.ogon.sdk.model.SelectionOptionData getDefaultInstanceForType() {
+  public ru.ogon.sdk.model.CreateKeysRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

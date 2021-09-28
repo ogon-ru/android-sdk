@@ -19,6 +19,8 @@ import androidx.core.content.FileProvider
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Status
 import com.google.android.gms.wallet.*
+import ru.ogon.sdk.model.CreateKeysRequest
+import ru.ogon.sdk.model.MobileApplicationParams
 import ru.ogon.sdk.model.MobileEvent
 import ru.ogon.sdk.model.MobileEventType
 import java.io.File
@@ -45,6 +47,9 @@ class WidgetActivity : AppCompatActivity() {
         const val EXTRA_QUERY_PARAMS = "EXTRA_QUERY_PARAMS"
 
         const val RESULT_ERROR = 100
+
+        @JvmStatic
+        var adapter: ApplicationAdapter? = null
     }
 
     private lateinit var webView: WebView
@@ -84,9 +89,10 @@ class WidgetActivity : AppCompatActivity() {
             webChromeClient = WidgetWebChromeClient()
         }
         jsBridge = JSBridge(
-                webView = webView,
-                eventListener = ::handleEvent,
-                navigationStateChange = ::handleNavigation,
+            webView = webView,
+            eventListener = ::handleEvent,
+            navigationStateChange = ::handleNavigation,
+            isOgonApplication = adapter != null,
         )
 
         val url = Uri.parse(baseUrl).buildUpon().run {
@@ -273,6 +279,52 @@ class WidgetActivity : AppCompatActivity() {
         startActivity(shareIntent)
     }
 
+    private fun getApplicationParams() {
+        adapter?.let {
+            val params = it.getParams()
+            val event = MobileEvent.newBuilder().run {
+                type = MobileEventType.MOBILE_EVENT_GET_PARAMS_RESPONSE
+                applicationParamsBuilder.apply {
+                    userId = params.getString(ApplicationAdapter.USER_ID, "")
+                    deviceId = params.getString(ApplicationAdapter.DEVICE_ID, "")
+                    confirmationId = params.getString(ApplicationAdapter.CONFIRMATION_ID, "")
+                    passwordEnabled = params.getBoolean(ApplicationAdapter.PASSWORD_ENABLED, false)
+                    biometryEnabled = params.getBoolean(ApplicationAdapter.BIOMETRY_ENABLED, false)
+                }
+                build()
+            }
+
+            jsBridge.sendEvent(event)
+        }
+    }
+
+    private fun setApplicationParams(params: MobileApplicationParams) {
+        adapter?.let {
+            val bundle = Bundle()
+
+            bundle.putString(ApplicationAdapter.USER_ID, params.userId)
+            bundle.putString(ApplicationAdapter.CONFIRMATION_ID, params.confirmationId)
+            bundle.putBoolean(ApplicationAdapter.PASSWORD_ENABLED, params.passwordEnabled)
+            bundle.putBoolean(ApplicationAdapter.BIOMETRY_ENABLED, params.biometryEnabled)
+
+            it.setParams(bundle)
+        }
+    }
+
+    private fun createKeys(request: CreateKeysRequest) {
+        adapter?.let {
+            val event = MobileEvent.newBuilder().run {
+                type = MobileEventType.MOBILE_EVENT_CREATE_KEYS_RESPONSE
+                createKeysResponseBuilder.apply {
+                    publicKey = it.createKeys(request.password)
+                }
+                build()
+            }
+
+            jsBridge.sendEvent(event)
+        }
+    }
+
     private fun handleEvent(mobileEvent: MobileEvent) {
         when (mobileEvent.type) {
             MobileEventType.MOBILE_EVENT_GOOGLEPAY_IS_READY_TO_PAY_REQUEST -> {
@@ -286,6 +338,15 @@ class WidgetActivity : AppCompatActivity() {
             }
             MobileEventType.MOBILE_EVENT_SHARE_URL_REQUEST -> {
                 shareUrl(mobileEvent.shareUrlRequest)
+            }
+            MobileEventType.MOBILE_EVENT_GET_PARAMS_REQUEST -> {
+                getApplicationParams()
+            }
+            MobileEventType.MOBILE_EVENT_SET_PARAMS_REQUEST -> {
+                setApplicationParams(mobileEvent.applicationParams)
+            }
+            MobileEventType.MOBILE_EVENT_CREATE_KEYS_REQUEST -> {
+                createKeys(mobileEvent.createKeysRequest)
             }
             else -> Log.i("[OgonWidget]", "Unhandled event type: ${mobileEvent.type}")
         }

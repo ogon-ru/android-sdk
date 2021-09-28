@@ -4,29 +4,28 @@
 package ru.ogon.sdk.model;
 
 /**
- * Protobuf type {@code pb.DisplayItem}
+ * Protobuf type {@code pb.MobileApplicationParams}
  */
-public final class DisplayItem extends
+public final class MobileApplicationParams extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.DisplayItem)
-    DisplayItemOrBuilder {
+    // @@protoc_insertion_point(message_implements:pb.MobileApplicationParams)
+    MobileApplicationParamsOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use DisplayItem.newBuilder() to construct.
-  private DisplayItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use MobileApplicationParams.newBuilder() to construct.
+  private MobileApplicationParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private DisplayItem() {
-    label_ = "";
-    type_ = "";
-    price_ = "";
-    status_ = "";
+  private MobileApplicationParams() {
+    userId_ = "";
+    deviceId_ = "";
+    confirmationId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new DisplayItem();
+    return new MobileApplicationParams();
   }
 
   @java.lang.Override
@@ -34,7 +33,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private DisplayItem(
+  private MobileApplicationParams(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -55,25 +54,29 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            label_ = s;
+            userId_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            type_ = s;
+            deviceId_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            price_ = s;
+            confirmationId_ = s;
             break;
           }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 32: {
 
-            status_ = s;
+            passwordEnabled_ = input.readBool();
+            break;
+          }
+          case 40: {
+
+            biometryEnabled_ = input.readBool();
             break;
           }
           default: {
@@ -97,167 +100,151 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return ru.ogon.sdk.model.MobileModel.internal_static_pb_DisplayItem_descriptor;
+    return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParams_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return ru.ogon.sdk.model.MobileModel.internal_static_pb_DisplayItem_fieldAccessorTable
+    return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParams_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ru.ogon.sdk.model.DisplayItem.class, ru.ogon.sdk.model.DisplayItem.Builder.class);
+            ru.ogon.sdk.model.MobileApplicationParams.class, ru.ogon.sdk.model.MobileApplicationParams.Builder.class);
   }
 
-  public static final int LABEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object label_;
+  public static final int USER_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object userId_;
   /**
-   * <code>string label = 1;</code>
-   * @return The label.
+   * <code>string user_id = 1;</code>
+   * @return The userId.
    */
   @java.lang.Override
-  public java.lang.String getLabel() {
-    java.lang.Object ref = label_;
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      label_ = s;
+      userId_ = s;
       return s;
     }
   }
   /**
-   * <code>string label = 1;</code>
-   * @return The bytes for label.
+   * <code>string user_id = 1;</code>
+   * @return The bytes for userId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getLabelBytes() {
-    java.lang.Object ref = label_;
+      getUserIdBytes() {
+    java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      label_ = b;
+      userId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object type_;
+  public static final int DEVICE_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object deviceId_;
   /**
-   * <code>string type = 2;</code>
-   * @return The type.
+   * <code>string device_id = 2;</code>
+   * @return The deviceId.
    */
   @java.lang.Override
-  public java.lang.String getType() {
-    java.lang.Object ref = type_;
+  public java.lang.String getDeviceId() {
+    java.lang.Object ref = deviceId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      type_ = s;
+      deviceId_ = s;
       return s;
     }
   }
   /**
-   * <code>string type = 2;</code>
-   * @return The bytes for type.
+   * <code>string device_id = 2;</code>
+   * @return The bytes for deviceId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTypeBytes() {
-    java.lang.Object ref = type_;
+      getDeviceIdBytes() {
+    java.lang.Object ref = deviceId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      type_ = b;
+      deviceId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int PRICE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object price_;
+  public static final int CONFIRMATION_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object confirmationId_;
   /**
-   * <code>string price = 3;</code>
-   * @return The price.
+   * <code>string confirmation_id = 3;</code>
+   * @return The confirmationId.
    */
   @java.lang.Override
-  public java.lang.String getPrice() {
-    java.lang.Object ref = price_;
+  public java.lang.String getConfirmationId() {
+    java.lang.Object ref = confirmationId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      price_ = s;
+      confirmationId_ = s;
       return s;
     }
   }
   /**
-   * <code>string price = 3;</code>
-   * @return The bytes for price.
+   * <code>string confirmation_id = 3;</code>
+   * @return The bytes for confirmationId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getPriceBytes() {
-    java.lang.Object ref = price_;
+      getConfirmationIdBytes() {
+    java.lang.Object ref = confirmationId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      price_ = b;
+      confirmationId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int STATUS_FIELD_NUMBER = 4;
-  private volatile java.lang.Object status_;
+  public static final int PASSWORD_ENABLED_FIELD_NUMBER = 4;
+  private boolean passwordEnabled_;
   /**
-   * <code>string status = 4;</code>
-   * @return The status.
+   * <code>bool password_enabled = 4;</code>
+   * @return The passwordEnabled.
    */
   @java.lang.Override
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      status_ = s;
-      return s;
-    }
+  public boolean getPasswordEnabled() {
+    return passwordEnabled_;
   }
+
+  public static final int BIOMETRY_ENABLED_FIELD_NUMBER = 5;
+  private boolean biometryEnabled_;
   /**
-   * <code>string status = 4;</code>
-   * @return The bytes for status.
+   * <code>bool biometry_enabled = 5;</code>
+   * @return The biometryEnabled.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      status_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public boolean getBiometryEnabled() {
+    return biometryEnabled_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -274,17 +261,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, label_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deviceId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, price_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(confirmationId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, confirmationId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
+    if (passwordEnabled_ != false) {
+      output.writeBool(4, passwordEnabled_);
+    }
+    if (biometryEnabled_ != false) {
+      output.writeBool(5, biometryEnabled_);
     }
     unknownFields.writeTo(output);
   }
@@ -295,17 +285,22 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, label_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deviceId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, price_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(confirmationId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, confirmationId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
+    if (passwordEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, passwordEnabled_);
+    }
+    if (biometryEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, biometryEnabled_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -317,19 +312,21 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ru.ogon.sdk.model.DisplayItem)) {
+    if (!(obj instanceof ru.ogon.sdk.model.MobileApplicationParams)) {
       return super.equals(obj);
     }
-    ru.ogon.sdk.model.DisplayItem other = (ru.ogon.sdk.model.DisplayItem) obj;
+    ru.ogon.sdk.model.MobileApplicationParams other = (ru.ogon.sdk.model.MobileApplicationParams) obj;
 
-    if (!getLabel()
-        .equals(other.getLabel())) return false;
-    if (!getType()
-        .equals(other.getType())) return false;
-    if (!getPrice()
-        .equals(other.getPrice())) return false;
-    if (!getStatus()
-        .equals(other.getStatus())) return false;
+    if (!getUserId()
+        .equals(other.getUserId())) return false;
+    if (!getDeviceId()
+        .equals(other.getDeviceId())) return false;
+    if (!getConfirmationId()
+        .equals(other.getConfirmationId())) return false;
+    if (getPasswordEnabled()
+        != other.getPasswordEnabled()) return false;
+    if (getBiometryEnabled()
+        != other.getBiometryEnabled()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -341,82 +338,86 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + LABEL_FIELD_NUMBER;
-    hash = (53 * hash) + getLabel().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getType().hashCode();
-    hash = (37 * hash) + PRICE_FIELD_NUMBER;
-    hash = (53 * hash) + getPrice().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getUserId().hashCode();
+    hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getDeviceId().hashCode();
+    hash = (37 * hash) + CONFIRMATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getConfirmationId().hashCode();
+    hash = (37 * hash) + PASSWORD_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getPasswordEnabled());
+    hash = (37 * hash) + BIOMETRY_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getBiometryEnabled());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static ru.ogon.sdk.model.DisplayItem parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.ogon.sdk.model.DisplayItem parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.DisplayItem parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.ogon.sdk.model.DisplayItem parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.DisplayItem parseFrom(byte[] data)
+  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.ogon.sdk.model.DisplayItem parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.DisplayItem parseFrom(java.io.InputStream input)
+  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ru.ogon.sdk.model.DisplayItem parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.DisplayItem parseDelimitedFrom(java.io.InputStream input)
+  public static ru.ogon.sdk.model.MobileApplicationParams parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ru.ogon.sdk.model.DisplayItem parseDelimitedFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParams parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.DisplayItem parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ru.ogon.sdk.model.DisplayItem parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -429,7 +430,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ru.ogon.sdk.model.DisplayItem prototype) {
+  public static Builder newBuilder(ru.ogon.sdk.model.MobileApplicationParams prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -445,26 +446,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pb.DisplayItem}
+   * Protobuf type {@code pb.MobileApplicationParams}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.DisplayItem)
-      ru.ogon.sdk.model.DisplayItemOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pb.MobileApplicationParams)
+      ru.ogon.sdk.model.MobileApplicationParamsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ru.ogon.sdk.model.MobileModel.internal_static_pb_DisplayItem_descriptor;
+      return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParams_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ru.ogon.sdk.model.MobileModel.internal_static_pb_DisplayItem_fieldAccessorTable
+      return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParams_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ru.ogon.sdk.model.DisplayItem.class, ru.ogon.sdk.model.DisplayItem.Builder.class);
+              ru.ogon.sdk.model.MobileApplicationParams.class, ru.ogon.sdk.model.MobileApplicationParams.Builder.class);
     }
 
-    // Construct using ru.ogon.sdk.model.DisplayItem.newBuilder()
+    // Construct using ru.ogon.sdk.model.MobileApplicationParams.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -482,13 +483,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      label_ = "";
+      userId_ = "";
 
-      type_ = "";
+      deviceId_ = "";
 
-      price_ = "";
+      confirmationId_ = "";
 
-      status_ = "";
+      passwordEnabled_ = false;
+
+      biometryEnabled_ = false;
 
       return this;
     }
@@ -496,17 +499,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return ru.ogon.sdk.model.MobileModel.internal_static_pb_DisplayItem_descriptor;
+      return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParams_descriptor;
     }
 
     @java.lang.Override
-    public ru.ogon.sdk.model.DisplayItem getDefaultInstanceForType() {
-      return ru.ogon.sdk.model.DisplayItem.getDefaultInstance();
+    public ru.ogon.sdk.model.MobileApplicationParams getDefaultInstanceForType() {
+      return ru.ogon.sdk.model.MobileApplicationParams.getDefaultInstance();
     }
 
     @java.lang.Override
-    public ru.ogon.sdk.model.DisplayItem build() {
-      ru.ogon.sdk.model.DisplayItem result = buildPartial();
+    public ru.ogon.sdk.model.MobileApplicationParams build() {
+      ru.ogon.sdk.model.MobileApplicationParams result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -514,12 +517,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public ru.ogon.sdk.model.DisplayItem buildPartial() {
-      ru.ogon.sdk.model.DisplayItem result = new ru.ogon.sdk.model.DisplayItem(this);
-      result.label_ = label_;
-      result.type_ = type_;
-      result.price_ = price_;
-      result.status_ = status_;
+    public ru.ogon.sdk.model.MobileApplicationParams buildPartial() {
+      ru.ogon.sdk.model.MobileApplicationParams result = new ru.ogon.sdk.model.MobileApplicationParams(this);
+      result.userId_ = userId_;
+      result.deviceId_ = deviceId_;
+      result.confirmationId_ = confirmationId_;
+      result.passwordEnabled_ = passwordEnabled_;
+      result.biometryEnabled_ = biometryEnabled_;
       onBuilt();
       return result;
     }
@@ -558,31 +562,33 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ru.ogon.sdk.model.DisplayItem) {
-        return mergeFrom((ru.ogon.sdk.model.DisplayItem)other);
+      if (other instanceof ru.ogon.sdk.model.MobileApplicationParams) {
+        return mergeFrom((ru.ogon.sdk.model.MobileApplicationParams)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ru.ogon.sdk.model.DisplayItem other) {
-      if (other == ru.ogon.sdk.model.DisplayItem.getDefaultInstance()) return this;
-      if (!other.getLabel().isEmpty()) {
-        label_ = other.label_;
+    public Builder mergeFrom(ru.ogon.sdk.model.MobileApplicationParams other) {
+      if (other == ru.ogon.sdk.model.MobileApplicationParams.getDefaultInstance()) return this;
+      if (!other.getUserId().isEmpty()) {
+        userId_ = other.userId_;
         onChanged();
       }
-      if (!other.getType().isEmpty()) {
-        type_ = other.type_;
+      if (!other.getDeviceId().isEmpty()) {
+        deviceId_ = other.deviceId_;
         onChanged();
       }
-      if (!other.getPrice().isEmpty()) {
-        price_ = other.price_;
+      if (!other.getConfirmationId().isEmpty()) {
+        confirmationId_ = other.confirmationId_;
         onChanged();
       }
-      if (!other.getStatus().isEmpty()) {
-        status_ = other.status_;
-        onChanged();
+      if (other.getPasswordEnabled() != false) {
+        setPasswordEnabled(other.getPasswordEnabled());
+      }
+      if (other.getBiometryEnabled() != false) {
+        setBiometryEnabled(other.getBiometryEnabled());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -599,11 +605,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ru.ogon.sdk.model.DisplayItem parsedMessage = null;
+      ru.ogon.sdk.model.MobileApplicationParams parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ru.ogon.sdk.model.DisplayItem) e.getUnfinishedMessage();
+        parsedMessage = (ru.ogon.sdk.model.MobileApplicationParams) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -613,306 +619,292 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object label_ = "";
+    private java.lang.Object userId_ = "";
     /**
-     * <code>string label = 1;</code>
-     * @return The label.
+     * <code>string user_id = 1;</code>
+     * @return The userId.
      */
-    public java.lang.String getLabel() {
-      java.lang.Object ref = label_;
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        label_ = s;
+        userId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string label = 1;</code>
-     * @return The bytes for label.
+     * <code>string user_id = 1;</code>
+     * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
-        getLabelBytes() {
-      java.lang.Object ref = label_;
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        label_ = b;
+        userId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string label = 1;</code>
-     * @param value The label to set.
+     * <code>string user_id = 1;</code>
+     * @param value The userId to set.
      * @return This builder for chaining.
      */
-    public Builder setLabel(
+    public Builder setUserId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      label_ = value;
+      userId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string label = 1;</code>
+     * <code>string user_id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearLabel() {
+    public Builder clearUserId() {
       
-      label_ = getDefaultInstance().getLabel();
+      userId_ = getDefaultInstance().getUserId();
       onChanged();
       return this;
     }
     /**
-     * <code>string label = 1;</code>
-     * @param value The bytes for label to set.
+     * <code>string user_id = 1;</code>
+     * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
-    public Builder setLabelBytes(
+    public Builder setUserIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      label_ = value;
+      userId_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object type_ = "";
+    private java.lang.Object deviceId_ = "";
     /**
-     * <code>string type = 2;</code>
-     * @return The type.
+     * <code>string device_id = 2;</code>
+     * @return The deviceId.
      */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = deviceId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        type_ = s;
+        deviceId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string type = 2;</code>
-     * @return The bytes for type.
+     * <code>string device_id = 2;</code>
+     * @return The bytes for deviceId.
      */
     public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
+        getDeviceIdBytes() {
+      java.lang.Object ref = deviceId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        type_ = b;
+        deviceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string type = 2;</code>
-     * @param value The type to set.
+     * <code>string device_id = 2;</code>
+     * @param value The deviceId to set.
      * @return This builder for chaining.
      */
-    public Builder setType(
+    public Builder setDeviceId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      type_ = value;
+      deviceId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string type = 2;</code>
+     * <code>string device_id = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearType() {
+    public Builder clearDeviceId() {
       
-      type_ = getDefaultInstance().getType();
+      deviceId_ = getDefaultInstance().getDeviceId();
       onChanged();
       return this;
     }
     /**
-     * <code>string type = 2;</code>
-     * @param value The bytes for type to set.
+     * <code>string device_id = 2;</code>
+     * @param value The bytes for deviceId to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeBytes(
+    public Builder setDeviceIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      type_ = value;
+      deviceId_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object price_ = "";
+    private java.lang.Object confirmationId_ = "";
     /**
-     * <code>string price = 3;</code>
-     * @return The price.
+     * <code>string confirmation_id = 3;</code>
+     * @return The confirmationId.
      */
-    public java.lang.String getPrice() {
-      java.lang.Object ref = price_;
+    public java.lang.String getConfirmationId() {
+      java.lang.Object ref = confirmationId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        price_ = s;
+        confirmationId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string price = 3;</code>
-     * @return The bytes for price.
+     * <code>string confirmation_id = 3;</code>
+     * @return The bytes for confirmationId.
      */
     public com.google.protobuf.ByteString
-        getPriceBytes() {
-      java.lang.Object ref = price_;
+        getConfirmationIdBytes() {
+      java.lang.Object ref = confirmationId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        price_ = b;
+        confirmationId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string price = 3;</code>
-     * @param value The price to set.
+     * <code>string confirmation_id = 3;</code>
+     * @param value The confirmationId to set.
      * @return This builder for chaining.
      */
-    public Builder setPrice(
+    public Builder setConfirmationId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      price_ = value;
+      confirmationId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string price = 3;</code>
+     * <code>string confirmation_id = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearPrice() {
+    public Builder clearConfirmationId() {
       
-      price_ = getDefaultInstance().getPrice();
+      confirmationId_ = getDefaultInstance().getConfirmationId();
       onChanged();
       return this;
     }
     /**
-     * <code>string price = 3;</code>
-     * @param value The bytes for price to set.
+     * <code>string confirmation_id = 3;</code>
+     * @param value The bytes for confirmationId to set.
      * @return This builder for chaining.
      */
-    public Builder setPriceBytes(
+    public Builder setConfirmationIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      price_ = value;
+      confirmationId_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object status_ = "";
+    private boolean passwordEnabled_ ;
     /**
-     * <code>string status = 4;</code>
-     * @return The status.
+     * <code>bool password_enabled = 4;</code>
+     * @return The passwordEnabled.
      */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public boolean getPasswordEnabled() {
+      return passwordEnabled_;
     }
     /**
-     * <code>string status = 4;</code>
-     * @return The bytes for status.
-     */
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string status = 4;</code>
-     * @param value The status to set.
+     * <code>bool password_enabled = 4;</code>
+     * @param value The passwordEnabled to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      status_ = value;
+    public Builder setPasswordEnabled(boolean value) {
+      
+      passwordEnabled_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string status = 4;</code>
+     * <code>bool password_enabled = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
+    public Builder clearPasswordEnabled() {
       
-      status_ = getDefaultInstance().getStatus();
+      passwordEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean biometryEnabled_ ;
+    /**
+     * <code>bool biometry_enabled = 5;</code>
+     * @return The biometryEnabled.
+     */
+    @java.lang.Override
+    public boolean getBiometryEnabled() {
+      return biometryEnabled_;
+    }
+    /**
+     * <code>bool biometry_enabled = 5;</code>
+     * @param value The biometryEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBiometryEnabled(boolean value) {
+      
+      biometryEnabled_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string status = 4;</code>
-     * @param value The bytes for status to set.
+     * <code>bool biometry_enabled = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder setStatusBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+    public Builder clearBiometryEnabled() {
       
-      status_ = value;
+      biometryEnabled_ = false;
       onChanged();
       return this;
     }
@@ -929,41 +921,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.DisplayItem)
+    // @@protoc_insertion_point(builder_scope:pb.MobileApplicationParams)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.DisplayItem)
-  private static final ru.ogon.sdk.model.DisplayItem DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pb.MobileApplicationParams)
+  private static final ru.ogon.sdk.model.MobileApplicationParams DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ru.ogon.sdk.model.DisplayItem();
+    DEFAULT_INSTANCE = new ru.ogon.sdk.model.MobileApplicationParams();
   }
 
-  public static ru.ogon.sdk.model.DisplayItem getDefaultInstance() {
+  public static ru.ogon.sdk.model.MobileApplicationParams getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DisplayItem>
-      PARSER = new com.google.protobuf.AbstractParser<DisplayItem>() {
+  private static final com.google.protobuf.Parser<MobileApplicationParams>
+      PARSER = new com.google.protobuf.AbstractParser<MobileApplicationParams>() {
     @java.lang.Override
-    public DisplayItem parsePartialFrom(
+    public MobileApplicationParams parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DisplayItem(input, extensionRegistry);
+      return new MobileApplicationParams(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<DisplayItem> parser() {
+  public static com.google.protobuf.Parser<MobileApplicationParams> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DisplayItem> getParserForType() {
+  public com.google.protobuf.Parser<MobileApplicationParams> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public ru.ogon.sdk.model.DisplayItem getDefaultInstanceForType() {
+  public ru.ogon.sdk.model.MobileApplicationParams getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

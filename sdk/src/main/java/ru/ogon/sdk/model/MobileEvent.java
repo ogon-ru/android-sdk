@@ -156,6 +156,48 @@ private static final long serialVersionUID = 0L;
             payload_ = s;
             break;
           }
+          case 90: {
+            ru.ogon.sdk.model.MobileApplicationParams.Builder subBuilder = null;
+            if (payloadCase_ == 11) {
+              subBuilder = ((ru.ogon.sdk.model.MobileApplicationParams) payload_).toBuilder();
+            }
+            payload_ =
+                input.readMessage(ru.ogon.sdk.model.MobileApplicationParams.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((ru.ogon.sdk.model.MobileApplicationParams) payload_);
+              payload_ = subBuilder.buildPartial();
+            }
+            payloadCase_ = 11;
+            break;
+          }
+          case 98: {
+            ru.ogon.sdk.model.CreateKeysRequest.Builder subBuilder = null;
+            if (payloadCase_ == 12) {
+              subBuilder = ((ru.ogon.sdk.model.CreateKeysRequest) payload_).toBuilder();
+            }
+            payload_ =
+                input.readMessage(ru.ogon.sdk.model.CreateKeysRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((ru.ogon.sdk.model.CreateKeysRequest) payload_);
+              payload_ = subBuilder.buildPartial();
+            }
+            payloadCase_ = 12;
+            break;
+          }
+          case 106: {
+            ru.ogon.sdk.model.CreateKeysResponse.Builder subBuilder = null;
+            if (payloadCase_ == 13) {
+              subBuilder = ((ru.ogon.sdk.model.CreateKeysResponse) payload_).toBuilder();
+            }
+            payload_ =
+                input.readMessage(ru.ogon.sdk.model.CreateKeysResponse.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((ru.ogon.sdk.model.CreateKeysResponse) payload_);
+              payload_ = subBuilder.buildPartial();
+            }
+            payloadCase_ = 13;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -202,6 +244,9 @@ private static final long serialVersionUID = 0L;
     APPLEPAY_PAYMENT_DATA(8),
     OPEN_URL_REQUEST(9),
     SHARE_URL_REQUEST(10),
+    APPLICATION_PARAMS(11),
+    CREATE_KEYS_REQUEST(12),
+    CREATE_KEYS_RESPONSE(13),
     PAYLOAD_NOT_SET(0);
     private final int value;
     private PayloadCase(int value) {
@@ -228,6 +273,9 @@ private static final long serialVersionUID = 0L;
         case 8: return APPLEPAY_PAYMENT_DATA;
         case 9: return OPEN_URL_REQUEST;
         case 10: return SHARE_URL_REQUEST;
+        case 11: return APPLICATION_PARAMS;
+        case 12: return CREATE_KEYS_REQUEST;
+        case 13: return CREATE_KEYS_RESPONSE;
         case 0: return PAYLOAD_NOT_SET;
         default: return null;
       }
@@ -573,6 +621,99 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int APPLICATION_PARAMS_FIELD_NUMBER = 11;
+  /**
+   * <code>.pb.MobileApplicationParams application_params = 11;</code>
+   * @return Whether the applicationParams field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplicationParams() {
+    return payloadCase_ == 11;
+  }
+  /**
+   * <code>.pb.MobileApplicationParams application_params = 11;</code>
+   * @return The applicationParams.
+   */
+  @java.lang.Override
+  public ru.ogon.sdk.model.MobileApplicationParams getApplicationParams() {
+    if (payloadCase_ == 11) {
+       return (ru.ogon.sdk.model.MobileApplicationParams) payload_;
+    }
+    return ru.ogon.sdk.model.MobileApplicationParams.getDefaultInstance();
+  }
+  /**
+   * <code>.pb.MobileApplicationParams application_params = 11;</code>
+   */
+  @java.lang.Override
+  public ru.ogon.sdk.model.MobileApplicationParamsOrBuilder getApplicationParamsOrBuilder() {
+    if (payloadCase_ == 11) {
+       return (ru.ogon.sdk.model.MobileApplicationParams) payload_;
+    }
+    return ru.ogon.sdk.model.MobileApplicationParams.getDefaultInstance();
+  }
+
+  public static final int CREATE_KEYS_REQUEST_FIELD_NUMBER = 12;
+  /**
+   * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+   * @return Whether the createKeysRequest field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateKeysRequest() {
+    return payloadCase_ == 12;
+  }
+  /**
+   * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+   * @return The createKeysRequest.
+   */
+  @java.lang.Override
+  public ru.ogon.sdk.model.CreateKeysRequest getCreateKeysRequest() {
+    if (payloadCase_ == 12) {
+       return (ru.ogon.sdk.model.CreateKeysRequest) payload_;
+    }
+    return ru.ogon.sdk.model.CreateKeysRequest.getDefaultInstance();
+  }
+  /**
+   * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+   */
+  @java.lang.Override
+  public ru.ogon.sdk.model.CreateKeysRequestOrBuilder getCreateKeysRequestOrBuilder() {
+    if (payloadCase_ == 12) {
+       return (ru.ogon.sdk.model.CreateKeysRequest) payload_;
+    }
+    return ru.ogon.sdk.model.CreateKeysRequest.getDefaultInstance();
+  }
+
+  public static final int CREATE_KEYS_RESPONSE_FIELD_NUMBER = 13;
+  /**
+   * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+   * @return Whether the createKeysResponse field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateKeysResponse() {
+    return payloadCase_ == 13;
+  }
+  /**
+   * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+   * @return The createKeysResponse.
+   */
+  @java.lang.Override
+  public ru.ogon.sdk.model.CreateKeysResponse getCreateKeysResponse() {
+    if (payloadCase_ == 13) {
+       return (ru.ogon.sdk.model.CreateKeysResponse) payload_;
+    }
+    return ru.ogon.sdk.model.CreateKeysResponse.getDefaultInstance();
+  }
+  /**
+   * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+   */
+  @java.lang.Override
+  public ru.ogon.sdk.model.CreateKeysResponseOrBuilder getCreateKeysResponseOrBuilder() {
+    if (payloadCase_ == 13) {
+       return (ru.ogon.sdk.model.CreateKeysResponse) payload_;
+    }
+    return ru.ogon.sdk.model.CreateKeysResponse.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -617,6 +758,15 @@ private static final long serialVersionUID = 0L;
     }
     if (payloadCase_ == 10) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, payload_);
+    }
+    if (payloadCase_ == 11) {
+      output.writeMessage(11, (ru.ogon.sdk.model.MobileApplicationParams) payload_);
+    }
+    if (payloadCase_ == 12) {
+      output.writeMessage(12, (ru.ogon.sdk.model.CreateKeysRequest) payload_);
+    }
+    if (payloadCase_ == 13) {
+      output.writeMessage(13, (ru.ogon.sdk.model.CreateKeysResponse) payload_);
     }
     unknownFields.writeTo(output);
   }
@@ -665,6 +815,18 @@ private static final long serialVersionUID = 0L;
     }
     if (payloadCase_ == 10) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, payload_);
+    }
+    if (payloadCase_ == 11) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, (ru.ogon.sdk.model.MobileApplicationParams) payload_);
+    }
+    if (payloadCase_ == 12) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, (ru.ogon.sdk.model.CreateKeysRequest) payload_);
+    }
+    if (payloadCase_ == 13) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, (ru.ogon.sdk.model.CreateKeysResponse) payload_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -720,6 +882,18 @@ private static final long serialVersionUID = 0L;
         if (!getShareUrlRequest()
             .equals(other.getShareUrlRequest())) return false;
         break;
+      case 11:
+        if (!getApplicationParams()
+            .equals(other.getApplicationParams())) return false;
+        break;
+      case 12:
+        if (!getCreateKeysRequest()
+            .equals(other.getCreateKeysRequest())) return false;
+        break;
+      case 13:
+        if (!getCreateKeysResponse()
+            .equals(other.getCreateKeysResponse())) return false;
+        break;
       case 0:
       default:
     }
@@ -773,6 +947,18 @@ private static final long serialVersionUID = 0L;
       case 10:
         hash = (37 * hash) + SHARE_URL_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getShareUrlRequest().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + APPLICATION_PARAMS_FIELD_NUMBER;
+        hash = (53 * hash) + getApplicationParams().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + CREATE_KEYS_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateKeysRequest().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + CREATE_KEYS_RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateKeysResponse().hashCode();
         break;
       case 0:
       default:
@@ -992,6 +1178,27 @@ private static final long serialVersionUID = 0L;
       if (payloadCase_ == 10) {
         result.payload_ = payload_;
       }
+      if (payloadCase_ == 11) {
+        if (applicationParamsBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = applicationParamsBuilder_.build();
+        }
+      }
+      if (payloadCase_ == 12) {
+        if (createKeysRequestBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = createKeysRequestBuilder_.build();
+        }
+      }
+      if (payloadCase_ == 13) {
+        if (createKeysResponseBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = createKeysResponseBuilder_.build();
+        }
+      }
       result.payloadCase_ = payloadCase_;
       onBuilt();
       return result;
@@ -1083,6 +1290,18 @@ private static final long serialVersionUID = 0L;
           payloadCase_ = 10;
           payload_ = other.payload_;
           onChanged();
+          break;
+        }
+        case APPLICATION_PARAMS: {
+          mergeApplicationParams(other.getApplicationParams());
+          break;
+        }
+        case CREATE_KEYS_REQUEST: {
+          mergeCreateKeysRequest(other.getCreateKeysRequest());
+          break;
+        }
+        case CREATE_KEYS_RESPONSE: {
+          mergeCreateKeysResponse(other.getCreateKeysResponse());
           break;
         }
         case PAYLOAD_NOT_SET: {
@@ -2266,6 +2485,429 @@ private static final long serialVersionUID = 0L;
       payload_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ru.ogon.sdk.model.MobileApplicationParams, ru.ogon.sdk.model.MobileApplicationParams.Builder, ru.ogon.sdk.model.MobileApplicationParamsOrBuilder> applicationParamsBuilder_;
+    /**
+     * <code>.pb.MobileApplicationParams application_params = 11;</code>
+     * @return Whether the applicationParams field is set.
+     */
+    @java.lang.Override
+    public boolean hasApplicationParams() {
+      return payloadCase_ == 11;
+    }
+    /**
+     * <code>.pb.MobileApplicationParams application_params = 11;</code>
+     * @return The applicationParams.
+     */
+    @java.lang.Override
+    public ru.ogon.sdk.model.MobileApplicationParams getApplicationParams() {
+      if (applicationParamsBuilder_ == null) {
+        if (payloadCase_ == 11) {
+          return (ru.ogon.sdk.model.MobileApplicationParams) payload_;
+        }
+        return ru.ogon.sdk.model.MobileApplicationParams.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 11) {
+          return applicationParamsBuilder_.getMessage();
+        }
+        return ru.ogon.sdk.model.MobileApplicationParams.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.pb.MobileApplicationParams application_params = 11;</code>
+     */
+    public Builder setApplicationParams(ru.ogon.sdk.model.MobileApplicationParams value) {
+      if (applicationParamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        applicationParamsBuilder_.setMessage(value);
+      }
+      payloadCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.pb.MobileApplicationParams application_params = 11;</code>
+     */
+    public Builder setApplicationParams(
+        ru.ogon.sdk.model.MobileApplicationParams.Builder builderForValue) {
+      if (applicationParamsBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        applicationParamsBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.pb.MobileApplicationParams application_params = 11;</code>
+     */
+    public Builder mergeApplicationParams(ru.ogon.sdk.model.MobileApplicationParams value) {
+      if (applicationParamsBuilder_ == null) {
+        if (payloadCase_ == 11 &&
+            payload_ != ru.ogon.sdk.model.MobileApplicationParams.getDefaultInstance()) {
+          payload_ = ru.ogon.sdk.model.MobileApplicationParams.newBuilder((ru.ogon.sdk.model.MobileApplicationParams) payload_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 11) {
+          applicationParamsBuilder_.mergeFrom(value);
+        }
+        applicationParamsBuilder_.setMessage(value);
+      }
+      payloadCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.pb.MobileApplicationParams application_params = 11;</code>
+     */
+    public Builder clearApplicationParams() {
+      if (applicationParamsBuilder_ == null) {
+        if (payloadCase_ == 11) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 11) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        applicationParamsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.pb.MobileApplicationParams application_params = 11;</code>
+     */
+    public ru.ogon.sdk.model.MobileApplicationParams.Builder getApplicationParamsBuilder() {
+      return getApplicationParamsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pb.MobileApplicationParams application_params = 11;</code>
+     */
+    @java.lang.Override
+    public ru.ogon.sdk.model.MobileApplicationParamsOrBuilder getApplicationParamsOrBuilder() {
+      if ((payloadCase_ == 11) && (applicationParamsBuilder_ != null)) {
+        return applicationParamsBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 11) {
+          return (ru.ogon.sdk.model.MobileApplicationParams) payload_;
+        }
+        return ru.ogon.sdk.model.MobileApplicationParams.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.pb.MobileApplicationParams application_params = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ru.ogon.sdk.model.MobileApplicationParams, ru.ogon.sdk.model.MobileApplicationParams.Builder, ru.ogon.sdk.model.MobileApplicationParamsOrBuilder> 
+        getApplicationParamsFieldBuilder() {
+      if (applicationParamsBuilder_ == null) {
+        if (!(payloadCase_ == 11)) {
+          payload_ = ru.ogon.sdk.model.MobileApplicationParams.getDefaultInstance();
+        }
+        applicationParamsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            ru.ogon.sdk.model.MobileApplicationParams, ru.ogon.sdk.model.MobileApplicationParams.Builder, ru.ogon.sdk.model.MobileApplicationParamsOrBuilder>(
+                (ru.ogon.sdk.model.MobileApplicationParams) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 11;
+      onChanged();;
+      return applicationParamsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ru.ogon.sdk.model.CreateKeysRequest, ru.ogon.sdk.model.CreateKeysRequest.Builder, ru.ogon.sdk.model.CreateKeysRequestOrBuilder> createKeysRequestBuilder_;
+    /**
+     * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+     * @return Whether the createKeysRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateKeysRequest() {
+      return payloadCase_ == 12;
+    }
+    /**
+     * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+     * @return The createKeysRequest.
+     */
+    @java.lang.Override
+    public ru.ogon.sdk.model.CreateKeysRequest getCreateKeysRequest() {
+      if (createKeysRequestBuilder_ == null) {
+        if (payloadCase_ == 12) {
+          return (ru.ogon.sdk.model.CreateKeysRequest) payload_;
+        }
+        return ru.ogon.sdk.model.CreateKeysRequest.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 12) {
+          return createKeysRequestBuilder_.getMessage();
+        }
+        return ru.ogon.sdk.model.CreateKeysRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+     */
+    public Builder setCreateKeysRequest(ru.ogon.sdk.model.CreateKeysRequest value) {
+      if (createKeysRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        createKeysRequestBuilder_.setMessage(value);
+      }
+      payloadCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+     */
+    public Builder setCreateKeysRequest(
+        ru.ogon.sdk.model.CreateKeysRequest.Builder builderForValue) {
+      if (createKeysRequestBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        createKeysRequestBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+     */
+    public Builder mergeCreateKeysRequest(ru.ogon.sdk.model.CreateKeysRequest value) {
+      if (createKeysRequestBuilder_ == null) {
+        if (payloadCase_ == 12 &&
+            payload_ != ru.ogon.sdk.model.CreateKeysRequest.getDefaultInstance()) {
+          payload_ = ru.ogon.sdk.model.CreateKeysRequest.newBuilder((ru.ogon.sdk.model.CreateKeysRequest) payload_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 12) {
+          createKeysRequestBuilder_.mergeFrom(value);
+        }
+        createKeysRequestBuilder_.setMessage(value);
+      }
+      payloadCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+     */
+    public Builder clearCreateKeysRequest() {
+      if (createKeysRequestBuilder_ == null) {
+        if (payloadCase_ == 12) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 12) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        createKeysRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+     */
+    public ru.ogon.sdk.model.CreateKeysRequest.Builder getCreateKeysRequestBuilder() {
+      return getCreateKeysRequestFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+     */
+    @java.lang.Override
+    public ru.ogon.sdk.model.CreateKeysRequestOrBuilder getCreateKeysRequestOrBuilder() {
+      if ((payloadCase_ == 12) && (createKeysRequestBuilder_ != null)) {
+        return createKeysRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 12) {
+          return (ru.ogon.sdk.model.CreateKeysRequest) payload_;
+        }
+        return ru.ogon.sdk.model.CreateKeysRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ru.ogon.sdk.model.CreateKeysRequest, ru.ogon.sdk.model.CreateKeysRequest.Builder, ru.ogon.sdk.model.CreateKeysRequestOrBuilder> 
+        getCreateKeysRequestFieldBuilder() {
+      if (createKeysRequestBuilder_ == null) {
+        if (!(payloadCase_ == 12)) {
+          payload_ = ru.ogon.sdk.model.CreateKeysRequest.getDefaultInstance();
+        }
+        createKeysRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            ru.ogon.sdk.model.CreateKeysRequest, ru.ogon.sdk.model.CreateKeysRequest.Builder, ru.ogon.sdk.model.CreateKeysRequestOrBuilder>(
+                (ru.ogon.sdk.model.CreateKeysRequest) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 12;
+      onChanged();;
+      return createKeysRequestBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ru.ogon.sdk.model.CreateKeysResponse, ru.ogon.sdk.model.CreateKeysResponse.Builder, ru.ogon.sdk.model.CreateKeysResponseOrBuilder> createKeysResponseBuilder_;
+    /**
+     * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+     * @return Whether the createKeysResponse field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateKeysResponse() {
+      return payloadCase_ == 13;
+    }
+    /**
+     * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+     * @return The createKeysResponse.
+     */
+    @java.lang.Override
+    public ru.ogon.sdk.model.CreateKeysResponse getCreateKeysResponse() {
+      if (createKeysResponseBuilder_ == null) {
+        if (payloadCase_ == 13) {
+          return (ru.ogon.sdk.model.CreateKeysResponse) payload_;
+        }
+        return ru.ogon.sdk.model.CreateKeysResponse.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 13) {
+          return createKeysResponseBuilder_.getMessage();
+        }
+        return ru.ogon.sdk.model.CreateKeysResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+     */
+    public Builder setCreateKeysResponse(ru.ogon.sdk.model.CreateKeysResponse value) {
+      if (createKeysResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        createKeysResponseBuilder_.setMessage(value);
+      }
+      payloadCase_ = 13;
+      return this;
+    }
+    /**
+     * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+     */
+    public Builder setCreateKeysResponse(
+        ru.ogon.sdk.model.CreateKeysResponse.Builder builderForValue) {
+      if (createKeysResponseBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        createKeysResponseBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 13;
+      return this;
+    }
+    /**
+     * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+     */
+    public Builder mergeCreateKeysResponse(ru.ogon.sdk.model.CreateKeysResponse value) {
+      if (createKeysResponseBuilder_ == null) {
+        if (payloadCase_ == 13 &&
+            payload_ != ru.ogon.sdk.model.CreateKeysResponse.getDefaultInstance()) {
+          payload_ = ru.ogon.sdk.model.CreateKeysResponse.newBuilder((ru.ogon.sdk.model.CreateKeysResponse) payload_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 13) {
+          createKeysResponseBuilder_.mergeFrom(value);
+        }
+        createKeysResponseBuilder_.setMessage(value);
+      }
+      payloadCase_ = 13;
+      return this;
+    }
+    /**
+     * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+     */
+    public Builder clearCreateKeysResponse() {
+      if (createKeysResponseBuilder_ == null) {
+        if (payloadCase_ == 13) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 13) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        createKeysResponseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+     */
+    public ru.ogon.sdk.model.CreateKeysResponse.Builder getCreateKeysResponseBuilder() {
+      return getCreateKeysResponseFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+     */
+    @java.lang.Override
+    public ru.ogon.sdk.model.CreateKeysResponseOrBuilder getCreateKeysResponseOrBuilder() {
+      if ((payloadCase_ == 13) && (createKeysResponseBuilder_ != null)) {
+        return createKeysResponseBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 13) {
+          return (ru.ogon.sdk.model.CreateKeysResponse) payload_;
+        }
+        return ru.ogon.sdk.model.CreateKeysResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ru.ogon.sdk.model.CreateKeysResponse, ru.ogon.sdk.model.CreateKeysResponse.Builder, ru.ogon.sdk.model.CreateKeysResponseOrBuilder> 
+        getCreateKeysResponseFieldBuilder() {
+      if (createKeysResponseBuilder_ == null) {
+        if (!(payloadCase_ == 13)) {
+          payload_ = ru.ogon.sdk.model.CreateKeysResponse.getDefaultInstance();
+        }
+        createKeysResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            ru.ogon.sdk.model.CreateKeysResponse, ru.ogon.sdk.model.CreateKeysResponse.Builder, ru.ogon.sdk.model.CreateKeysResponseOrBuilder>(
+                (ru.ogon.sdk.model.CreateKeysResponse) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 13;
+      onChanged();;
+      return createKeysResponseBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

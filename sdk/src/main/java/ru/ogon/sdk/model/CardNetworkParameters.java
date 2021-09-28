@@ -229,13 +229,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCardNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cardNetwork_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cardNetwork_);
     }
-    if (!getAcquirerBinBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acquirerBin_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, acquirerBin_);
     }
-    if (!getAcquirerMerchantIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acquirerMerchantId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, acquirerMerchantId_);
     }
     unknownFields.writeTo(output);
@@ -247,13 +247,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCardNetworkBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cardNetwork_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cardNetwork_);
     }
-    if (!getAcquirerBinBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acquirerBin_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, acquirerBin_);
     }
-    if (!getAcquirerMerchantIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acquirerMerchantId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, acquirerMerchantId_);
     }
     size += unknownFields.getSerializedSize();
