@@ -64,6 +64,26 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_SHARE_URL_REQUEST = 13;</code>
    */
   MOBILE_EVENT_SHARE_URL_REQUEST(13),
+  /**
+   * <code>MOBILE_EVENT_GET_PARAMS_REQUEST = 14;</code>
+   */
+  MOBILE_EVENT_GET_PARAMS_REQUEST(14),
+  /**
+   * <code>MOBILE_EVENT_GET_PARAMS_RESPONSE = 15;</code>
+   */
+  MOBILE_EVENT_GET_PARAMS_RESPONSE(15),
+  /**
+   * <code>MOBILE_EVENT_SET_PARAMS_REQUEST = 16;</code>
+   */
+  MOBILE_EVENT_SET_PARAMS_REQUEST(16),
+  /**
+   * <code>MOBILE_EVENT_CREATE_KEYS_REQUEST = 17;</code>
+   */
+  MOBILE_EVENT_CREATE_KEYS_REQUEST(17),
+  /**
+   * <code>MOBILE_EVENT_CREATE_KEYS_RESPONSE = 18;</code>
+   */
+  MOBILE_EVENT_CREATE_KEYS_RESPONSE(18),
   UNRECOGNIZED(-1),
   ;
 
@@ -123,6 +143,26 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_SHARE_URL_REQUEST = 13;</code>
    */
   public static final int MOBILE_EVENT_SHARE_URL_REQUEST_VALUE = 13;
+  /**
+   * <code>MOBILE_EVENT_GET_PARAMS_REQUEST = 14;</code>
+   */
+  public static final int MOBILE_EVENT_GET_PARAMS_REQUEST_VALUE = 14;
+  /**
+   * <code>MOBILE_EVENT_GET_PARAMS_RESPONSE = 15;</code>
+   */
+  public static final int MOBILE_EVENT_GET_PARAMS_RESPONSE_VALUE = 15;
+  /**
+   * <code>MOBILE_EVENT_SET_PARAMS_REQUEST = 16;</code>
+   */
+  public static final int MOBILE_EVENT_SET_PARAMS_REQUEST_VALUE = 16;
+  /**
+   * <code>MOBILE_EVENT_CREATE_KEYS_REQUEST = 17;</code>
+   */
+  public static final int MOBILE_EVENT_CREATE_KEYS_REQUEST_VALUE = 17;
+  /**
+   * <code>MOBILE_EVENT_CREATE_KEYS_RESPONSE = 18;</code>
+   */
+  public static final int MOBILE_EVENT_CREATE_KEYS_RESPONSE_VALUE = 18;
 
 
   public final int getNumber() {
@@ -163,6 +203,11 @@ public enum MobileEventType
       case 11: return MOBILE_EVENT_OPEN_URL_REQUEST;
       case 12: return MOBILE_EVENT_BACK;
       case 13: return MOBILE_EVENT_SHARE_URL_REQUEST;
+      case 14: return MOBILE_EVENT_GET_PARAMS_REQUEST;
+      case 15: return MOBILE_EVENT_GET_PARAMS_RESPONSE;
+      case 16: return MOBILE_EVENT_SET_PARAMS_REQUEST;
+      case 17: return MOBILE_EVENT_CREATE_KEYS_REQUEST;
+      case 18: return MOBILE_EVENT_CREATE_KEYS_RESPONSE;
       default: return null;
     }
   }

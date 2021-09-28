@@ -294,7 +294,7 @@ private static final long serialVersionUID = 0L;
     if (apiVersionMinor_ != 0) {
       output.writeUInt32(2, apiVersionMinor_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
     }
     if (shippingAddress_ != null) {
@@ -323,7 +323,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, apiVersionMinor_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
     }
     if (shippingAddress_ != null) {

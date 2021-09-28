@@ -153,5 +153,50 @@ public interface MobileEventOrBuilder extends
   com.google.protobuf.ByteString
       getShareUrlRequestBytes();
 
+  /**
+   * <code>.pb.MobileApplicationParams application_params = 11;</code>
+   * @return Whether the applicationParams field is set.
+   */
+  boolean hasApplicationParams();
+  /**
+   * <code>.pb.MobileApplicationParams application_params = 11;</code>
+   * @return The applicationParams.
+   */
+  ru.ogon.sdk.model.MobileApplicationParams getApplicationParams();
+  /**
+   * <code>.pb.MobileApplicationParams application_params = 11;</code>
+   */
+  ru.ogon.sdk.model.MobileApplicationParamsOrBuilder getApplicationParamsOrBuilder();
+
+  /**
+   * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+   * @return Whether the createKeysRequest field is set.
+   */
+  boolean hasCreateKeysRequest();
+  /**
+   * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+   * @return The createKeysRequest.
+   */
+  ru.ogon.sdk.model.CreateKeysRequest getCreateKeysRequest();
+  /**
+   * <code>.pb.CreateKeysRequest create_keys_request = 12;</code>
+   */
+  ru.ogon.sdk.model.CreateKeysRequestOrBuilder getCreateKeysRequestOrBuilder();
+
+  /**
+   * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+   * @return Whether the createKeysResponse field is set.
+   */
+  boolean hasCreateKeysResponse();
+  /**
+   * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+   * @return The createKeysResponse.
+   */
+  ru.ogon.sdk.model.CreateKeysResponse getCreateKeysResponse();
+  /**
+   * <code>.pb.CreateKeysResponse create_keys_response = 13;</code>
+   */
+  ru.ogon.sdk.model.CreateKeysResponseOrBuilder getCreateKeysResponseOrBuilder();
+
   public ru.ogon.sdk.model.MobileEvent.PayloadCase getPayloadCase();
 }

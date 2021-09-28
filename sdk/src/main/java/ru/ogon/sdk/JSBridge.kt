@@ -52,10 +52,15 @@ class JSBridge(
         private val webView: WebView,
         private val eventListener: EventListener,
         private val navigationStateChange: () -> Unit,
+        isOgonApplication: Boolean,
 ) {
 
     init {
         webView.addJavascriptInterface(JSInterface(), "PNWidget")
+        if (isOgonApplication) {
+            // ogon app marker
+            webView.addJavascriptInterface(JSAppInterface(), "OgonApp")
+        }
     }
 
     fun sendEvent(event: MobileEvent) {
@@ -117,5 +122,10 @@ class JSBridge(
         fun _navigationStateChange() {
             navigationStateChange()
         }
+    }
+
+    private inner class JSAppInterface {
+        @JavascriptInterface
+        fun noop() {}
     }
 }
