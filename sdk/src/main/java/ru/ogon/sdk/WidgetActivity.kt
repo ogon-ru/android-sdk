@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.graphics.Bitmap
+import android.graphics.Rect
 import android.net.Uri
 import android.net.http.SslError
 import android.os.Build
@@ -28,6 +29,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import ru.ogon.sdk.model.IsReadyToPayRequest as IsReadyToPayRequestModel
 import ru.ogon.sdk.model.PaymentDataRequest as PaymentDataRequestModel
+import android.view.View
 
 
 private const val BASE_URL = BuildConfig.BASE_URL
@@ -113,6 +115,24 @@ class WidgetActivity : AppCompatActivity() {
 
         if (BuildConfig.DEBUG) {
             Log.d("[OgonWidget]", "init; url: $url;")
+        }
+
+        val rootView = window.decorView.findViewById<View>(android.R.id.content)
+        val containerView = (webView.parent as View)
+
+        // GBoard autofill workaround
+        rootView?.viewTreeObserver?.addOnGlobalLayoutListener {
+            try {
+                val rect = Rect().apply {
+                    window.decorView.getWindowVisibleDisplayFrame(this)
+                }
+
+                containerView.layoutParams = containerView.layoutParams.apply {
+                    height = rect.height()
+                }
+            } catch (e: Throwable) {
+                Log.e("[OgonWidget]", "Container resize error", e)
+            }
         }
     }
 
