@@ -4,20 +4,19 @@
 package ru.ogon.sdk.model;
 
 /**
- * Protobuf type {@code pb.MobileApplicationParams}
+ * Protobuf type {@code pb.MobileApplicationParamsUpdate}
  */
-public final class MobileApplicationParams extends
+public final class MobileApplicationParamsUpdate extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:pb.MobileApplicationParams)
-    MobileApplicationParamsOrBuilder {
+    // @@protoc_insertion_point(message_implements:pb.MobileApplicationParamsUpdate)
+    MobileApplicationParamsUpdateOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use MobileApplicationParams.newBuilder() to construct.
-  private MobileApplicationParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use MobileApplicationParamsUpdate.newBuilder() to construct.
+  private MobileApplicationParamsUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private MobileApplicationParams() {
+  private MobileApplicationParamsUpdate() {
     userId_ = "";
-    deviceId_ = "";
     confirmationId_ = "";
   }
 
@@ -25,7 +24,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new MobileApplicationParams();
+    return new MobileApplicationParamsUpdate();
   }
 
   @java.lang.Override
@@ -33,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private MobileApplicationParams(
+  private MobileApplicationParamsUpdate(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -60,28 +59,17 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            deviceId_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
             confirmationId_ = s;
             break;
           }
-          case 32: {
+          case 24: {
 
             passwordEnabled_ = input.readBool();
             break;
           }
-          case 40: {
+          case 32: {
 
             biometryEnabled_ = input.readBool();
-            break;
-          }
-          case 48: {
-
-            biometryAvailable_ = input.readBool();
             break;
           }
           default: {
@@ -105,15 +93,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParams_descriptor;
+    return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParamsUpdate_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParams_fieldAccessorTable
+    return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParamsUpdate_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ru.ogon.sdk.model.MobileApplicationParams.class, ru.ogon.sdk.model.MobileApplicationParams.Builder.class);
+            ru.ogon.sdk.model.MobileApplicationParamsUpdate.class, ru.ogon.sdk.model.MobileApplicationParamsUpdate.Builder.class);
   }
 
   public static final int USER_ID_FIELD_NUMBER = 1;
@@ -154,48 +142,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DEVICE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deviceId_;
-  /**
-   * <code>string device_id = 2;</code>
-   * @return The deviceId.
-   */
-  @java.lang.Override
-  public java.lang.String getDeviceId() {
-    java.lang.Object ref = deviceId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      deviceId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string device_id = 2;</code>
-   * @return The bytes for deviceId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDeviceIdBytes() {
-    java.lang.Object ref = deviceId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      deviceId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CONFIRMATION_ID_FIELD_NUMBER = 3;
+  public static final int CONFIRMATION_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object confirmationId_;
   /**
-   * <code>string confirmation_id = 3;</code>
+   * <code>string confirmation_id = 2;</code>
    * @return The confirmationId.
    */
   @java.lang.Override
@@ -212,7 +162,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string confirmation_id = 3;</code>
+   * <code>string confirmation_id = 2;</code>
    * @return The bytes for confirmationId.
    */
   @java.lang.Override
@@ -230,10 +180,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PASSWORD_ENABLED_FIELD_NUMBER = 4;
+  public static final int PASSWORD_ENABLED_FIELD_NUMBER = 3;
   private boolean passwordEnabled_;
   /**
-   * <code>bool password_enabled = 4;</code>
+   * <code>bool password_enabled = 3;</code>
    * @return The passwordEnabled.
    */
   @java.lang.Override
@@ -241,26 +191,15 @@ private static final long serialVersionUID = 0L;
     return passwordEnabled_;
   }
 
-  public static final int BIOMETRY_ENABLED_FIELD_NUMBER = 5;
+  public static final int BIOMETRY_ENABLED_FIELD_NUMBER = 4;
   private boolean biometryEnabled_;
   /**
-   * <code>bool biometry_enabled = 5;</code>
+   * <code>bool biometry_enabled = 4;</code>
    * @return The biometryEnabled.
    */
   @java.lang.Override
   public boolean getBiometryEnabled() {
     return biometryEnabled_;
-  }
-
-  public static final int BIOMETRY_AVAILABLE_FIELD_NUMBER = 6;
-  private boolean biometryAvailable_;
-  /**
-   * <code>bool biometry_available = 6;</code>
-   * @return The biometryAvailable.
-   */
-  @java.lang.Override
-  public boolean getBiometryAvailable() {
-    return biometryAvailable_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -280,20 +219,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deviceId_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(confirmationId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, confirmationId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, confirmationId_);
     }
     if (passwordEnabled_ != false) {
-      output.writeBool(4, passwordEnabled_);
+      output.writeBool(3, passwordEnabled_);
     }
     if (biometryEnabled_ != false) {
-      output.writeBool(5, biometryEnabled_);
-    }
-    if (biometryAvailable_ != false) {
-      output.writeBool(6, biometryAvailable_);
+      output.writeBool(4, biometryEnabled_);
     }
     unknownFields.writeTo(output);
   }
@@ -307,23 +240,16 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deviceId_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(confirmationId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, confirmationId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, confirmationId_);
     }
     if (passwordEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(4, passwordEnabled_);
+        .computeBoolSize(3, passwordEnabled_);
     }
     if (biometryEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(5, biometryEnabled_);
-    }
-    if (biometryAvailable_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, biometryAvailable_);
+        .computeBoolSize(4, biometryEnabled_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -335,23 +261,19 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ru.ogon.sdk.model.MobileApplicationParams)) {
+    if (!(obj instanceof ru.ogon.sdk.model.MobileApplicationParamsUpdate)) {
       return super.equals(obj);
     }
-    ru.ogon.sdk.model.MobileApplicationParams other = (ru.ogon.sdk.model.MobileApplicationParams) obj;
+    ru.ogon.sdk.model.MobileApplicationParamsUpdate other = (ru.ogon.sdk.model.MobileApplicationParamsUpdate) obj;
 
     if (!getUserId()
         .equals(other.getUserId())) return false;
-    if (!getDeviceId()
-        .equals(other.getDeviceId())) return false;
     if (!getConfirmationId()
         .equals(other.getConfirmationId())) return false;
     if (getPasswordEnabled()
         != other.getPasswordEnabled()) return false;
     if (getBiometryEnabled()
         != other.getBiometryEnabled()) return false;
-    if (getBiometryAvailable()
-        != other.getBiometryAvailable()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -365,8 +287,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
-    hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getDeviceId().hashCode();
     hash = (37 * hash) + CONFIRMATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getConfirmationId().hashCode();
     hash = (37 * hash) + PASSWORD_ENABLED_FIELD_NUMBER;
@@ -375,77 +295,74 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BIOMETRY_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getBiometryEnabled());
-    hash = (37 * hash) + BIOMETRY_AVAILABLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getBiometryAvailable());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(byte[] data)
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(java.io.InputStream input)
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.MobileApplicationParams parseDelimitedFrom(java.io.InputStream input)
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ru.ogon.sdk.model.MobileApplicationParams parseDelimitedFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ru.ogon.sdk.model.MobileApplicationParams parseFrom(
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -458,7 +375,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ru.ogon.sdk.model.MobileApplicationParams prototype) {
+  public static Builder newBuilder(ru.ogon.sdk.model.MobileApplicationParamsUpdate prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -474,26 +391,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code pb.MobileApplicationParams}
+   * Protobuf type {@code pb.MobileApplicationParamsUpdate}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:pb.MobileApplicationParams)
-      ru.ogon.sdk.model.MobileApplicationParamsOrBuilder {
+      // @@protoc_insertion_point(builder_implements:pb.MobileApplicationParamsUpdate)
+      ru.ogon.sdk.model.MobileApplicationParamsUpdateOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParams_descriptor;
+      return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParamsUpdate_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParams_fieldAccessorTable
+      return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParamsUpdate_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ru.ogon.sdk.model.MobileApplicationParams.class, ru.ogon.sdk.model.MobileApplicationParams.Builder.class);
+              ru.ogon.sdk.model.MobileApplicationParamsUpdate.class, ru.ogon.sdk.model.MobileApplicationParamsUpdate.Builder.class);
     }
 
-    // Construct using ru.ogon.sdk.model.MobileApplicationParams.newBuilder()
+    // Construct using ru.ogon.sdk.model.MobileApplicationParamsUpdate.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -513,15 +430,11 @@ private static final long serialVersionUID = 0L;
       super.clear();
       userId_ = "";
 
-      deviceId_ = "";
-
       confirmationId_ = "";
 
       passwordEnabled_ = false;
 
       biometryEnabled_ = false;
-
-      biometryAvailable_ = false;
 
       return this;
     }
@@ -529,17 +442,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParams_descriptor;
+      return ru.ogon.sdk.model.MobileModel.internal_static_pb_MobileApplicationParamsUpdate_descriptor;
     }
 
     @java.lang.Override
-    public ru.ogon.sdk.model.MobileApplicationParams getDefaultInstanceForType() {
-      return ru.ogon.sdk.model.MobileApplicationParams.getDefaultInstance();
+    public ru.ogon.sdk.model.MobileApplicationParamsUpdate getDefaultInstanceForType() {
+      return ru.ogon.sdk.model.MobileApplicationParamsUpdate.getDefaultInstance();
     }
 
     @java.lang.Override
-    public ru.ogon.sdk.model.MobileApplicationParams build() {
-      ru.ogon.sdk.model.MobileApplicationParams result = buildPartial();
+    public ru.ogon.sdk.model.MobileApplicationParamsUpdate build() {
+      ru.ogon.sdk.model.MobileApplicationParamsUpdate result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -547,14 +460,12 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public ru.ogon.sdk.model.MobileApplicationParams buildPartial() {
-      ru.ogon.sdk.model.MobileApplicationParams result = new ru.ogon.sdk.model.MobileApplicationParams(this);
+    public ru.ogon.sdk.model.MobileApplicationParamsUpdate buildPartial() {
+      ru.ogon.sdk.model.MobileApplicationParamsUpdate result = new ru.ogon.sdk.model.MobileApplicationParamsUpdate(this);
       result.userId_ = userId_;
-      result.deviceId_ = deviceId_;
       result.confirmationId_ = confirmationId_;
       result.passwordEnabled_ = passwordEnabled_;
       result.biometryEnabled_ = biometryEnabled_;
-      result.biometryAvailable_ = biometryAvailable_;
       onBuilt();
       return result;
     }
@@ -593,22 +504,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ru.ogon.sdk.model.MobileApplicationParams) {
-        return mergeFrom((ru.ogon.sdk.model.MobileApplicationParams)other);
+      if (other instanceof ru.ogon.sdk.model.MobileApplicationParamsUpdate) {
+        return mergeFrom((ru.ogon.sdk.model.MobileApplicationParamsUpdate)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ru.ogon.sdk.model.MobileApplicationParams other) {
-      if (other == ru.ogon.sdk.model.MobileApplicationParams.getDefaultInstance()) return this;
+    public Builder mergeFrom(ru.ogon.sdk.model.MobileApplicationParamsUpdate other) {
+      if (other == ru.ogon.sdk.model.MobileApplicationParamsUpdate.getDefaultInstance()) return this;
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
-        onChanged();
-      }
-      if (!other.getDeviceId().isEmpty()) {
-        deviceId_ = other.deviceId_;
         onChanged();
       }
       if (!other.getConfirmationId().isEmpty()) {
@@ -620,9 +527,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getBiometryEnabled() != false) {
         setBiometryEnabled(other.getBiometryEnabled());
-      }
-      if (other.getBiometryAvailable() != false) {
-        setBiometryAvailable(other.getBiometryAvailable());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -639,11 +543,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ru.ogon.sdk.model.MobileApplicationParams parsedMessage = null;
+      ru.ogon.sdk.model.MobileApplicationParamsUpdate parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ru.ogon.sdk.model.MobileApplicationParams) e.getUnfinishedMessage();
+        parsedMessage = (ru.ogon.sdk.model.MobileApplicationParamsUpdate) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -729,85 +633,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object deviceId_ = "";
-    /**
-     * <code>string device_id = 2;</code>
-     * @return The deviceId.
-     */
-    public java.lang.String getDeviceId() {
-      java.lang.Object ref = deviceId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deviceId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string device_id = 2;</code>
-     * @return The bytes for deviceId.
-     */
-    public com.google.protobuf.ByteString
-        getDeviceIdBytes() {
-      java.lang.Object ref = deviceId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deviceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string device_id = 2;</code>
-     * @param value The deviceId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeviceId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      deviceId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string device_id = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDeviceId() {
-      
-      deviceId_ = getDefaultInstance().getDeviceId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string device_id = 2;</code>
-     * @param value The bytes for deviceId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeviceIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      deviceId_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object confirmationId_ = "";
     /**
-     * <code>string confirmation_id = 3;</code>
+     * <code>string confirmation_id = 2;</code>
      * @return The confirmationId.
      */
     public java.lang.String getConfirmationId() {
@@ -823,7 +651,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string confirmation_id = 3;</code>
+     * <code>string confirmation_id = 2;</code>
      * @return The bytes for confirmationId.
      */
     public com.google.protobuf.ByteString
@@ -840,7 +668,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string confirmation_id = 3;</code>
+     * <code>string confirmation_id = 2;</code>
      * @param value The confirmationId to set.
      * @return This builder for chaining.
      */
@@ -855,7 +683,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string confirmation_id = 3;</code>
+     * <code>string confirmation_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearConfirmationId() {
@@ -865,7 +693,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string confirmation_id = 3;</code>
+     * <code>string confirmation_id = 2;</code>
      * @param value The bytes for confirmationId to set.
      * @return This builder for chaining.
      */
@@ -883,7 +711,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean passwordEnabled_ ;
     /**
-     * <code>bool password_enabled = 4;</code>
+     * <code>bool password_enabled = 3;</code>
      * @return The passwordEnabled.
      */
     @java.lang.Override
@@ -891,7 +719,7 @@ private static final long serialVersionUID = 0L;
       return passwordEnabled_;
     }
     /**
-     * <code>bool password_enabled = 4;</code>
+     * <code>bool password_enabled = 3;</code>
      * @param value The passwordEnabled to set.
      * @return This builder for chaining.
      */
@@ -902,7 +730,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool password_enabled = 4;</code>
+     * <code>bool password_enabled = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearPasswordEnabled() {
@@ -914,7 +742,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean biometryEnabled_ ;
     /**
-     * <code>bool biometry_enabled = 5;</code>
+     * <code>bool biometry_enabled = 4;</code>
      * @return The biometryEnabled.
      */
     @java.lang.Override
@@ -922,7 +750,7 @@ private static final long serialVersionUID = 0L;
       return biometryEnabled_;
     }
     /**
-     * <code>bool biometry_enabled = 5;</code>
+     * <code>bool biometry_enabled = 4;</code>
      * @param value The biometryEnabled to set.
      * @return This builder for chaining.
      */
@@ -933,43 +761,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool biometry_enabled = 5;</code>
+     * <code>bool biometry_enabled = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearBiometryEnabled() {
       
       biometryEnabled_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean biometryAvailable_ ;
-    /**
-     * <code>bool biometry_available = 6;</code>
-     * @return The biometryAvailable.
-     */
-    @java.lang.Override
-    public boolean getBiometryAvailable() {
-      return biometryAvailable_;
-    }
-    /**
-     * <code>bool biometry_available = 6;</code>
-     * @param value The biometryAvailable to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBiometryAvailable(boolean value) {
-      
-      biometryAvailable_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool biometry_available = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBiometryAvailable() {
-      
-      biometryAvailable_ = false;
       onChanged();
       return this;
     }
@@ -986,41 +783,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:pb.MobileApplicationParams)
+    // @@protoc_insertion_point(builder_scope:pb.MobileApplicationParamsUpdate)
   }
 
-  // @@protoc_insertion_point(class_scope:pb.MobileApplicationParams)
-  private static final ru.ogon.sdk.model.MobileApplicationParams DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:pb.MobileApplicationParamsUpdate)
+  private static final ru.ogon.sdk.model.MobileApplicationParamsUpdate DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ru.ogon.sdk.model.MobileApplicationParams();
+    DEFAULT_INSTANCE = new ru.ogon.sdk.model.MobileApplicationParamsUpdate();
   }
 
-  public static ru.ogon.sdk.model.MobileApplicationParams getDefaultInstance() {
+  public static ru.ogon.sdk.model.MobileApplicationParamsUpdate getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<MobileApplicationParams>
-      PARSER = new com.google.protobuf.AbstractParser<MobileApplicationParams>() {
+  private static final com.google.protobuf.Parser<MobileApplicationParamsUpdate>
+      PARSER = new com.google.protobuf.AbstractParser<MobileApplicationParamsUpdate>() {
     @java.lang.Override
-    public MobileApplicationParams parsePartialFrom(
+    public MobileApplicationParamsUpdate parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new MobileApplicationParams(input, extensionRegistry);
+      return new MobileApplicationParamsUpdate(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<MobileApplicationParams> parser() {
+  public static com.google.protobuf.Parser<MobileApplicationParamsUpdate> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<MobileApplicationParams> getParserForType() {
+  public com.google.protobuf.Parser<MobileApplicationParamsUpdate> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public ru.ogon.sdk.model.MobileApplicationParams getDefaultInstanceForType() {
+  public ru.ogon.sdk.model.MobileApplicationParamsUpdate getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

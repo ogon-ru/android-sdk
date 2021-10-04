@@ -9,6 +9,7 @@ interface ApplicationAdapter {
         const val CONFIRMATION_ID = "CONFIRMATION_ID"
         const val PASSWORD_ENABLED = "PASSWORD_ENABLED"
         const val BIOMETRY_ENABLED = "BIOMETRY_ENABLED"
+        const val BIOMETRY_AVAILABLE = "BIOMETRY_AVAILABLE"
     }
 
     fun getParams(): Bundle

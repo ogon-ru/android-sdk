@@ -20,16 +20,14 @@ import androidx.core.content.FileProvider
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Status
 import com.google.android.gms.wallet.*
-import ru.ogon.sdk.model.CreateKeysRequest
-import ru.ogon.sdk.model.MobileApplicationParams
-import ru.ogon.sdk.model.MobileEvent
-import ru.ogon.sdk.model.MobileEventType
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 import ru.ogon.sdk.model.IsReadyToPayRequest as IsReadyToPayRequestModel
 import ru.ogon.sdk.model.PaymentDataRequest as PaymentDataRequestModel
 import android.view.View
+import com.google.android.gms.wallet.PaymentData
+import ru.ogon.sdk.model.*
 
 
 private const val BASE_URL = BuildConfig.BASE_URL
@@ -310,6 +308,7 @@ class WidgetActivity : AppCompatActivity() {
                     confirmationId = params.getString(ApplicationAdapter.CONFIRMATION_ID, "")
                     passwordEnabled = params.getBoolean(ApplicationAdapter.PASSWORD_ENABLED, false)
                     biometryEnabled = params.getBoolean(ApplicationAdapter.BIOMETRY_ENABLED, false)
+                    biometryAvailable = params.getBoolean(ApplicationAdapter.BIOMETRY_AVAILABLE, false)
                 }
                 build()
             }
@@ -318,7 +317,7 @@ class WidgetActivity : AppCompatActivity() {
         }
     }
 
-    private fun setApplicationParams(params: MobileApplicationParams) {
+    private fun setApplicationParams(params: MobileApplicationParamsUpdate) {
         adapter?.let {
             val bundle = Bundle()
 
@@ -363,7 +362,7 @@ class WidgetActivity : AppCompatActivity() {
                 getApplicationParams()
             }
             MobileEventType.MOBILE_EVENT_SET_PARAMS_REQUEST -> {
-                setApplicationParams(mobileEvent.applicationParams)
+                setApplicationParams(mobileEvent.applicationParamsUpdate)
             }
             MobileEventType.MOBILE_EVENT_CREATE_KEYS_REQUEST -> {
                 createKeys(mobileEvent.createKeysRequest)
