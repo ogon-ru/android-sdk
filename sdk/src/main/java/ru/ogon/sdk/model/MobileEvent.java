@@ -198,6 +198,20 @@ private static final long serialVersionUID = 0L;
             payloadCase_ = 13;
             break;
           }
+          case 114: {
+            ru.ogon.sdk.model.MobileApplicationParamsUpdate.Builder subBuilder = null;
+            if (payloadCase_ == 14) {
+              subBuilder = ((ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_).toBuilder();
+            }
+            payload_ =
+                input.readMessage(ru.ogon.sdk.model.MobileApplicationParamsUpdate.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_);
+              payload_ = subBuilder.buildPartial();
+            }
+            payloadCase_ = 14;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -247,6 +261,7 @@ private static final long serialVersionUID = 0L;
     APPLICATION_PARAMS(11),
     CREATE_KEYS_REQUEST(12),
     CREATE_KEYS_RESPONSE(13),
+    APPLICATION_PARAMS_UPDATE(14),
     PAYLOAD_NOT_SET(0);
     private final int value;
     private PayloadCase(int value) {
@@ -276,6 +291,7 @@ private static final long serialVersionUID = 0L;
         case 11: return APPLICATION_PARAMS;
         case 12: return CREATE_KEYS_REQUEST;
         case 13: return CREATE_KEYS_RESPONSE;
+        case 14: return APPLICATION_PARAMS_UPDATE;
         case 0: return PAYLOAD_NOT_SET;
         default: return null;
       }
@@ -714,6 +730,37 @@ private static final long serialVersionUID = 0L;
     return ru.ogon.sdk.model.CreateKeysResponse.getDefaultInstance();
   }
 
+  public static final int APPLICATION_PARAMS_UPDATE_FIELD_NUMBER = 14;
+  /**
+   * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+   * @return Whether the applicationParamsUpdate field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplicationParamsUpdate() {
+    return payloadCase_ == 14;
+  }
+  /**
+   * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+   * @return The applicationParamsUpdate.
+   */
+  @java.lang.Override
+  public ru.ogon.sdk.model.MobileApplicationParamsUpdate getApplicationParamsUpdate() {
+    if (payloadCase_ == 14) {
+       return (ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_;
+    }
+    return ru.ogon.sdk.model.MobileApplicationParamsUpdate.getDefaultInstance();
+  }
+  /**
+   * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+   */
+  @java.lang.Override
+  public ru.ogon.sdk.model.MobileApplicationParamsUpdateOrBuilder getApplicationParamsUpdateOrBuilder() {
+    if (payloadCase_ == 14) {
+       return (ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_;
+    }
+    return ru.ogon.sdk.model.MobileApplicationParamsUpdate.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -767,6 +814,9 @@ private static final long serialVersionUID = 0L;
     }
     if (payloadCase_ == 13) {
       output.writeMessage(13, (ru.ogon.sdk.model.CreateKeysResponse) payload_);
+    }
+    if (payloadCase_ == 14) {
+      output.writeMessage(14, (ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_);
     }
     unknownFields.writeTo(output);
   }
@@ -827,6 +877,10 @@ private static final long serialVersionUID = 0L;
     if (payloadCase_ == 13) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, (ru.ogon.sdk.model.CreateKeysResponse) payload_);
+    }
+    if (payloadCase_ == 14) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, (ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -894,6 +948,10 @@ private static final long serialVersionUID = 0L;
         if (!getCreateKeysResponse()
             .equals(other.getCreateKeysResponse())) return false;
         break;
+      case 14:
+        if (!getApplicationParamsUpdate()
+            .equals(other.getApplicationParamsUpdate())) return false;
+        break;
       case 0:
       default:
     }
@@ -959,6 +1017,10 @@ private static final long serialVersionUID = 0L;
       case 13:
         hash = (37 * hash) + CREATE_KEYS_RESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getCreateKeysResponse().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + APPLICATION_PARAMS_UPDATE_FIELD_NUMBER;
+        hash = (53 * hash) + getApplicationParamsUpdate().hashCode();
         break;
       case 0:
       default:
@@ -1199,6 +1261,13 @@ private static final long serialVersionUID = 0L;
           result.payload_ = createKeysResponseBuilder_.build();
         }
       }
+      if (payloadCase_ == 14) {
+        if (applicationParamsUpdateBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = applicationParamsUpdateBuilder_.build();
+        }
+      }
       result.payloadCase_ = payloadCase_;
       onBuilt();
       return result;
@@ -1302,6 +1371,10 @@ private static final long serialVersionUID = 0L;
         }
         case CREATE_KEYS_RESPONSE: {
           mergeCreateKeysResponse(other.getCreateKeysResponse());
+          break;
+        }
+        case APPLICATION_PARAMS_UPDATE: {
+          mergeApplicationParamsUpdate(other.getApplicationParamsUpdate());
           break;
         }
         case PAYLOAD_NOT_SET: {
@@ -2908,6 +2981,147 @@ private static final long serialVersionUID = 0L;
       payloadCase_ = 13;
       onChanged();;
       return createKeysResponseBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ru.ogon.sdk.model.MobileApplicationParamsUpdate, ru.ogon.sdk.model.MobileApplicationParamsUpdate.Builder, ru.ogon.sdk.model.MobileApplicationParamsUpdateOrBuilder> applicationParamsUpdateBuilder_;
+    /**
+     * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+     * @return Whether the applicationParamsUpdate field is set.
+     */
+    @java.lang.Override
+    public boolean hasApplicationParamsUpdate() {
+      return payloadCase_ == 14;
+    }
+    /**
+     * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+     * @return The applicationParamsUpdate.
+     */
+    @java.lang.Override
+    public ru.ogon.sdk.model.MobileApplicationParamsUpdate getApplicationParamsUpdate() {
+      if (applicationParamsUpdateBuilder_ == null) {
+        if (payloadCase_ == 14) {
+          return (ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_;
+        }
+        return ru.ogon.sdk.model.MobileApplicationParamsUpdate.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 14) {
+          return applicationParamsUpdateBuilder_.getMessage();
+        }
+        return ru.ogon.sdk.model.MobileApplicationParamsUpdate.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+     */
+    public Builder setApplicationParamsUpdate(ru.ogon.sdk.model.MobileApplicationParamsUpdate value) {
+      if (applicationParamsUpdateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        applicationParamsUpdateBuilder_.setMessage(value);
+      }
+      payloadCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+     */
+    public Builder setApplicationParamsUpdate(
+        ru.ogon.sdk.model.MobileApplicationParamsUpdate.Builder builderForValue) {
+      if (applicationParamsUpdateBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        applicationParamsUpdateBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+     */
+    public Builder mergeApplicationParamsUpdate(ru.ogon.sdk.model.MobileApplicationParamsUpdate value) {
+      if (applicationParamsUpdateBuilder_ == null) {
+        if (payloadCase_ == 14 &&
+            payload_ != ru.ogon.sdk.model.MobileApplicationParamsUpdate.getDefaultInstance()) {
+          payload_ = ru.ogon.sdk.model.MobileApplicationParamsUpdate.newBuilder((ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 14) {
+          applicationParamsUpdateBuilder_.mergeFrom(value);
+        }
+        applicationParamsUpdateBuilder_.setMessage(value);
+      }
+      payloadCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+     */
+    public Builder clearApplicationParamsUpdate() {
+      if (applicationParamsUpdateBuilder_ == null) {
+        if (payloadCase_ == 14) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 14) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        applicationParamsUpdateBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+     */
+    public ru.ogon.sdk.model.MobileApplicationParamsUpdate.Builder getApplicationParamsUpdateBuilder() {
+      return getApplicationParamsUpdateFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+     */
+    @java.lang.Override
+    public ru.ogon.sdk.model.MobileApplicationParamsUpdateOrBuilder getApplicationParamsUpdateOrBuilder() {
+      if ((payloadCase_ == 14) && (applicationParamsUpdateBuilder_ != null)) {
+        return applicationParamsUpdateBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 14) {
+          return (ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_;
+        }
+        return ru.ogon.sdk.model.MobileApplicationParamsUpdate.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ru.ogon.sdk.model.MobileApplicationParamsUpdate, ru.ogon.sdk.model.MobileApplicationParamsUpdate.Builder, ru.ogon.sdk.model.MobileApplicationParamsUpdateOrBuilder> 
+        getApplicationParamsUpdateFieldBuilder() {
+      if (applicationParamsUpdateBuilder_ == null) {
+        if (!(payloadCase_ == 14)) {
+          payload_ = ru.ogon.sdk.model.MobileApplicationParamsUpdate.getDefaultInstance();
+        }
+        applicationParamsUpdateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            ru.ogon.sdk.model.MobileApplicationParamsUpdate, ru.ogon.sdk.model.MobileApplicationParamsUpdate.Builder, ru.ogon.sdk.model.MobileApplicationParamsUpdateOrBuilder>(
+                (ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 14;
+      onChanged();;
+      return applicationParamsUpdateBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

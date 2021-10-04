@@ -3,8 +3,8 @@
 
 package ru.ogon.sdk.model;
 
-public interface MobileApplicationParamsOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:pb.MobileApplicationParams)
+public interface MobileApplicationParamsUpdateOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:pb.MobileApplicationParamsUpdate)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -20,44 +20,26 @@ public interface MobileApplicationParamsOrBuilder extends
       getUserIdBytes();
 
   /**
-   * <code>string device_id = 2;</code>
-   * @return The deviceId.
-   */
-  java.lang.String getDeviceId();
-  /**
-   * <code>string device_id = 2;</code>
-   * @return The bytes for deviceId.
-   */
-  com.google.protobuf.ByteString
-      getDeviceIdBytes();
-
-  /**
-   * <code>string confirmation_id = 3;</code>
+   * <code>string confirmation_id = 2;</code>
    * @return The confirmationId.
    */
   java.lang.String getConfirmationId();
   /**
-   * <code>string confirmation_id = 3;</code>
+   * <code>string confirmation_id = 2;</code>
    * @return The bytes for confirmationId.
    */
   com.google.protobuf.ByteString
       getConfirmationIdBytes();
 
   /**
-   * <code>bool password_enabled = 4;</code>
+   * <code>bool password_enabled = 3;</code>
    * @return The passwordEnabled.
    */
   boolean getPasswordEnabled();
 
   /**
-   * <code>bool biometry_enabled = 5;</code>
+   * <code>bool biometry_enabled = 4;</code>
    * @return The biometryEnabled.
    */
   boolean getBiometryEnabled();
-
-  /**
-   * <code>bool biometry_available = 6;</code>
-   * @return The biometryAvailable.
-   */
-  boolean getBiometryAvailable();
 }

@@ -198,5 +198,20 @@ public interface MobileEventOrBuilder extends
    */
   ru.ogon.sdk.model.CreateKeysResponseOrBuilder getCreateKeysResponseOrBuilder();
 
+  /**
+   * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+   * @return Whether the applicationParamsUpdate field is set.
+   */
+  boolean hasApplicationParamsUpdate();
+  /**
+   * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+   * @return The applicationParamsUpdate.
+   */
+  ru.ogon.sdk.model.MobileApplicationParamsUpdate getApplicationParamsUpdate();
+  /**
+   * <code>.pb.MobileApplicationParamsUpdate application_params_update = 14;</code>
+   */
+  ru.ogon.sdk.model.MobileApplicationParamsUpdateOrBuilder getApplicationParamsUpdateOrBuilder();
+
   public ru.ogon.sdk.model.MobileEvent.PayloadCase getPayloadCase();
 }
