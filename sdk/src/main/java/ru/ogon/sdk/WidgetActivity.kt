@@ -14,20 +14,20 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.view.KeyEvent
+import android.view.View
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.common.api.Status
+import com.google.android.gms.tasks.Task
 import com.google.android.gms.wallet.*
+import com.google.android.gms.wallet.IsReadyToPayRequest
+import com.google.android.gms.wallet.PaymentData
+import com.google.android.gms.wallet.PaymentDataRequest
+import ru.ogon.sdk.handlers.*
+import ru.ogon.sdk.model.*
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
-import ru.ogon.sdk.model.IsReadyToPayRequest as IsReadyToPayRequestModel
-import ru.ogon.sdk.model.PaymentDataRequest as PaymentDataRequestModel
-import android.view.View
-import com.google.android.gms.wallet.PaymentData
-import ru.ogon.sdk.model.*
 
 
 private const val BASE_URL = BuildConfig.BASE_URL
@@ -37,7 +37,7 @@ private const val INPUT_FILE_REQUEST_CODE = 3
 private const val CAMERA_REQUEST_CODE = 4
 private const val RESOURCE_AUDIO_CAPTURE = "android.webkit.resource.AUDIO_CAPTURE"
 
-class WidgetActivity : AppCompatActivity() {
+open class WidgetActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_TOKEN = "EXTRA_TOKEN"
         const val EXTRA_BASE_URL = "EXTRA_BASE_URL"
@@ -47,14 +47,13 @@ class WidgetActivity : AppCompatActivity() {
         const val EXTRA_QUERY_PARAMS = "EXTRA_QUERY_PARAMS"
 
         const val RESULT_ERROR = 100
-
-        @JvmStatic
-        var adapter: ApplicationAdapter? = null
     }
 
-    private lateinit var webView: WebView
-    private lateinit var jsBridge: JSBridge
-    private lateinit var baseUrl: String
+    protected val handlers = mutableListOf<MobileEventHandler>()
+    protected lateinit var webView: WebView
+    protected lateinit var jsBridge: JSBridge
+    protected lateinit var baseUrl: String
+    private lateinit var googlePayEventHandler: GooglePayEventHandler
     private var googlePayEnabled: Boolean = false
     private var httpUsername: String? = null
     private var httpPassword: String? = null
@@ -62,10 +61,6 @@ class WidgetActivity : AppCompatActivity() {
     private var filePathCallback: ValueCallback<Array<Uri>>? = null
     private var cameraPhotoPath: String? = null
     private var httpError = false
-
-    private val walletEnvironment get() = Uri.parse(baseUrl).host
-        ?.takeIf { it.equals("widget.ogon.ru", ignoreCase = true) }
-        ?.let { WalletConstants.ENVIRONMENT_PRODUCTION } ?: WalletConstants.ENVIRONMENT_TEST
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,7 +87,6 @@ class WidgetActivity : AppCompatActivity() {
             webView = webView,
             eventListener = ::handleEvent,
             navigationStateChange = ::handleNavigation,
-            isOgonApplication = adapter != null,
         )
 
         val url = Uri.parse(baseUrl).buildUpon().run {
@@ -132,6 +126,16 @@ class WidgetActivity : AppCompatActivity() {
                 Log.e("[OgonWidget]", "Container resize error", e)
             }
         }
+
+        handlers.add(OpenUrlEventHandler(this))
+        handlers.add(ShareUrlEventHandler(this))
+
+        if (googlePayEnabled) {
+            googlePayEventHandler = GooglePayEventHandler(ActivityGooglePayContract(), jsBridge)
+            handlers.add(googlePayEventHandler)
+        } else {
+            handlers.add(DisabledGooglePayEventHandler(jsBridge))
+        }
     }
 
     override fun onKeyDown(keyCode: Int, keyEvent: KeyEvent?): Boolean {
@@ -142,7 +146,7 @@ class WidgetActivity : AppCompatActivity() {
                     build()
                 }
 
-                jsBridge.sendEvent(event)
+                jsBridge.send(event)
                 return true
             }
 
@@ -174,10 +178,14 @@ class WidgetActivity : AppCompatActivity() {
         when (requestCode) {
             LOAD_PAYMENT_DATA_REQUEST_CODE -> {
                 when (resultCode) {
-                    RESULT_OK ->
-                        data?.let { PaymentData.getFromIntent(it)?.let(::handlePaymentSuccess) }
-                    AutoResolveHelper.RESULT_ERROR ->
-                        AutoResolveHelper.getStatusFromIntent(data)?.let(::handlePaymentError)
+                    RESULT_OK -> data?.let {
+                        PaymentData.getFromIntent(it)?.let { data ->
+                            googlePayEventHandler.onPaymentSuccess(data)
+                        }
+                    }
+                    AutoResolveHelper.RESULT_ERROR -> AutoResolveHelper.getStatusFromIntent(data)?.let { status ->
+                        googlePayEventHandler.onPaymentError(status)
+                    }
                 }
             }
             INPUT_FILE_REQUEST_CODE -> {
@@ -205,170 +213,10 @@ class WidgetActivity : AppCompatActivity() {
         permissionRequest = request
     }
 
-    private fun createPaymentsClient(): PaymentsClient {
-        val walletOptions = Wallet.WalletOptions.Builder()
-            .setEnvironment(walletEnvironment)
-            .build()
-
-        return Wallet.getPaymentsClient(this, walletOptions)
-    }
-
-    private fun isReadyToPay(payload: IsReadyToPayRequestModel) {
-        if (!googlePayEnabled) {
-            val event = MobileEvent.newBuilder().run {
-                type = MobileEventType.MOBILE_EVENT_GOOGLEPAY_IS_READY_TO_PAY_RESPONSE
-                isReadyToPay = false
-                build()
-            }
-
-            jsBridge.sendEvent(event)
-            return
-        }
-
-        val client = createPaymentsClient()
-        val json = payload.toJson()
-        val request = IsReadyToPayRequest.fromJson(json)
-
-        client.isReadyToPay(request).addOnCompleteListener { task ->
-            val result = try {
-                task.getResult(ApiException::class.java) ?: false
-            } catch (exception: ApiException) {
-                Log.w("[OgonWidget]", exception)
-                false
-            }
-
-
-            val event = MobileEvent.newBuilder().run {
-                type = MobileEventType.MOBILE_EVENT_GOOGLEPAY_IS_READY_TO_PAY_RESPONSE
-                isReadyToPay = result
-                build()
-            }
-
-            jsBridge.sendEvent(event)
-        }
-    }
-
-    private fun loadPaymentData(payload: PaymentDataRequestModel) {
-        val client = createPaymentsClient()
-        val json = payload.toJson()
-        val request = PaymentDataRequest.fromJson(json)
-
-        AutoResolveHelper.resolveTask(client.loadPaymentData(request), this, LOAD_PAYMENT_DATA_REQUEST_CODE)
-    }
-
-    private fun handlePaymentSuccess(paymentData: PaymentData) {
-        val event = MobileEvent.newBuilder().run {
-            type = MobileEventType.MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_RESPONSE
-            paymentDataBuilder.fromJson(paymentData.toJson())
-            build()
-        }
-
-        jsBridge.sendEvent(event)
-    }
-
-    private fun handlePaymentError(status: Status) {
-        val event = MobileEvent.newBuilder().run {
-            type = MobileEventType.MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_ERROR
-            errorBuilder.apply {
-                code = status.statusCode
-                message = status.statusMessage ?: ""
-            }
-            build()
-        }
-
-        jsBridge.sendEvent(event)
-    }
-
-    private fun openUrl(url: String) {
-        val webpage = Uri.parse(url)
-        val intent = Intent(Intent.ACTION_VIEW, webpage)
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivity(intent)
-        }
-    }
-
-    private fun shareUrl(url: String) {
-        val sendIntent: Intent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, url)
-            type = "text/plain"
-        }
-        val shareIntent = Intent.createChooser(sendIntent, null)
-        startActivity(shareIntent)
-    }
-
-    private fun getApplicationParams() {
-        adapter?.let {
-            val params = it.getParams()
-            val event = MobileEvent.newBuilder().run {
-                type = MobileEventType.MOBILE_EVENT_GET_PARAMS_RESPONSE
-                applicationParamsBuilder.apply {
-                    userId = params.getString(ApplicationAdapter.USER_ID, "")
-                    deviceId = params.getString(ApplicationAdapter.DEVICE_ID, "")
-                    confirmationId = params.getString(ApplicationAdapter.CONFIRMATION_ID, "")
-                    passwordEnabled = params.getBoolean(ApplicationAdapter.PASSWORD_ENABLED, false)
-                    biometryEnabled = params.getBoolean(ApplicationAdapter.BIOMETRY_ENABLED, false)
-                    biometryAvailable = params.getBoolean(ApplicationAdapter.BIOMETRY_AVAILABLE, false)
-                }
-                build()
-            }
-
-            jsBridge.sendEvent(event)
-        }
-    }
-
-    private fun setApplicationParams(params: MobileApplicationParamsUpdate) {
-        adapter?.let {
-            val bundle = Bundle()
-
-            bundle.putString(ApplicationAdapter.USER_ID, params.userId)
-            bundle.putString(ApplicationAdapter.CONFIRMATION_ID, params.confirmationId)
-            bundle.putBoolean(ApplicationAdapter.PASSWORD_ENABLED, params.passwordEnabled)
-            bundle.putBoolean(ApplicationAdapter.BIOMETRY_ENABLED, params.biometryEnabled)
-
-            it.setParams(bundle)
-        }
-    }
-
-    private fun createKeys(request: CreateKeysRequest) {
-        adapter?.let {
-            val event = MobileEvent.newBuilder().run {
-                type = MobileEventType.MOBILE_EVENT_CREATE_KEYS_RESPONSE
-                createKeysResponseBuilder.apply {
-                    publicKey = it.createKeys(request.password)
-                }
-                build()
-            }
-
-            jsBridge.sendEvent(event)
-        }
-    }
-
-    private fun handleEvent(mobileEvent: MobileEvent) {
-        when (mobileEvent.type) {
-            MobileEventType.MOBILE_EVENT_GOOGLEPAY_IS_READY_TO_PAY_REQUEST -> {
-                isReadyToPay(mobileEvent.isReadyToPayRequest)
-            }
-            MobileEventType.MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_REQUEST -> {
-                loadPaymentData(mobileEvent.paymentDataRequest)
-            }
-            MobileEventType.MOBILE_EVENT_OPEN_URL_REQUEST -> {
-                openUrl(mobileEvent.openUrlRequest)
-            }
-            MobileEventType.MOBILE_EVENT_SHARE_URL_REQUEST -> {
-                shareUrl(mobileEvent.shareUrlRequest)
-            }
-            MobileEventType.MOBILE_EVENT_GET_PARAMS_REQUEST -> {
-                getApplicationParams()
-            }
-            MobileEventType.MOBILE_EVENT_SET_PARAMS_REQUEST -> {
-                setApplicationParams(mobileEvent.applicationParamsUpdate)
-            }
-            MobileEventType.MOBILE_EVENT_CREATE_KEYS_REQUEST -> {
-                createKeys(mobileEvent.createKeysRequest)
-            }
-            else -> Log.i("[OgonWidget]", "Unhandled event type: ${mobileEvent.type}")
-        }
+    private fun handleEvent(event: MobileEvent) {
+        handlers.find {
+            it.handle(event)
+        } ?: Log.i("[OgonWidget]", "Unhandled event type: ${event.type}")
     }
 
     private fun handleNavigation() {
@@ -546,5 +394,25 @@ class WidgetActivity : AppCompatActivity() {
             return openFileChooser(callback)
         }
 
+    }
+
+    private inner class ActivityGooglePayContract : GooglePayContract {
+        private val walletEnvironment get() = Uri.parse(baseUrl).host
+            ?.takeIf { it.equals("widget.ogon.ru", ignoreCase = true) }
+            ?.let { WalletConstants.ENVIRONMENT_PRODUCTION } ?: WalletConstants.ENVIRONMENT_TEST
+
+        private val walletOptions get() = Wallet.WalletOptions.Builder()
+            .setEnvironment(walletEnvironment)
+            .build()
+
+        private val client get() = Wallet.getPaymentsClient(this@WidgetActivity, walletOptions)
+
+        override fun isReadyToPay(request: IsReadyToPayRequest): Task<Boolean> = client.isReadyToPay(request)
+
+        override fun loadPaymentData(request: PaymentDataRequest) = AutoResolveHelper.resolveTask(
+            client.loadPaymentData(request),
+            this@WidgetActivity,
+            LOAD_PAYMENT_DATA_REQUEST_CODE
+        )
     }
 }

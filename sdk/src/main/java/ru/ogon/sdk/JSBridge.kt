@@ -3,6 +3,7 @@ package ru.ogon.sdk
 import android.util.Log
 import android.webkit.JavascriptInterface
 import android.webkit.WebView
+import ru.ogon.sdk.handlers.MobileEventDispatcher
 import ru.ogon.sdk.model.MobileEvent
 
 typealias EventListener = (MobileEvent) -> Unit
@@ -52,18 +53,13 @@ class JSBridge(
         private val webView: WebView,
         private val eventListener: EventListener,
         private val navigationStateChange: () -> Unit,
-        isOgonApplication: Boolean,
-) {
+) : MobileEventDispatcher {
 
     init {
         webView.addJavascriptInterface(JSInterface(), "PNWidget")
-        if (isOgonApplication) {
-            // ogon app marker
-            webView.addJavascriptInterface(JSAppInterface(), "OgonApp")
-        }
     }
 
-    fun sendEvent(event: MobileEvent) {
+    override fun send(event: MobileEvent) {
         val json = event.toJson(
             preservingProtoFieldNames = true,
         )
@@ -122,10 +118,5 @@ class JSBridge(
         fun _navigationStateChange() {
             navigationStateChange()
         }
-    }
-
-    private inner class JSAppInterface {
-        @JavascriptInterface
-        fun noop() {}
     }
 }
