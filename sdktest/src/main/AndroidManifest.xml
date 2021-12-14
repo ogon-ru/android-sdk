@@ -13,7 +13,9 @@
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"
             android:value="true" />
-        <activity android:name="ru.ogon.sdktest.MainActivity">
+        <activity
+            android:name="ru.ogon.sdktest.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

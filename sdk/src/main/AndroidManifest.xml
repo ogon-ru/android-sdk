@@ -13,6 +13,7 @@
 
     <application>
         <activity
+            android:exported="false"
             android:name="ru.ogon.sdk.WidgetActivity"
             android:label="@string/title_activity_widget"
             android:theme="@style/Theme.SDK"
