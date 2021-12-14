@@ -4,6 +4,9 @@ plugins {
     id 'maven-publish'
 }
 
+group = 'com.github.ogon-ru'
+version = '1.0.2'
+
 android {
     compileSdkVersion 31
     buildToolsVersion "30.0.2"
@@ -12,7 +15,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 31
         versionCode 24
-        versionName '1.0.1'
+        versionName '1.0.2'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -55,15 +58,11 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            // Creates a Maven publication called "release".
             release(MavenPublication) {
-                // Applies the component for the release build variant.
                 from components.release
-
-                // You can then customize attributes of the publication as shown below.
-                groupId = 'ru.ogon'
+                groupId = 'com.github.ogon-ru'
                 artifactId = 'android-sdk'
-                version = '1.0.1'
+                version = '1.0.2'
             }
         }
     }
