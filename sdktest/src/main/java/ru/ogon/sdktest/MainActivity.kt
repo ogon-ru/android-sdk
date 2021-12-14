@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
             setOnClickListener {
                 val intent = Intent(this@MainActivity, WidgetActivity::class.java).apply {
                     putExtra(WidgetActivity.EXTRA_BASE_URL, "https://dev-widget.ogon.ru")
-//                    putExtra(WidgetActivity.EXTRA_HTTP_USERNAME, "sp")
-//                    putExtra(WidgetActivity.EXTRA_HTTP_PASSWORD, "BolshayaSet!")
 //                    putExtra(WidgetActivity.EXTRA_GOOGLE_PAY_ENABLED, true)
                 }
 
