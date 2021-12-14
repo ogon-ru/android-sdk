@@ -1,0 +1,3 @@
+include ':sdktest'
+include ':sdk'
+rootProject.name = "Widget SDK"

@@ -1,0 +1,4 @@
+<resources>
+    <string name="title_activity_widget">Сеть Партнерств</string>
+    <string name="provider_package">.ru.ogon.sdk.fileprovider</string>
+</resources>
