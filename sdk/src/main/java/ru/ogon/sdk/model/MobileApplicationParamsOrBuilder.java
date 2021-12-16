@@ -60,4 +60,16 @@ public interface MobileApplicationParamsOrBuilder extends
    * @return The biometryAvailable.
    */
   boolean getBiometryAvailable();
+
+  /**
+   * <code>string fcm_token = 7;</code>
+   * @return The fcmToken.
+   */
+  java.lang.String getFcmToken();
+  /**
+   * <code>string fcm_token = 7;</code>
+   * @return The bytes for fcmToken.
+   */
+  com.google.protobuf.ByteString
+      getFcmTokenBytes();
 }

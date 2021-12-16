@@ -196,7 +196,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < shippingOptions_.size(); i++) {
       output.writeMessage(1, shippingOptions_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultSelectedOptionId_)) {
+    if (!getDefaultSelectedOptionIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, defaultSelectedOptionId_);
     }
     unknownFields.writeTo(output);
@@ -212,7 +212,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, shippingOptions_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultSelectedOptionId_)) {
+    if (!getDefaultSelectedOptionIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, defaultSelectedOptionId_);
     }
     size += unknownFields.getSerializedSize();

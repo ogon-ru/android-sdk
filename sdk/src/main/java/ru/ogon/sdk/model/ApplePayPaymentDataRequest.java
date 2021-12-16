@@ -223,10 +223,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countryCode_)) {
+    if (!getCountryCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, countryCode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
+    if (!getCurrencyCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, currencyCode_);
     }
     if (total_ != null) {
@@ -241,10 +241,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countryCode_)) {
+    if (!getCountryCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, countryCode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
+    if (!getCurrencyCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, currencyCode_);
     }
     if (total_ != null) {
