@@ -280,37 +280,39 @@ public final class MobileModel {
       "\016payment_method\030\003 \001(\0132\026.pb.ApplePaymentM" +
       "ethod\"I\n\022ApplePaymentMethod\022\024\n\014display_n" +
       "ame\030\001 \001(\t\022\017\n\007network\030\002 \001(\t\022\014\n\004type\030\003 \001(\t" +
-      "\"\246\001\n\027MobileApplicationParams\022\017\n\007user_id\030" +
+      "\"\271\001\n\027MobileApplicationParams\022\017\n\007user_id\030" +
       "\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\022\027\n\017confirmation" +
       "_id\030\003 \001(\t\022\030\n\020password_enabled\030\004 \001(\010\022\030\n\020b" +
       "iometry_enabled\030\005 \001(\010\022\032\n\022biometry_availa" +
-      "ble\030\006 \001(\010\"}\n\035MobileApplicationParamsUpda" +
-      "te\022\017\n\007user_id\030\001 \001(\t\022\027\n\017confirmation_id\030\002" +
-      " \001(\t\022\030\n\020password_enabled\030\003 \001(\010\022\030\n\020biomet" +
-      "ry_enabled\030\004 \001(\010\"%\n\021CreateKeysRequest\022\020\n" +
-      "\010password\030\001 \001(\t\"(\n\022CreateKeysResponse\022\022\n" +
-      "\npublic_key\030\001 \001(\t*\273\006\n\017MobileEventType\022\034\n" +
-      "\030MOBILE_EVENT_UNSPECIFIED\020\000\0222\n.MOBILE_EV" +
-      "ENT_GOOGLEPAY_IS_READY_TO_PAY_REQUEST\020\001\022" +
-      "3\n/MOBILE_EVENT_GOOGLEPAY_IS_READY_TO_PA" +
-      "Y_RESPONSE\020\002\022/\n+MOBILE_EVENT_GOOGLEPAY_P" +
-      "AYMENT_DATA_REQUEST\020\003\0220\n,MOBILE_EVENT_GO" +
-      "OGLEPAY_PAYMENT_DATA_RESPONSE\020\004\022-\n)MOBIL" +
-      "E_EVENT_GOOGLEPAY_PAYMENT_DATA_ERROR\020\005\0221" +
-      "\n-MOBILE_EVENT_APPLEPAY_IS_READY_TO_PAY_" +
-      "REQUEST\020\006\0222\n.MOBILE_EVENT_APPLEPAY_IS_RE" +
-      "ADY_TO_PAY_RESPONSE\020\007\022.\n*MOBILE_EVENT_AP" +
-      "PLEPAY_PAYMENT_DATA_REQUEST\020\010\022/\n+MOBILE_" +
-      "EVENT_APPLEPAY_PAYMENT_DATA_RESPONSE\020\t\022," +
-      "\n(MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_ERR" +
-      "OR\020\n\022!\n\035MOBILE_EVENT_OPEN_URL_REQUEST\020\013\022" +
-      "\025\n\021MOBILE_EVENT_BACK\020\014\022\"\n\036MOBILE_EVENT_S" +
-      "HARE_URL_REQUEST\020\r\022#\n\037MOBILE_EVENT_GET_P" +
-      "ARAMS_REQUEST\020\016\022$\n MOBILE_EVENT_GET_PARA" +
-      "MS_RESPONSE\020\017\022#\n\037MOBILE_EVENT_SET_PARAMS" +
-      "_REQUEST\020\020\022$\n MOBILE_EVENT_CREATE_KEYS_R" +
-      "EQUEST\020\021\022%\n!MOBILE_EVENT_CREATE_KEYS_RES" +
-      "PONSE\020\022B\025\n\021ru.ogon.sdk.modelP\001b\006proto3"
+      "ble\030\006 \001(\010\022\021\n\tfcm_token\030\007 \001(\t\"}\n\035MobileAp" +
+      "plicationParamsUpdate\022\017\n\007user_id\030\001 \001(\t\022\027" +
+      "\n\017confirmation_id\030\002 \001(\t\022\030\n\020password_enab" +
+      "led\030\003 \001(\010\022\030\n\020biometry_enabled\030\004 \001(\010\"%\n\021C" +
+      "reateKeysRequest\022\020\n\010password\030\001 \001(\t\"(\n\022Cr" +
+      "eateKeysResponse\022\022\n\npublic_key\030\001 \001(\t*\334\006\n" +
+      "\017MobileEventType\022\034\n\030MOBILE_EVENT_UNSPECI" +
+      "FIED\020\000\0222\n.MOBILE_EVENT_GOOGLEPAY_IS_READ" +
+      "Y_TO_PAY_REQUEST\020\001\0223\n/MOBILE_EVENT_GOOGL" +
+      "EPAY_IS_READY_TO_PAY_RESPONSE\020\002\022/\n+MOBIL" +
+      "E_EVENT_GOOGLEPAY_PAYMENT_DATA_REQUEST\020\003" +
+      "\0220\n,MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA_" +
+      "RESPONSE\020\004\022-\n)MOBILE_EVENT_GOOGLEPAY_PAY" +
+      "MENT_DATA_ERROR\020\005\0221\n-MOBILE_EVENT_APPLEP" +
+      "AY_IS_READY_TO_PAY_REQUEST\020\006\0222\n.MOBILE_E" +
+      "VENT_APPLEPAY_IS_READY_TO_PAY_RESPONSE\020\007" +
+      "\022.\n*MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_R" +
+      "EQUEST\020\010\022/\n+MOBILE_EVENT_APPLEPAY_PAYMEN" +
+      "T_DATA_RESPONSE\020\t\022,\n(MOBILE_EVENT_APPLEP" +
+      "AY_PAYMENT_DATA_ERROR\020\n\022!\n\035MOBILE_EVENT_" +
+      "OPEN_URL_REQUEST\020\013\022\025\n\021MOBILE_EVENT_BACK\020" +
+      "\014\022\"\n\036MOBILE_EVENT_SHARE_URL_REQUEST\020\r\022#\n" +
+      "\037MOBILE_EVENT_GET_PARAMS_REQUEST\020\016\022$\n MO" +
+      "BILE_EVENT_GET_PARAMS_RESPONSE\020\017\022#\n\037MOBI" +
+      "LE_EVENT_SET_PARAMS_REQUEST\020\020\022$\n MOBILE_" +
+      "EVENT_CREATE_KEYS_REQUEST\020\021\022%\n!MOBILE_EV" +
+      "ENT_CREATE_KEYS_RESPONSE\020\022\022\037\n\033MOBILE_EVE" +
+      "NT_PARAMS_UPDATED\020\023B\025\n\021ru.ogon.sdk.model" +
+      "P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -483,7 +485,7 @@ public final class MobileModel {
     internal_static_pb_MobileApplicationParams_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_MobileApplicationParams_descriptor,
-        new java.lang.String[] { "UserId", "DeviceId", "ConfirmationId", "PasswordEnabled", "BiometryEnabled", "BiometryAvailable", });
+        new java.lang.String[] { "UserId", "DeviceId", "ConfirmationId", "PasswordEnabled", "BiometryEnabled", "BiometryAvailable", "FcmToken", });
     internal_static_pb_MobileApplicationParamsUpdate_descriptor =
       getDescriptor().getMessageTypes().get(27);
     internal_static_pb_MobileApplicationParamsUpdate_fieldAccessorTable = new

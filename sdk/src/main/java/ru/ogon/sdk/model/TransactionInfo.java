@@ -508,28 +508,28 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transactionId_)) {
+    if (!getTransactionIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, transactionId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
+    if (!getCurrencyCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, currencyCode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countryCode_)) {
+    if (!getCountryCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, countryCode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalPrice_)) {
+    if (!getTotalPriceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, totalPrice_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalPriceLabel_)) {
+    if (!getTotalPriceLabelBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, totalPriceLabel_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalPriceStatus_)) {
+    if (!getTotalPriceStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, totalPriceStatus_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transactionNote_)) {
+    if (!getTransactionNoteBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, transactionNote_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkoutOption_)) {
+    if (!getCheckoutOptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, checkoutOption_);
     }
     for (int i = 0; i < displayItems_.size(); i++) {
@@ -544,28 +544,28 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transactionId_)) {
+    if (!getTransactionIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, transactionId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
+    if (!getCurrencyCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, currencyCode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countryCode_)) {
+    if (!getCountryCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, countryCode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalPrice_)) {
+    if (!getTotalPriceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, totalPrice_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalPriceLabel_)) {
+    if (!getTotalPriceLabelBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, totalPriceLabel_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(totalPriceStatus_)) {
+    if (!getTotalPriceStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, totalPriceStatus_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transactionNote_)) {
+    if (!getTransactionNoteBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, transactionNote_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkoutOption_)) {
+    if (!getCheckoutOptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, checkoutOption_);
     }
     for (int i = 0; i < displayItems_.size(); i++) {

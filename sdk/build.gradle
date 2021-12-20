@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.ogon-ru'
-version = '1.0.2'
+version = '1.0.3'
 
 android {
     compileSdkVersion 31
@@ -14,8 +14,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 31
-        versionCode 24
-        versionName '1.0.2'
+        versionCode 25
+        versionName '1.0.3'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -62,7 +62,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.ogon-ru'
                 artifactId = 'android-sdk'
-                version = '1.0.2'
+                version = '1.0.3'
             }
         }
     }

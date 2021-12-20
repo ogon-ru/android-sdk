@@ -18,7 +18,7 @@ gradlew sdk:assemble
 
 ## JitPack
 
-Бибблиотеку можно подключить к проекту с помощью [JitPack](https://jitpack.io).
+Библиотеку можно подключить к проекту с помощью [JitPack](https://jitpack.io).
 Для этого необходимо подключить JitPack в корневом build.gradle:
 
 ```bash

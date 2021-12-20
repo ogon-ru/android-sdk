@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     deviceId_ = "";
     confirmationId_ = "";
+    fcmToken_ = "";
   }
 
   @java.lang.Override
@@ -82,6 +83,12 @@ private static final long serialVersionUID = 0L;
           case 48: {
 
             biometryAvailable_ = input.readBool();
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            fcmToken_ = s;
             break;
           }
           default: {
@@ -263,6 +270,44 @@ private static final long serialVersionUID = 0L;
     return biometryAvailable_;
   }
 
+  public static final int FCM_TOKEN_FIELD_NUMBER = 7;
+  private volatile java.lang.Object fcmToken_;
+  /**
+   * <code>string fcm_token = 7;</code>
+   * @return The fcmToken.
+   */
+  @java.lang.Override
+  public java.lang.String getFcmToken() {
+    java.lang.Object ref = fcmToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fcmToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string fcm_token = 7;</code>
+   * @return The bytes for fcmToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFcmTokenBytes() {
+    java.lang.Object ref = fcmToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      fcmToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -277,13 +322,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+    if (!getUserIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
+    if (!getDeviceIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deviceId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(confirmationId_)) {
+    if (!getConfirmationIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, confirmationId_);
     }
     if (passwordEnabled_ != false) {
@@ -295,6 +340,9 @@ private static final long serialVersionUID = 0L;
     if (biometryAvailable_ != false) {
       output.writeBool(6, biometryAvailable_);
     }
+    if (!getFcmTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, fcmToken_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -304,13 +352,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+    if (!getUserIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
+    if (!getDeviceIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deviceId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(confirmationId_)) {
+    if (!getConfirmationIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, confirmationId_);
     }
     if (passwordEnabled_ != false) {
@@ -324,6 +372,9 @@ private static final long serialVersionUID = 0L;
     if (biometryAvailable_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, biometryAvailable_);
+    }
+    if (!getFcmTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, fcmToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -352,6 +403,8 @@ private static final long serialVersionUID = 0L;
         != other.getBiometryEnabled()) return false;
     if (getBiometryAvailable()
         != other.getBiometryAvailable()) return false;
+    if (!getFcmToken()
+        .equals(other.getFcmToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -378,6 +431,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BIOMETRY_AVAILABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getBiometryAvailable());
+    hash = (37 * hash) + FCM_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getFcmToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -523,6 +578,8 @@ private static final long serialVersionUID = 0L;
 
       biometryAvailable_ = false;
 
+      fcmToken_ = "";
+
       return this;
     }
 
@@ -555,6 +612,7 @@ private static final long serialVersionUID = 0L;
       result.passwordEnabled_ = passwordEnabled_;
       result.biometryEnabled_ = biometryEnabled_;
       result.biometryAvailable_ = biometryAvailable_;
+      result.fcmToken_ = fcmToken_;
       onBuilt();
       return result;
     }
@@ -623,6 +681,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getBiometryAvailable() != false) {
         setBiometryAvailable(other.getBiometryAvailable());
+      }
+      if (!other.getFcmToken().isEmpty()) {
+        fcmToken_ = other.fcmToken_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -970,6 +1032,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearBiometryAvailable() {
       
       biometryAvailable_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object fcmToken_ = "";
+    /**
+     * <code>string fcm_token = 7;</code>
+     * @return The fcmToken.
+     */
+    public java.lang.String getFcmToken() {
+      java.lang.Object ref = fcmToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fcmToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string fcm_token = 7;</code>
+     * @return The bytes for fcmToken.
+     */
+    public com.google.protobuf.ByteString
+        getFcmTokenBytes() {
+      java.lang.Object ref = fcmToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fcmToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string fcm_token = 7;</code>
+     * @param value The fcmToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFcmToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fcmToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string fcm_token = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFcmToken() {
+      
+      fcmToken_ = getDefaultInstance().getFcmToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string fcm_token = 7;</code>
+     * @param value The bytes for fcmToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFcmTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fcmToken_ = value;
       onChanged();
       return this;
     }
