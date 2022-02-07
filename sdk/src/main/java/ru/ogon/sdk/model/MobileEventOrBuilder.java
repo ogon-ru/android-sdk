@@ -213,5 +213,20 @@ public interface MobileEventOrBuilder extends
    */
   ru.ogon.sdk.model.MobileApplicationParamsUpdateOrBuilder getApplicationParamsUpdateOrBuilder();
 
+  /**
+   * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+   * @return Whether the analyticsEvent field is set.
+   */
+  boolean hasAnalyticsEvent();
+  /**
+   * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+   * @return The analyticsEvent.
+   */
+  ru.ogon.sdk.model.MobileAnalyticsEvent getAnalyticsEvent();
+  /**
+   * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+   */
+  ru.ogon.sdk.model.MobileAnalyticsEventOrBuilder getAnalyticsEventOrBuilder();
+
   public ru.ogon.sdk.model.MobileEvent.PayloadCase getPayloadCase();
 }

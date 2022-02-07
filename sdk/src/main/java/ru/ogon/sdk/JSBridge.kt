@@ -23,6 +23,7 @@ internal const val INJECT_JS_CODE = """
         
         window.PNWidget.onMobileEvent = function onMobileEvent(listener) {
             window.PNWidget._listeners.add(listener);
+            window.PNWidget._onListener();
         
             return function unsubscribe() {
                 window.PNWidget._listeners.delete(listener);
@@ -55,11 +56,19 @@ class JSBridge(
         private val navigationStateChange: () -> Unit,
 ) : MobileEventDispatcher {
 
+    private var hasListeners = false
+    private val eventQueue = mutableListOf<MobileEvent>()
+
     init {
         webView.addJavascriptInterface(JSInterface(), "PNWidget")
     }
 
     override fun send(event: MobileEvent) {
+        if (!hasListeners) {
+            eventQueue.add(event)
+            return
+        }
+
         val json = event.toJson(
             preservingProtoFieldNames = true,
         )
@@ -108,6 +117,12 @@ class JSBridge(
         }
     }
 
+    private fun onListener() {
+        hasListeners = true
+        eventQueue.forEach { send(it) }
+        eventQueue.clear()
+    }
+
     private inner class JSInterface {
         @JavascriptInterface
         fun _sendMobileEvent(json: String) {
@@ -117,6 +132,11 @@ class JSBridge(
         @JavascriptInterface
         fun _navigationStateChange() {
             navigationStateChange()
+        }
+
+        @JavascriptInterface
+        fun _onListener() {
+            onListener()
         }
     }
 }

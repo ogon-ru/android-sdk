@@ -212,6 +212,20 @@ private static final long serialVersionUID = 0L;
             payloadCase_ = 14;
             break;
           }
+          case 122: {
+            ru.ogon.sdk.model.MobileAnalyticsEvent.Builder subBuilder = null;
+            if (payloadCase_ == 15) {
+              subBuilder = ((ru.ogon.sdk.model.MobileAnalyticsEvent) payload_).toBuilder();
+            }
+            payload_ =
+                input.readMessage(ru.ogon.sdk.model.MobileAnalyticsEvent.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((ru.ogon.sdk.model.MobileAnalyticsEvent) payload_);
+              payload_ = subBuilder.buildPartial();
+            }
+            payloadCase_ = 15;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -262,6 +276,7 @@ private static final long serialVersionUID = 0L;
     CREATE_KEYS_REQUEST(12),
     CREATE_KEYS_RESPONSE(13),
     APPLICATION_PARAMS_UPDATE(14),
+    ANALYTICS_EVENT(15),
     PAYLOAD_NOT_SET(0);
     private final int value;
     private PayloadCase(int value) {
@@ -292,6 +307,7 @@ private static final long serialVersionUID = 0L;
         case 12: return CREATE_KEYS_REQUEST;
         case 13: return CREATE_KEYS_RESPONSE;
         case 14: return APPLICATION_PARAMS_UPDATE;
+        case 15: return ANALYTICS_EVENT;
         case 0: return PAYLOAD_NOT_SET;
         default: return null;
       }
@@ -761,6 +777,37 @@ private static final long serialVersionUID = 0L;
     return ru.ogon.sdk.model.MobileApplicationParamsUpdate.getDefaultInstance();
   }
 
+  public static final int ANALYTICS_EVENT_FIELD_NUMBER = 15;
+  /**
+   * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+   * @return Whether the analyticsEvent field is set.
+   */
+  @java.lang.Override
+  public boolean hasAnalyticsEvent() {
+    return payloadCase_ == 15;
+  }
+  /**
+   * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+   * @return The analyticsEvent.
+   */
+  @java.lang.Override
+  public ru.ogon.sdk.model.MobileAnalyticsEvent getAnalyticsEvent() {
+    if (payloadCase_ == 15) {
+       return (ru.ogon.sdk.model.MobileAnalyticsEvent) payload_;
+    }
+    return ru.ogon.sdk.model.MobileAnalyticsEvent.getDefaultInstance();
+  }
+  /**
+   * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+   */
+  @java.lang.Override
+  public ru.ogon.sdk.model.MobileAnalyticsEventOrBuilder getAnalyticsEventOrBuilder() {
+    if (payloadCase_ == 15) {
+       return (ru.ogon.sdk.model.MobileAnalyticsEvent) payload_;
+    }
+    return ru.ogon.sdk.model.MobileAnalyticsEvent.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -817,6 +864,9 @@ private static final long serialVersionUID = 0L;
     }
     if (payloadCase_ == 14) {
       output.writeMessage(14, (ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_);
+    }
+    if (payloadCase_ == 15) {
+      output.writeMessage(15, (ru.ogon.sdk.model.MobileAnalyticsEvent) payload_);
     }
     unknownFields.writeTo(output);
   }
@@ -881,6 +931,10 @@ private static final long serialVersionUID = 0L;
     if (payloadCase_ == 14) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, (ru.ogon.sdk.model.MobileApplicationParamsUpdate) payload_);
+    }
+    if (payloadCase_ == 15) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, (ru.ogon.sdk.model.MobileAnalyticsEvent) payload_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -952,6 +1006,10 @@ private static final long serialVersionUID = 0L;
         if (!getApplicationParamsUpdate()
             .equals(other.getApplicationParamsUpdate())) return false;
         break;
+      case 15:
+        if (!getAnalyticsEvent()
+            .equals(other.getAnalyticsEvent())) return false;
+        break;
       case 0:
       default:
     }
@@ -1021,6 +1079,10 @@ private static final long serialVersionUID = 0L;
       case 14:
         hash = (37 * hash) + APPLICATION_PARAMS_UPDATE_FIELD_NUMBER;
         hash = (53 * hash) + getApplicationParamsUpdate().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + ANALYTICS_EVENT_FIELD_NUMBER;
+        hash = (53 * hash) + getAnalyticsEvent().hashCode();
         break;
       case 0:
       default:
@@ -1268,6 +1330,13 @@ private static final long serialVersionUID = 0L;
           result.payload_ = applicationParamsUpdateBuilder_.build();
         }
       }
+      if (payloadCase_ == 15) {
+        if (analyticsEventBuilder_ == null) {
+          result.payload_ = payload_;
+        } else {
+          result.payload_ = analyticsEventBuilder_.build();
+        }
+      }
       result.payloadCase_ = payloadCase_;
       onBuilt();
       return result;
@@ -1375,6 +1444,10 @@ private static final long serialVersionUID = 0L;
         }
         case APPLICATION_PARAMS_UPDATE: {
           mergeApplicationParamsUpdate(other.getApplicationParamsUpdate());
+          break;
+        }
+        case ANALYTICS_EVENT: {
+          mergeAnalyticsEvent(other.getAnalyticsEvent());
           break;
         }
         case PAYLOAD_NOT_SET: {
@@ -3122,6 +3195,147 @@ private static final long serialVersionUID = 0L;
       payloadCase_ = 14;
       onChanged();;
       return applicationParamsUpdateBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ru.ogon.sdk.model.MobileAnalyticsEvent, ru.ogon.sdk.model.MobileAnalyticsEvent.Builder, ru.ogon.sdk.model.MobileAnalyticsEventOrBuilder> analyticsEventBuilder_;
+    /**
+     * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+     * @return Whether the analyticsEvent field is set.
+     */
+    @java.lang.Override
+    public boolean hasAnalyticsEvent() {
+      return payloadCase_ == 15;
+    }
+    /**
+     * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+     * @return The analyticsEvent.
+     */
+    @java.lang.Override
+    public ru.ogon.sdk.model.MobileAnalyticsEvent getAnalyticsEvent() {
+      if (analyticsEventBuilder_ == null) {
+        if (payloadCase_ == 15) {
+          return (ru.ogon.sdk.model.MobileAnalyticsEvent) payload_;
+        }
+        return ru.ogon.sdk.model.MobileAnalyticsEvent.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 15) {
+          return analyticsEventBuilder_.getMessage();
+        }
+        return ru.ogon.sdk.model.MobileAnalyticsEvent.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+     */
+    public Builder setAnalyticsEvent(ru.ogon.sdk.model.MobileAnalyticsEvent value) {
+      if (analyticsEventBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        analyticsEventBuilder_.setMessage(value);
+      }
+      payloadCase_ = 15;
+      return this;
+    }
+    /**
+     * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+     */
+    public Builder setAnalyticsEvent(
+        ru.ogon.sdk.model.MobileAnalyticsEvent.Builder builderForValue) {
+      if (analyticsEventBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        analyticsEventBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 15;
+      return this;
+    }
+    /**
+     * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+     */
+    public Builder mergeAnalyticsEvent(ru.ogon.sdk.model.MobileAnalyticsEvent value) {
+      if (analyticsEventBuilder_ == null) {
+        if (payloadCase_ == 15 &&
+            payload_ != ru.ogon.sdk.model.MobileAnalyticsEvent.getDefaultInstance()) {
+          payload_ = ru.ogon.sdk.model.MobileAnalyticsEvent.newBuilder((ru.ogon.sdk.model.MobileAnalyticsEvent) payload_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 15) {
+          analyticsEventBuilder_.mergeFrom(value);
+        }
+        analyticsEventBuilder_.setMessage(value);
+      }
+      payloadCase_ = 15;
+      return this;
+    }
+    /**
+     * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+     */
+    public Builder clearAnalyticsEvent() {
+      if (analyticsEventBuilder_ == null) {
+        if (payloadCase_ == 15) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 15) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        analyticsEventBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+     */
+    public ru.ogon.sdk.model.MobileAnalyticsEvent.Builder getAnalyticsEventBuilder() {
+      return getAnalyticsEventFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+     */
+    @java.lang.Override
+    public ru.ogon.sdk.model.MobileAnalyticsEventOrBuilder getAnalyticsEventOrBuilder() {
+      if ((payloadCase_ == 15) && (analyticsEventBuilder_ != null)) {
+        return analyticsEventBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 15) {
+          return (ru.ogon.sdk.model.MobileAnalyticsEvent) payload_;
+        }
+        return ru.ogon.sdk.model.MobileAnalyticsEvent.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.pb.MobileAnalyticsEvent analytics_event = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        ru.ogon.sdk.model.MobileAnalyticsEvent, ru.ogon.sdk.model.MobileAnalyticsEvent.Builder, ru.ogon.sdk.model.MobileAnalyticsEventOrBuilder> 
+        getAnalyticsEventFieldBuilder() {
+      if (analyticsEventBuilder_ == null) {
+        if (!(payloadCase_ == 15)) {
+          payload_ = ru.ogon.sdk.model.MobileAnalyticsEvent.getDefaultInstance();
+        }
+        analyticsEventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            ru.ogon.sdk.model.MobileAnalyticsEvent, ru.ogon.sdk.model.MobileAnalyticsEvent.Builder, ru.ogon.sdk.model.MobileAnalyticsEventOrBuilder>(
+                (ru.ogon.sdk.model.MobileAnalyticsEvent) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 15;
+      onChanged();;
+      return analyticsEventBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

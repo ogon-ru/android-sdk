@@ -88,6 +88,10 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_PARAMS_UPDATED = 19;</code>
    */
   MOBILE_EVENT_PARAMS_UPDATED(19),
+  /**
+   * <code>MOBILE_EVENT_ANALYTICS_EVENT = 20;</code>
+   */
+  MOBILE_EVENT_ANALYTICS_EVENT(20),
   UNRECOGNIZED(-1),
   ;
 
@@ -171,6 +175,10 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_PARAMS_UPDATED = 19;</code>
    */
   public static final int MOBILE_EVENT_PARAMS_UPDATED_VALUE = 19;
+  /**
+   * <code>MOBILE_EVENT_ANALYTICS_EVENT = 20;</code>
+   */
+  public static final int MOBILE_EVENT_ANALYTICS_EVENT_VALUE = 20;
 
 
   public final int getNumber() {
@@ -217,6 +225,7 @@ public enum MobileEventType
       case 17: return MOBILE_EVENT_CREATE_KEYS_REQUEST;
       case 18: return MOBILE_EVENT_CREATE_KEYS_RESPONSE;
       case 19: return MOBILE_EVENT_PARAMS_UPDATED;
+      case 20: return MOBILE_EVENT_ANALYTICS_EVENT;
       default: return null;
     }
   }
