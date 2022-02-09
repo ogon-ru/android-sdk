@@ -18,13 +18,12 @@ import android.view.View
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import com.google.android.gms.tasks.Task
-import com.google.android.gms.wallet.*
-import com.google.android.gms.wallet.IsReadyToPayRequest
-import com.google.android.gms.wallet.PaymentData
-import com.google.android.gms.wallet.PaymentDataRequest
-import ru.ogon.sdk.handlers.*
-import ru.ogon.sdk.model.*
+import ru.ogon.sdk.handlers.DefaultGooglePayEventHandler
+import ru.ogon.sdk.handlers.MobileEventHandler
+import ru.ogon.sdk.handlers.OpenUrlEventHandler
+import ru.ogon.sdk.handlers.ShareUrlEventHandler
+import ru.ogon.sdk.model.MobileEvent
+import ru.ogon.sdk.model.MobileEventType
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -32,7 +31,6 @@ import java.util.*
 
 private const val BASE_URL = BuildConfig.BASE_URL
 private const val RECORD_AUDIO_REQUEST_CODE = 1
-private const val LOAD_PAYMENT_DATA_REQUEST_CODE = 2
 private const val INPUT_FILE_REQUEST_CODE = 3
 private const val CAMERA_REQUEST_CODE = 4
 private const val RESOURCE_AUDIO_CAPTURE = "android.webkit.resource.AUDIO_CAPTURE"
@@ -43,7 +41,6 @@ open class WidgetActivity : AppCompatActivity() {
         const val EXTRA_BASE_URL = "EXTRA_BASE_URL"
         const val EXTRA_HTTP_USERNAME = "EXTRA_HTTP_USERNAME"
         const val EXTRA_HTTP_PASSWORD = "EXTRA_HTTP_PASSWORD"
-        const val EXTRA_GOOGLE_PAY_ENABLED = "EXTRA_GOOGLE_PAY_ENABLED"
         const val EXTRA_QUERY_PARAMS = "EXTRA_QUERY_PARAMS"
 
         const val RESULT_ERROR = 100
@@ -53,8 +50,6 @@ open class WidgetActivity : AppCompatActivity() {
     protected lateinit var webView: WebView
     protected lateinit var jsBridge: JSBridge
     protected lateinit var baseUrl: String
-    private lateinit var googlePayEventHandler: GooglePayEventHandler
-    private var googlePayEnabled: Boolean = false
     private var httpUsername: String? = null
     private var httpPassword: String? = null
     private var permissionRequest: PermissionRequest? = null
@@ -71,7 +66,6 @@ open class WidgetActivity : AppCompatActivity() {
         baseUrl = intent.getStringExtra(EXTRA_BASE_URL) ?: BASE_URL
         httpUsername = intent.getStringExtra(EXTRA_HTTP_USERNAME)
         httpPassword = intent.getStringExtra(EXTRA_HTTP_PASSWORD)
-        googlePayEnabled = intent.getBooleanExtra(EXTRA_GOOGLE_PAY_ENABLED, false)
 
         webView = findViewById<WebView>(R.id.webView).apply {
             settings.javaScriptEnabled = true
@@ -129,13 +123,7 @@ open class WidgetActivity : AppCompatActivity() {
 
         handlers.add(OpenUrlEventHandler(this))
         handlers.add(ShareUrlEventHandler(this))
-
-        if (googlePayEnabled) {
-            googlePayEventHandler = GooglePayEventHandler(ActivityGooglePayContract(), jsBridge)
-            handlers.add(googlePayEventHandler)
-        } else {
-            handlers.add(DisabledGooglePayEventHandler(jsBridge))
-        }
+        handlers.add(DefaultGooglePayEventHandler(jsBridge))
     }
 
     override fun onKeyDown(keyCode: Int, keyEvent: KeyEvent?): Boolean {
@@ -176,18 +164,6 @@ open class WidgetActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         when (requestCode) {
-            LOAD_PAYMENT_DATA_REQUEST_CODE -> {
-                when (resultCode) {
-                    RESULT_OK -> data?.let {
-                        PaymentData.getFromIntent(it)?.let { data ->
-                            googlePayEventHandler.onPaymentSuccess(data)
-                        }
-                    }
-                    AutoResolveHelper.RESULT_ERROR -> AutoResolveHelper.getStatusFromIntent(data)?.let { status ->
-                        googlePayEventHandler.onPaymentError(status)
-                    }
-                }
-            }
             INPUT_FILE_REQUEST_CODE -> {
                 if (resultCode == RESULT_OK) {
                     val result = if (data == null || data.dataString == null) {
@@ -394,25 +370,5 @@ open class WidgetActivity : AppCompatActivity() {
             return openFileChooser(callback)
         }
 
-    }
-
-    private inner class ActivityGooglePayContract : GooglePayContract {
-        private val walletEnvironment get() = Uri.parse(baseUrl).host
-            ?.takeIf { it.equals("widget.ogon.ru", ignoreCase = true) }
-            ?.let { WalletConstants.ENVIRONMENT_PRODUCTION } ?: WalletConstants.ENVIRONMENT_TEST
-
-        private val walletOptions get() = Wallet.WalletOptions.Builder()
-            .setEnvironment(walletEnvironment)
-            .build()
-
-        private val client get() = Wallet.getPaymentsClient(this@WidgetActivity, walletOptions)
-
-        override fun isReadyToPay(request: IsReadyToPayRequest): Task<Boolean> = client.isReadyToPay(request)
-
-        override fun loadPaymentData(request: PaymentDataRequest) = AutoResolveHelper.resolveTask(
-            client.loadPaymentData(request),
-            this@WidgetActivity,
-            LOAD_PAYMENT_DATA_REQUEST_CODE
-        )
     }
 }
