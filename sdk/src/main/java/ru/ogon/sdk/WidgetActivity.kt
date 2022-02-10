@@ -18,10 +18,7 @@ import android.view.View
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import ru.ogon.sdk.handlers.DefaultGooglePayEventHandler
-import ru.ogon.sdk.handlers.MobileEventHandler
-import ru.ogon.sdk.handlers.OpenUrlEventHandler
-import ru.ogon.sdk.handlers.ShareUrlEventHandler
+import ru.ogon.sdk.handlers.*
 import ru.ogon.sdk.model.MobileEvent
 import ru.ogon.sdk.model.MobileEventType
 import java.io.File
@@ -123,6 +120,7 @@ open class WidgetActivity : AppCompatActivity() {
 
         handlers.add(OpenUrlEventHandler(this))
         handlers.add(ShareUrlEventHandler(this))
+        handlers.add(ClipboardWriteEventHandler(this))
         handlers.add(DefaultGooglePayEventHandler(jsBridge))
     }
 
