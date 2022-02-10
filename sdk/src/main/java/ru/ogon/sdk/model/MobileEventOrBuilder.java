@@ -228,5 +228,22 @@ public interface MobileEventOrBuilder extends
    */
   ru.ogon.sdk.model.MobileAnalyticsEventOrBuilder getAnalyticsEventOrBuilder();
 
+  /**
+   * <code>string clipboard_write = 16;</code>
+   * @return Whether the clipboardWrite field is set.
+   */
+  boolean hasClipboardWrite();
+  /**
+   * <code>string clipboard_write = 16;</code>
+   * @return The clipboardWrite.
+   */
+  java.lang.String getClipboardWrite();
+  /**
+   * <code>string clipboard_write = 16;</code>
+   * @return The bytes for clipboardWrite.
+   */
+  com.google.protobuf.ByteString
+      getClipboardWriteBytes();
+
   public ru.ogon.sdk.model.MobileEvent.PayloadCase getPayloadCase();
 }
