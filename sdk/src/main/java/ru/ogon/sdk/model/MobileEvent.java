@@ -226,6 +226,12 @@ private static final long serialVersionUID = 0L;
             payloadCase_ = 15;
             break;
           }
+          case 130: {
+            java.lang.String s = input.readStringRequireUtf8();
+            payloadCase_ = 16;
+            payload_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -277,6 +283,7 @@ private static final long serialVersionUID = 0L;
     CREATE_KEYS_RESPONSE(13),
     APPLICATION_PARAMS_UPDATE(14),
     ANALYTICS_EVENT(15),
+    CLIPBOARD_WRITE(16),
     PAYLOAD_NOT_SET(0);
     private final int value;
     private PayloadCase(int value) {
@@ -308,6 +315,7 @@ private static final long serialVersionUID = 0L;
         case 13: return CREATE_KEYS_RESPONSE;
         case 14: return APPLICATION_PARAMS_UPDATE;
         case 15: return ANALYTICS_EVENT;
+        case 16: return CLIPBOARD_WRITE;
         case 0: return PAYLOAD_NOT_SET;
         default: return null;
       }
@@ -808,6 +816,58 @@ private static final long serialVersionUID = 0L;
     return ru.ogon.sdk.model.MobileAnalyticsEvent.getDefaultInstance();
   }
 
+  public static final int CLIPBOARD_WRITE_FIELD_NUMBER = 16;
+  /**
+   * <code>string clipboard_write = 16;</code>
+   * @return Whether the clipboardWrite field is set.
+   */
+  public boolean hasClipboardWrite() {
+    return payloadCase_ == 16;
+  }
+  /**
+   * <code>string clipboard_write = 16;</code>
+   * @return The clipboardWrite.
+   */
+  public java.lang.String getClipboardWrite() {
+    java.lang.Object ref = "";
+    if (payloadCase_ == 16) {
+      ref = payload_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (payloadCase_ == 16) {
+        payload_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <code>string clipboard_write = 16;</code>
+   * @return The bytes for clipboardWrite.
+   */
+  public com.google.protobuf.ByteString
+      getClipboardWriteBytes() {
+    java.lang.Object ref = "";
+    if (payloadCase_ == 16) {
+      ref = payload_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (payloadCase_ == 16) {
+        payload_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -867,6 +927,9 @@ private static final long serialVersionUID = 0L;
     }
     if (payloadCase_ == 15) {
       output.writeMessage(15, (ru.ogon.sdk.model.MobileAnalyticsEvent) payload_);
+    }
+    if (payloadCase_ == 16) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, payload_);
     }
     unknownFields.writeTo(output);
   }
@@ -935,6 +998,9 @@ private static final long serialVersionUID = 0L;
     if (payloadCase_ == 15) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, (ru.ogon.sdk.model.MobileAnalyticsEvent) payload_);
+    }
+    if (payloadCase_ == 16) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, payload_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1010,6 +1076,10 @@ private static final long serialVersionUID = 0L;
         if (!getAnalyticsEvent()
             .equals(other.getAnalyticsEvent())) return false;
         break;
+      case 16:
+        if (!getClipboardWrite()
+            .equals(other.getClipboardWrite())) return false;
+        break;
       case 0:
       default:
     }
@@ -1083,6 +1153,10 @@ private static final long serialVersionUID = 0L;
       case 15:
         hash = (37 * hash) + ANALYTICS_EVENT_FIELD_NUMBER;
         hash = (53 * hash) + getAnalyticsEvent().hashCode();
+        break;
+      case 16:
+        hash = (37 * hash) + CLIPBOARD_WRITE_FIELD_NUMBER;
+        hash = (53 * hash) + getClipboardWrite().hashCode();
         break;
       case 0:
       default:
@@ -1337,6 +1411,9 @@ private static final long serialVersionUID = 0L;
           result.payload_ = analyticsEventBuilder_.build();
         }
       }
+      if (payloadCase_ == 16) {
+        result.payload_ = payload_;
+      }
       result.payloadCase_ = payloadCase_;
       onBuilt();
       return result;
@@ -1448,6 +1525,12 @@ private static final long serialVersionUID = 0L;
         }
         case ANALYTICS_EVENT: {
           mergeAnalyticsEvent(other.getAnalyticsEvent());
+          break;
+        }
+        case CLIPBOARD_WRITE: {
+          payloadCase_ = 16;
+          payload_ = other.payload_;
+          onChanged();
           break;
         }
         case PAYLOAD_NOT_SET: {
@@ -3336,6 +3419,103 @@ private static final long serialVersionUID = 0L;
       payloadCase_ = 15;
       onChanged();;
       return analyticsEventBuilder_;
+    }
+
+    /**
+     * <code>string clipboard_write = 16;</code>
+     * @return Whether the clipboardWrite field is set.
+     */
+    @java.lang.Override
+    public boolean hasClipboardWrite() {
+      return payloadCase_ == 16;
+    }
+    /**
+     * <code>string clipboard_write = 16;</code>
+     * @return The clipboardWrite.
+     */
+    @java.lang.Override
+    public java.lang.String getClipboardWrite() {
+      java.lang.Object ref = "";
+      if (payloadCase_ == 16) {
+        ref = payload_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (payloadCase_ == 16) {
+          payload_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string clipboard_write = 16;</code>
+     * @return The bytes for clipboardWrite.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getClipboardWriteBytes() {
+      java.lang.Object ref = "";
+      if (payloadCase_ == 16) {
+        ref = payload_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (payloadCase_ == 16) {
+          payload_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string clipboard_write = 16;</code>
+     * @param value The clipboardWrite to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClipboardWrite(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  payloadCase_ = 16;
+      payload_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string clipboard_write = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClipboardWrite() {
+      if (payloadCase_ == 16) {
+        payloadCase_ = 0;
+        payload_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>string clipboard_write = 16;</code>
+     * @param value The bytes for clipboardWrite to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClipboardWriteBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      payloadCase_ = 16;
+      payload_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
