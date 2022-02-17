@@ -324,12 +324,14 @@ public final class MobileModel {
       "ATE_KEYS_REQUEST\020\021\022%\n!MOBILE_EVENT_CREAT" +
       "E_KEYS_RESPONSE\020\022\022\037\n\033MOBILE_EVENT_PARAMS" +
       "_UPDATED\020\023\022 \n\034MOBILE_EVENT_ANALYTICS_EVE" +
-      "NT\020\024\022 \n\034MOBILE_EVENT_CLIPBOARD_WRITE\020\025*\205" +
+      "NT\020\024\022 \n\034MOBILE_EVENT_CLIPBOARD_WRITE\020\025*\356" +
       "\001\n\030MobileAnalyticsEventType\022+\n\'MOBILE_AN" +
       "ALYTICS_EVENT_TYPE_UNSPECIFIED\020\000\022<\n8MOBI" +
       "LE_ANALYTICS_EVENT_TYPE_ANDROID_APP_INST" +
-      "ALL_REFERRER\020\001B\025\n\021ru.ogon.sdk.modelP\001b\006p" +
-      "roto3"
+      "ALL_REFERRER\020\001\0223\n/MOBILE_ANALYTICS_EVENT" +
+      "_TYPE_ANDROID_IAU_INSTALL\020\002\0222\n.MOBILE_AN" +
+      "ALYTICS_EVENT_TYPE_ANDROID_IAU_CANCEL\020\003B" +
+      "\025\n\021ru.ogon.sdk.modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
