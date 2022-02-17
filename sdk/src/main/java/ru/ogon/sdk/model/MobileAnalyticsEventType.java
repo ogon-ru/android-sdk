@@ -16,6 +16,14 @@ public enum MobileAnalyticsEventType
    * <code>MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_APP_INSTALL_REFERRER = 1;</code>
    */
   MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_APP_INSTALL_REFERRER(1),
+  /**
+   * <code>MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_IAU_INSTALL = 2;</code>
+   */
+  MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_IAU_INSTALL(2),
+  /**
+   * <code>MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_IAU_CANCEL = 3;</code>
+   */
+  MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_IAU_CANCEL(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -27,6 +35,14 @@ public enum MobileAnalyticsEventType
    * <code>MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_APP_INSTALL_REFERRER = 1;</code>
    */
   public static final int MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_APP_INSTALL_REFERRER_VALUE = 1;
+  /**
+   * <code>MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_IAU_INSTALL = 2;</code>
+   */
+  public static final int MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_IAU_INSTALL_VALUE = 2;
+  /**
+   * <code>MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_IAU_CANCEL = 3;</code>
+   */
+  public static final int MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_IAU_CANCEL_VALUE = 3;
 
 
   public final int getNumber() {
@@ -55,6 +71,8 @@ public enum MobileAnalyticsEventType
     switch (value) {
       case 0: return MOBILE_ANALYTICS_EVENT_TYPE_UNSPECIFIED;
       case 1: return MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_APP_INSTALL_REFERRER;
+      case 2: return MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_IAU_INSTALL;
+      case 3: return MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_IAU_CANCEL;
       default: return null;
     }
   }
