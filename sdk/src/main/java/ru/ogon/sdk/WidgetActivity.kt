@@ -64,7 +64,7 @@ open class WidgetActivity : AppCompatActivity() {
         httpUsername = intent.getStringExtra(EXTRA_HTTP_USERNAME)
         httpPassword = intent.getStringExtra(EXTRA_HTTP_PASSWORD)
 
-        webView = findViewById<WebView>(R.id.webView).apply {
+        webView = findViewById<WebView>(R.id.web_view).apply {
             settings.javaScriptEnabled = true
             settings.allowContentAccess = true
             settings.allowFileAccess = true
