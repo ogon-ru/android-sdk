@@ -10,8 +10,11 @@ class OpenUrlEventHandler(private val context: Context) : MobileEventHandler {
     override fun handle(event: MobileEvent): Boolean = event.takeIf {
         it.type == MobileEventType.MOBILE_EVENT_OPEN_URL_REQUEST
     }?.let {
-        val webpage = Uri.parse(it.openUrlRequest)
-        val intent = Intent(Intent.ACTION_VIEW, webpage)
+        val uri = Uri.parse(it.openUrlRequest)
+        val intent = when(uri.scheme) {
+            "mailto" -> Intent(Intent.ACTION_SENDTO, uri)
+            else -> Intent(Intent.ACTION_VIEW, uri)
+        }
         if (intent.resolveActivity(context.packageManager) != null) {
             context.startActivity(intent)
         }
