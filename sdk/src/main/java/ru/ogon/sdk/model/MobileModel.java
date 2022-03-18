@@ -301,7 +301,7 @@ public final class MobileModel {
       "\0162\034.pb.MobileAnalyticsEventType\022\r\n\005value" +
       "\030\002 \001(\t\022\022\n\nutm_medium\030\003 \001(\t\022\022\n\nutm_source" +
       "\030\004 \001(\t\022\024\n\014utm_campaign\030\005 \001(\t\022\020\n\010utm_term" +
-      "\030\006 \001(\t\022\023\n\013utm_content\030\007 \001(\t*\240\007\n\017MobileEv" +
+      "\030\006 \001(\t\022\023\n\013utm_content\030\007 \001(\t*\271\007\n\017MobileEv" +
       "entType\022\034\n\030MOBILE_EVENT_UNSPECIFIED\020\000\0222\n" +
       ".MOBILE_EVENT_GOOGLEPAY_IS_READY_TO_PAY_" +
       "REQUEST\020\001\0223\n/MOBILE_EVENT_GOOGLEPAY_IS_R" +
@@ -324,14 +324,15 @@ public final class MobileModel {
       "ATE_KEYS_REQUEST\020\021\022%\n!MOBILE_EVENT_CREAT" +
       "E_KEYS_RESPONSE\020\022\022\037\n\033MOBILE_EVENT_PARAMS" +
       "_UPDATED\020\023\022 \n\034MOBILE_EVENT_ANALYTICS_EVE" +
-      "NT\020\024\022 \n\034MOBILE_EVENT_CLIPBOARD_WRITE\020\025*\356" +
-      "\001\n\030MobileAnalyticsEventType\022+\n\'MOBILE_AN" +
-      "ALYTICS_EVENT_TYPE_UNSPECIFIED\020\000\022<\n8MOBI" +
-      "LE_ANALYTICS_EVENT_TYPE_ANDROID_APP_INST" +
-      "ALL_REFERRER\020\001\0223\n/MOBILE_ANALYTICS_EVENT" +
-      "_TYPE_ANDROID_IAU_INSTALL\020\002\0222\n.MOBILE_AN" +
-      "ALYTICS_EVENT_TYPE_ANDROID_IAU_CANCEL\020\003B" +
-      "\025\n\021ru.ogon.sdk.modelP\001b\006proto3"
+      "NT\020\024\022 \n\034MOBILE_EVENT_CLIPBOARD_WRITE\020\025\022\027" +
+      "\n\023MOBILE_EVENT_REVIEW\020\026*\356\001\n\030MobileAnalyt" +
+      "icsEventType\022+\n\'MOBILE_ANALYTICS_EVENT_T" +
+      "YPE_UNSPECIFIED\020\000\022<\n8MOBILE_ANALYTICS_EV" +
+      "ENT_TYPE_ANDROID_APP_INSTALL_REFERRER\020\001\022" +
+      "3\n/MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_I" +
+      "AU_INSTALL\020\002\0222\n.MOBILE_ANALYTICS_EVENT_T" +
+      "YPE_ANDROID_IAU_CANCEL\020\003B\025\n\021ru.ogon.sdk." +
+      "modelP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

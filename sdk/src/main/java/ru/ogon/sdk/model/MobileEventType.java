@@ -96,6 +96,10 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_CLIPBOARD_WRITE = 21;</code>
    */
   MOBILE_EVENT_CLIPBOARD_WRITE(21),
+  /**
+   * <code>MOBILE_EVENT_REVIEW = 22;</code>
+   */
+  MOBILE_EVENT_REVIEW(22),
   UNRECOGNIZED(-1),
   ;
 
@@ -187,6 +191,10 @@ public enum MobileEventType
    * <code>MOBILE_EVENT_CLIPBOARD_WRITE = 21;</code>
    */
   public static final int MOBILE_EVENT_CLIPBOARD_WRITE_VALUE = 21;
+  /**
+   * <code>MOBILE_EVENT_REVIEW = 22;</code>
+   */
+  public static final int MOBILE_EVENT_REVIEW_VALUE = 22;
 
 
   public final int getNumber() {
@@ -235,6 +243,7 @@ public enum MobileEventType
       case 19: return MOBILE_EVENT_PARAMS_UPDATED;
       case 20: return MOBILE_EVENT_ANALYTICS_EVENT;
       case 21: return MOBILE_EVENT_CLIPBOARD_WRITE;
+      case 22: return MOBILE_EVENT_REVIEW;
       default: return null;
     }
   }
