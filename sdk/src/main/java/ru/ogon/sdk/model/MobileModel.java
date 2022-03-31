@@ -287,52 +287,53 @@ public final class MobileModel {
       "\016payment_method\030\003 \001(\0132\026.pb.ApplePaymentM" +
       "ethod\"I\n\022ApplePaymentMethod\022\024\n\014display_n" +
       "ame\030\001 \001(\t\022\017\n\007network\030\002 \001(\t\022\014\n\004type\030\003 \001(\t" +
-      "\"\271\001\n\027MobileApplicationParams\022\017\n\007user_id\030" +
+      "\"\331\001\n\027MobileApplicationParams\022\017\n\007user_id\030" +
       "\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\022\027\n\017confirmation" +
       "_id\030\003 \001(\t\022\030\n\020password_enabled\030\004 \001(\010\022\030\n\020b" +
       "iometry_enabled\030\005 \001(\010\022\032\n\022biometry_availa" +
-      "ble\030\006 \001(\010\022\021\n\tfcm_token\030\007 \001(\t\"}\n\035MobileAp" +
-      "plicationParamsUpdate\022\017\n\007user_id\030\001 \001(\t\022\027" +
-      "\n\017confirmation_id\030\002 \001(\t\022\030\n\020password_enab" +
-      "led\030\003 \001(\010\022\030\n\020biometry_enabled\030\004 \001(\010\"%\n\021C" +
-      "reateKeysRequest\022\020\n\010password\030\001 \001(\t\"(\n\022Cr" +
-      "eateKeysResponse\022\022\n\npublic_key\030\001 \001(\t\"\274\001\n" +
-      "\024MobileAnalyticsEvent\0220\n\nevent_type\030\001 \001(" +
-      "\0162\034.pb.MobileAnalyticsEventType\022\r\n\005value" +
-      "\030\002 \001(\t\022\022\n\nutm_medium\030\003 \001(\t\022\022\n\nutm_source" +
-      "\030\004 \001(\t\022\024\n\014utm_campaign\030\005 \001(\t\022\020\n\010utm_term" +
-      "\030\006 \001(\t\022\023\n\013utm_content\030\007 \001(\t*\271\007\n\017MobileEv" +
-      "entType\022\034\n\030MOBILE_EVENT_UNSPECIFIED\020\000\0222\n" +
-      ".MOBILE_EVENT_GOOGLEPAY_IS_READY_TO_PAY_" +
-      "REQUEST\020\001\0223\n/MOBILE_EVENT_GOOGLEPAY_IS_R" +
-      "EADY_TO_PAY_RESPONSE\020\002\022/\n+MOBILE_EVENT_G" +
-      "OOGLEPAY_PAYMENT_DATA_REQUEST\020\003\0220\n,MOBIL" +
-      "E_EVENT_GOOGLEPAY_PAYMENT_DATA_RESPONSE\020" +
-      "\004\022-\n)MOBILE_EVENT_GOOGLEPAY_PAYMENT_DATA" +
-      "_ERROR\020\005\0221\n-MOBILE_EVENT_APPLEPAY_IS_REA" +
-      "DY_TO_PAY_REQUEST\020\006\0222\n.MOBILE_EVENT_APPL" +
-      "EPAY_IS_READY_TO_PAY_RESPONSE\020\007\022.\n*MOBIL" +
-      "E_EVENT_APPLEPAY_PAYMENT_DATA_REQUEST\020\010\022" +
-      "/\n+MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_RE" +
-      "SPONSE\020\t\022,\n(MOBILE_EVENT_APPLEPAY_PAYMEN" +
-      "T_DATA_ERROR\020\n\022!\n\035MOBILE_EVENT_OPEN_URL_" +
-      "REQUEST\020\013\022\025\n\021MOBILE_EVENT_BACK\020\014\022\"\n\036MOBI" +
-      "LE_EVENT_SHARE_URL_REQUEST\020\r\022#\n\037MOBILE_E" +
-      "VENT_GET_PARAMS_REQUEST\020\016\022$\n MOBILE_EVEN" +
-      "T_GET_PARAMS_RESPONSE\020\017\022#\n\037MOBILE_EVENT_" +
-      "SET_PARAMS_REQUEST\020\020\022$\n MOBILE_EVENT_CRE" +
-      "ATE_KEYS_REQUEST\020\021\022%\n!MOBILE_EVENT_CREAT" +
-      "E_KEYS_RESPONSE\020\022\022\037\n\033MOBILE_EVENT_PARAMS" +
-      "_UPDATED\020\023\022 \n\034MOBILE_EVENT_ANALYTICS_EVE" +
-      "NT\020\024\022 \n\034MOBILE_EVENT_CLIPBOARD_WRITE\020\025\022\027" +
-      "\n\023MOBILE_EVENT_REVIEW\020\026*\356\001\n\030MobileAnalyt" +
-      "icsEventType\022+\n\'MOBILE_ANALYTICS_EVENT_T" +
-      "YPE_UNSPECIFIED\020\000\022<\n8MOBILE_ANALYTICS_EV" +
-      "ENT_TYPE_ANDROID_APP_INSTALL_REFERRER\020\001\022" +
-      "3\n/MOBILE_ANALYTICS_EVENT_TYPE_ANDROID_I" +
-      "AU_INSTALL\020\002\0222\n.MOBILE_ANALYTICS_EVENT_T" +
-      "YPE_ANDROID_IAU_CANCEL\020\003B\025\n\021ru.ogon.sdk." +
-      "modelP\001b\006proto3"
+      "ble\030\006 \001(\010\022\021\n\tfcm_token\030\007 \001(\t\022\036\n\026my_track" +
+      "er_instance_id\030\010 \001(\t\"}\n\035MobileApplicatio" +
+      "nParamsUpdate\022\017\n\007user_id\030\001 \001(\t\022\027\n\017confir" +
+      "mation_id\030\002 \001(\t\022\030\n\020password_enabled\030\003 \001(" +
+      "\010\022\030\n\020biometry_enabled\030\004 \001(\010\"%\n\021CreateKey" +
+      "sRequest\022\020\n\010password\030\001 \001(\t\"(\n\022CreateKeys" +
+      "Response\022\022\n\npublic_key\030\001 \001(\t\"\274\001\n\024MobileA" +
+      "nalyticsEvent\0220\n\nevent_type\030\001 \001(\0162\034.pb.M" +
+      "obileAnalyticsEventType\022\r\n\005value\030\002 \001(\t\022\022" +
+      "\n\nutm_medium\030\003 \001(\t\022\022\n\nutm_source\030\004 \001(\t\022\024" +
+      "\n\014utm_campaign\030\005 \001(\t\022\020\n\010utm_term\030\006 \001(\t\022\023" +
+      "\n\013utm_content\030\007 \001(\t*\271\007\n\017MobileEventType\022" +
+      "\034\n\030MOBILE_EVENT_UNSPECIFIED\020\000\0222\n.MOBILE_" +
+      "EVENT_GOOGLEPAY_IS_READY_TO_PAY_REQUEST\020" +
+      "\001\0223\n/MOBILE_EVENT_GOOGLEPAY_IS_READY_TO_" +
+      "PAY_RESPONSE\020\002\022/\n+MOBILE_EVENT_GOOGLEPAY" +
+      "_PAYMENT_DATA_REQUEST\020\003\0220\n,MOBILE_EVENT_" +
+      "GOOGLEPAY_PAYMENT_DATA_RESPONSE\020\004\022-\n)MOB" +
+      "ILE_EVENT_GOOGLEPAY_PAYMENT_DATA_ERROR\020\005" +
+      "\0221\n-MOBILE_EVENT_APPLEPAY_IS_READY_TO_PA" +
+      "Y_REQUEST\020\006\0222\n.MOBILE_EVENT_APPLEPAY_IS_" +
+      "READY_TO_PAY_RESPONSE\020\007\022.\n*MOBILE_EVENT_" +
+      "APPLEPAY_PAYMENT_DATA_REQUEST\020\010\022/\n+MOBIL" +
+      "E_EVENT_APPLEPAY_PAYMENT_DATA_RESPONSE\020\t" +
+      "\022,\n(MOBILE_EVENT_APPLEPAY_PAYMENT_DATA_E" +
+      "RROR\020\n\022!\n\035MOBILE_EVENT_OPEN_URL_REQUEST\020" +
+      "\013\022\025\n\021MOBILE_EVENT_BACK\020\014\022\"\n\036MOBILE_EVENT" +
+      "_SHARE_URL_REQUEST\020\r\022#\n\037MOBILE_EVENT_GET" +
+      "_PARAMS_REQUEST\020\016\022$\n MOBILE_EVENT_GET_PA" +
+      "RAMS_RESPONSE\020\017\022#\n\037MOBILE_EVENT_SET_PARA" +
+      "MS_REQUEST\020\020\022$\n MOBILE_EVENT_CREATE_KEYS" +
+      "_REQUEST\020\021\022%\n!MOBILE_EVENT_CREATE_KEYS_R" +
+      "ESPONSE\020\022\022\037\n\033MOBILE_EVENT_PARAMS_UPDATED" +
+      "\020\023\022 \n\034MOBILE_EVENT_ANALYTICS_EVENT\020\024\022 \n\034" +
+      "MOBILE_EVENT_CLIPBOARD_WRITE\020\025\022\027\n\023MOBILE" +
+      "_EVENT_REVIEW\020\026*\356\001\n\030MobileAnalyticsEvent" +
+      "Type\022+\n\'MOBILE_ANALYTICS_EVENT_TYPE_UNSP" +
+      "ECIFIED\020\000\022<\n8MOBILE_ANALYTICS_EVENT_TYPE" +
+      "_ANDROID_APP_INSTALL_REFERRER\020\001\0223\n/MOBIL" +
+      "E_ANALYTICS_EVENT_TYPE_ANDROID_IAU_INSTA" +
+      "LL\020\002\0222\n.MOBILE_ANALYTICS_EVENT_TYPE_ANDR" +
+      "OID_IAU_CANCEL\020\003B\025\n\021ru.ogon.sdk.modelP\001b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -505,7 +506,7 @@ public final class MobileModel {
     internal_static_pb_MobileApplicationParams_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pb_MobileApplicationParams_descriptor,
-        new java.lang.String[] { "UserId", "DeviceId", "ConfirmationId", "PasswordEnabled", "BiometryEnabled", "BiometryAvailable", "FcmToken", });
+        new java.lang.String[] { "UserId", "DeviceId", "ConfirmationId", "PasswordEnabled", "BiometryEnabled", "BiometryAvailable", "FcmToken", "MyTrackerInstanceId", });
     internal_static_pb_MobileApplicationParamsUpdate_descriptor =
       getDescriptor().getMessageTypes().get(27);
     internal_static_pb_MobileApplicationParamsUpdate_fieldAccessorTable = new

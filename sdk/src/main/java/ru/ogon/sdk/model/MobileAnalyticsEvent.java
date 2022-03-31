@@ -393,22 +393,22 @@ private static final long serialVersionUID = 0L;
     if (eventType_ != ru.ogon.sdk.model.MobileAnalyticsEventType.MOBILE_ANALYTICS_EVENT_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, eventType_);
     }
-    if (!getValueBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
     }
-    if (!getUtmMediumBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(utmMedium_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, utmMedium_);
     }
-    if (!getUtmSourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(utmSource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, utmSource_);
     }
-    if (!getUtmCampaignBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(utmCampaign_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, utmCampaign_);
     }
-    if (!getUtmTermBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(utmTerm_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, utmTerm_);
     }
-    if (!getUtmContentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(utmContent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, utmContent_);
     }
     unknownFields.writeTo(output);
@@ -424,22 +424,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, eventType_);
     }
-    if (!getValueBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
     }
-    if (!getUtmMediumBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(utmMedium_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, utmMedium_);
     }
-    if (!getUtmSourceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(utmSource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, utmSource_);
     }
-    if (!getUtmCampaignBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(utmCampaign_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, utmCampaign_);
     }
-    if (!getUtmTermBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(utmTerm_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, utmTerm_);
     }
-    if (!getUtmContentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(utmContent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, utmContent_);
     }
     size += unknownFields.getSerializedSize();

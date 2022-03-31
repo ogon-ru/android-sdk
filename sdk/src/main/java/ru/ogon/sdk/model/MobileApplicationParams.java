@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     deviceId_ = "";
     confirmationId_ = "";
     fcmToken_ = "";
+    myTrackerInstanceId_ = "";
   }
 
   @java.lang.Override
@@ -89,6 +90,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             fcmToken_ = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            myTrackerInstanceId_ = s;
             break;
           }
           default: {
@@ -308,6 +315,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MY_TRACKER_INSTANCE_ID_FIELD_NUMBER = 8;
+  private volatile java.lang.Object myTrackerInstanceId_;
+  /**
+   * <code>string my_tracker_instance_id = 8;</code>
+   * @return The myTrackerInstanceId.
+   */
+  @java.lang.Override
+  public java.lang.String getMyTrackerInstanceId() {
+    java.lang.Object ref = myTrackerInstanceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      myTrackerInstanceId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string my_tracker_instance_id = 8;</code>
+   * @return The bytes for myTrackerInstanceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMyTrackerInstanceIdBytes() {
+    java.lang.Object ref = myTrackerInstanceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      myTrackerInstanceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -322,13 +367,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
     }
-    if (!getDeviceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deviceId_);
     }
-    if (!getConfirmationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(confirmationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, confirmationId_);
     }
     if (passwordEnabled_ != false) {
@@ -340,8 +385,11 @@ private static final long serialVersionUID = 0L;
     if (biometryAvailable_ != false) {
       output.writeBool(6, biometryAvailable_);
     }
-    if (!getFcmTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fcmToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, fcmToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(myTrackerInstanceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, myTrackerInstanceId_);
     }
     unknownFields.writeTo(output);
   }
@@ -352,13 +400,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
     }
-    if (!getDeviceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deviceId_);
     }
-    if (!getConfirmationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(confirmationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, confirmationId_);
     }
     if (passwordEnabled_ != false) {
@@ -373,8 +421,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, biometryAvailable_);
     }
-    if (!getFcmTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fcmToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, fcmToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(myTrackerInstanceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, myTrackerInstanceId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -405,6 +456,8 @@ private static final long serialVersionUID = 0L;
         != other.getBiometryAvailable()) return false;
     if (!getFcmToken()
         .equals(other.getFcmToken())) return false;
+    if (!getMyTrackerInstanceId()
+        .equals(other.getMyTrackerInstanceId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -433,6 +486,8 @@ private static final long serialVersionUID = 0L;
         getBiometryAvailable());
     hash = (37 * hash) + FCM_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getFcmToken().hashCode();
+    hash = (37 * hash) + MY_TRACKER_INSTANCE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getMyTrackerInstanceId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -580,6 +635,8 @@ private static final long serialVersionUID = 0L;
 
       fcmToken_ = "";
 
+      myTrackerInstanceId_ = "";
+
       return this;
     }
 
@@ -613,6 +670,7 @@ private static final long serialVersionUID = 0L;
       result.biometryEnabled_ = biometryEnabled_;
       result.biometryAvailable_ = biometryAvailable_;
       result.fcmToken_ = fcmToken_;
+      result.myTrackerInstanceId_ = myTrackerInstanceId_;
       onBuilt();
       return result;
     }
@@ -684,6 +742,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getFcmToken().isEmpty()) {
         fcmToken_ = other.fcmToken_;
+        onChanged();
+      }
+      if (!other.getMyTrackerInstanceId().isEmpty()) {
+        myTrackerInstanceId_ = other.myTrackerInstanceId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1108,6 +1170,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       fcmToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object myTrackerInstanceId_ = "";
+    /**
+     * <code>string my_tracker_instance_id = 8;</code>
+     * @return The myTrackerInstanceId.
+     */
+    public java.lang.String getMyTrackerInstanceId() {
+      java.lang.Object ref = myTrackerInstanceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        myTrackerInstanceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string my_tracker_instance_id = 8;</code>
+     * @return The bytes for myTrackerInstanceId.
+     */
+    public com.google.protobuf.ByteString
+        getMyTrackerInstanceIdBytes() {
+      java.lang.Object ref = myTrackerInstanceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        myTrackerInstanceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string my_tracker_instance_id = 8;</code>
+     * @param value The myTrackerInstanceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMyTrackerInstanceId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      myTrackerInstanceId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string my_tracker_instance_id = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMyTrackerInstanceId() {
+      
+      myTrackerInstanceId_ = getDefaultInstance().getMyTrackerInstanceId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string my_tracker_instance_id = 8;</code>
+     * @param value The bytes for myTrackerInstanceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMyTrackerInstanceIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      myTrackerInstanceId_ = value;
       onChanged();
       return this;
     }

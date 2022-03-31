@@ -98,8 +98,8 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 40: {
-            payloadCase_ = 5;
             payload_ = input.readBool();
+            payloadCase_ = 5;
             break;
           }
           case 50: {
