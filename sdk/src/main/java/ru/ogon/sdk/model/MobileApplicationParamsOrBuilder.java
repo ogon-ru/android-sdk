@@ -72,4 +72,16 @@ public interface MobileApplicationParamsOrBuilder extends
    */
   com.google.protobuf.ByteString
       getFcmTokenBytes();
+
+  /**
+   * <code>string my_tracker_instance_id = 8;</code>
+   * @return The myTrackerInstanceId.
+   */
+  java.lang.String getMyTrackerInstanceId();
+  /**
+   * <code>string my_tracker_instance_id = 8;</code>
+   * @return The bytes for myTrackerInstanceId.
+   */
+  com.google.protobuf.ByteString
+      getMyTrackerInstanceIdBytes();
 }
